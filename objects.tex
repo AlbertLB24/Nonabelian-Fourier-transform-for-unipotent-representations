@@ -1,0 +1,34 @@
+\section{Unipotent representations for p-adic groups and the dual nonabelian Fourier transform}
+
+Let $\mathbf{G}$ be a connected, simple, split algebraic group over some nonarchimedean local field $F$ with finite residue field $k_F$ and let $G=\mathbf{G}(F)$. Let $\Rep(G)$ be the category of admissible smooth complex representations of $G$ and let $\Irr(G)$ be the subset of the irreducible representations. We define $R(G)$ to be $\CC$-span of $\Irr(G)$ (i.e. the complexification of the Grothendieck group of the abelian category of smooth $G$-representations).
+
+Then, for any parahoric subgroup $K$ (these are the stabilizers under the action of $G$ on the Bruhat-Tits building) with pro-unipotent radical $U_K$, there is a \textit{restriction functor}
+
+\begin{equation*}
+    \res^K:R(G)\longrightarrow \CC[K/U_K]^{K/U_K},\quad V\longmapsto V^{U_K},\quad\text{for all }V\in\Irr(G),
+\end{equation*}
+where $\CC[H]$ is the $\CC$-vector space of $\CC$-valued functions on a group $H$ and $\CC[H]^H$ is the subspace of functions preserved under conjugation (i.e. class functions). This is well-defined since the representations are assumed to be admissible. 
+
+\begin{remark}
+    Suppose that $K$ is the stabilizers of a point $x$ in the Bruhat-Tits building in some apartment $\mathcal{A}(G,T,F)$ corresponding to some maximal torus $T$ of $G$ with roots $\Phi$ and root subgroups $\cX_\alpha$. By tracing the action of $G$ on the building, one can show that 
+    $$K=\langle T(\cO),\cX_\alpha(\varpi^{\lceil-\langle\alpha,x\rangle\rceil}\cO)\ |\ \alpha\in\Phi\rangle\quad\text{and}\quad U_K=\langle T(1+\varpi\cO),\cX_\alpha(\varpi^{\lceil\epsilon-\langle\alpha,x\rangle\rceil})\ |\ \alpha\in\Phi\rangle$$
+    for some sufficiently small $\epsilon>0$. It then follows that 
+    $U_K$ is a pro-unipotent normal subgroup of $K$ and $K/U_K$ is isomorphic to the $k_F$-points of a reductive group with maximal torus $T(k_F)$ and roots $\Phi_K=\{\alpha\in\Phi\ |\ \langle\alpha,x\rangle\in\ZZ\}$.
+\end{remark}
+
+We then say that an irreducible smooth representation $(\pi,V)$ of $G$ is \textit{unipotent} if there exists some parahoric subgroup $K$ of $G$ such that some (equivalently, any) irreducible component of $V^{U_K}$ is a unipotent representation of the finite group $K/U_K$.
+
+\begin{example}
+    The Iwahori subgroup $I=\langle T(\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$, with pro-unipotent radical $U_I=\langle T(1+\varpi\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$ and reductive quotient $I/U_I=T(k_F)$ is, up to conjugacy, the unique minimal parahoric subgroup of $G$. Any smooth admissible representation $(\pi,V)$ of $G$ with an Iwahori fixed vector is unipotent. Indeed, $V^{U_I}$ contains the trivial representation of $T(k_F)$, its unique unipotent representation. 
+\end{example}
+
+Analogously to the construction of $R(G)$, we define $\Irr_{un}(G)$ to be the set of irreducible unipotent representations of $G$, and $R_{un}(G)$ to be its $\CC$-span. We then have a well-defined 
+
+
+
+\vspace{2cm}
+
+
+
+
+We say that a smooth admissible complex representation $(\pi,V)$ is \textit{unipotent} if there exists some parahoric subgroup $K$ 

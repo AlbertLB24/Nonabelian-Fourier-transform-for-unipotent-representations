@@ -1,0 +1,155 @@
+\documentclass{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% package setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref,bm}
+\usepackage[all]{xy}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{graphicx}
+\usepackage{mathtools, caption, dsfont, tikz-cd}
+\usepackage{wrapfig}
+
+% tikzpicture
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+
+\mathchardef\mhyphen="2D
+
+
+\raggedbottom
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% operators and symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% operators
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ext}{\mathrm{Ext}}
+\newcommand{\Ker}{\mathrm{Ker}}
+\newcommand{\Pic}{\mathrm{Pic}}
+\newcommand{\comp}{\mathrm{comp}}
+\newcommand{\Proj}{\mathrm{Proj}}
+\newcommand{\rk}{\mathrm{rk}}
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Frob}{\mathrm{Frob}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\Rep}{\mathrm{Rep}}
+\newcommand{\Irr}{\mathrm{Irr}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Res}{\mathrm{Res}}
+\newcommand{\res}{\mathrm{res}}
+\newcommand{\Smo}{\mathrm{Smo}}
+\newcommand{\Span}{\mathrm{Span}}
+\newcommand{\Frac}{\mathrm{Frac}}
+\newcommand{\supp}{\mathrm{supp}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\Top}{\mathrm{Top}}
+\newcommand{\Ab}{\mathrm{Ab}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\hht}{\mathrm{ht}}
+
+\newcommand{\PGL}{\mathrm{PGL}}
+\newcommand{\PSL}{\mathrm{PSL}}
+\newcommand{\Psh}{\mathrm{Psh}}
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\aff}{\mathrm{aff}}
+
+
+% greek 
+\newcommand{\calpha}{\check{\alpha}}
+\newcommand{\cPhi}{\check{\Phi}}
+\newcommand{\cbeta}{\check{\beta}}
+\newcommand{\valpha}{\alpha^\vee}
+\newcommand{\vbeta}{\beta^\vee}
+\newcommand{\vPhi}{\Phi^\vee}
+
+% shortcuts
+\newcommand{\slii}{\mathfrak{sl}_2}
+\newcommand{\sliii}{\mathfrak{sl}_3}
+\newcommand{\gl}{\mathfrak{gl}}
+\newcommand{\eW}{\widetilde{W_a}}
+
+
+% mathcal
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cX}{\mathcal{X}}
+
+% mathbb
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\adele}{\mathbb{A}}
+
+% mathfrak
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\pp}{\mathfrak{p}}
+\newcommand{\nn}{\mathfrak{n}}
+\newcommand{\mm}{\mathfrak{m}}
+
+% shortcuts
+\newcommand{\CG}{C_c^{\infty}(G)}
+\newcommand{\cInd}{c\mhyphen\mathrm{Ind}}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\hatv}[1]{\overset{\vee}{\mathstrut#1}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.5}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{question}[theorem]{Question}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{algo}[theorem]{Algorithm}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notn}[theorem]{Notation}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{hypothesis}{Hypothesis}
+\newtheorem*{exercise}{Exercise}
+
+
+\title{Nonabelian Fourier transform for unipotent representations}
+\author{Albert Lopez Bruch}
+
+\begin{document}
+	\maketitle
+	\pagenumbering{arabic}
+    \input{finite_unipotent.tex}
+    \newpage
+    \input{objects.tex}
+    
+    
+
+\end{document}

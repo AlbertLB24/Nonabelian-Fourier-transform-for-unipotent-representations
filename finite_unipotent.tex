@@ -1,0 +1,76 @@
+\section{Unipotent representations for finite groups of Lie type}
+\subsection{Frobenius maps}
+
+Let $k$ be an algebraically closed field of characteristic $p\geq 0$ and let $G$ be a connected reductive group over $k$. The structure of $G$ can be understood to a large extent by looking at its maximal connected solvable subgroups of $G$, denoted as Borel subgroups. If we fix some Borel subgroup $B$, any maximal torus $T$ in $B$ is also a maximal torus in $G$, and it determines a set of roots $\Phi=\Phi(G,T)\subset X(T)$. The choice of the Borel $B$ containing $T$ corresponds to a choice of positive roots $\Phi^+$ and therefore of an integral basis $\Delta\subseteq\Phi^+$. Moreover, the subgroups $B,N:=N_G(T)$ satisfy the axioms of a $BN$-pair, as described by Tits whose corresponding Weyl group is $W=N/T=\langle w_{\alpha_i}\ |\ \alpha_i\in\Delta\rangle$.
+
+
+Let $F:G\rightarrow G$ be a Frobenius map and let $G^F$ be the fixed points under the Frobenius map. One can show that $G$ contains $F$-stable Borel subgroups, and that inside any $F$-stable Borel there are $F$-stable maximal tori. Thus, we may assume that the Borel subgroup $B$ and maximal torus $T$ fixed in the previous paragraph are $F$-stable. Under these assumptions, the Frobenius map acts on the simple roots by permuting the corresponding the root spaces. Thus, $F$ corresponds to some permutation $\rho$ of $\Delta$ satisfying
+$$F(\cX_\alpha)=\cX_{\rho(\alpha)}\quad\text{ for all }\alpha\in\Phi.$$
+Moreover, one can easily check that $\rho$ is in fact a symmetry of the Dynkin diagram, and these can be completely classified. For each orbit $J\subseteq\Delta$ of $\rho$, let $w_J\in W_J=\{w_{\alpha_i}\ |\ \alpha_i\in J\}$ be the unique element such that $w_J(J)=-J$. Moreover, it satisfies that $w_J^2=1$. In then follows that the group $G^F$ has a natural $BN$-pair given by the groups $B^F$ and $N^F$, whose Weyl group is
+$$N^F/T^F=(N/T)^F=W^F=\langle w_J\ |\ J\subseteq\Delta\text{ is an orbit of }\rho\rangle.$$
+
+Any $F$-stable Borel subgroup contains an $F$-stable maximal torus, but the converse might not be true. Any $F$-stable maximal torus that is contained in an $F$-stable Borel subgroup is called \textit{maximally split}, and since any two $F$-stable Borel are conjugate under $G^F$, any two $F$-stable maximally split tori are also conjugate under $G^F$. In fact, one can easily determine the $G^F$-conjugacy classes of $F$-stable maximal tori by looking at the Weyl group. To state this result, we first introduce the notion of $F$-conjugacy classes in $W$. Given two $w_1,w_2\in W$, we say that they are $F$-conjugate if there is some $x\in W$ such that $F(x)w_1x^{-1}=w_2$. Note that if $F$ acts on $W$ trivially, then the $F$-conjugacy classes are the standard conjugacy classes.
+
+\begin{lemma}
+    There is a bijection between
+    \begin{align*}
+        \{G^F\text{-conjugacy classes of $F$-stable maximal tori}\}&\longrightarrow\{F\text{-conjugacy classes of }W\}\\
+        T'=\prescript{g}{}{T}&\longmapsto \pi(g^{-1}F(g))
+    \end{align*}
+\end{lemma}
+
+From now, we will write $T_1$ for a maximally split $F$-stable maximal torus and $T_w$ for any $F$-stable torus obtained from $T_1$ by conjugating by some element $g\in G$ such that $\pi(g^{-1}F(g))=w$. By the previous result, these objects are uniquely defined up to $G^F$-conjugation.
+
+\subsection{Deligne--Lusztig characters and unipotent representations}
+
+In their groundbreaking paper from 1976, Deligne and Lusztig attached to each pair $(T,\theta)$ of $F$-stable maximal torus $T$ and character $\theta$ of $T^F$, a virtual character $R_{T,\theta}$ of the group $G^F$. These virtual characters were constructed using the action of $G^F$ on certain $\ell$-adic cohomology groups associated to certain Deligne-Lusztig varieties. We shall not consider the explicit definition of the characters, but we will rather recall without proof some important properties. 
+
+\begin{enumerate}
+    \item If the pair $(T',\theta')$ is obtained from $(T,\theta)$ by conjugation on some element of $G^F$, then $R_{T,\theta}=R_{T',\theta'}$.
+    \item If $T_1$ is a maximally split torus inside some $F$-stable Borel $B$, then $R_{T_1,\theta}=\theta_{B^F}^{G^F}$, where $\theta_{B^F}^{G^F}$ is the character of the parabolically induced representation $\Ind_{B^F}^{G^F}\theta$.
+    \item $R_{T,\theta}(u)$ is independent of $\theta$ if $u$ is unipotent. We write $Q_T(u)$ for this common value.
+    \item The orthogonality relations $(R_{T,\theta},R_{T',\theta'})=|\{w\in W(T,T')^F\ |\ \prescript{w}{}{\theta'}=\theta\}|$ hold. In particular, if $T,T'$ are not $G^F$-conjugate, then $(R_{T,\theta},R_{T',\theta'})=0$.
+    \item If $(T,\theta)$ is in general position, then one of $\pm R_{T,\theta}$ is an irreducible character.
+    \item If $(T,\theta)$ and $(T',\theta')$ are not geometrically conjugate, then $R_{T,\theta}$ and $R_{T',\theta'}$ do not share any irreducible component. This is a stronger assumption than not being $G^F$-conjugate.
+    \item We have
+    \begin{equation*}
+        (R_{T,\theta},1)=\begin{cases}
+            1 \text{ if } \theta=1\\
+            0 \text{ if } \theta\neq1
+        \end{cases}
+    \end{equation*}
+    \item The dimension of $R_{T,\theta}$ equals
+    $$R_{T,\theta}=\varepsilon_G\varepsilon_T|G^F:T^F|$$
+\end{enumerate}
+
+Let's give a couple of examples for the decomposition of the Deligne--Lusztig characters.
+
+\begin{example}
+    Suppose first that $G=GL_2(k)$ and $F=F_q:G\rightarrow G$ is the standard Frobenius. Then $G^F=\GL_2(\FF_q)$ and $G$ has two $F$-stable tori up to $G^F$ conjugation, namely
+    \begin{equation*}
+        T_1=\left\{\begin{pmatrix}
+            a & 0\\
+            0 & b\\
+        \end{pmatrix}\ |\ a,b\in k\right\}\quad\text{and}\quad T_w=\left\{\begin{pmatrix}
+            a & b\\
+            ub & a\\
+        \end{pmatrix}\ |\ a,b\in k\right\},
+    \end{equation*}
+    where $u\in\FF_q^\times$ is a non-square. 
+    Then $T_1^F\cong \FF_q^\times\times\FF_q^\times$ while $T_2^F\cong\FF_{q^2}^\times$. Now, if $\theta=\theta_1\otimes\theta_2$ is a character of $T_1^F$, then 
+    $$R_{T_1,\theta}={\theta_{B^F}}^{G^F}=\begin{cases}
+        \overline{\theta}\otimes(1\oplus\St) &\text{ if } \theta_1=\theta_2\\
+        \text{irreducible principal series} & \text{ if }\theta_1\neq\theta_2,
+    \end{cases}$$
+    where $\overline{\theta}$ is the unique extension of $\theta$ to all of $\GL_2(\FF_q)$ (this is only possible if $\theta_1=\theta_2)$.
+    On the other hand, suppose that $\theta'$ is a character of $T_w^F$. Then
+    $$R_{T_w,\theta'}=\begin{cases}
+        \overline{\theta}\otimes(1\ominus\St) &\text{ if } \theta'^q=\theta'\\
+        \text{irreducible cuspidal} & \text{ if }\theta'^q\neq\theta',
+    \end{cases}$$
+    where $\overline{\theta}$ is the extension of the unique character $\theta$ of $T_1^F$ for which $(\theta,T_1)$ is geometrically conjugate to $(\theta',T_w)$.
+
+
+    
+\end{example}
+
