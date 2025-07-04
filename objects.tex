@@ -5,7 +5,7 @@ Let $\mathbf{G}$ be a connected, simple, split algebraic group over some nonarch
 Then, for any parahoric subgroup $K$ (these are the stabilizers under the action of $G$ on the Bruhat-Tits building) with pro-unipotent radical $U_K$, there is a \textit{restriction functor}
 
 \begin{equation*}
-    \res^K:R(G)\longrightarrow \CC[K/U_K]^{K/U_K},\quad V\longmapsto V^{U_K},\quad\text{for all }V\in\Irr(G),
+    \res^K:R(G)\longrightarrow \CC[K/U_K]^{K/U_K},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G),
 \end{equation*}
 where $\CC[H]$ is the $\CC$-vector space of $\CC$-valued functions on a group $H$ and $\CC[H]^H$ is the subspace of functions preserved under conjugation (i.e. class functions). This is well-defined since the representations are assumed to be admissible. 
 
@@ -13,7 +13,7 @@ where $\CC[H]$ is the $\CC$-vector space of $\CC$-valued functions on a group $H
     Suppose that $K$ is the stabilizers of a point $x$ in the Bruhat-Tits building in some apartment $\mathcal{A}(G,T,F)$ corresponding to some maximal torus $T$ of $G$ with roots $\Phi$ and root subgroups $\cX_\alpha$. By tracing the action of $G$ on the building, one can show that 
     $$K=\langle T(\cO),\cX_\alpha(\varpi^{\lceil-\langle\alpha,x\rangle\rceil}\cO)\ |\ \alpha\in\Phi\rangle\quad\text{and}\quad U_K=\langle T(1+\varpi\cO),\cX_\alpha(\varpi^{\lceil\epsilon-\langle\alpha,x\rangle\rceil})\ |\ \alpha\in\Phi\rangle$$
     for some sufficiently small $\epsilon>0$. It then follows that 
-    $U_K$ is a pro-unipotent normal subgroup of $K$ and $K/U_K$ is isomorphic to the $k_F$-points of a reductive group with maximal torus $T(k_F)$ and roots $\Phi_K=\{\alpha\in\Phi\ |\ \langle\alpha,x\rangle\in\ZZ\}$.
+    $U_K$ is a pro-unipotent normal subgroup of $K$ and $K/U_K$ is isomorphic to the $k_F$-points of a reductive group with maximal torus $T(k_F)$ and roots $\Phi_K=\{\alpha\in\Phi\ |\ \langle\alpha,x\rangle\in\ZZ\}$. Thus, one can apply the ideas of Deligne--Lusztig for the representations of $K/U_K$.
 \end{remark}
 
 We then say that an irreducible smooth representation $(\pi,V)$ of $G$ is \textit{unipotent} if there exists some parahoric subgroup $K$ of $G$ such that some (equivalently, any) irreducible component of $V^{U_K}$ is a unipotent representation of the finite group $K/U_K$.
