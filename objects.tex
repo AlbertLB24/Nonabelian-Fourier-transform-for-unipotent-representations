@@ -16,7 +16,20 @@ where $\CC[H]$ is the $\CC$-vector space of $\CC$-valued functions on a group $H
     $U_K$ is a pro-unipotent normal subgroup of $K$ and $K/U_K$ is isomorphic to the $k_F$-points of a reductive group with maximal torus $T(k_F)$ and roots $\Phi_K=\{\alpha\in\Phi\ |\ \langle\alpha,x\rangle\in\ZZ\}$. Thus, one can apply the ideas of Deligne--Lusztig for the representations of $K/U_K$.
 \end{remark}
 
-We then say that an irreducible smooth representation $(\pi,V)$ of $G$ is \textit{unipotent} if there exists some parahoric subgroup $K$ of $G$ such that some (equivalently, any) irreducible component of $V^{U_K}$ is a unipotent representation of the finite group $K/U_K$.
+\begin{definition}
+    An irreducible smooth admissible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there exists some parahoric subgroup $K$ of $G$ such that $V^{U_K}$ contains a cuspidal unipotent representation of the finite group $K/U_K$.
+\end{definition}
+We note that if we replace $G$ for $G^F$ and \textit{parahoric} by \textit{parabolic}, then we recover the definition of a unipotent representation in $G^F$. 
+
+The following two lemmas are basic to ensure that unipotent representations behave under the restriction functor above.
+\begin{lemma}
+    Let $(\pi,V)$ be a smooth irreducible representation of $G$.
+    \begin{enumerate}
+        \item If there is some parahoric subgroup $K$ such that $V^{U_K}$ contains a non-cuspidal unipotent representation of $K/U_K$, then $(\pi,V)$ is a unipotent representation of $G$.  
+        \item Conversely, if $(\pi,V)$ is a unipotent representation of $G$, then all irreducible $K/U_K$-subrepresentations of $V^{U_K}$ are unipotent.
+    \end{enumerate}
+\end{lemma}
+\textcolor{red}{Need to find proofs for this!!}
 
 \begin{example}
     The Iwahori subgroup $I=\langle T(\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$, with pro-unipotent radical $U_I=\langle T(1+\varpi\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$ and reductive quotient $I/U_I=T(k_F)$ is, up to conjugacy, the unique minimal parahoric subgroup of $G$. Any smooth admissible representation $(\pi,V)$ of $G$ with an Iwahori fixed vector is unipotent. Indeed, $V^{U_I}$ contains the trivial representation of $T(k_F)$, its unique unipotent representation. 

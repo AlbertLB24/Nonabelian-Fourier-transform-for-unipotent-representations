@@ -23,7 +23,7 @@ From now, we will write $T_1$ for a maximally split $F$-stable maximal torus and
 
 \subsection{Deligne--Lusztig characters and unipotent representations}
 
-In their groundbreaking paper from 1976, Deligne and Lusztig attached to each pair $(T,\theta)$ of $F$-stable maximal torus $T$ and character $\theta$ of $T^F$, a virtual character $R_{T,\theta}$ of the group $G^F$. These virtual characters were constructed using the action of $G^F$ on certain $\ell$-adic cohomology groups associated to certain Deligne-Lusztig varieties. We shall not consider the explicit definition of the characters, but we will rather recall without proof some important properties. 
+In their groundbreaking paper from 1976, Deligne and Lusztig attached to each pair $(T,\theta)$ of $F$-stable maximal torus $T$ and character $\theta$ of $T^F$, a virtual character $R_{T,\theta}$ of the group $G^F$. These virtual characters were constructed using the action of $G^F$ on certain $\ell$-adic cohomology groups associated to certain Deligne--Lusztig varieties. We shall not consider the explicit definition of the characters, but we will rather recall without proof some important properties. 
 
 \begin{enumerate}
     \item If the pair $(T',\theta')$ is obtained from $(T,\theta)$ by conjugation on some element of $G^F$, then $R_{T,\theta}=R_{T',\theta'}$.
@@ -103,30 +103,82 @@ $$(\chi_1,R_{T,\theta})\neq0\quad\text{and}\quad(\chi_2,R_{T',\theta'})\neq 0.$$
 Clearly, there are then $|Z^F|q^l$ geometric conjugacy classes of characters. We are now ready to give the characterization of a semisimple character and a unipotent one.
 
 \begin{definition}
+    An irreducible character $\chi$ of $G^F$ is called \textit{unipotent} if there is some maximal $F$-stable torus $T$ of $G$ such that $(R_{T,1},\chi)\neq0$. 
     An irreducible character $\chi$ of the group $G^F$ is called \textit{semisimple} if 
     \begin{equation*}
         \sum_{\substack{u\in G^F\\u \text{ reg unipotent}}}\chi(u)\neq0.
     \end{equation*}
-    An irreducible character $\chi$ is called \textit{unipotent} if there is some maximal $F$-stable torus $T$ such that $(R_{T,1},\chi)\neq0$. Then $T_1^F\cong \FF_q^\times\times\FF_q^\times$ while $T_2^F\cong\FF_{q^2}^\times$.
+
 \end{definition}
 
-It is clear from the definitions that unipotent characters form one geometric conjugacy class of irreducible characters. Semisimple characters, on the other hand, have the opposite property. To explain this, we define the class function $\Xi$ to be supported on regular unipotent elements with constant value of $|Z^F|q^l$. By using properties of character duality, one can show that $(\Xi,\Xi)=|Z^F|q^l$ and that $(\Xi,\chi)\in\{-1,0,1\}$ for all irreducible characters $\chi$ of $G^F$. Note that this implies that there are exactly $|Z^F|q^l$ semisimple characters. In fact, one can furthermore show that 
+It is clear from the definitions that unipotent characters form one geometric conjugacy class of irreducible characters, and that if $\chi$ is a unipotent character, then $(\chi,R_{T,\theta})=0$ for any $\theta\neq 1$. Semisimple characters, on the other hand, have the opposite property. To explain this, we define the class function $\Xi$ to be supported on regular unipotent elements with constant value of $|Z^F|q^l$. By using properties of character duality, one can show that $(\Xi,\Xi)=|Z^F|q^l$ and that $(\Xi,\chi)\in\{-1,0,1\}$ for all irreducible characters $\chi$ of $G^F$. Note that this implies that there are exactly $|Z^F|q^l$ semisimple characters. In fact, one can furthermore show that 
 \begin{equation*}
     \Xi=\sum_{\kappa}\varepsilon_\kappa\chi_\kappa^{ss} \quad\text{where }\chi_\kappa^{ss}\text{ is irreducible and }\quad \varepsilon_\kappa\chi_\kappa^{ss}=\sum_{\substack{(T,\theta)\in\kappa\\\text{mod }G^F}}\frac{R_{T,\theta}}{(R_{T,\theta},R_{T,\theta})},
 \end{equation*}
 where $\kappa$ runs over the conjugacy classes of pairs $(T,\theta)$. These results show that each geometric conjugacy class contains one unique semisimple irreducible character. 
 
-Finally, we are ready to describe the \textit{Jordan decomposition for characters.} The idea is that one can completely understand all characters of a finite group of Lie type by understanding its semisimple representations and unipotent representations of the Levi subgroups of its dual group $G^*$. If $\chi$ is an irreducible character, then there is one unique semisimple character $\chi_s$ geometrically conjugate to $\chi$. Such a semisimple character corresponds to some semisimple conjugacy class of $(G^*)^{F^*}$ containing some $s^*$. This element is characterized by the property that $$\chi_s(1)=|(G^*)^{F^*}:C^{F^*}|_{p'},$$
-where $C$ is the centralizer of $s^*$ in $G^*$. Finally, there is a natural bijection between in the class containing $\chi_s$ and unipotent characters of $C^{F^*}$. If the character $\chi$ of $G^F$ corresponds to some character $\chi_u$ of $C^{F^*}$, then
-$$\chi(1)=\chi_s(1)\chi_u(1).$$
-As it turns out, studying semisimple characters is easy since we have explicit formulas to understand them. So Lusztig turned his attention into understanding unipotent representations of finite groups of Lie type. 
+\subsection{Jordan decomposition for irreducible characters}
 
-To have a good understanding of the unipotent characters, we first note that there is a natural bijection (whose proof is non-trivial)
+Finally, we are ready to describe the \textit{Jordan decomposition for characters.} To simplify the discussion, we shall assume that the centre $(Z(G))^F$ of $G^F$ is connected. The idea is that one can completely understand all characters of a finite group of Lie type by understanding its semisimple representations and unipotent representations of its Levi subgroups. To state it, we first recall that there is a natural bijection between geometric conjugacy classes of $(T,\theta)$ and conjugacy classes of semisimple elements in the dual group $(G^*)^F$, both sets having size $|Z(G)^F|q^l$. 
+\begin{definition}
+    Let $(s)$ be a semisimple conjugacy class of the dual group $(G^*)^{F^*}$. Then the \textit{Lusztig series} $\mathcal{E}(G^F,(s))$ associated to $(s)$ is the set of irreducible characters of $G^F$ appearing in $R_{T,\theta}$ for some pair $(T,\theta)$ corresponding to $(s)$.
+\end{definition}
+
+The Lusztig series $\mathcal{E}(G^F,(s))$ are the geometric conjugacy classes of characters defined in the previous section. If $(s)$ is regular semisimple, then $(T,\theta)$ is in general position and $\mathcal{E}(G^F,(s))$ is a singleton. On the other end, the series $\mathcal{E}(G^F,(1))$ contains the unipotent characters.
+
+\begin{theorem}
+    Let $(s)$ be a semisimple conjugacy class of $(G^*)^F$ and let $H$ be the dual group of the centralizer $Z_{G^*}(s)$. Then there is a bijection 
+    $$\mathcal{E}(G^F,(s))\rightarrow \mathcal{E}(H^F,(1)),\quad\chi\mapsto\chi_u,$$
+    such that for any pair $(T,\theta)$ corresponding to $s\in(G^*)^{F^*}$ and any pair $(S,\psi)$ corresponding to $s\in(H^*)^{F^*}$,
+    $$(\chi,\varepsilon_G\varepsilon_T\cdot R_{T,\theta}^G)=(\chi_u,\varepsilon_H\varepsilon_S\cdot R_S^H(\psi)).$$
+    In addition, the unique semisimple character $\chi_s\in\mathcal{E}(G^F,(s))$ corresponds to the trivial character of $H^F$ and for any $\chi\in\mathcal{E}(G^F,(s))$, we have that 
+    $$\chi(1)=\chi_s(1)\chi_u(1).$$
+\end{theorem}
+
+To summarize, for any irreducible character $\chi$, there is one unique semisimple character $\chi_s$ geometrically conjugate to $\chi$, corresponding to some semisimple conjugacy class of $(G^*)^{F^*}$. One can in fact show that 
+$$\chi_s(1)=|(G^*)^{F^*}:C^{F^*}|_{p'},$$
+where $C$ is the centralizer of $s^*$ in $G^*$.
+Finally, there is a natural bijection $\chi\mapsto\chi_u$ between characters in the class containing $\chi_s$ and unipotent characters of the dual group of $C^{F^*}$ satisfying
+$$\chi(1)=\chi_s(1)\chi_u(1).$$
+
+As it turns out, studying semisimple characters is easy since we have explicit formulas to understand them. So Lusztig turned his attention into understanding unipotent representations of finite groups of Lie type. Lusztig first observed that the study of unipotent characters of $G^F$ can be reduced to the case when $G$ is simple of adjoint type. That's because every unipotent character appears as a component of some $R_{T,1}$, where $R_{T,1}(g)=\mathcal{L}(g,\mathfrak{B}_w)$. But $Z^F$ acts trivially on $\mathfrak{B}_w$, so it lies in the kernel of every unipotent representation. So $G$ can be assumed to be semisimple, and a simple argument shows that $G$ can be further assumed to be simple.
+
+
+Secondly, following the same approach as Harish--Chandra to classify irreducible characters of $G^F$, Lusztig showed the following result.
+
+\begin{proposition}
+    Let $\chi$ be an irreducible character of $G^F$. 
+    \begin{enumerate}
+        \item There is an $F$-stable parabolic subgroup $P$ of $G$ with $F$-stable Levi decomposition $P=LN$ and a cuspidal character $\phi$ of $L^F$ such that $(\chi,{\phi_{P^F}}^{G_F})\neq 0$.
+        \item Moreover, the pair $(P,\phi)$ is unique up to $G^F$-conjugacy.
+        \item The character $\chi$ of $G^F$ is unipotent if and only if $\phi$ is a unipotent character of $L^J$.
+    \end{enumerate}     
+\end{proposition}
+
+\begin{proof}
+    The proof of parts $1.$ and $2.$ are classical, so we only give a sketch. We fix some $F$-stable maximal torus $T$ and some integral basis $\Delta\subset\Phi(G,T)$. For each $J\subseteq\Delta$, let $P_J=L_JU_J$ be the standard $F$-stable parabolic with standard $F$-stable Levi $L_J$. Since any parabolic subgroup of $G^F$ is conjugate to some $P_J^F$, it is enough to prove the assertions for standard parabolics of $G^F$.
+    
+    Let $V$ be the $G^F$ representation affording $\chi$ and let $\mathcal{J}=\{J\subseteq\Delta\ |\ (1_{U_J},\chi|_{U_J})\neq 0\}=\{J\subseteq\Delta\ |\ V^{U_J}\neq 0\},$ which is non-empty since $\Delta\in\mathcal{J}$. If $J\in\mathcal{J}$ is minimal with respect to inclusion, we may write $V^{U_J}=\oplus_{i=1}^k U_i$ as a direct sum of irreducible $L_J$-representations, all of which are cuspidal. The character $\phi$ afforded by $U_1$ satisfies the conditions of $1.$, and part $2.$ is contained in Carter 9.1.5.
+
+    To prove the last assertion, fix some $J\subseteq\Delta$ and some irreducible character $\phi$ of $L_J$. Let $(T,\theta)$ be such that $(\phi,R_{T,\theta}^{L_J^F})_{L_J^F}\neq 0$, and let $\chi$ be an irreducible component of ${\phi_{P_J^F}}^{G^F}$. Then by Frobenius reciprocity, we have that 
+    $$(\chi|_{P_J^F},\phi_{P_J^F})_{P_J^F}=(\chi,{\phi_{P_J^F}}^{G^F})_{G_F}\neq 0,$$
+    and since $\phi_{P_J^F}$ is an irreducible $P_J^F$ representation, we have that
+    $$(\chi,R_{T,\theta}^{G^F})=(\chi,{(R_{T,\theta}^{L_J^F})_{P_J^F}}^{G^F})_{G^F}=(\chi|_{P_J^F},{(R_{T,\theta}^{L_J^F})_{P_J^F}})_{P_J^F}\neq 0.$$
+
+    This calculation, together with the fact that unipotent representations form a geometric conjugacy class yield the last part.
+\end{proof}
+
+Therefore, to classify the unipotent characters of $G^F$, it is enough to determine the cuspidal unipotent representations $\phi$ of the standard Levi subgroups $L_J^F$ of $G^F$ and then calculate the decomposition of ${\phi_{P_J^F}}^{G^F}$ into irreducible characters. The later task can be achieved by Howlett--Lehrer theory (Carter, \S10), while the former was achieved by Lusztig by a case by case analysis. For example, Lusztig showed that if $G^F$ is of classical type, then the number of cuspidal unipotent characters is either $0$ or $1$.
+
+
+\subsection{Families of unipotent characters}
+
+Lusztig further observed that the unipotent characters of $G^F$ naturally form families in a remarkable way. Firstly, he parametrized the principal series unipotent characters with irreducible characters of $W$ by showing that there is a natural bijection
 \begin{align*}
     \{\text{Irreducible characters of }W\}&\longrightarrow\{\text{Irreducible components of }\Ind_{B^F}^{G^F}1\}\\
-    \phi&\longmapsto\chi_\phi
+    \phi&\longmapsto\chi_\phi.
 \end{align*}
-To prove this bijection, we first note that
+To prove this, we first note that
 \begin{align*}
     \End(\Ind_{B^F}^{G^F}1)\cong \Hom_{B^F}(1,\Ind_{B^F}^{G^F}1|_{B^F})\cong\bigoplus_{w\in B\backslash G/B}\Hom_{B^F\cap \prescript{w}{}{B^F}}(1,1),
 \end{align*}
@@ -144,17 +196,19 @@ $$\End(\Ind_{B^F}^{G^F}1)=\bigoplus_{i=1}^k\Hom_{G^F}(V_i,\oplus_{j=1}^kV_j^{a_j
 and the modules on the right hand side are precisely the irreducible submodules, each one corresponding to one unique irreducible component of $\Ind_{B^F}^{G^F}1$. Thus, irreducible characters of $W$ parametrize principal series cuspidal characters of $G^F$.
 
 \begin{example}
-    Let $G$ be a reductive group of type $A_l$. Then $G^F$ has no cuspidal unipotent representations. Consequently, all unipotent representations of $G^F$ are in the principal series. By the above discussion, this means that the irreducible characters of $W$ completely parametrize all unipotent representations of $G^F$. Explicitly, given some irreducible character $\chi$ of $W$, 
+    Let $G$ be a reductive group of type $A_l$. Then $G^F$ has no cuspidal unipotent representations. Consequently, all unipotent representations of $G^F$ are in the principal series. By the above discussion, this means that the irreducible characters of $W$ completely parametrize all unipotent representations of $G^F$. Explicitly, given some irreducible character $\phi$ of $W$, 
     \begin{equation*}
-        \chi_\phi=R_\phi:=\frac{1}{|W|}\sum_{w\in W}\phi(w)R_{T_w,1}
+        \chi_\phi=\frac{1}{|W|}\sum_{w\in W}\phi(w)R_{T_w,1}
     \end{equation*}
     For $G=\GL_2(k)$ or $\SL_2(k)$, $\chi_1=1$ and $\chi_{\mathrm{sgn}}=\St$.
 \end{example}
 
-In general, however, finite groups of Lie type do have cuspidal unipotent characters, and the $R_\phi$ as defined above are not irreducible. Lusztig then divided unipotent representations of $G^F$ into families by the rule that two unipotent characters appearing in the same $R_\phi$ are in the same family and then extending by transitivity. Similarly, we can define an equivalence relation on the irreducible characters of $W$ by the rule that two characters are related if their corresponding $R_{-}$ share an irreducible component. It is clear that there is a bijection between families of unipotent characters of $G^F$ and families of characters of $W$. Remarkably, Lusztig proved that these families can be parametrized in the following manner. 
+In general, however, finite groups of Lie type do have cuspidal unipotent characters, and the virtual characters 
+$$R_\phi=\frac{1}{|W|}\sum_{w\in W}\phi(w)R_{T_w,1}$$
+as defined above are not irreducible. Lusztig then divided unipotent representations of $G^F$ into families by the rule that two unipotent characters appearing in the same $R_\phi$ are in the same family and then extending by transitivity. Similarly, we can define an equivalence relation on the irreducible characters of $W$ by the rule that two characters $\phi_1,\phi_2$ are related if $R_{\phi_1}$ and $R_{\phi_2}$ share an irreducible component. It is clear that there is a bijection between families of unipotent characters of $G^F$ and families of characters of $W$. Remarkably, Lusztig proved that these families can be parametrized in the following manner. 
 
 \begin{theorem}
-    For each family of unipotent representations $\mathcal{F}$ there is a group $\Gamma_\mathcal{F}\in\{1,C_2\times\cdots\times C_2,S_3,S_4,S_5\}$
+    For each family of unipotent representations $\mathcal{F}$ there is a group $\Gamma=\Gamma_\mathcal{F}\in\{1,C_2\times\cdots\times C_2,S_3,S_4,S_5\}$
     and a bijection 
     \begin{align*}
         M(\Gamma)&\longrightarrow\mathcal{F}\\
@@ -183,11 +237,12 @@ Finally, Lusztig defined a nonabelian Fourier transform on the set of irreducibl
 $$\{(x,\sigma),(y,\tau)\}=\frac{1}{|C_\Gamma(x)||C_\Gamma(y)|}\sum_{\substack{g\in \Gamma\\ xgyg^{-1}=gyg^{-1}x}}\sigma(gyg^{-1})\overline{\tau(g^{-1}xg)}.$$
 Then he proved that this matrix is Hermitian and that it squares to the identity. It therefore induces an involution on the space $\CC[G^F]^{G^F}_\mathcal{F}$ of class functions spanned by the characters in $\mathcal{F}$, where we take the natural basis $\{\chi_{(x,\sigma)}^\mathcal{F}\ |\ (x,\sigma)\in M(\Gamma)\}$. Combining for each family, this gives an involution 
 $$R:\CC_{un}[G^F]^{G^F}\longrightarrow \CC_{un}[G^F]^{G^F}$$
-on the space $\CC_{un}[G^F]^{G^F}$ of class functions spanned by unipotent characters. This forces, for example, that $R(\chi_\phi)=R_\phi$ for all characters of $W$. The involution $R$ transforms unipotent characters into \textit{unipotent almost characters} that also satisfy the orthogonality relations and have a geometrical significance.
+on the space $\CC_{un}[G^F]^{G^F}$ of class functions spanned by unipotent characters. This forces, for example, that $R(\chi_\phi)=R_\phi$ for all characters of $W$. The involution $R$ transforms unipotent characters into \textit{unipotent almost characters} that also satisfy the orthogonality relations and have a geometrical significance. By this we mean that every almost character agrees up to a scalar with a characteristic function associated to an $F$-stable character sheaf on $G^F$ (see Shoji's article).
 
 \begin{example}
     If $G^F$ is of type $A_l$, then the unipotent characters coincide with the almost characters.
-
+\end{example}
+\begin{example}
     If $G^F$ is of type $G_2$, then $R$ fixes the characters $\phi_{1,0}$ and $\phi_{1,6}$ but transforms the third family according to the Fourier transform matrix
     \begin{center}
         \includegraphics[width=0.8\textwidth]{Fourier matrix for S_3.png}
