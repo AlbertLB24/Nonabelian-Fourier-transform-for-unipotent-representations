@@ -1,11 +1,10 @@
 \section{Unipotent representations for p-adic groups and the dual nonabelian Fourier transform}
 
-Let $\mathbf{G}$ be a connected, simple, split algebraic group over some nonarchimedean local field $F$ with finite residue field $k_F$ and let $G=\mathbf{G}(F)$. Let $\Rep(G)$ be the category of admissible smooth complex representations of $G$ and let $\Irr(G)$ be the subset of the irreducible representations. We define $R(G)$ to be $\CC$-span of $\Irr(G)$ (i.e. the complexification of the Grothendieck group of the abelian category of smooth $G$-representations).
+Let $\mathbf{G}$ be a connected, almost simple, split algebraic group over some nonarchimedean local field $F$ with finite residue field $k_F$ and let $G=\mathbf{G}(F)$. Let $\Rep(G)$ be the category of admissible smooth complex representations of $G$ and let $\Irr(G)$ be the subset of the irreducible representations. We define $R(G)$ to be $\CC$-span of $\Irr(G)$ (i.e. the complexification of the Grothendieck group of the abelian category of smooth $G$-representations).
 
-Then, for any parahoric subgroup $K$ (these are the stabilizers under the action of $G$ on the Bruhat-Tits building) with pro-unipotent radical $U_K$, there is a \textit{restriction functor}
-
+If $K$ is any parahoric subgroup (these are the stabilizers under the action of $G$ on the Bruhat-Tits building) with pro-unipotent radical $U_K$, the quotient $\overline{K}=K/U_K$ is naturally isomorphic to a reductive group over $\kappa_F$, and there is a \textit{restriction functor}
 \begin{equation*}
-    \res^K:R(G)\longrightarrow \CC[K/U_K]^{K/U_K},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G),
+    \res^K:R(G)\longrightarrow \CC[\overline{K}]^{\overline{K}},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G),
 \end{equation*}
 where $\CC[H]$ is the $\CC$-vector space of $\CC$-valued functions on a group $H$ and $\CC[H]^H$ is the subspace of functions preserved under conjugation (i.e. class functions). This is well-defined since the representations are assumed to be admissible. 
 
@@ -13,35 +12,123 @@ where $\CC[H]$ is the $\CC$-vector space of $\CC$-valued functions on a group $H
     Suppose that $K$ is the stabilizers of a point $x$ in the Bruhat-Tits building in some apartment $\mathcal{A}(G,T,F)$ corresponding to some maximal torus $T$ of $G$ with roots $\Phi$ and root subgroups $\cX_\alpha$. By tracing the action of $G$ on the building, one can show that 
     $$K=\langle T(\cO),\cX_\alpha(\varpi^{\lceil-\langle\alpha,x\rangle\rceil}\cO)\ |\ \alpha\in\Phi\rangle\quad\text{and}\quad U_K=\langle T(1+\varpi\cO),\cX_\alpha(\varpi^{\lceil\epsilon-\langle\alpha,x\rangle\rceil})\ |\ \alpha\in\Phi\rangle$$
     for some sufficiently small $\epsilon>0$. It then follows that 
-    $U_K$ is a pro-unipotent normal subgroup of $K$ and $K/U_K$ is isomorphic to the $k_F$-points of a reductive group with maximal torus $T(k_F)$ and roots $\Phi_K=\{\alpha\in\Phi\ |\ \langle\alpha,x\rangle\in\ZZ\}$. Thus, one can apply the ideas of Deligne--Lusztig for the representations of $K/U_K$.
+    $U_K$ is a pro-unipotent normal subgroup of $K$ and $\overline{K}=K/U_K$ is isomorphic to the $k_F$-points of a reductive group with maximal torus $T(k_F)$ and roots $\Phi_K=\{\alpha\in\Phi\ |\ \langle\alpha,x\rangle\in\ZZ\}$. Thus, one can apply the ideas of Deligne--Lusztig for the representations of $\overline{K}$.
 \end{remark}
 
 \begin{definition}
-    An irreducible smooth admissible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there exists some parahoric subgroup $K$ of $G$ such that $V^{U_K}$ contains a cuspidal unipotent representation of the finite group $K/U_K$.
+    An irreducible smooth admissible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there exists some parahoric subgroup $K$ of $G$ such that $V^{U_K}$ contains a cuspidal unipotent representation of the finite group $\overline{K}$.
 \end{definition}
 We note that if we replace $G$ for $G^F$ and \textit{parahoric} by \textit{parabolic}, then we recover the definition of a unipotent representation in $G^F$. 
 
 The following two lemmas are basic to ensure that unipotent representations behave under the restriction functor above.
-\begin{lemma}
+\begin{lemma}\label{lem:unipotent_padic}
     Let $(\pi,V)$ be a smooth irreducible representation of $G$.
     \begin{enumerate}
-        \item If there is some parahoric subgroup $K$ such that $V^{U_K}$ contains a non-cuspidal unipotent representation of $K/U_K$, then $(\pi,V)$ is a unipotent representation of $G$.  
-        \item Conversely, if $(\pi,V)$ is a unipotent representation of $G$, then all irreducible $K/U_K$-subrepresentations of $V^{U_K}$ are unipotent.
+        \item If there is some parahoric subgroup $K$ such that $V^{U_K}$ contains a non-cuspidal unipotent representation of $\overline{K}=K/U_K$, then $(\pi,V)$ is a unipotent representation of $G$.  
+        \item Conversely, if $(\pi,V)$ is a unipotent representation of $G$, then all irreducible $\overline{K}$-subrepresentations of $V^{U_K}$ are unipotent.
     \end{enumerate}
 \end{lemma}
+\begin{proof}
+    To prove the first claim, suppose that $V^{U_K}$ contains a unipotent irreducible representation $(\sigma,W)$ of $\overline{K}$, and therefore $\Hom_K(W,V^{U_K})\neq 0$. By Proposition \ref{prop:harishchandra}, there is some standard parabolic subgroup $\overline{P}=\overline{U_P}\cdot\overline{L_P}$ of $\overline{K}$ and cuspidal unipotent representation $(\tau,U)$ of $\overline{L_P}$ such that 
+    $$\Hom_{K}(W,\Ind_{\overline{P}}^{\overline{K}}U)\neq 0,$$
+    where we view the $\overline{K}$ representations as inflated $K$ representations, trivial on $U_K$. By the classification of parahoric subgroups in $G$, it follows that $\bar{P}=H/U_K$, where $H$ is another parahoric subgroup contained in $K$. Moreover, we have the inclusions $U_K\subseteq U_H\subseteq H\subseteq K$ and therefore $\overline{U_P}=U_H/U_K$ and $\overline{L_P}=H/U_H$. Since induction and inflation are commuting operations, it follows that the induced $\overline{K}$-representation $\Ind_{\overline{P}}^{\overline{K}}U$ is isomorphic to the $K$-representation $\Ind_H^K U$, where we view $U$ as the induced $H$-representation trivial on $U_H$, and hence $\Hom_K(W,\Ind_H^K U)\neq0$. Since $W$ is irreducible and $K$ is compact, it also follows that 
+    $$\Hom_K(\Ind_H^K U,V^{U_K})=\Hom_H(U,V^{U_K})\neq 0.$$
+    Since the representation $U$ is trivial on $U_H$, it follows that the image of $H$-equivariant map $U\to V^{U_K}$ lies inside $V^{U_H}$. Thus, 
+    $$\Hom_H(U,V^{U_H})=\Hom_H(U,V^{U_K})\neq 0,$$
+    and this concludes the proof.
+\end{proof}
+
 \textcolor{red}{Need to find proofs for this!!}
 
 \begin{example}
     The Iwahori subgroup $I=\langle T(\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$, with pro-unipotent radical $U_I=\langle T(1+\varpi\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$ and reductive quotient $I/U_I=T(k_F)$ is, up to conjugacy, the unique minimal parahoric subgroup of $G$. Any smooth admissible representation $(\pi,V)$ of $G$ with an Iwahori fixed vector is unipotent. Indeed, $V^{U_I}$ contains the trivial representation of $T(k_F)$, its unique unipotent representation. 
 \end{example}
 
-Analogously to the construction of $R(G)$, we define $\Irr_{un}(G)$ to be the set of irreducible unipotent representations of $G$, and $R_{un}(G)$ to be its $\CC$-span. We then have a well-defined 
+Analogously to the construction of $R(G)$, we define $\Irr_{\textrm{un}}(G)$ to be the set of irreducible unipotent representations of $G$, and $R_{\textrm{un}}(G)$ to be its $\CC$-span. Lemma \ref{lem:unipotent_padic} implies that there is a well-defined \textit{restriction function}
+\begin{equation*}
+    \res_{\textrm{un}}^K:R_{\textrm{un}}(G)\longrightarrow \CC_{\textrm{un}}[\overline{K}]^{\overline{K}},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G).
+\end{equation*}
+It is also convenient to consider simultaneously all such functions for all conjugacy classes of maximal parahoric subgroups, so we define $\res_{\textrm{un}}^{\textrm{par}}=(\res_{\textrm{un}}^K)_K$. In the previous section, we defined a nonabelian Fourier transform 
+$$\FT^K:\CC_{\un}[\overline{K}]^{\overline{K}}\longrightarrow\CC_{\un}[\overline{K}]^{\overline{K}},$$
+taking the unipotent characters to the almost characters of $\overline{K}$, having nice geometric properties. We also consider all these maps simultaneously for all conjugacy classes of maximal parahoric subgroups, which we denote as $\FT^{\mathrm{par}}=(\FT^K)_{K \text{ maximal}}$.
+
+It is therefore a natural question to ask whether there exists some function $\FT^\vee:R_{\un}(G)\rightarrow R_{\un}(G)$ such that the square
+\[
+\begin{tikzcd}
+R_{\un}(G) \arrow[r, "\FT^\vee"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & R_{\un}(G) \arrow[d, "\res_{\un}^{\mathrm{par}}"] \\
+\bigoplus_K\CC_{\un}[\overline{K}]^{\overline{K}} \arrow[r, "\FT^{\mathrm{par}}"] & \bigoplus_K\CC_{\un}[\overline{K}]^{\overline{K}}
+\end{tikzcd}
+\]
+
+\textcolor{red}{This question is now unresolved, but partial progress has been achieved.} To understand it, we first need to look at the Langlands parametrization of unipotent representations. 
+
+\subsection{The Langlands parametrization of unipotent representations}
+For this section, we introduce the Weil group $W_F$ of the field $F$ with inertia subgroup $I_F$. Moreover, we set $W_F':=W_F\times\SL_2(\CC)$. %In addition to these groups, Langlands introduced the $L$-group $\prescript{L}{}{G}:=G^\vee\rtimes W_F$ associated to the $p$-adic group $G$, where $G^\vee$ denotes the $\CC$-points of the dual group of $\mathbf{G}$
+Under the assumption that $\mathbf{G}$ is a split group, we have the following important definition.
+\begin{definition}
+    A \textit{Langlands parameter} (or $L$-parameter) for $G$ is a continuous morphism $\varphi:W'_F\rightarrow G^\vee$, where $G^\vee$ denotes the $\CC$-points of the dual group of $\mathbf{G}$, and $\varphi((w,1))$ is semisimple for each $w\in W_F$.
+\end{definition}
 
 
+In its simplest form, the Local Langlands correspondence (LLC) conjectures the existence of a finite to one map between isomorphism classes of smooth admissible complex representations of $G$ and conjugacy classes of Langlands parameters of $G$ satisfying certain nice properties. In particular, the LLC conjectures that the unipotent representations of $G$ correspond to the following Langlands parameters.
 
-\vspace{2cm}
+\begin{definition}
+    An $L$-parameter $\varphi:W_F\times\SL_2(\CC)\rightarrow G^\vee$ is called \textit{unipotent} if $\varphi(w,1)=1$ for any element $w$ of the inertia subgroup $I_F$ of $W_F$. Such parameters are sometimes called \textit{unramified} Langlands parameters.
+\end{definition}
+\begin{remark}
+    For any $L$-parameter $\varphi:W_F'\rightarrow G^\vee$, define the elements $u_\varphi=\varphi(1,\left(\begin{smallmatrix}
+        1 & 1\\
+        0 & 1
+    \end{smallmatrix}\right))$ and $s_\varphi=\varphi(\Frob,\Id)$ that commute. An application of the Jacobson--Morozov implies that an $L$-parameter is determined by $u_\varphi$ and $\varphi|_{W_F}$ up to $G^\vee$ conjugacy. If the $L$-parameter is, in addition, unipotent, then $\varphi|_{W_F}$ is determined by $s_\varphi$. Thus, unipotent $L$-parameters are parametrized by $G^\vee$ conjugacy classes of pairs $(u,s)$ where $u\in G^\vee$ is unipotent, $s\in G^\vee$ is semisimple and they commute. But this is the same as conjugacy classes of elements of $G^\vee$ (by using the Jordan decomposition).
+\end{remark}
 
+However, this is a finite-to-one correspondence, so it does not parametrize unipotent representations, but rather $L$-packets of unipotent representations. To get a one to one correspondence, we need to introduce refinements of the $L$-parameters. Given an $L$-parameter $\varphi$, a natural object of interest is the centralizer $Z_{G^\vee}(\varphi)$ of the image of $\varphi$ inside $G^\vee$. Now, $G^\vee$ sits within $G^\vee_{\mathrm{sc}}=(G_{\ad})^\vee\twoheadrightarrow G^\vee\twoheadrightarrow G_{\ad}^\vee$. We then denote $Z_{G^\vee}^1(\varphi)$ to be the inverse image of $Z_{G^\vee}(\varphi)$ under the isogeny $G^\vee_{\mathrm{sc}}\twoheadrightarrow G^\vee$. We then denote by $A_\varphi$, $A^1_\varphi$ to be the component group of $Z_{G^\vee}(\varphi)$ and $Z_{G^\vee}^1(\varphi)$, respectively.
 
+\begin{definition}
+    An enhanced Langlands parameter is a pair $(\varphi,\phi)$, where $\varphi:W_F'\rightarrow G^\vee$ is an $L$-parameter and $\phi$ is an irreducible representation of $A_\varphi^1$. 
+\end{definition}
 
+Similarly to $L$-parameters, an enhanced $L$-parameter $(\varphi,\phi)$ is determined by the triple $(u_\varphi,\varphi|_{W_F},\phi)$, and if it is also unipotent, then it is determined by the triple $(u_\varphi,s_\varphi,\phi)$. Let $\Phi_{\mathrm{e,un}}(G^\vee)$ be the set of enhanced unipotent $L$-parameters. Then the LLC predicts that there is a natural bijection
+\begin{equation*}
+    \LLC:\Phi_{\mathrm{e,un}}(G^\vee)\longleftrightarrow\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G'),
+\end{equation*}
+where $G'$ runs over the classes of inner twists of $G$. This is already very useful, but we would also like to parametrize only the unipotent representations of $G$. To do this, we first note that there is a canonical bijection 
+$$\InnT(G)\longleftrightarrow H^1(F,\mathrm{Inn}(\mathbf{G}^*))\longleftrightarrow\Irr(Z_{G^\vee_{sc}}),\quad G'\longmapsto\zeta_{G'}.$$
+Similarly, for any enhanced unipotent $L$-parameter $(\varphi,\phi)$, the representation $\phi$ induces a character $\zeta_\phi$ on $Z_{G^\vee_{sc}}$. We then say that $(\varphi,\phi)$ is $G'$-relevant if $\zeta_\phi=\zeta_{G'}$ and we denote the set of $G'$-relevant parameters by $\Phi_{e,\un}(G')$. It is then clear that 
+$$\Phi_{e,\un}(G^\vee)=\bigsqcup_{G'\in\InnT(G)}\Phi_{e,\un}(G'),$$
+and naturally LLC predicts that $\Phi_{e,\un}(G')$ parametrizes the set $\Irr_{\un}(G')$ for each $G'\in\InnT(G)$.
 
-We say that a smooth admissible complex representation $(\pi,V)$ is \textit{unipotent} if there exists some parahoric subgroup $K$ 
+\begin{remark}
+    One can obtain analogous results by considering pairs $(\varphi,\phi)$ of $L$-parameters $\varphi$ and irreducible representations $\phi$ of $A_\varphi$. We then set 
+    $$\Phi_{\mathrm{e,un}}^p(G^\vee)=G^\vee\backslash\{(\varphi,\phi)\ |\ \varphi\text{ unipotent, }\phi\in\widehat{A_\varphi}\},$$
+    and the Local Langlands conjecture predicts a natural bijection
+    \begin{equation*}
+        \LLC:\Phi_{\mathrm{e,un}}^p(G^\vee)\longleftrightarrow\bigsqcup_{G'\in\InnT^p(G)}\Irr_{\un}(G'),
+    \end{equation*}
+    where $G'$ now runs over the classes of \textit{pure} inner twists of $G$. \textcolor{red}{Then we distinguish between the distinct pure inner twists by looking at characters of $Z_{G^\vee}$.}
+    
+    We make one further important remark. Given $(\varphi,\phi)\in\Phi_{e,\un}^p(G^\vee)$, we could define the commuting unipotent and semisimple elements $u=u_\varphi=\varphi(1,\left(\begin{smallmatrix}
+        1 & 1\\
+        0 & 1
+    \end{smallmatrix}\right))$ and $s=s_\varphi=\varphi(\Frob,\Id)$, and we observed that the pair is determined by the triple $(u,s,\phi)$. Moreover, if $x=su$, then $Z_{G^\vee}(\varphi)=Z_{G^\vee}(x)$ and $A_\varphi=A_x=Z_{G^\vee}(x)/Z_{G^\vee}(x)^0$. So the LLC gives a simple parametrization
+    \begin{equation*}
+    G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\bigsqcup_{G'\in\InnT^p(G)}\Irr_{\un}(G'),\quad (x,\phi)\longmapsto\pi(x,\phi)
+\end{equation*}
+\end{remark}
+
+\begin{example}
+    If $\mathbf{G}$ is a simply connected split group, then $H^1(F,\mathbf{G}^*)=1$ and therefore there is only one class of pure inner forms of $G$, namely the quasi-split form $G^*$. Correspondingly, $G^\vee=G^\vee_{\ad}$ and $Z_{G^\vee}$ is trivial. Therefore, the above discussion gives a bijection 
+    \begin{equation*}
+        \LLC:G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\Phi_{\mathrm{e,un}}^p(G^\vee)\longleftrightarrow\Irr_{\un}(G^*)
+    \end{equation*}
+\end{example}
+The case where $\mathbf{G}$ is adjoint is more interesting, and we discuss it in the next section.
+
+\subsection{The adjoint case}
+In this subsection, we assume that $\mathbf{G}$ is a connected, almost simple, split \textit{adjoint} algebraic group over $F$, and $G=\mathbf{G}(F)$. Under these assumptions, for each class of inner twists of $G$ there is precisely one class of pure inner twists. Moreover, we have that $G^\vee=G^\vee_{sc}$ and therefore $A_\varphi=A^1_\varphi$ for each $L$-parameter $\varphi$.  %If we let $x_\varphi=u_\varphi s_\varphi\in G^\vee$ for each $L$-parameter $\varphi$, then $Z_{G^\vee}(\varphi)=Z_{G^\vee}(x_\varphi)$. 
+Therefore, from the previous discussion, unipotent enhanced $L$-parameters are in bijection with the set
+$$G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}, \quad\text{where}\quad A_x=Z_{G^\vee}(x)/Z_{G^\vee}(x)^0,$$
+and we have a one-to-one correspondence 
+\begin{equation*}
+    G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G'),\quad (x,\phi)\longmapsto\pi(x,\phi)
+\end{equation*}
