@@ -20,14 +20,13 @@ where $\CC[H]$ is the $\CC$-vector space of $\CC$-valued functions on a group $H
 \end{definition}
 We note that if we replace $G$ for $G^F$ and \textit{parahoric} by \textit{parabolic}, then we recover the definition of a unipotent representation in $G^F$. 
 
-The following two lemmas are basic to ensure that unipotent representations behave under the restriction functor above.
-\begin{lemma}\label{lem:unipotent_padic}
-    Let $(\pi,V)$ be a smooth irreducible representation of $G$.
-    \begin{enumerate}
-        \item If there is some parahoric subgroup $K$ such that $V^{U_K}$ contains a non-cuspidal unipotent representation of $\overline{K}=K/U_K$, then $(\pi,V)$ is a unipotent representation of $G$.  
-        \item Conversely, if $(\pi,V)$ is a unipotent representation of $G$, then all irreducible $\overline{K}$-subrepresentations of $V^{U_K}$ are unipotent.
-    \end{enumerate}
-\end{lemma}
+The following two results are basic to ensure that unipotent representations behave under the restriction functor above.
+\begin{proposition}\label{prop:unipotent_padic}
+    Let $(\pi,V)$ be an irreducible admissible representation of $G$. If there is some parahoric subgroup $K$ such that $V^{U_K}$ contains a non-cuspidal unipotent representation of $\overline{K}=K/U_K$, then $(\pi,V)$ is a unipotent representation of $G$.
+    %\begin{enumerate}
+    %    \item Conversely, if $(\pi,V)$ is a unipotent representation of $G$, then all irreducible $\overline{K}$-subrepresentations of $V^{U_K}$ are unipotent.
+    %\end{enumerate}
+\end{proposition}
 \begin{proof}
     To prove the first claim, suppose that $V^{U_K}$ contains a unipotent irreducible representation $(\sigma,W)$ of $\overline{K}$, and therefore $\Hom_K(W,V^{U_K})\neq 0$. By Proposition \ref{prop:harishchandra}, there is some standard parabolic subgroup $\overline{P}=\overline{U_P}\cdot\overline{L_P}$ of $\overline{K}$ and cuspidal unipotent representation $(\tau,U)$ of $\overline{L_P}$ such that 
     $$\Hom_{K}(W,\Ind_{\overline{P}}^{\overline{K}}U)\neq 0,$$
@@ -38,13 +37,28 @@ The following two lemmas are basic to ensure that unipotent representations beha
     and this concludes the proof.
 \end{proof}
 
+Conversely, we would like to show that for any irreducible unipotent representation $(\pi,V)$ of $G$, the irreducible $\overline{P}$-submodules of $V^{P^+}$ are all unipotent. %We first note that by the results of Harish-Chandra, for any such irreducible $\overline{P}$-submodules affording the character $\chi$, there is a parahoric subgroup $Q\subseteq P$ and cuspidal representation 
+This is a direct corollary of the following theorem.
+
+\begin{theorem}
+    Let $(\pi,V_\pi)$ be an irreducible admissible representation of $G$. Suppose that there is some parahoric $P$ such that $V^{P^+}\neq 0$ contains an irreducible cuspidal representation $(\sigma,V_\sigma)$ of $\overline{P}$. Then, for any parahoric $Q$ such that $V^{Q^+}\neq 0$, any $\overline{Q}$-submodule of $V^{Q^+}$ contains a cuspidal representation $(\tau,V_\tau)$ of $\overline{L}$ for some parahoric subgroup $L\subseteq Q$. Moreover, there is some $g\in G$ such that $L=\prescript{g}{}{P}$ and $\tau=\prescript{g}{}{\sigma}$.
+\end{theorem}
+
+\begin{proof}
+    From the proof of the previous result implies that any $\overline{Q}$-submodule of $V^{Q^+}$ contains a cuspidal representation $\tau$ of $\overline{L}$ for some parahoric subgroup $L\subseteq Q$. Thus, we may assume without loss of generality that $Q=L$ so that the irreducible $\overline{Q}$-submodule $(\tau,V_\tau)$ of $V^{Q^+}$ is cuspidal. To prove the second statement, we let $E_\tau:V_\pi\rightarrow V_\tau$ be a $Q$-equivariant projection. Then, for any $g\in G$, we have the linear map 
+    $$\varphi_g=E_\tau\circ\pi(g^{-1}):V_\sigma\longrightarrow V_\tau,$$
+    and for any $h\in P\cap gQg^{-1}$ and $v\in V_\sigma$, we have that 
+    $$\varphi_g\circ\sigma(h)(v)=E_\tau(\pi(g^{-1}hg)\pi(g^{-1})v)=\tau(g^{-1}hg)\circ   E_\tau(\pi(g^{-1}))(v)=\tau(g^{-1}hg)\circ\varphi_g(v).$$
+Since $\pi$ is an irreducible representation of $G$, there must be some $g\in G$ such that $\pi(g^{-1})V_\sigma\not\subseteq\ker(E_\tau)$, in which case $\varphi_g\neq 0$. The image of $P\cap gQg^{-1}$ inside $\overline{P}$ (resp $\overline{gQg^{-1}}$) is a parabolic subgroup $\overline{P}_{\prescript{g}{}{Q}}$ (resp. $\overline{\prescript{g}{}{Q}}_{P}$) 
+\end{proof}
+
 \textcolor{red}{Need to find proofs for this!!}
 
 \begin{example}
     The Iwahori subgroup $I=\langle T(\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$, with pro-unipotent radical $U_I=\langle T(1+\varpi\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$ and reductive quotient $I/U_I=T(k_F)$ is, up to conjugacy, the unique minimal parahoric subgroup of $G$. Any smooth admissible representation $(\pi,V)$ of $G$ with an Iwahori fixed vector is unipotent. Indeed, $V^{U_I}$ contains the trivial representation of $T(k_F)$, its unique unipotent representation. 
 \end{example}
 
-Analogously to the construction of $R(G)$, we define $\Irr_{\textrm{un}}(G)$ to be the set of irreducible unipotent representations of $G$, and $R_{\textrm{un}}(G)$ to be its $\CC$-span. Lemma \ref{lem:unipotent_padic} implies that there is a well-defined \textit{restriction function}
+Analogously to the construction of $R(G)$, we define $\Irr_{\textrm{un}}(G)$ to be the set of irreducible unipotent representations of $G$, and $R_{\textrm{un}}(G)$ to be its $\CC$-span. Lemma \ref{prop:unipotent_padic} implies that there is a well-defined \textit{restriction function}
 \begin{equation*}
     \res_{\textrm{un}}^K:R_{\textrm{un}}(G)\longrightarrow \CC_{\textrm{un}}[\overline{K}]^{\overline{K}},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G).
 \end{equation*}
@@ -79,7 +93,7 @@ In its simplest form, the Local Langlands correspondence (LLC) conjectures the e
     For any $L$-parameter $\varphi:W_F'\rightarrow G^\vee$, define the elements $u_\varphi=\varphi(1,\left(\begin{smallmatrix}
         1 & 1\\
         0 & 1
-    \end{smallmatrix}\right))$ and $s_\varphi=\varphi(\Frob,\Id)$ that commute. An application of the Jacobson--Morozov implies that an $L$-parameter is determined by $u_\varphi$ and $\varphi|_{W_F}$ up to $G^\vee$ conjugacy. If the $L$-parameter is, in addition, unipotent, then $\varphi|_{W_F}$ is determined by $s_\varphi$. Thus, unipotent $L$-parameters are parametrized by $G^\vee$ conjugacy classes of pairs $(u,s)$ where $u\in G^\vee$ is unipotent, $s\in G^\vee$ is semisimple and they commute. But this is the same as conjugacy classes of elements of $G^\vee$ (by using the Jordan decomposition).
+    \end{smallmatrix}\right))$ and $s_\varphi=\varphi(\Frob,\Id)$ that commute. An application of the Jacobson--Morozov theorem implies that an $L$-parameter is determined by $u_\varphi$ and $\varphi|_{W_F}$ up to $G^\vee$-conjugacy. If the $L$-parameter is, in addition, unipotent, then $\varphi|_{W_F}$ is determined by $s_\varphi$. Thus, unipotent $L$-parameters are parametrized by $G^\vee$ conjugacy classes of pairs $(u,s)$ where $u\in G^\vee$ is unipotent, $s\in G^\vee$ is semisimple and they commute. But this is the same as conjugacy classes of elements of $G^\vee$ (by using the Jordan decomposition).
 \end{remark}
 
 However, this is a finite-to-one correspondence, so it does not parametrize unipotent representations, but rather $L$-packets of unipotent representations. To get a one to one correspondence, we need to introduce refinements of the $L$-parameters. Given an $L$-parameter $\varphi$, a natural object of interest is the centralizer $Z_{G^\vee}(\varphi)$ of the image of $\varphi$ inside $G^\vee$. Now, $G^\vee$ sits within $G^\vee_{\mathrm{sc}}=(G_{\ad})^\vee\twoheadrightarrow G^\vee\twoheadrightarrow G_{\ad}^\vee$. We then denote $Z_{G^\vee}^1(\varphi)$ to be the inverse image of $Z_{G^\vee}(\varphi)$ under the isogeny $G^\vee_{\mathrm{sc}}\twoheadrightarrow G^\vee$. We then denote by $A_\varphi$, $A^1_\varphi$ to be the component group of $Z_{G^\vee}(\varphi)$ and $Z_{G^\vee}^1(\varphi)$, respectively.
@@ -88,47 +102,114 @@ However, this is a finite-to-one correspondence, so it does not parametrize unip
     An enhanced Langlands parameter is a pair $(\varphi,\phi)$, where $\varphi:W_F'\rightarrow G^\vee$ is an $L$-parameter and $\phi$ is an irreducible representation of $A_\varphi^1$. 
 \end{definition}
 
-Similarly to $L$-parameters, an enhanced $L$-parameter $(\varphi,\phi)$ is determined by the triple $(u_\varphi,\varphi|_{W_F},\phi)$, and if it is also unipotent, then it is determined by the triple $(u_\varphi,s_\varphi,\phi)$. Let $\Phi_{\mathrm{e,un}}(G^\vee)$ be the set of enhanced unipotent $L$-parameters. Then the LLC predicts that there is a natural bijection
-\begin{equation*}
-    \LLC:\Phi_{\mathrm{e,un}}(G^\vee)\longleftrightarrow\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G'),
-\end{equation*}
-where $G'$ runs over the classes of inner twists of $G$. This is already very useful, but we would also like to parametrize only the unipotent representations of $G$. To do this, we first note that there is a canonical bijection 
-$$\InnT(G)\longleftrightarrow H^1(F,\mathrm{Inn}(\mathbf{G}^*))\longleftrightarrow\Irr(Z_{G^\vee_{sc}}),\quad G'\longmapsto\zeta_{G'}.$$
-Similarly, for any enhanced unipotent $L$-parameter $(\varphi,\phi)$, the representation $\phi$ induces a character $\zeta_\phi$ on $Z_{G^\vee_{sc}}$. We then say that $(\varphi,\phi)$ is $G'$-relevant if $\zeta_\phi=\zeta_{G'}$ and we denote the set of $G'$-relevant parameters by $\Phi_{e,\un}(G')$. It is then clear that 
-$$\Phi_{e,\un}(G^\vee)=\bigsqcup_{G'\in\InnT(G)}\Phi_{e,\un}(G'),$$
-and naturally LLC predicts that $\Phi_{e,\un}(G')$ parametrizes the set $\Irr_{\un}(G')$ for each $G'\in\InnT(G)$.
+Let us introduce some notation. We denote by $\Phi_{\un}(G^\vee)$ the set of unipotent $L$-parameters and $\Phi_{e,\un}(G^\vee)$ the set of all \textit{enhanced} unipotent $L$-parameters. Similarly to $L$-parameters, an enhanced $L$-parameter $(\varphi,\phi)$ is determined by the triple $(u_\varphi,\varphi|_{W_F},\phi)$, and if it is also unipotent, then it is determined by the triple $(u_\varphi,s_\varphi,\phi)$. Moreover, if $x_\varphi=s_\varphi u_\varphi$, then $Z_{G^\vee}(\varphi)=Z_{G^\vee}(x_\varphi)$, and therefore there is a canonical bijection
+\begin{align*}
+    \Phi_{\mathrm{e,un}}(G^\vee)&\longleftrightarrow G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x^1}\},\\
+    (\varphi,\phi)&\longmapsto (s_\varphi u_\varphi,\phi)
+\end{align*}
+where $A_x^1$ is the component group of $Z^1_{G^\vee}(x)$.
 
-\begin{remark}
-    One can obtain analogous results by considering pairs $(\varphi,\phi)$ of $L$-parameters $\varphi$ and irreducible representations $\phi$ of $A_\varphi$. We then set 
-    $$\Phi_{\mathrm{e,un}}^p(G^\vee)=G^\vee\backslash\{(\varphi,\phi)\ |\ \varphi\text{ unipotent, }\phi\in\widehat{A_\varphi}\},$$
-    and the Local Langlands conjecture predicts a natural bijection
-    \begin{equation*}
-        \LLC:\Phi_{\mathrm{e,un}}^p(G^\vee)\longleftrightarrow\bigsqcup_{G'\in\InnT^p(G)}\Irr_{\un}(G'),
-    \end{equation*}
-    where $G'$ now runs over the classes of \textit{pure} inner twists of $G$. \textcolor{red}{Then we distinguish between the distinct pure inner twists by looking at characters of $Z_{G^\vee}$.}
-    
-    We make one further important remark. Given $(\varphi,\phi)\in\Phi_{e,\un}^p(G^\vee)$, we could define the commuting unipotent and semisimple elements $u=u_\varphi=\varphi(1,\left(\begin{smallmatrix}
-        1 & 1\\
-        0 & 1
-    \end{smallmatrix}\right))$ and $s=s_\varphi=\varphi(\Frob,\Id)$, and we observed that the pair is determined by the triple $(u,s,\phi)$. Moreover, if $x=su$, then $Z_{G^\vee}(\varphi)=Z_{G^\vee}(x)$ and $A_\varphi=A_x=Z_{G^\vee}(x)/Z_{G^\vee}(x)^0$. So the LLC gives a simple parametrization
-    \begin{equation*}
+Then the LLC predicts that there is a natural bijection
+\begin{align*}
+    \LLC_{\un}: G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x^1}\}\longleftrightarrow\Phi_{\mathrm{e,un}}(G^\vee)\longleftrightarrow&\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G')\\
+    (x,\phi)\hspace{1.5cm}\longmapsto \hspace{1.5cm}&\quad\pi(x,\phi),
+\end{align*}
+where $G'$ runs over the classes of inner twists of $G$. We say that a pair $(x,\phi)$ is $G'$-relevant if $\pi(x,\phi)\in\Irr_{\un}(G')$, and this property can be checked explicitly. Firstly, we note that there is a canonical bijection 
+$$\InnT(G)\longleftrightarrow H^1(F,\mathrm{Inn}(\mathbf{G}^*))\longleftrightarrow\Irr(Z_{G^\vee_{sc}}),\quad G'\longmapsto\zeta_{G'}.$$
+Similarly, for any pair $(x,\phi)$, the representation $\phi$ induces a character $\zeta_\phi$ on $Z_{G^\vee_{sc}}$. Then $\pi(x,\phi)$ is $G'$ relevant if and only if $\zeta_\phi=\zeta_{G'}$ and we denote the set of $G'$-relevant parameters by $\Phi_{e,\un}(G')$. 
+
+It is then clear that 
+$$\Phi_{e,\un}(G^\vee)=\bigsqcup_{G'\in\InnT(G)}\Phi_{e,\un}(G'),$$
+and the LLC predicts that $\Phi_{e,\un}(G')$ parametrizes the set $\Irr_{\un}(G')$ for each $G'\in\InnT(G)$.
+
+\subsubsection{Pure Langlands parameters}
+
+One can also refine $L$-parameters by considering instead pairs $(\varphi,\phi)$, where $\varphi$ is an $L$-parameters and $\phi$ is an irreducible representations of $A_\varphi$. We then set 
+$$\Phi_{\mathrm{e,un}}^p(G^\vee)=G^\vee\backslash\{(\varphi,\phi)\ |\ \varphi\text{ unipotent, }\phi\in\widehat{A_\varphi}\},$$
+which is in natural bijection with the set 
+$$G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x}\},$$
+where $A_x$ is the component group of $Z_{G^\vee}(x)$.
+
+In this setting the Local Langlands conjecture predicts a natural bijection
+\begin{equation*}
     G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\bigsqcup_{G'\in\InnT^p(G)}\Irr_{\un}(G'),\quad (x,\phi)\longmapsto\pi(x,\phi)
 \end{equation*}
-\end{remark}
+where $G'$ now runs over the classes of \textit{pure} inner twists of $G$. We distinguish between the distinct pure inner twists by looking at characters of $Z_{G^\vee}$.
 
 \begin{example}
-    If $\mathbf{G}$ is a simply connected split group, then $H^1(F,\mathbf{G}^*)=1$ and therefore there is only one class of pure inner forms of $G$, namely the quasi-split form $G^*$. Correspondingly, $G^\vee=G^\vee_{\ad}$ and $Z_{G^\vee}$ is trivial. Therefore, the above discussion gives a bijection 
+    If $\mathbf{G}$ is a simple split \textit{simply connected} algebraic group, then $H^1(F,\mathbf{G}^*)=1$ and therefore there is only one class of pure inner forms of $G$, namely $G$ itself. Correspondingly, $G^\vee=G^\vee_{\ad}$ and $Z_{G^\vee}$ is trivial. Therefore, the above discussion gives a bijection 
     \begin{equation*}
-        \LLC:G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\Phi_{\mathrm{e,un}}^p(G^\vee)\longleftrightarrow\Irr_{\un}(G^*)
+        \LLC_{\un}^p:G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\Phi_{\mathrm{e,un}}^p(G^\vee)\longleftrightarrow\Irr_{\un}(G^*).
     \end{equation*}
 \end{example}
-The case where $\mathbf{G}$ is adjoint is more interesting, and we discuss it in the next section.
 
-\subsection{The adjoint case}
-In this subsection, we assume that $\mathbf{G}$ is a connected, almost simple, split \textit{adjoint} algebraic group over $F$, and $G=\mathbf{G}(F)$. Under these assumptions, for each class of inner twists of $G$ there is precisely one class of pure inner twists. Moreover, we have that $G^\vee=G^\vee_{sc}$ and therefore $A_\varphi=A^1_\varphi$ for each $L$-parameter $\varphi$.  %If we let $x_\varphi=u_\varphi s_\varphi\in G^\vee$ for each $L$-parameter $\varphi$, then $Z_{G^\vee}(\varphi)=Z_{G^\vee}(x_\varphi)$. 
-Therefore, from the previous discussion, unipotent enhanced $L$-parameters are in bijection with the set
-$$G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}, \quad\text{where}\quad A_x=Z_{G^\vee}(x)/Z_{G^\vee}(x)^0,$$
-and we have a one-to-one correspondence 
-\begin{equation*}
-    G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G'),\quad (x,\phi)\longmapsto\pi(x,\phi)
-\end{equation*}
+\begin{example}
+    If $\mathbf{G}$ is a simple split \textit{adjoint} algebraic group, then $H^1(F,\mathbf{G}^*)=H^1(F,\mathrm{Inn}(\mathbf{G}^*))$ so for each inner twist there is one unique pure inner twist. 
+    Therefore, from the previous discussion, unipotent enhanced $L$-parameters are in bijection with the set
+    $$G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}, \quad\text{where}\quad A_x=Z_{G^\vee}(x)/Z_{G^\vee}(x)^0,$$
+    and we have a one-to-one correspondence 
+    \begin{equation*}
+        G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G'),\quad (x,\phi)\longmapsto\pi(x,\phi)
+    \end{equation*}
+\end{example}
+
+\subsection{The unipotent elliptic space and the dual nonabelian Fourier transform}
+With the Langlands parametrization, it is then possible to define a dual fourier transform on a certain subspace of $\bigoplus_{G'\in\InnT^p(G)}R_{\un}(G')$, which we now describe. We first fix some unipotent element $u\in G^\vee$ up to $G^\vee$-conjugacy and we denote $\Gamma_u$ the reductive part of $Z_{G^\vee}(u)$. We then consider the space of elliptic pairs 
+$$\mathcal{Y}(\Gamma_u)_{\text{ell}}=\{(s,h)\ |\ s,h\in\Gamma_u \text{ semisimple, }sh=hs \text{ and }Z_{G^\vee}(s,h) \text{ is finite}\}$$
+up to $\Gamma_u$-conjugacy. Then for each $(s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}}$, we define the virtual representation 
+$$\pi(u,s,h):=\sum_{\phi\in\widehat{A_{su}}}\phi(h)\pi(su,\phi).$$
+\begin{definition}
+    The elliptic unipotent representation space $\mathcal{R}_{\un,\text{ell}}^p(G)$ of $G$ is defined as the $\CC$-subspace of $\bigoplus_{G'\in\InnT^p(G)}R_{\un}(G')$ spanned by the set $\{\pi(u,s,h)\ |\ u\in G^\vee,\ (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}}\}.$
+\end{definition}
+
+On the space $\mathcal{R}_{\un,\text{ell}}^p(G)$ we can define the \textit{dual} Fourier transform in a natural way.
+
+\begin{definition}
+    The dual elliptic nonabelian Fourier transform is the linear map satisfying
+    \begin{equation*}
+        \mathrm{FT}^\vee_{\text{ell}}:\mathcal{R}_{\un,\text{ell}}^p(G)\longrightarrow\mathcal{R}_{\un,\text{ell}}^p(G)\quad \pi(u,s,h)\longmapsto\pi(u,h,s)\quad\text{for all}\quad (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}},\ u\in G^\vee\text{ unipotent.}
+    \end{equation*}
+\end{definition}
+
+With this linear map, we then have the diagram 
+\[
+    \begin{tikzcd}
+    \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[r, "\FT^\vee_{\text{ell}}"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[d, "\res_{\un}^{\mathrm{par}}"] \\
+    \bigoplus_{G'}\bigoplus_{K'}\CC_{\un}[\overline{K'}]^{\overline{K'}} \arrow[r, "\FT^{\mathrm{par}}"] & \bigoplus_{G'}\bigoplus_{K'}\CC_{\un}[\overline{K'}]^{\overline{K'}},
+    \end{tikzcd}
+\]
+and a natural question to ask is whether this square commutes. We first show this is indeed the case when $\mathbf{G}$ is a simple algebraic group of type $G_2$.
+
+\subsection{Type \texorpdfstring{$G_2$}{PDFstring}}
+
+
+\begin{example}
+    Let $\mathbf{G}$ be a simple algebraic group of type $G_2$, and let $G=G(F)$. Then $G$ is both simply connected and adjoint so it has no pure inner twists other than itself. In addition, $G$ has three maximal parahoric subgroups of types $K_0$, $K_1$ and $K_2$, with reductive quotients of type $G_2$, $A_2$ and $A_1+\tilde{A_1}$, respectively. Thus, commutativity of the above square is equivalent to the commutativity of
+    \[
+        \begin{tikzcd}
+        \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[r, "\FT^\vee_{\text{ell}}"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[d, "\res_{\un}^{K_i}"] \\
+        \CC_{\un}[\overline{K_i}]^{\overline{K_i}} \arrow[r, "\FT^{K_i}"] & \CC_{\un}[\overline{K_i}]^{\overline{K_i}},
+        \end{tikzcd}
+    \]
+    for $i=0,1,2$. Moreover, if $u\in G^\vee$ is unipotent, then $\mathcal{Y}(\Gamma_u)$ is non-empty if and only if $u=u_{\text{reg}}$ is regular and $\Gamma_u=\{(1,1)\}$, or $u=u_{sr}$ is subregular and $\Gamma_u=\{(1,1),(1,g_2),(1,g_3),(g_2,1),(g_2,g_2),(g_3,1),(g_3,g_3),(g_3,g_3')\}$.
+    Therefore, $\mathcal{R}_{\un,\text{ell}}^p(G)$ is $9$-dimensional, spanned by
+    \begin{equation*}
+        \begin{cases}
+            \pi(u_{\text{reg}},1,1)&=\pi(u_{\text{reg}},\mathbf{1})\\
+            \pi(u_{sr},1,1)&=\pi(u_{sr},\mathbf{1})+\pi(u_{sr},\varepsilon)+2\pi(u_{sr},\mathbf{r})\\
+            \pi(u_{sr},1,g_2)&=\pi(u_{sr},\mathbf{1})-\pi(u_{sr},\varepsilon)\\
+            \pi(u_{sr},1,g_3)&=\pi(u_{sr},\mathbf{1})+\pi(u_{sr},\varepsilon)-\pi(u_{sr},\mathbf{r})\\
+            \pi(u_{sr},g_2,1)&=\pi(u_{sr}g_2,\mathbf{1})+\pi(u_{sr}g_2,\varepsilon)\\
+            \pi(u_{sr},g_2,g_2)&=\pi(u_{sr}g_2,\mathbf{1})-\pi(u_{sr}g_2,\varepsilon)\\
+            \pi(u_{sr},g_3,1)&=\pi(u_{sr}g_3,\mathbf{1})+\pi(u_{sr}g_3,\theta)+\pi(u_{sr},\theta^2)\\
+            \pi(u_{sr},g_3,g_3)&=\pi(u_{sr}g_3,\mathbf{1})+\theta^2\pi(u_{sr}g_3,\theta)+\theta\pi(u_{sr}g_3,\theta^2)\\
+            \pi(u_{sr},g_3,g_3^{-1})&=\pi(u_{sr}g_3,\mathbf{1})+\theta\pi(u_{sr}g_3,\theta)+\theta^2\pi(u_{sr}g_3,\theta^2).
+        \end{cases}
+    \end{equation*}
+
+    When $i=1,2$ and the finite group $\overline{K_i}$ is of type $A_2$ or $A_1+\tilde{A_1}$, then $\mathrm{FT}^{K_i}$ is the identity map, and therefore it is enough to show that 
+    $$\res_{\un}^{K_i}(\pi(u,s,h))=\res_{\un}^{K_i}(\pi(u,h,s))$$
+    for all $\pi(u,s,h)$ spanning $\mathcal{R}_{\un,\text{ell}}^p(G)$. This is obvious for all cases except for $\pi(u,s,h)=\pi(u_{sr},1,g_2),\pi(u_{sr},1,g_3)$
+
+
+\end{example}
