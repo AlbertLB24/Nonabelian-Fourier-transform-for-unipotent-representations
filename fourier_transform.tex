@@ -1,0 +1,62 @@
+\section{The dual nonabelian Fourier transform for unipotent representation of p-adic groups}
+
+\subsection{The unipotent elliptic space and the dual nonabelian Fourier transform}
+With the Langlands parametrization, it is then possible to define a dual fourier transform on a certain subspace of $\bigoplus_{G'\in\InnT^p(G)}R_{\un}(G')$, which we now describe. We first fix some unipotent element $u\in G^\vee$ up to $G^\vee$-conjugacy and we denote $\Gamma_u$ the reductive part of $Z_{G^\vee}(u)$. We then consider the space of elliptic pairs 
+$$\mathcal{Y}(\Gamma_u)_{\text{ell}}=\{(s,h)\ |\ s,h\in\Gamma_u \text{ semisimple, }sh=hs \text{ and }Z_{G^\vee}(s,h) \text{ is finite}\}$$
+up to $\Gamma_u$-conjugacy. Then for each $(s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}}$, we define the virtual representation 
+$$\pi(u,s,h):=\sum_{\phi\in\widehat{A_{su}}}\phi(h)\pi(su,\phi).$$
+\begin{definition}
+    The elliptic unipotent representation space $\mathcal{R}_{\un,\text{ell}}^p(G)$ of $G$ is defined as the $\CC$-subspace of $\bigoplus_{G'\in\InnT^p(G)}R_{\un}(G')$ spanned by the set $\{\pi(u,s,h)\ |\ u\in G^\vee,\ (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}}\}.$
+\end{definition}
+
+On the space $\mathcal{R}_{\un,\text{ell}}^p(G)$ we can define the \textit{dual} Fourier transform in a natural way.
+
+\begin{definition}
+    The dual elliptic nonabelian Fourier transform is the linear map satisfying
+    \begin{equation*}
+        \mathrm{FT}^\vee_{\text{ell}}:\mathcal{R}_{\un,\text{ell}}^p(G)\longrightarrow\mathcal{R}_{\un,\text{ell}}^p(G)\quad \pi(u,s,h)\longmapsto\pi(u,h,s)\quad\text{for all}\quad (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}},\ u\in G^\vee\text{ unipotent.}
+    \end{equation*}
+\end{definition}
+
+With this linear map, we then have the diagram 
+\[
+    \begin{tikzcd}
+    \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[r, "\FT^\vee_{\text{ell}}"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[d, "\res_{\un}^{\mathrm{par}}"] \\
+    \bigoplus_{G'}\bigoplus_{K'}\CC_{\un}[\overline{K'}]^{\overline{K'}} \arrow[r, "\FT^{\mathrm{par}}"] & \bigoplus_{G'}\bigoplus_{K'}\CC_{\un}[\overline{K'}]^{\overline{K'}},
+    \end{tikzcd}
+\]
+and a natural question to ask is whether this square commutes. We first show this is indeed the case when $\mathbf{G}$ is a simple algebraic group of type $G_2$.
+
+\subsection{Type \texorpdfstring{$G_2$}{PDFstring}}
+
+
+\begin{example}
+    Let $\mathbf{G}$ be a simple algebraic group of type $G_2$, and let $G=G(F)$. Then $G$ is both simply connected and adjoint so it has no pure inner twists other than itself. In addition, $G$ has three maximal parahoric subgroups of types $K_0$, $K_1$ and $K_2$, with reductive quotients of type $G_2$, $A_2$ and $A_1+\tilde{A_1}$, respectively. Thus, commutativity of the above square is equivalent to the commutativity of
+    \[
+        \begin{tikzcd}
+        \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[r, "\FT^\vee_{\text{ell}}"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[d, "\res_{\un}^{K_i}"] \\
+        \CC_{\un}[\overline{K_i}]^{\overline{K_i}} \arrow[r, "\FT^{K_i}"] & \CC_{\un}[\overline{K_i}]^{\overline{K_i}},
+        \end{tikzcd}
+    \]
+    for $i=0,1,2$. Moreover, if $u\in G^\vee$ is unipotent, then $\mathcal{Y}(\Gamma_u)$ is non-empty if and only if $u=u_{\text{reg}}$ is regular and $\Gamma_u=\{(1,1)\}$, or $u=u_{sr}$ is subregular and $\Gamma_u=\{(1,1),(1,g_2),(1,g_3),(g_2,1),(g_2,g_2),(g_3,1),(g_3,g_3),(g_3,g_3')\}$.
+    Therefore, $\mathcal{R}_{\un,\text{ell}}^p(G)$ is $9$-dimensional, spanned by
+    \begin{equation*}
+        \begin{cases}
+            \pi(u_{\text{reg}},1,1)&=\pi(u_{\text{reg}},\mathbf{1})\\
+            \pi(u_{sr},1,1)&=\pi(u_{sr},\mathbf{1})+\pi(u_{sr},\varepsilon)+2\pi(u_{sr},\mathbf{r})\\
+            \pi(u_{sr},1,g_2)&=\pi(u_{sr},\mathbf{1})-\pi(u_{sr},\varepsilon)\\
+            \pi(u_{sr},1,g_3)&=\pi(u_{sr},\mathbf{1})+\pi(u_{sr},\varepsilon)-\pi(u_{sr},\mathbf{r})\\
+            \pi(u_{sr},g_2,1)&=\pi(u_{sr}g_2,\mathbf{1})+\pi(u_{sr}g_2,\varepsilon)\\
+            \pi(u_{sr},g_2,g_2)&=\pi(u_{sr}g_2,\mathbf{1})-\pi(u_{sr}g_2,\varepsilon)\\
+            \pi(u_{sr},g_3,1)&=\pi(u_{sr}g_3,\mathbf{1})+\pi(u_{sr}g_3,\theta)+\pi(u_{sr},\theta^2)\\
+            \pi(u_{sr},g_3,g_3)&=\pi(u_{sr}g_3,\mathbf{1})+\theta^2\pi(u_{sr}g_3,\theta)+\theta\pi(u_{sr}g_3,\theta^2)\\
+            \pi(u_{sr},g_3,g_3^{-1})&=\pi(u_{sr}g_3,\mathbf{1})+\theta\pi(u_{sr}g_3,\theta)+\theta^2\pi(u_{sr}g_3,\theta^2).
+        \end{cases}
+    \end{equation*}
+
+    When $i=1,2$ and the finite group $\overline{K_i}$ is of type $A_2$ or $A_1+\tilde{A_1}$, then $\mathrm{FT}^{K_i}$ is the identity map, and therefore it is enough to show that 
+    $$\res_{\un}^{K_i}(\pi(u,s,h))=\res_{\un}^{K_i}(\pi(u,h,s))$$
+    for all $\pi(u,s,h)$ spanning $\mathcal{R}_{\un,\text{ell}}^p(G)$. This is obvious for all cases except for $\pi(u,s,h)=\pi(u_{sr},1,g_2),\pi(u_{sr},1,g_3)$
+
+
+\end{example}

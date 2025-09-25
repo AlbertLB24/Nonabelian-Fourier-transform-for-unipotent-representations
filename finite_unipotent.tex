@@ -5,7 +5,7 @@ Let $k$ be an algebraically closed field of characteristic $p\geq 0$ and let $G$
 
 
 Let $F:G\rightarrow G$ be a Frobenius map and let $G^F$ be the fixed points under the Frobenius map. One can show that $G$ contains $F$-stable Borel subgroups, and that inside any $F$-stable Borel there are $F$-stable maximal tori. Thus, we may assume that the Borel subgroup $B$ and maximal torus $T$ fixed in the previous paragraph are $F$-stable. Under these assumptions, the Frobenius map acts on the simple roots by permuting the corresponding the root spaces. Thus, $F$ corresponds to some permutation $\rho$ of $\Delta$ satisfying
-$$F(\cX_\alpha)=\cX_{\rho(\alpha)}\quad\text{ for all }\alpha\in\Phi.$$
+$$F(\cX_\alpha)=\cX_{\rho(\alpha)}\quad\text{ for all }\alpha\in\Delta.$$
 Moreover, one can easily check that $\rho$ is in fact a symmetry of the Dynkin diagram, and these can be completely classified. For each orbit $J\subseteq\Delta$ of $\rho$, let $w_J\in W_J=\{w_{\alpha_i}\ |\ \alpha_i\in J\}$ be the unique element such that $w_J(J)=-J$. Moreover, it satisfies that $w_J^2=1$. In then follows that the group $G^F$ has a natural $BN$-pair given by the groups $B^F$ and $N^F$, whose Weyl group is
 $$N^F/T^F=(N/T)^F=W^F=\langle w_J\ |\ J\subseteq\Delta\text{ is an orbit of }\rho\rangle.$$
 
@@ -46,7 +46,7 @@ In their groundbreaking paper from 1976, Deligne and Lusztig attached to each pa
 Let's give a couple of examples for the decomposition of the Deligne--Lusztig characters.
 
 \begin{example}
-    Suppose first that $G=\SL_2(k)$ and $F=F_q:G\rightarrow G$ is the standard Frobenius. Then $G^F=\GL_2(\FF_q)$ and $G$ has two $F$-stable tori up to $G^F$ conjugation, namely
+    Suppose first that $G=\GL_2(k)$ and $F=F_q:G\rightarrow G$ is the standard Frobenius. Then $G^F=\GL_2(\FF_q)$ and $G$ has two $F$-stable tori up to $G^F$ conjugation, namely
     \begin{equation*}
         T_1=\left\{\begin{pmatrix}
             a & 0\\
@@ -217,7 +217,7 @@ as defined above are not irreducible. Lusztig then divided unipotent representat
     satisfying that 
     \begin{equation*}
         (\chi_{(x,\sigma)}^\mathcal{F},R_\phi)=\begin{cases}
-            \{(x,\sigma),(y,\tau)\} & \text{ if } \chi_\phi=\chi_{(x,\sigma)}^\mathcal{F}\in\mathcal{F},\\
+            \{(x,\sigma),(y,\tau)\} & \text{ if } \chi_\phi=\chi_{(y,\tau)}^\mathcal{F}\in\mathcal{F},\\
             0 & \text{ if }\chi_\phi\not\in\mathcal{F}.
         \end{cases}
     \end{equation*}
