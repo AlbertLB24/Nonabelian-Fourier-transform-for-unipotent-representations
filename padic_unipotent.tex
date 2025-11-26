@@ -1,16 +1,43 @@
 \section{Structure theory and representations of p-adic groups}
+\subsection{The Bernstein decomposition}\label{sec:Bernstein}
+Let $F$ be a nonarchimedean local field with ring of integers $\cO$, uniformizer $\varpi$ and residue field $k$ of cardinality $q$, a power of a prime $p$. Let $\mathbf{G}$ be a connected, almost simple, split algebraic group over $F$ and let $G=\mathbf{G}(F)$. We denote by $\Rep(G)$ the set of smooth admissible complex representations of $G$. We begin this chapter by discussing a fundamental result that instrumental in the study of the category $\Rep(G)$. The starting point is the following well-known fact.
+
+\begin{proposition}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$. Then there exists a parabolic subgroup $P\subseteq G$ with Levi subgroup $M$ and a supercuspidal representation $(\sigma,M)$ of $M$ such that $\pi\hookrightarrow\Ind_P^G\sigma$. Moreover, if $P'$ is another parabolic subgroup with Levi subgroup $M$ and supercuspidal representation $(\sigma',W')$ such that $\pi\hookrightarrow\Ind_{P'}^{G'}\sigma'$, then there exists $g\in G$ such that $M'=gMg^{-1}$ and $\sigma'\cong\prescript{g}{}{\sigma}$.
+\end{proposition}
+Given an irreducible smooth representation $(\pi,V)$, we denote the $G$-conjugacy class of $(M,(\sigma,W))$ as above the \textit{supercuspidal support} of $(\pi,V)$.
+
+The Bernstein decomposition naturally arises when we study whether two irreducible representations with distinct supercuspidal support can have non-trivial extensions between them. This is indeed possible, but only to a very limited extent.
+
+\begin{lemma}
+    Let $(\pi,V), (\pi',V')$ be two irreducible representations with supercuspidal support $(M,\sigma)$, $(M',\sigma')$, respectively. If there is a non-trivial extension between $V$ and $V'$, then there exists $g\in G$ and an unramified character $\chi$ of $M'(F)$ such that $M'=gMg^{-1}$ and $\sigma'\cong\prescript{g}{}{\sigma}\otimes\chi$.
+\end{lemma}
+If the conclusion of the lemma is satisfied, then we say that the pairs $(M,\sigma)$ and $(M',\sigma')$ are \textit{inertially equivalent}, and we denote the equivalence by $\sim$ and the inertial equivalence class by $[M,\sigma]_G$. Finally, we let $\mathfrak{J}(G)$ be the set of inertial equivalence classes. 
+
+If $[M,\sigma]\in\mathfrak{J}(G)$, then we denote $\Rep(G)_{[M,\sigma]}$ the full subcategory of $\Rep(G)$ whose objects are representations $(\pi,V)$ satisfying that all for any irreducible subquotient $\pi'$ of $\pi$, there is a parabolic subgroup $P'$ with Levi subgroup $M'$ and supercuspidal representation $\sigma'$ of $M'$ such that $\pi'\hookrightarrow\Ind_{P'}^{G'}$ and $(M',\sigma')\in[M,\sigma]_G$.
+
+These results are summarized in the following theorem.
+
+\begin{theorem}[Bernstein decomposition]
+    We have an equivalence of categories
+    \begin{equation}
+        \Rep(G)\cong \prod_{[M,\sigma]\in\mathfrak{J}(G)}\Rep(G)_{[M,\sigma]}
+    \end{equation}
+    and each full subcategory $\Rep(G)_{[M,\sigma]}$ is indecomposable.
+\end{theorem}
+
+
 
 \subsection{The apartment of a split maximal torus}
 
-Let $F$ be a nonarchimedean local field with ring of integers $\cO$, uniformizer $\varpi$ and residue field $k$ of cardinality $q$, a power of a prime $p$. Let $\mathbf{G}$ be a connected, almost simple, split algebraic group over $F$ and let $G=\mathbf{G}(F)$. %Let $\Rep(G)$ be the category of admissible smooth complex representations of $G$ and let $\Irr(G)$ be the subset of the irreducible representations. We define $R(G)$ to be $\CC$-span of $\Irr(G)$ (i.e. the complexification of the Grothendieck group of the abelian category of smooth $G$-representations).
-
+Before continuing with representation theoretic aspects of $p$-adic groups, we first shift towards a more structural focus. As in the previous section, let $\mathbf{G}$ be a connected, almost simple, split algebraic group over $F$ and let $G=\mathbf{G}(F)$.
 Let $T$ be a split maximal torus of $G$ over $F$, and let $X^*(T)$ (resp. $X_*(T)$) be its character (resp. cocharacter) lattice and let 
 $$\langle\cdot,\cdot\rangle:X^*(T)\times X_*(T)\longrightarrow\ZZ$$
-the natural perfect pairing between characters and cocharacters of $T$. Let $\Phi(G,T)\subset X^*(T)$ be the set of roots associated to $T$, with the corresponding set of coroots $\Phi^\vee(G,T)\subset X_*(T)$. We recall from the previous section that a choice of a Borel subgroup $B$ of $G$ containing $T$ is equivalent to the choice of simple roots $\Delta(G,T)=\{\alpha_1,\ldots,\alpha_r\}\subset\Phi(G,T)$, which we fix throughout. In addition, the group $B$ together with the normalizer $N:=N_G(T)$ form a $BN$-pair with corresponding Weyl group $W=N(F)/T(F)$. 
+the natural perfect pairing between characters and cocharacters of $T$. Let $\Phi(G,T)\subset X^*(T)$ be the set of roots associated to $T$, with the corresponding set of coroots $\Phi^\vee(G,T)\subset X_*(T)$. We recall from the previous chapter that a choice of a Borel subgroup $B$ of $G$ containing $T$ is equivalent to the choice of simple roots $\Delta(G,T)=\{\alpha_1,\ldots,\alpha_r\}\subset\Phi(G,T)$, which we fix throughout. In addition, the group $B$ together with the normalizer $N:=N_G(T)$ form a $BN$-pair with corresponding Weyl group $W=N(F)/T(F)$. 
 
-A natural object arising in the representation theory of $G$ is the apartment $\cA(G,T):=X_*(T)\otimes_\ZZ\RR$, a real vector space naturally containing all coroots. Moreover, $\cA(G,T)$ has the structure of a simplicial complex given by the hyperplanes
+A natural object arising in the representation theory of $G$ is the apartment $\cA(G,T):=X_*(T)\otimes_\ZZ\RR$, a real vector space containing all coroots. Moreover, $\cA(G,T)$ has the structure of a simplicial complex given by the hyperplanes
 $$H_{\alpha,n}=\{x\in\cA(G,T)\ |\ \langle\alpha,x\rangle=n\},\quad\text{for each }\alpha\in\Phi(G,T)^+\text{ and } n\in\ZZ.$$
-Whenever the torus $T$ is clear from context, we will omit it from the notation. The complexes on the apartment are called \textit{facets}, and the facets of largest dimension are called \textit{alcoves}. Our choice of simple roots $\Delta$ determines a canonical alcove
+Whenever the torus $T$ is clear from context, we will omit it from the notation. The complexes on the apartment are called \textit{facets}, and the facets of largest dimension (equivalently, they are open in the apartment) are called \textit{alcoves}. Our choice of simple roots $\Delta$ determines a canonical alcove
 $$\mathcal{C}_0=\{x\in\cA\ |\ \langle\alpha,x\rangle>0, \alpha\in\Delta\ \text{ and } \langle\alpha_0,x\rangle<1\},$$
 commonly referred to as the \textit{fundamental alcove}.
 
@@ -24,7 +51,7 @@ This action preserves the simplicial structure of the apartment and is transitiv
 $$\widetilde{W}:=N(F)/T(\cO)\cong W\ltimes X_*(T)$$
 acts faithfully on the apartment $\cA$ and transitively on the set of alcoves. We denote by $w_{\alpha,n}$ the unique element in $\widetilde{W}$ acting on $\mathcal{A}$ by a reflection on the hyperplane $H_{\alpha,n}$. 
 
-In general, however, this action is not simple on the set of alcoves and the group $\Omega=\{w\in\widetilde{W}\ |\ w(\cO)=\cO\}$ is non-empty. These groups fit in a \textbf{splitting} short exact sequence
+In general, however, this action is not simple on the set of alcoves and the group $\Omega=\{w\in\widetilde{W}\ |\ w(\mathcal{C}_0)=\mathcal{C}_0\}$ is non-empty. These groups fit in a \textbf{splitting} short exact sequence
 $$1\longrightarrow W_{\aff}\longrightarrow \widetilde{W}\longrightarrow \Omega\longrightarrow 1,$$
 where $(W_{\aff},S_{\aff})$ is a Coxeter group generated by the simple reflections $s_0:=w_{\alpha_0,1}$, $s_i=w_{\alpha_i,0},\ i=1,\ldots, r$ along the walls of the fundamental alcove $\mathcal{C}_0$ and acting simply transitively on the set of alcoves of $\cA$. The group $W_{\aff}$ is the \textit{affine Weyl group} associated to the group $G$. The Weyl groups $W$, $\widetilde{W}$ and $W_{\aff}$ are independent of $T$, up to isomorphism.
 
@@ -132,11 +159,11 @@ An important property of the building $\cB(G)$ is that it carries a $G$-action s
     $$K_1:=\mathrm{Stab}(0)=\SL_2(\ZZ_p),\ K_2:=\mathrm{Stab}(\calpha/2)=\begin{psmallmatrix}
         \ZZ_p & p^{-1}\ZZ_p\\
         p\ZZ_p & \ZZ_p
-    \end{psmallmatrix}, \text{ and }I:=\mathrm{Stab}(\mathcal{C}_0)=\begin{psmallmatrix}
+    \end{psmallmatrix}, \text{ and }\cI:=\mathrm{Stab}(\mathcal{C}_0)=\begin{psmallmatrix}
         \ZZ_p^\times & \ZZ_p\\
         p\ZZ_p & \ZZ_p^\times
     \end{psmallmatrix}$$
-    are all connected, open compact subgroups of $\SL_2(\QQ_p)$ not conjugate to each other. $K_0$ and $K_1$ are the unique maximal compact subgroups of $\SL_2(\QQ_p)$ -- in particular, the stabilizer of any vertex of the building is conjugate to either $K_0$ or $K_1$. The subgroup $I$ is called the \textbf{Iwahori subgroup}, it is conjugate to the stabilizer of any facet in the building and is of fundamental importance in the representation theory of $\SL_2(\QQ_p)$.
+    are all connected, open compact subgroups of $\SL_2(\QQ_p)$ not conjugate to each other. $K_0$ and $K_1$ are the unique maximal compact subgroups of $\SL_2(\QQ_p)$ -- in particular, the stabilizer of any vertex of the building is conjugate to either $K_0$ or $K_1$. The subgroup $\cI$ is called the \textbf{Iwahori subgroup}, it is conjugate to the stabilizer of any facet in the building and is of fundamental importance in the representation theory of $\SL_2(\QQ_p)$.
 
     On the other hand, if $G=\PGL_2(\QQ_p)$, then 
     $$K_1:=\mathrm{Stab}(0)=\PGL_2(\ZZ_p),\ K_2:=\mathrm{Stab}(\calpha/2)=\begin{psmallmatrix}
@@ -168,82 +195,179 @@ Two facets $c_{J_1}$ and $c_{J_2}$ are conjugate under the action of $G$ if and 
 \[
     \{\Omega-\text{orbits of }J\subsetneq S_{\aff}\}\longleftrightarrow\{G-\text{orbits of facets $c$ in the BT-building}\}
 \]
-For any facet $c$ of the building of $G$, we let $P_c^+:=\mathrm{Stab}_G(c)$ be the stabilizer of $c$. There is a short exact sequence
-$$1\longrightarrow U_c\longrightarrow P_c^+\longrightarrow M_c^+,$$
-where $U_c$ is the pro-unipotent radical of $P_c^+$ and $M_c^+$ is the group of $k$-rational points of a (possibly disconnected) reductive group $\mathbf{M}_c^+$ over $k$. 
+For any facet $c$ of the building of $G$, we let $K_c^+:=\mathrm{Stab}_G(c)$ be the stabilizer of $c$. There is a short exact sequence
+$$1\longrightarrow U_c\longrightarrow K_c^+\longrightarrow \overline{K}_c^+\longrightarrow 1,$$
+where $U_c$ is the pro-unipotent radical of $K_c^+$ and $\overline{K}_c^+$ is the group of $k$-rational points of a (possibly disconnected) reductive group $\mathbf{\overline{K}}_c^+$ over $k$. 
 
 \begin{definition}
-    A \textbf{parahoric subgroup} $P_c$ is the inverse image in $P_c^+$ of the group $M_c$ of $k$-rational points of the identity component $\mathbf{M}_c$ of $\mathbf{M}_c^+$. We shall sometimes denote "parahoric subgroup" to the triple $(U_c,P_c,M_c)$. If $c$ is open in the building, then $(U_c,P_c,M_c)$ is a minimal parahoric subgroup and is called an \textbf{Iwahori subgroup}. The standard Iwahori subgroup corresponds to $J=\emptyset\subsetneq S_{\aff}$.
+    A \textbf{parahoric subgroup} $K_c$ is the inverse image in $K_c^+$ of the group $\overline{K}_c$ of $k$-rational points of the identity component $\mathbf{\overline{K}}_c$ of $\mathbf{\overline{K}}_c^+$. We shall sometimes denote "parahoric subgroup" to the triple $(K_c,U_c,\overline{K}_c)$. If $c$ is open in the building, then $(K_c,U_c,\overline{K}_c)$ is a minimal parahoric subgroup and is called an \textbf{Iwahori subgroup}. The standard Iwahori subgroup corresponds to $J=\emptyset\subsetneq S_{\aff}$.
 \end{definition}
 
-Naturally, two parahoric subgroups are conjugate in $G$ if and only if the corresponding facets of the building are in the same $G$-orbit. Thus, all Iwahori subgroups are conjugate in $G$. If $c=c_J$ is a standard facet, then we simply write $(U_J,P_J,M_J)$ for its associated parahoric subgroup, and $P_J$ is generated by the standard Iwahori subgroup and $J$. Thus, there is a bijection between 
+Naturally, two parahoric subgroups are conjugate in $G$ if and only if the corresponding facets of the building are in the same $G$-orbit. Thus, all Iwahori subgroups are conjugate in $G$. If $c=c_J$ is a standard facet, then we simply write $(K_J,U_J,\overline{K}_J)$ for its associated parahoric subgroup, and $K_J$ is generated by the standard Iwahori subgroup and $J$. Thus, there is a bijection between 
 \[
-    \{\Omega-\text{orbits of }J\subsetneq S_{\aff}\}\longleftrightarrow\{G-\text{conjugacy classes of parahoric subgroups } (U_c,P_c,M_c)\}
+    \{\Omega-\text{orbits of }J\subsetneq S_{\aff}\}\longleftrightarrow\{G-\text{conjugacy classes of parahoric subgroups } (K,U_K,\overline{K})\}
 \]
 Moreover, if the facet $c$ corresponds to $J\subsetneq S_{\aff}$, then
-$$P_c^+/P_c\cong\Omega_J=\mathrm{Stab}_\Omega(J).$$
+$$K_c^+/K_c\cong\Omega_J=\mathrm{Stab}_\Omega(J).$$
 These results can be directly verified for $\SL_2$, $\PGL_2$ and $\GL_2$ using the examples above.
 
-\begin{example}
+\begin{example}\label{example:G2_quotients}
     Suppose that $G=G_2(F)$. The affine Dynkin diagram of $G_2$ has no symmetries, so $\Omega=1$ and the extended affine weyl group $\widetilde{W}$ is a Coxeter group of type $\tilde{G_2}$. Since $S_{\aff}={s_0,s_1,s_2}$, there are $7$ conjugacy classes of parahoric subgroups, satisfying
     \begin{align}
-        M_{\{s_1,s_2\}}=G_2(k),\quad M_{\{s_0,s_1\}}=\SL_3(k), \quad M_{\{s_0,s_2\}}=\SL_2(k)\times\SL_2(k)\\
-        \text{\textcolor{red}{what about singletons}}\quad M_{\emptyset}=T(k)=(k^\times)^2.
+        \overline{K}_{\{s_1,s_2\}}=G_2(k),\quad \overline{K}_{\{s_0,s_1\}}=\SL_3(k), \quad \overline{K}_{\{s_0,s_2\}}=\SL_2(k)\times\SL_2(k)\\
+        \text{\textcolor{red}{what about singletons}}\quad \overline{K}_{\emptyset}=T(k)=(k^\times)^2.
     \end{align}
 \end{example}
 
-\subsection{Parahoric restriction}
-
-Parahoric subgroups are ubiquitous objects in the representation theory of p-adic objects, since it provides a bridge between smooth admissible representations of the p-adic group $G$ and finite dimensional representations of the finite groups of Lie type $M_c$ defined in the previous section. In this section, we explore this important connection that we will exploit in a latter chapter. 
-
-If $(U,P,M)$ is any parahoric subgroup corresponding to a facet $c$ and $(\pi,V)$ is a smooth admissible representation of $G$, the space $V^{U}$ of fixed points under the pro-unipotent radical is naturally a representation of $M$. We can take this idea one step further and define the \textit{parahoric restriction functor}
-\begin{equation*}
-    \res_c:R(G)\longrightarrow \CC[M]^{M},\quad V\longmapsto \text{(character of) }V^{U},\quad\text{for all }V\in\Irr(G),
-\end{equation*}
-where $\CC[M]^M$ is the space of class functions of $M$. This is well-defined since the representations are assumed to be admissible. The existence of such a functor is very powerful -- for example, one can then apply the theory of Deligne-Lusztig induction to the setting of representation of $p$-adic groups. 
-
+\subsection{Types for Bernstein blocks and Hecke algebras}
+In Section \ref{sec:Bernstein} we stated the Bernstein decomposition, a fundamental result in the complex representation theory of $p$-adic groups. The upshot of this result a priori is clear -- one can restrict attention to each block individually and study the irreducible objects in each block instead of the entire category $\Rep(G)$. In this section, we briefly introduce the notion of types and their corresponding Hecke algebra, which help us understand each individual Bernstein block. We give precise results for so-called \textit{depth-zero Bernstein blocks} which will be required later on. We begin with the definition of a \textit{type}.
 \begin{definition}
-    We say that an irreducible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there is a parahoric subgroup $(P,U,M)$ such that $V^U$ contains a cuspidal unipotent representation of $M$. More generally, a smooth admissible representation of $G$ is unipotent if all irreducible subquotients of $\pi$ are unipotent.
+    Let $[M,\sigma]\in\mathfrak{J}(G)$ be a pair parametrizing a Bernstein block $\Rep(G)_{[M,\sigma]}$. A pair $(K,\rho)$ consisting of an open compact subgroup $K$ of $G$ and a smooth irreducible representation $\rho$ of $K$ is called a $[M,\sigma]$-type if, for any $(\pi,V)\in\Irr(G)$, the following two conditions are equivalent:
+    \begin{itemize}
+        \item The representation $(\pi,V)$ lies in the Bernstein block $\Rep(G)_{[M,\sigma]}$.
+        \item The restriction of $\pi$ to $K$ contains $\rho$; in other words, $\Hom_K(\rho,\pi|_K)\neq 0$.
+    \end{itemize}
 \end{definition}
 
-\textcolor{red}{Are all pairs $(P,E)$ as above types of certain Bernstein blocks?}
+Associated to every pair $(K,\rho)$, where $K$ is a compact open subgroup of $G$ and $(\rho,W)$ is an irreducible smooth representation of $K$, one can associate the \textit{Hecke algebra} 
+$$\cH(G,K,\rho):=\End_G(\cInd_K^G\rho),$$
+with composition of functions as the product.
+Alternatively, one can show that the Hecke algebra $\cH(G,K,\rho)$ can be seen as the $\CC$-vector space of functions $f:G\rightarrow\End_\CC(W)$ satisfying
+\begin{itemize}
+    \item $f(k_1gk_2)=\rho(k_1)\circ f(g)\circ\rho(k_2)$ for any $k_1,k_2\in K$ and $g\in G$.
+    \item the support of $f$ is compact,
+\end{itemize}
+together with multiplication given by \textit{convolution} defined by
+\[
+    (f_1*f_2)(g)=\sum_{x\in G(F)/K}f_1(x)f_2(x^{-1}g).
+\]
 
-\begin{example}
-    
+The importance of the theory of types in studying individual Bernstein blocks is highlighted in the following theorem.
+\begin{theorem}
+    Let $(K,\rho)$ be an $[M,\sigma]$-type. Then the Bernstein block $\Rep(G)_{[M,\sigma]}$ is equivalent to the category of right unital $\cH(G,K,\rho)$-modules; i.e.
+    $$\Rep(G)_{[M,\sigma]}\simeq\cH(G,K,\rho)\textrm{ - mod}.$$
+\end{theorem}
+Of course, such a result is only useful if one can
+\begin{enumerate}
+    \item construct types for the Bernstein blocks we are interested in,
+    \item understand the structure of the corresponding Hecke algebras and
+    \item describe the irreducible unital right modules of the Hecke algebra.
+\end{enumerate}
+
+In most cases, one can answer the three questions giving rise to beautiful, deep and interesting mathematics. One of the main aims of this document is to try to answer these questions. Let us answer these questions first in a particularly simple case.
+
+\begin{example}\label{example:supercuspidal_type}
+    Suppose that $G$ is a simple group and that $x\in\cB(G)$ is a vertex in building (facet of minimal dimension) and let $(K_x,U_x,\overline{K}_x)$ be the corresponding parahoric subgroup. If $\sigma$ is an irreducible smooth representation of $K_x^+$ that is trivial on $U_x$ and such that $\sigma|_{K_x}$ is a cuspidal representation of $\overline{K}_x$, then 
+    $$\pi:=\cInd_{K_x^+}^G\sigma$$
+    is a supercuspidal representation of $G$, and $(K_x^+,\sigma)$ is a $[G,\pi]$-type. Moreover, by Schur's lemma, we know that 
+    $$\cH(G,K_x^+,\sigma)=\End_G(\cInd_{K_x^+}^G\sigma)=\End_G(\pi)=\CC$$
+    is a $1$-dimensional vector space. This implies that $\Rep(G)_{[G,\pi]}$ has a unique irreducible object, which of course is $\pi=\cInd_{K_x^+}^G\sigma$. Moreover, $\pi$ has no non-trivial extensions, so
+    $$\Rep(G)_{[G,\pi]}=\{\pi,\pi\oplus\pi,\pi\oplus\pi\oplus\pi,\ldots\}.$$
 \end{example}
 
 
+
+
+\textcolor{red}{Before we finish this section, we state the answer of the first question for \textit{depth-zero blocks}.}
+
 \begin{definition}
-    Let $(U_c,P_c,M_c)$ be a parahoric subgroup and let $(\tau, E)$ be a cuspidal representation of $M_c$. We then define 
-    $$\Irr(G,P_c,E)=\{(\pi,V)\in\Irr(G)\ |\ \text{the $M_c$-module }V^{U_c}\text{ contains the $M_c$-module }E\}$$ 
+    An irreducible smooth representation $(\pi,V)$ of $G$ has \textit{depth-zero} if there is some parahoric subgroup $(K,U_K,\overline{K})$ such that $V^{U_K}\neq 0$.
+\end{definition}    
+
+For the remainder of the section, assume for simplicity that $G$ is simple. Suppose that $M$ is a Levi subgroup of $G$ and that $\sigma$ is a depth-zero supercuspidal representation $\sigma$ of $M$. A well-known result of Moy and Prasad states that there is a vertex $x\in\cB(M)\subseteq\cB(G)$ with corresponding stabilizer $K^{(M)+}_x$, parahoric subgroup $(K^{(M)}_x,U^{(M)}_x,\overline{K}^{(M)}_x)$ and a cuspidal representation $\tilde\tau$ of $\overline{K}^{(M)}_xZ(G)$ such that 
+$$\sigma\cong\cInd_{K^{(M)}_xZ(G)}^G\tilde\tau.$$
+
+
+
+
+\subsection{Parahoric restriction and unipotent representations}
+
+
+Parahoric subgroups are ubiquitous objects in the representation theory of p-adic objects, since it provides a bridge between smooth admissible representations of the p-adic group $G$ and finite dimensional representations of the finite groups of Lie type $\overline{K}_c$ defined in the previous section. In this section, we explore this important connection that we will exploit in a latter chapter. 
+
+If $(K,U_K,\overline{K})$ is any parahoric subgroup corresponding to a facet $c$ and $(\pi,V)$ is a smooth admissible representation of $G$, the space $V^{U_K}$ of fixed points under the pro-unipotent radical is naturally a representation of $\overline{K}$. We can take this idea one step further and define the \textit{parahoric restriction functor}
+\begin{equation}\label{eqn:par_restriction}
+    \res_K:R(G)\longrightarrow \CC[\overline{K}]^{\overline{K}},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G),
+\end{equation}
+where $R(G)$ is the $\CC$-span of $\Irr(G)$ and $\CC[\overline{K}]^{\overline{K}}$ is the space of class functions of $\overline{K}$. This is well-defined since the representations are assumed to be admissible. The existence of such a functor is very powerful -- we can then apply the techniques of representation theory of finite groups of Lie such as Deligne-Lusztig induction in the setting of $p$-adic groups. Let us begin first with a natural definition.
+
+\begin{definition}
+    Let $(K,U_K,\overline{K})$ be a parahoric subgroup and $(\tau, E)$ be a cuspidal representation of $\overline{K}$. Define 
+    $$\Irr(G,K,E)=\{(\pi,V)\in\Irr(G)\ |\ \text{the $\overline{K}$-module }V^{U_K}\text{ contains the $\overline{K}$-module }E\}.$$ 
 \end{definition}
 
 
 \begin{definition}
-    An irreducible smooth admissible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there exists some parahoric subgroup $K$ of $G$ such that $V^{U_K}$ contains a cuspidal unipotent representation of the finite group $\overline{K}$.
+    We say that an irreducible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there is a parahoric subgroup $(K,U_K,\overline{K})$ such that $V^{U_K}$ contains a cuspidal unipotent representation of $\overline{K}$; that is, if $(\pi,V)\in\Irr(G,K,E)$ for some pair $(K,E)$ where $E$ is unipotent. We denote the set of unipotent representations of $G$ by 
+    $$\Irr_{\un}(G)=\bigcup_{\substack{J\subsetneq S_{\aff}\\
+    E \text{ cusp. unip. $\overline{K}_J$-rep}}}\Irr(G,K_J,E)$$
 \end{definition}
-We note that if we replace $G$ for $G^F$ and \textit{parahoric} by \textit{parabolic}, then we recover the definition of a unipotent representation in $G^F$. 
 
-The following two results are basic to ensure that unipotent representations behave under the restriction functor above.
+We note that if we replace the $p$-adic group $G$ for the finite group of Lie type $G^F$ and \textit{parahoric} by \textit{parabolic}, then we recover the definition of a unipotent representation in $G^F$. 
+
+\textcolor{red}{Are all pairs $(K,E)$ as above types of certain Bernstein blocks?}
+
+\begin{example}\label{example:unip_blocks}
+    Let $G$ be a split reductive p-adic group with split maximal torus $T$.
+    \begin{enumerate}
+        \item Let $\cI$ be an Iwahori subgroup with pro-unipotent radical $\cI^+$. Then the reductive quotient $\cI/\cI^+$ is isomorphic to $T(k)$. Thus, all irreducible representations of $\cI/\cI^+$ are $1$-dimensional and the only unipotent representation is the trivial one. Therefore, the irreducible \textit{Iwahori-spherical} representations
+        $$\Irr(G,\cI,\mathbf{1})=\{(\pi,V)\in\Irr(G)\ |\ V^{\cI}\neq 0\}$$
+        are all unipotent, and this set coincides with the set of irreducible subrepresentations of $\cInd_B^G\chi$, where $\chi$ is an unramified character of $T$.
+        Thus, it follows that
+        $$\{(\pi,V)\in\Rep(G)\ | \ V \text{ is generated by } V^{\cI}\}$$
+        is the \textit{principal Bernstein block} $\Rep(G)_{[T,1]}$.
+        \item Let $(K,U_K,\overline{K})$ be a maximal parahoric subgroup corresponding to a vertex of the building associated to $G$ and let $(\sigma,E)$ be a cuspidal (not necessarily unipotent) representation of $\overline{K}$ viewed as a representation of $K$ by inflation. Then the compactly induced $(\pi,V):=\cInd_K^G(\sigma,E)$ is an irreducible supercuspidal representation and by Frobenius reciprocity
+        $$(\pi,V)\in\Irr(G,K,E).$$
+        In fact, as we shall observe later, we have that $\Irr(G,K,E)=\{(\pi,V)\}$ and consequently \textcolor{red}{(potentially mention type theory briefly)} the block 
+        $$\Rep(G)_{[G,\pi]}=\{\pi,\pi\oplus\pi,\pi\oplus\pi\oplus\pi,\ldots\}.$$
+    \end{enumerate}
+    
+\end{example}
+
+\begin{remark}\label{rem:An_unipotent}
+    For $n\geq 1$, reductive groups over finite fields of type $A_n$ have no irreducible cuspidal unipotent representations. Therefore, if $G$ is a reductive $p$-adic group of type $A_n$ and $J\subseteq S_{\aff}$ is non-empty, then $\overline{K}_J$ has no cuspidal unipotent representations. This implies that the set of irreducible unipotent representations of $G$
+    $$\Irr_{\un}(G)=\Irr(G,\cI,\mathbf{1})$$
+    coincides with the irreducible Iwahori-spherical representations of $G$.
+\end{remark}
+
+The next step is to ensure that unipotent representations behave under the parahoric restriction functor \eqref{eqn:par_restriction}. The following two results ensure this is indeed the case.
 \begin{proposition}\label{prop:unipotent_padic}
-    Let $(\pi,V)$ be an irreducible admissible representation of $G$. If there is some parahoric subgroup $K$ such that $V^{U_K}$ contains a non-cuspidal unipotent representation of $\overline{K}=K/U_K$, then $(\pi,V)$ is a unipotent representation of $G$.
-    %\begin{enumerate}
-    %    \item Conversely, if $(\pi,V)$ is a unipotent representation of $G$, then all irreducible $\overline{K}$-subrepresentations of $V^{U_K}$ are unipotent.
-    %\end{enumerate}
+    Let $(\pi,V)$ be an irreducible admissible representation of $G$. If there is some parahoric subgroup $(K,U_K,\overline{K})$ such that $V^{U_K}$ contains a (potentially non-cuspidal) unipotent representation of $\overline{K}$, then $(\pi,V)$ is a unipotent representation of $G$.
 \end{proposition}
 \begin{proof}
-    To prove the first claim, suppose that $V^{U_K}$ contains a unipotent irreducible representation $(\sigma,W)$ of $\overline{K}$, and therefore $\Hom_K(W,V^{U_K})\neq 0$. By Proposition \ref{prop:harishchandra}, there is some standard parabolic subgroup $\overline{P}=\overline{U_P}\cdot\overline{L_P}$ of $\overline{K}$ and cuspidal unipotent representation $(\tau,U)$ of $\overline{L_P}$ such that 
-    $$\Hom_{K}(W,\Ind_{\overline{P}}^{\overline{K}}U)\neq 0,$$
-    where we view the $\overline{K}$ representations as inflated $K$ representations, trivial on $U_K$. By the classification of parahoric subgroups in $G$, it follows that $\bar{P}=H/U_K$, where $H$ is another parahoric subgroup contained in $K$. Moreover, we have the inclusions $U_K\subseteq U_H\subseteq H\subseteq K$ and therefore $\overline{U_P}=U_H/U_K$ and $\overline{L_P}=H/U_H$. Since induction and inflation are commuting operations, it follows that the induced $\overline{K}$-representation $\Ind_{\overline{P}}^{\overline{K}}U$ is isomorphic to the $K$-representation $\Ind_H^K U$, where we view $U$ as the induced $H$-representation trivial on $U_H$, and hence $\Hom_K(W,\Ind_H^K U)\neq0$. Since $W$ is irreducible and $K$ is compact, it also follows that 
-    $$\Hom_K(\Ind_H^K U,V^{U_K})=\Hom_H(U,V^{U_K})\neq 0.$$
-    Since the representation $U$ is trivial on $U_H$, it follows that the image of $H$-equivariant map $U\to V^{U_K}$ lies inside $V^{U_H}$. Thus, 
-    $$\Hom_H(U,V^{U_H})=\Hom_H(U,V^{U_K})\neq 0,$$
+    By assumption, $V^{U_K}$ contains a unipotent irreducible representation $(\sigma,W)$ of $\overline{K}$ so $\Hom_K(W,V^{U_K})\neq 0$. By Proposition \ref{prop:harishchandra}, there is some standard parabolic subgroup $\overline{P}=\overline{U_P}\cdot\overline{L_P}$ of $\overline{K}$ and cuspidal unipotent representation $(\tau,E)$ of $\overline{L_P}$ such that 
+    $$\Hom_{K}(W,\Ind_{\overline{P}}^{\overline{K}}E)\neq 0,$$
+    where we view the $\overline{K}$ representations as inflated $K$ representations, trivial on $U_K$. By the classification of parahoric subgroups in $G$, it follows that $\overline{P}=H/U_K$, where $(H,U_H,\overline{H})$ is another parahoric subgroup contained in $K$. Moreover, we have the inclusions $U_K\subseteq U_H\subseteq H\subseteq K$ and therefore $\overline{U_P}=U_H/U_K$ and $\overline{L_P}=\overline{H}=H/U_H$. Since induction and inflation are commuting operations, it follows that
+    $$\mathrm{Inf}_{\overline{K}}^K\Ind_{\overline{P}}^{\overline{K}}E\cong\Ind_{H}^K\mathrm{Inf}_{\overline{H}}^H E$$
+    and hence $\Hom_K(W,\Ind_H^K E)\neq0$. Since $W$ is irreducible and $K$ is compact, it also follows that 
+    $$\Hom_K(\Ind_H^K E,V^{U_K})=\Hom_H(E,V^{U_K})\neq 0.$$
+    Since the representation $E$ is trivial on $U_H$, the image of any $H$-equivariant map $E\to V^{U_K}$ lies inside $V^{U_H}$. Thus, 
+    $$\Hom_H(E,V^{U_H})=\Hom_H(E,V^{U_K})\neq 0,$$
     and this concludes the proof.
 \end{proof}
 
-Conversely, we would like to show that for any irreducible unipotent representation $(\pi,V)$ of $G$, the irreducible $\overline{P}$-submodules of $V^{P^+}$ are all unipotent. %We first note that by the results of Harish-Chandra, for any such irreducible $\overline{P}$-submodules affording the character $\chi$, there is a parahoric subgroup $Q\subseteq P$ and cuspidal representation 
-This is a direct corollary of the following theorem.
+Conversely, we would like to show that for any irreducible unipotent representation $(\pi,V)$ of $G$, the irreducible $\overline{K}$-submodules of $V^{U_K}$ are all unipotent, for any parahoric subgroup $(K,U_K,\overline{K}).$ This is a direct corollary of the following theorem.
 
+\begin{theorem}\label{thm:unip_restriction}
+    Suppose $I\subsetneq S_{\aff}$ and that $V^{U_I}$ contains the cuspidal unipotent representation $\sigma$ of $\overline{K}_I$. If $J\subsetneq S_{\aff}$ with $V^{U_J}\neq 0$, and $J$ is minimal with respect to this property, then there is $\omega\in\Omega$ such that $I=\omega J$, and $V^{U_J}$ consists of copies of $\sigma^{\omega}$. Moreover, if $G$ is exceptional, then $J=I$.
+\end{theorem}
+\begin{proof}
+    See Moy-Prasad for a complete account for general cuspidal representations and not necessarily unipotent and Reeder's paper for a sketch in the unipotent setting.
+\end{proof}
+
+\begin{cor}
+    Let $(\pi,V)$ be a unipotent representation of $G$ and let $(H,U_H,\overline{H})$ be a parahoric subgroup. Then the $\overline{H}$-irreducible components of $V^{U_H}$ are all unipotent.
+\end{cor}
+\begin{proof}
+    Since $(\pi,V)$ is unipotent, $(\pi,V)\in\Irr(G,K_J,E)$ for some $J\subsetneq S_{\aff}$ and cuspidal unipotent representation $E$ of $\overline{K}_J$.
+    Let $(\tau,W)$ be a $\overline{H}$-irreducible component of $\pi^{U_H}$. By conjugating if necessary, we may assume that $(H,U_H,\overline{H})$ is a standard parahoric subgroup. Analogously to the proof of Proposition \ref{prop:unipotent_padic}, there is some $I\subsetneq S_{\aff}$ such that $(K_I,U_I,\overline{K}_I)$ is contained in $K$ and $\tau$ is a subrepresentation of $\Ind_{\overline{K_I}}^{\overline{H}}\sigma$. By Theorem \ref{thm:unip_restriction}, $I$ is the same $\Omega$-orbit as $J$ and $\sigma$ is cuspidal unipotent. By Proposition $\ref{prop:harishchandra}$, this implies that $(\tau,W)$ is also unipotent.
+\end{proof}
+
+\begin{cor}\label{cor:disjoint_reps}
+    For any two pairs $(K,E)$, $(K',E')$ of a parahoric subgroup and a cuspidal unipotent representation of the reductive quotient, $\Irr(G,K,E)$ and $\Irr(G,K',E')$ are either disjoint or equal.
+\end{cor}
+
+\iffalse
 \begin{theorem}
     Let $(\pi,V_\pi)$ be an irreducible admissible representation of $G$. Suppose that there is some parahoric $P$ such that $V^{P^+}\neq 0$ contains an irreducible cuspidal representation $(\sigma,V_\sigma)$ of $\overline{P}$. Then, for any parahoric $Q$ such that $V^{Q^+}\neq 0$, any $\overline{Q}$-submodule of $V^{Q^+}$ contains a cuspidal representation $(\tau,V_\tau)$ of $\overline{L}$ for some parahoric subgroup $L\subseteq Q$. Moreover, there is some $g\in G$ such that $L=\prescript{g}{}{P}$ and $\tau=\prescript{g}{}{\sigma}$.
 \end{theorem}
@@ -257,88 +381,166 @@ Since $\pi$ is an irreducible representation of $G$, there must be some $g\in G$
 \end{proof}
 
 \textcolor{red}{Need to find proofs for this!!}
+\fi
 
-\begin{example}
-    The Iwahori subgroup $I=\langle T(\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$, with pro-unipotent radical $U_I=\langle T(1+\varpi\cO),\cX_\alpha(\cO),\cX_\alpha(\varpi\cO)\ |\ \alpha\in\Phi^+\rangle$ and reductive quotient $I/U_I=T(k_F)$ is, up to conjugacy, the unique minimal parahoric subgroup of $G$. Any smooth admissible representation $(\pi,V)$ of $G$ with an Iwahori fixed vector is unipotent. Indeed, $V^{U_I}$ contains the trivial representation of $T(k_F)$, its unique unipotent representation. 
-\end{example}
-
-Analogously to the construction of $R(G)$, we define $\Irr_{\textrm{un}}(G)$ to be the set of irreducible unipotent representations of $G$, and $R_{\textrm{un}}(G)$ to be its $\CC$-span. Lemma \ref{prop:unipotent_padic} implies that there is a well-defined \textit{restriction function}
+Analogously to the construction of $R(G)$, we define $R_{\textrm{un}}(G)$ to be the $\CC$-span of the irreducible unipotent representations $\Irr_{\un}(G)$. Lemma \ref{prop:unipotent_padic} and Theorem \ref{thm:unip_restriction} implies that for each parahoric subgroup $(K,U_K,\overline{K})$ there is a well-defined \textit{restriction function}
 \begin{equation*}
     \res_{\textrm{un}}^K:R_{\textrm{un}}(G)\longrightarrow \CC_{\textrm{un}}[\overline{K}]^{\overline{K}},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G).
 \end{equation*}
-It is also convenient to consider simultaneously all such functions for all conjugacy classes of maximal parahoric subgroups, so we define $\res_{\textrm{un}}^{\textrm{par}}=(\res_{\textrm{un}}^K)_K$. In the previous section, we defined a nonabelian Fourier transform 
+It is also convenient to consider simultaneously all such functions for all conjugacy classes of maximal parahoric subgroups, so we define $\res_{\textrm{un}}^{\textrm{par}}=(\res_{\textrm{un}}^K)_K$. 
+
+
+\iffalse In the previous section, we defined a nonabelian Fourier transform 
 $$\FT^K:\CC_{\un}[\overline{K}]^{\overline{K}}\longrightarrow\CC_{\un}[\overline{K}]^{\overline{K}},$$
 taking the unipotent characters to the almost characters of $\overline{K}$, having nice geometric properties. We also consider all these maps simultaneously for all conjugacy classes of maximal parahoric subgroups, which we denote as $\FT^{\mathrm{par}}=(\FT^K)_{K \text{ maximal}}$.
+\fi
 
-It is therefore a natural question to ask whether there exists some function $\FT^\vee:R_{\un}(G)\rightarrow R_{\un}(G)$ such that the square
+
+
+\subsection{Parahoric restriction for unipotent supercuspidal representations}
+
+Let $G$ be the simple $p$-adic group over $F$. In this section, we investigate the parahoric restriction of supercuspidal unipotent representations of $G$ (if any) with respect to maximal parahoric subgroups. A well-known result of Moy and Prasad states that any supercuspidal unipotent representation $(\pi,V)$ of $G$ is obtained by compactly inducting an irreducible smooth representation $(\rho,E)$ of $K_x^+$, where $x\in\cB(G)$ is a vertex, such that $\rho|_{K_x}$ is the inflation of a cuspidal representation of $\overline{K}_x$. By conjugating if necessary, we may assume that $x$ lies in the closure of the fundamental alcove $\mathcal{C}_0$. Explicitly, 
+$$\pi\cong\cInd_{K_x^+}^G\rho,$$
+so by Frobenius reciprocity we have that 
+\begin{equation*}
+    \Hom_{K_x}(\rho|_{K_x},\pi^{U_x})\supseteq\textcolor{red}{\text{this should be equality }}\Hom_{K_x^+}(\rho,\pi^{U_x})=\Hom_{K_x^+}(\rho,\pi)=\Hom_G(\cInd_{K_x^+}^G\rho,\pi)\cong\CC,
+\end{equation*}
+so $(\pi,V)\in\Irr(G,K_x,E)$. If $J=\{\alpha\in S_{\alpha}\ |\ \langle\alpha,x\rangle=0\}$, then $K_x=K_J$ and by cuspidality $J$ is a minimal subset of $S_{\aff}$, up to the action of $\Omega$, such that $\pi^{U_J}\neq 0$. Now let $I\subsetneq S_{\aff}$ be another subset such that $V^{U_I}\neq 0$. If $\pi^{U_I}$ contains an irreducible cuspidal representation of $\overline{K}_I$ then $I$ is also minimal with respect to $V^{U_I}\neq 0$ and by Theorem \ref{thm:unip_restriction}, $I$ and $J$ are in the same $\Omega$-orbit. If $\pi^{U_I}$ does not contain any irreducible cuspidal representation, then by \ref{prop:harishchandra}, there is some $J'\subset I$ such that $\pi^{U_{J'}}$ contains a cuspidal representation of $\overline{K}_{J'}$ so $J$ and $J'$ lie in the same $\Omega$-orbit, but this is a contradiction since $K_J$ is a maximal parahoric subgroup of $G$. We have thus shown:
+
+\begin{lemma}
+    Let $(\pi,V)$ be a supercuspidal unipotent representation of $G$. Then there is one unique $\Omega$-orbit $[J]$ of subsets of $S_{\aff}$, all of which are maximal such that $\pi^{U_I}\neq 0$ if and only if $I\in[J]$.
+\end{lemma}
+
+
+
+\vspace{3cm}
+
+Suppose $G$ has type $G_2$ with simple reflections $S_{\aff}=\{s_0,s_1,s_2\}$. We note that $\Omega=\{1\}$ so $\Omega$-orbits are all singletons. By combining Example \ref{example:G2_quotients} and Remark \ref{rem:An_unipotent}, given $J\subsetneq S_{\aff}$, the reductive quotient $\overline{K}_J$ has cuspidal unipotent representations if and only if $J=J_0:=\{s_1,s_2\}$ or $J=\emptyset$.
+
+In the first case, $K_0:=K_{J_0}$ is the stabilizer of the origin in the apartment $\cA(G,T)$ and $\overline{K_0}=G_2(\FF_q)$ has $4$ cuspidal unipotent representations labelled $G_2[1],G_2[-1],G_2[\theta]$ and $G_2[\theta^2]$, where $\theta$ is a primitive third root of unity. For any of these representations $\sigma$, Example \ref{example:unip_blocks} shows that the compactly induced representation $\pi=\cInd_{K_0}^G\sigma$ is irreducible and supercuspidal, and 
+$$\Irr(G,K_0,\sigma)=\{\pi\}.$$
+In the second case, $K_\emptyset=\cI$ is the standard Iwahori subgroup (stabilizer of the fundamental alcove) and the only cuspidal unipotent representation of $I/U_I$ is the trivial character. Therefore,
 \[
-\begin{tikzcd}
-R_{\un}(G) \arrow[r, "\FT^\vee"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & R_{\un}(G) \arrow[d, "\res_{\un}^{\mathrm{par}}"] \\
-\bigoplus_K\CC_{\un}[\overline{K}]^{\overline{K}} \arrow[r, "\FT^{\mathrm{par}}"] & \bigoplus_K\CC_{\un}[\overline{K}]^{\overline{K}}
-\end{tikzcd}
+    \Irr_{\un}(G)=\Irr(G,\cI,\mathbf{1})\ \bigcup\ \{\cInd_{K_0}^GG_2[1],\cInd_{K_0}^GG_2[-1],\cInd_{K_0}^GG_2[\theta],\cInd_{K_0}^GG_2[\theta^2]\}.
 \]
+In the next section, we shall describe a natural way to parametrize this family. We shall now investigate the parahoric restriction of these representations with respect to the \textit{maximal parahoric subgroups} $K_0$, $K_1:=K_{\{\alpha_0,\alpha_2\}}$ and $K_2:=K_{\{\alpha_0,\alpha_1\}}$. 
 
-\textcolor{red}{This question is now unresolved, but partial progress has been achieved.} To understand it, we first need to look at the Langlands parametrization of unipotent representations. 
+Firstly, consider the case $\pi=\cInd_{K_0}^G\sigma$ for a cuspidal unipotent representation $\sigma$ of $G_2(\FF_q)$. By Frobenius reciprocity, it follows that $\pi^{U_{K_0}}=\sigma\neq0$ and therefore by Theorem \ref{thm:unip_restriction}, the set $J_0=\{\alpha_1,\alpha_2\}$ is minimal with respect to the property that $V^{U_J}\neq 0$. Suppose for a contradiction that $V^{U_{J_i}}\neq 0$ for $i=1$ or $i=2$, where $J_1:=\{\alpha_0,\alpha_2\}$ and $J_2:=\{\alpha_0,\alpha_1\}$. Since $J_1$ or $J_2$ cannot be minimal with respect to the same property, then $V^{U_{\{\alpha_0\}}}\neq0$. But $\overline{K}_{\{\alpha_0\}}$ has no cuspidal unipotent representations, so $V^{K_{\emptyset}}=V^{I}\neq0$, a contradiction to Corollary \ref{cor:disjoint_reps}.
 
+
+
+
+\newpage
 \subsection{The Langlands parametrization of unipotent representations}
-For this section, we introduce the Weil group $W_F$ of the field $F$ with inertia subgroup $I_F$. Moreover, we set $W_F':=W_F\times\SL_2(\CC)$. %In addition to these groups, Langlands introduced the $L$-group $\prescript{L}{}{G}:=G^\vee\rtimes W_F$ associated to the $p$-adic group $G$, where $G^\vee$ denotes the $\CC$-points of the dual group of $\mathbf{G}$
+
+
+In this section, we give an overview on the Langlands parametrization of unipotent representations achieved by Lusztig in his celebrated paper of 1995. Firstly, we briefly discuss the results of Kazhdan--Lusztig on the parametrization of Iwahori-spherical representation when $G$ is a $p$-adic reductive group of \textit{adjoint} type. Throughout, let $G^\vee$ be complex dual group of $G$.
+
+We recall that the irreducible Iwahori-spherical representations are in bijection with the irreducible modules of $\cH_\cI=\cH(G,\cI,\mathbf{1})$. Let $\cB$ be the variety of Borel subgroups of $G^\vee$ and let 
+$$\mathcal{Z}=\{(B,u,B')\in\cB\times G^\vee\times\cB:u\in B\cap B'\text{ unipotent}\}$$
+be the Steinberg variety of $G$, playing a main role in the representation theory of $\cH_\cI$.
+Importantly, $G^\vee\times\CC^\times$ acts on $\mathcal{Z}$ by
+$$(g,\lambda)(B,u,B')=(gBg^{-1},gu^{\lambda^{-1}}g^{-1},gB'g^{-1}).$$
+This action gives rise to the $K$-group $K^{G^\vee\times\CC^\times}(\mathcal{Z})$, which is naturally a $\CC[z,z^{-1}]$-module and satisfies
+\begin{equation}\label{eqn:Kgroup}
+    K^{G^\vee\times\CC^\times}(\mathcal{Z})\otimes_{\CC[z,z^{-1}]}\CC_q\cong\cH(G,\cI,q).
+\end{equation}
+
+Thus, we want to construct the $K^{G^\vee\times\CC^\times}(\mathcal{Z})$-modules and then specialize to $\cH$-modules via \eqref{eqn:Kgroup}. This is performed most naturally with Borel-Moore homology. 
+
+Let $t\in G^\vee$ be semisimple and let $u\in G^\vee$ be unipotent such that $tut^{-1}=u^q$ and let $\cB^{t,u}\subset\cB$ be the subvariety of Borel subgroups containing $t$ and $u$. Then it turns out that $H_*(\cB^{t,u},\CC)$ is naturally a $K^{G^\vee\times\CC^\times}(\mathcal{Z})$-module, usually reducible. Since these constructions are compatible with conjugation by elements of $G^\vee$, the group $Z_{G^\vee}(t,u)$ acts on $H_*(\cB^{t,u},\CC)$ by $K^{G^\vee\times\CC^\times}(\mathcal{Z})$-intertwiners. In fact, the neutral component of $Z_{G^\vee}(t,u)$ acts trivially, so we may regard it as an action of the component group $\pi_0(Z_{G^\vee}(t,u))$. This action can be used to decompose $H_*(\cB^{t,u},\CC)$ as follows:
+
+For each irreducible representation $\rho$ of $\pi_0(Z_{G^\vee}(t,u))$ appearing in $H_*(\cB^{t,u},\CC)$, the space 
+$$K_{t,u,\rho}:=\Hom_{\pi_0(Z_{G^\vee}(t,u))}(\rho,H_*(\cB^{t,u},\CC))$$
+is a nonzero $K^{G^\vee\times\CC^\times}(\mathcal{Z})$-module, called standard. The data $(t,u,\rho)$ are called \textit{Kazhdan--Lusztig triples} for $(G^\vee,q)$.
+
+\begin{theorem}
+    Under the assumption that $G^\vee$ is simply connected, we have that
+    \begin{enumerate}
+        \item For each Kazhdan--Lusztig triple $(t,u,\rho)$, the $\cH$-module $K_{t,u,\rho}$ has a unique irreducible quotient $L_{t,u,\rho}$.
+        \item Every irreducible $\cH$-module if of the form $L_{t,u,\rho}$ for some Kazhdan--Lusztig triple.
+        \item If $(t',u',\rho')$ is another triple, then $L_{t,u,\rho}\cong L_{t',u',\rho'}$ if and only if there is some $g\in G$ such that $t'=gtg^{-1}$, $u'=gug^{-1}$ and $\rho'=\rho\circ\mathrm{Ad}(g^{-1})$.
+    \end{enumerate}
+\end{theorem}
+
+The above theorem is a major result and has many interesting consequences. However, the definition of a Kazhdan--Lusztig triple is slightly awkward since the pair $(t,u)$ does not commute, and consequently the classification of these triples up to $G$-conjugacy seems hard. Thankfully, this situation can be remedied by considering \textit{Kazhdan--Lusztig triples for $(G^\vee,1)$}. These are defined analogously to the Kazhdan--Lusztig triples for $(G,q)$ but replacing $1$ for $q$ throughout. In particular, the semisimple and unipotent part do commute.
+
+
+\begin{lemma}\label{lem:parametrization}
+    Let $G$ be a $p$-adic reductive group over a field $F$ of residue cardinality $q$ and let $G^\vee$ be its complex dual. There exists a bijection
+    \begin{align*}
+        \{\text{Kazhdan--Lusztig triples for }(G,1)\}/G&\longleftrightarrow\Irr(\cH(G,\cI,q))\\
+        (t,u,\rho)\quad\quad &\longmapsto\quad L_{t_q,u,\rho_q},
+    \end{align*}
+    where and $(t_q,u,\rho_q)$ are obtained from $(t,u,\rho)$ in a prescribed way.
+\end{lemma}
+
+We recall that Kazhdan--Lusztig triples for $(G^\vee,1)$ are defined to be tuples $(t,u,\rho)$ such that $\rho$ is 
+\textit{an irreducible character of $\pi_0(Z_{G^\vee}(tu))$ appearing in $H_*(\cB(t,u),\CC)$}. This begs the question: if $\rho$ does not satisfy this condition, does the triple $(t,u,\rho)$ parametrize a (not Iwahori-spherical) representation of $G$?
+
+This question was studied and completely resolved by Lusztig in his celebrated paper of 1995. He showed that, in order to get a bijection with all pairs $(t,u,\rho)$ without technical conditions on $\rho$, one needs to consider a wider family of representations. Firstly, one needs to consider not only representations of $G$, but also of all of its \textit{pure inner twists}. We let $\InnT^p(G)$ be the set of pure inner twists of $G$. A well known result states that there is a canonical bijection between the sets
+\begin{align}\label{eqn:pure_bijection}
+    \InnT^p(G)\longleftrightarrow H^1(F,\mathbf{G}^*)&\longleftrightarrow\Irr(Z_{G^\vee}),\\
+    G'&\longmapsto\zeta_{G'}
+\end{align}
+For instance, if $G$ is a simply connected $p$-adic group, then $Z_{G^\vee}=\{1\}$ and therefore $G$ has no pure inner twists other than itself. Secondly, one needs to consider all unipotent representations, and not just the Iwahori-spherical. The following theorem contains this information.
+
+\begin{theorem}[The arithmetic-geometric correspondence]\label{thm:correspondence}
+    There is an explicit bijection between the sets
+    \begin{equation*}
+        \bigcup_{G'\in\InnT^p(G)}\Irr_{\un}(G')\longleftrightarrow\mathcal{T}(\sqrt{q})\longleftrightarrow\mathcal{T}(1),
+    \end{equation*}
+    where $\mathcal{T}(v_0)$ is set containing all triples $(s,u,\rho)$ such that
+    \begin{itemize}
+        \item $t\in G^\vee$ is semisimple,
+        \item $u\in G^\vee$ is unipotent satisfying $tut^{-1}=u^{v_0^2}$,
+        \item $\rho$ is an irreducible representation of the group of components of the centralizer group $Z_{G^\vee}(t,u)$.
+    \end{itemize}
+\end{theorem}
+
+For the remaining of the section, we explain how this result fits within the modern framework of the local Langlands correspondence. Let $W_F$ be the Weyl group of the field $F$ with inertia subgroup $I_F$. Moreover, we set $W_F':=W_F\times\SL_2(\CC)$. 
+
 Under the assumption that $\mathbf{G}$ is a split group, we have the following important definition.
 \begin{definition}
     A \textit{Langlands parameter} (or $L$-parameter) for $G$ is a continuous morphism $\varphi:W'_F\rightarrow G^\vee$, where $G^\vee$ denotes the $\CC$-points of the dual group of $\mathbf{G}$, and $\varphi((w,1))$ is semisimple for each $w\in W_F$.
 \end{definition}
 
 
-In its simplest form, the Local Langlands correspondence (LLC) conjectures the existence of a finite to one map between isomorphism classes of smooth admissible complex representations of $G$ and conjugacy classes of Langlands parameters of $G$ satisfying certain nice properties. In particular, the LLC conjectures that the unipotent representations of $G$ correspond to the following Langlands parameters.
+In its simplest form, the Local Langlands correspondence (LLC) conjectures the existence of a finite to one map between isomorphism classes of smooth admissible complex representations of $G$ and conjugacy classes of Langlands parameters of $G$ satisfying certain nice properties. Using Theorem \ref{thm:correspondence}, we will see that the the unipotent representations of $G$ and its pure inner twists correspond to the following Langlands parameters.
 
 \begin{definition}
-    An $L$-parameter $\varphi:W_F\times\SL_2(\CC)\rightarrow G^\vee$ is called \textit{unipotent} if $\varphi(w,1)=1$ for any element $w$ of the inertia subgroup $I_F$ of $W_F$. Such parameters are sometimes called \textit{unramified} Langlands parameters.
+    An $L$-parameter $\varphi:W_F\times\SL_2(\CC)\rightarrow G^\vee$ is called \textit{unipotent} if $\varphi(w,1)=1$ for any element $w$ of the inertia subgroup $I_F$ of $W_F$. Such parameters are sometimes called \textit{unramified} Langlands parameters and we denote this set by $\Phi_{\un}(G^\vee)$.
 \end{definition}
 \begin{remark}
-    For any $L$-parameter $\varphi:W_F'\rightarrow G^\vee$, define the elements $u_\varphi=\varphi(1,\left(\begin{smallmatrix}
+    For any $L$-parameter $\varphi:W_F'\rightarrow G^\vee$, define the commuting elements $u_\varphi=\varphi(1,\left(\begin{smallmatrix}
         1 & 1\\
         0 & 1
-    \end{smallmatrix}\right))$ and $s_\varphi=\varphi(\Frob,\Id)$ that commute. An application of the Jacobson--Morozov theorem implies that an $L$-parameter is determined by $u_\varphi$ and $\varphi|_{W_F}$ up to $G^\vee$-conjugacy. If the $L$-parameter is, in addition, unipotent, then $\varphi|_{W_F}$ is determined by $s_\varphi$. Thus, unipotent $L$-parameters are parametrized by $G^\vee$ conjugacy classes of pairs $(u,s)$ where $u\in G^\vee$ is unipotent, $s\in G^\vee$ is semisimple and they commute. But this is the same as conjugacy classes of elements of $G^\vee$ (by using the Jordan decomposition).
+    \end{smallmatrix}\right))$ and $s_\varphi=\varphi(\Frob,\Id)$. An application of the Jacobson--Morozov theorem implies that an $L$-parameter is determined by $u_\varphi$ and $\varphi|_{W_F}$ up to $G^\vee$-conjugacy. If the $L$-parameter is, in addition, unipotent, then $\varphi|_{W_F}$ is determined by $s_\varphi$. Thus, unipotent $L$-parameters are parametrized by $G^\vee$ conjugacy classes of pairs $(u,s)$ where $u\in G^\vee$ is unipotent, $s\in G^\vee$ is semisimple and they commute. But this is the same as conjugacy classes of elements of $G^\vee$ (by using the Jordan decomposition). This should be reminiscent of the parametrization of Iwahori-spherical representations in Lemma \ref{lem:parametrization}.
 \end{remark}
 
-However, this is a finite-to-one correspondence, so it does not parametrize unipotent representations, but rather $L$-packets of unipotent representations. To get a one to one correspondence, we need to introduce refinements of the $L$-parameters. Given an $L$-parameter $\varphi$, a natural object of interest is the centralizer $Z_{G^\vee}(\varphi)$ of the image of $\varphi$ inside $G^\vee$. Now, $G^\vee$ sits within $G^\vee_{\mathrm{sc}}=(G_{\ad})^\vee\twoheadrightarrow G^\vee\twoheadrightarrow G_{\ad}^\vee$. We then denote $Z_{G^\vee}^1(\varphi)$ to be the inverse image of $Z_{G^\vee}(\varphi)$ under the isogeny $G^\vee_{\mathrm{sc}}\twoheadrightarrow G^\vee$. We then denote by $A_\varphi$, $A^1_\varphi$ to be the component group of $Z_{G^\vee}(\varphi)$ and $Z_{G^\vee}^1(\varphi)$, respectively.
+However, under the LLC correspondence, unramified $L$-parameters do not parametrize unipotent representations, but rather $L$-packets of unipotent representations. To get a one to one correspondence, we need to introduce refinements of the $L$-parameters. Given an $L$-parameter $\varphi$, a natural object of interest is the component group $A_\varphi$ of centralizer $Z_{G^\vee}(\varphi)$ of the image of $\varphi$ inside $G^\vee$. We remark that when $\varphi$ is unipotent, it is determined by the commuting elements $s_\varphi$ and $u_\varphi$ and therefore $Z_{G^\vee}(\varphi)=Z_{G^\vee}(s_\varphi u_\varphi)$. This object is completely analogous to the centralizer $Z_{G^\vee}(t,u)$, considered by Kazhdan and Lusztig in the setting of representations of Hecke algebras. 
 
 \begin{definition}
-    An enhanced Langlands parameter is a pair $(\varphi,\phi)$, where $\varphi:W_F'\rightarrow G^\vee$ is an $L$-parameter and $\phi$ is an irreducible representation of $A_\varphi^1$. 
+    An \textit{enhanced pure Langlands parameter} is a pair $(\varphi,\phi)$, where $\varphi:W_F'\rightarrow G^\vee$ is an $L$-parameter and $\phi$ is an irreducible representation of $A_\varphi$. 
 \end{definition}
 
-Let us introduce some notation. We denote by $\Phi_{\un}(G^\vee)$ the set of unipotent $L$-parameters and $\Phi_{e,\un}(G^\vee)$ the set of all \textit{enhanced} unipotent $L$-parameters. Similarly to $L$-parameters, an enhanced $L$-parameter $(\varphi,\phi)$ is determined by the triple $(u_\varphi,\varphi|_{W_F},\phi)$, and if it is also unipotent, then it is determined by the triple $(u_\varphi,s_\varphi,\phi)$. Moreover, if $x_\varphi=s_\varphi u_\varphi$, then $Z_{G^\vee}(\varphi)=Z_{G^\vee}(x_\varphi)$, and therefore there is a canonical bijection
-\begin{align*}
-    \Phi_{\mathrm{e,un}}(G^\vee)&\longleftrightarrow G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x^1}\},\\
-    (\varphi,\phi)&\longmapsto (s_\varphi u_\varphi,\phi)
-\end{align*}
-where $A_x^1$ is the component group of $Z^1_{G^\vee}(x)$.
-
-Then the LLC predicts that there is a natural bijection
-\begin{align*}
-    \LLC_{\un}: G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x^1}\}\longleftrightarrow\Phi_{\mathrm{e,un}}(G^\vee)\longleftrightarrow&\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G')\\
-    (x,\phi)\hspace{1.5cm}\longmapsto \hspace{1.5cm}&\quad\pi(x,\phi),
-\end{align*}
-where $G'$ runs over the classes of inner twists of $G$. We say that a pair $(x,\phi)$ is $G'$-relevant if $\pi(x,\phi)\in\Irr_{\un}(G')$, and this property can be checked explicitly. Firstly, we note that there is a canonical bijection 
-$$\InnT(G)\longleftrightarrow H^1(F,\mathrm{Inn}(\mathbf{G}^*))\longleftrightarrow\Irr(Z_{G^\vee_{sc}}),\quad G'\longmapsto\zeta_{G'}.$$
-Similarly, for any pair $(x,\phi)$, the representation $\phi$ induces a character $\zeta_\phi$ on $Z_{G^\vee_{sc}}$. Then $\pi(x,\phi)$ is $G'$ relevant if and only if $\zeta_\phi=\zeta_{G'}$ and we denote the set of $G'$-relevant parameters by $\Phi_{e,\un}(G')$. 
-
-It is then clear that 
-$$\Phi_{e,\un}(G^\vee)=\bigsqcup_{G'\in\InnT(G)}\Phi_{e,\un}(G'),$$
-and the LLC predicts that $\Phi_{e,\un}(G')$ parametrizes the set $\Irr_{\un}(G')$ for each $G'\in\InnT(G)$.
-
-\subsubsection{Pure Langlands parameters}
-
-One can also refine $L$-parameters by considering instead pairs $(\varphi,\phi)$, where $\varphi$ is an $L$-parameters and $\phi$ is an irreducible representations of $A_\varphi$. We then set 
+Let us introduce some important notation. Define
 $$\Phi_{\mathrm{e,un}}^p(G^\vee)=G^\vee\backslash\{(\varphi,\phi)\ |\ \varphi\text{ unipotent, }\phi\in\widehat{A_\varphi}\},$$
-which is in natural bijection with the set 
+which by the previous paragraph is in natural bijection with the set 
 $$G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x}\},$$
 where $A_x$ is the component group of $Z_{G^\vee}(x)$.
 
 In this setting the Local Langlands conjecture predicts a natural bijection
-\begin{equation*}
-    G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\bigsqcup_{G'\in\InnT^p(G)}\Irr_{\un}(G'),\quad (x,\phi)\longmapsto\pi(x,\phi)
-\end{equation*}
-where $G'$ now runs over the classes of \textit{pure} inner twists of $G$. We distinguish between the distinct pure inner twists by looking at characters of $Z_{G^\vee}$.
+\begin{align*}
+    \LLC^p_{\un}: G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x}\}\longleftrightarrow\Phi^p_{\mathrm{e,un}}(G^\vee)\longleftrightarrow&\bigsqcup_{G'\in\InnT^p(G)}\Irr_{\un}(G')\\
+    (x,\phi)\hspace{1.5cm}\longmapsto \hspace{1.5cm}&\quad\pi(x,\phi),
+\end{align*}
+where $G'$ runs over the classes of \textit{pure} inner twists of $G$. 
+
+We distinguish between the distinct pure inner twists by looking at characters of $Z_{G^\vee}$. By \eqref{eqn:pure_bijection}, each pure inner twist $G'$ naturally corresponds to some character $\zeta_{G'}$ of $Z_{G^\vee}$. Similarly, for any pure enhanced $L$-parameter $(\varphi,\phi)$, the representation $\phi$ induces a character $\zeta_\phi$ on $Z_{G^\vee_{sc}}$. We say that a pair $(\varphi,\phi)$ is $G'$-relevant if $\zeta_\phi=\zeta_{G'}$, in which case $\pi(x_\varphi,\phi)\in\Irr_{\un}(G')$ if $\varphi$ is unipotent, and we denote the set of $G'$-relevant pure enhanced unipotent $L$-parameters by $\Phi^p_{e,\un}(G)$.
+It is then clear that 
+$$\Phi_{e,\un}(G^\vee)=\bigsqcup_{G'\in\InnT(G)}\Phi_{e,\un}(G'),$$
+and the LLC predicts that $\Phi_{e,\un}(G')$ parametrizes the set $\Irr_{\un}(G')$ for each $G'\in\InnT(G)$.
 
 \begin{example}
     If $\mathbf{G}$ is a simple split \textit{simply connected} algebraic group, then $H^1(F,\mathbf{G}^*)=1$ and therefore there is only one class of pure inner forms of $G$, namely $G$ itself. Correspondingly, $G^\vee=G^\vee_{\ad}$ and $Z_{G^\vee}$ is trivial. Therefore, the above discussion gives a bijection 
@@ -356,3 +558,71 @@ where $G'$ now runs over the classes of \textit{pure} inner twists of $G$. We di
         G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G'),\quad (x,\phi)\longmapsto\pi(x,\phi)
     \end{equation*}
 \end{example}
+
+\subsection{Unipotent conjugacy classes of complex simple groups}\label{subsec:unipotent_classes}
+
+In the previous paragraph we stated the unramified local Langlands correspondence, which reduces the classification of unipotent representations of $G$ to the classification of conjugacy classes or $G^\vee$ and the structure of the component group of their centralizer. To understand these, one first studies the classification of unipotent conjugacy classes of $G^\vee$, an interesting problem on its own right that uncovers rich structure inside $G^\vee$. 
+
+Define $\mathcal{U}$ to be the set of unipotent elements of $G^\vee$. This can be seen to be a closed irreducible subvariety of $G^\vee$ of dimension $\dim G^\vee-\rk G^\vee$. If $u\in \mathcal{U}$ is a unipotent element, its conjugacy class $C(u)\subset H$ is the orbit of $u$ under the conjugation action of $G^\vee$ on itself. Standard results in the structure theory of unipotent elements inside complex reductive groups state that $G^\vee$ has finitely many conjugacy classes of unipotent elements, and that each class $C$ is a locally closed subvariety of $G^\vee$. Moreover, its closure $\overline{C}$ is the union of (finitely many) unipotent conjugacy classes. In particular, there is one unique unipotent conjugacy class $C_{\reg}$ of maximal dimension such that $C_{\reg}$ is open and $\overline{C_{\reg}}=\mathcal{U}$. Such unipotent elements are called \textit{regular}, and $\dim Z_{G^\vee}(u)=\rk G^\vee$ for any $u\in C_{\reg}$. The boundary of $C_{\reg}$ has dimension $\dim G^\vee-\rk G^\vee-2$ and contains a unique dense unipotent conjugacy class $C_{subreg}$ of \textit{subregular} unipotent elements such that 
+$$\overline{C_{subreg}}=\overline{C_{\reg}}-C_{\reg}=\mathcal{U}-C_{\reg}.$$
+Similarly, $\dim_{Z_{G^\vee}}(u)=\rk G^\vee+2$ for any $u\in C_{subreg}$. At the other end, there is the trivial class consisting of $\{1\}$, and this is the only closed conjugacy class. There is one further "canonical orbit", the set of \textit{minimal} unipotent elements $C_{\min}$, with the property that they are contained in the closure of every unipotent conjugacy class except for $\{1\}$.  
+
+Beyond these four classes, the structure of $\mathcal{U}$ for a general simple complex group can be complicated. To study it, one can define a partial ordering on the set of unipotent conjugacy classes given by 
+$$C\leq C'\quad\text{if and only if}\quad\overline{C}\subseteq\overline{C'}.$$
+One can then picture this partial order in a diagram, called a \textit{Hasse diagram}, and one has the following generic picture.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics{Unipotent structure.png}
+\end{figure}
+
+\begin{example}
+    If $\mathbf{G}$ is a simple split algebraic group of type $G_2$, then $G=\mathbf{G}(F)$ is both adjoint and simply connected and consequently there is a bijection
+    \begin{equation*}
+        G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\Irr_{\un}(G)=\Irr(G,\cI,\mathbf{1})\ \bigcup\ \{\cInd_{K_0}^GG_2[\alpha]\ |\ \alpha\in\{1,-1,\theta,\theta^2\}\}.
+    \end{equation*}
+    Let us indicate which pairs $(x=su,\rho)$ in the left correspond to the $4$ unipotent supercuspidal representations of $G_2$. Since supercuspidal representations are square-integrable (\textcolor{red}{Is this true?}), it is enough to look at the regular and subregular unipotent elements.
+    \begin{itemize}
+        \item Let $u=u_{\reg}$ be the regular unipotent element. In that case $A_u=1$ and therefore $s=1$, $A_x=A_u=1$ and $\rho$ is the trivial representation. The corresponding representation $\pi(u_{\reg},\mathbf{1})$ is the Steinberg representation.
+        \item Let $u=u_{\sr}$ be the subregular unipotent element. In that case, $A_u=S_3$ so up to conjugacy, $s\in\{1,g_2,g_3\}$ where $g_i$ is a lift of order $i$ from $A_u$ to $Z_{G^\vee}(u)$. Moreover, $A_{ug_2}=S_3$ and $A_{ug_3}=s_2$. The corresponding table gives the required parametrization.
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics{subregular_element.png}
+        \end{figure}
+    \end{itemize}
+\end{example}
+
+
+
+\newpage
+
+\iffalse
+\subsubsection{Enhanced Langlands parameters}
+
+Now, $G^\vee$ sits within $G^\vee_{\mathrm{sc}}=(G_{\ad})^\vee\twoheadrightarrow G^\vee\twoheadrightarrow G_{\ad}^\vee$. We then denote $Z_{G^\vee}^1(\varphi)$ to be the inverse image of $Z_{G^\vee}(\varphi)$ under the isogeny $G^\vee_{\mathrm{sc}}\twoheadrightarrow G^\vee$. We denote by $A^1_\varphi$ to be the component group of $Z_{G^\vee}^1(\varphi)$, respectively. In some contexts, the following refinement of Langlands parameters are required.
+
+\begin{definition}
+    An enhanced Langlands parameter is a pair $(\varphi,\phi)$, where $\varphi:W_F'\rightarrow G^\vee$ is an $L$-parameter and $\phi$ is an irreducible representation of $A_\varphi^1$. 
+\end{definition}
+
+Similarly to $L$-parameters, an enhanced $L$-parameter $(\varphi,\phi)$ is determined by the triple $(u_\varphi,\varphi|_{W_F},\phi)$, and if it is also unipotent, then it is determined by the triple $(u_\varphi,s_\varphi,\phi)$. Moreover, if $x_\varphi=s_\varphi u_\varphi$, then $Z_{G^\vee}(\varphi)=Z_{G^\vee}(x_\varphi)$, and therefore there is a canonical bijection
+\begin{align*}
+    \Phi_{\mathrm{e,un}}(G^\vee)&\longleftrightarrow G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x^1}\},\\
+    (\varphi,\phi)&\longmapsto (s_\varphi u_\varphi,\phi)
+\end{align*}
+where $A_x^1$ is the component group of $Z^1_{G^\vee}(x)$.
+
+The LLC then predicts that enhanced Langlands parameters parametrize the unipotent representations of all \textit{inner twists} of $G$, a set denoted by $\InnT(G)$ and which is sometimes more natural to study. Explicitly, the LLC predicts there is a bijection between the sets
+\begin{align*}
+    \LLC_{\un}: G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x^1}\}\longleftrightarrow\Phi_{\mathrm{e,un}}(G^\vee)\longleftrightarrow&\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G')\\
+    (x,\phi)\hspace{1.5cm}\longmapsto \hspace{1.5cm}&\quad\pi(x,\phi),
+\end{align*}
+where $G'$ runs over the classes of inner twists of $G$. We say that a pair $(x,\phi)$ is $G'$-relevant if $\pi(x,\phi)\in\Irr_{\un}(G')$, and this property can be checked explicitly. Firstly, we note that there is a canonical bijection 
+$$\InnT(G)\longleftrightarrow H^1(F,\mathrm{Inn}(\mathbf{G}^*))\longleftrightarrow\Irr(Z_{G^\vee_{sc}}),\quad G'\longmapsto\zeta_{G'}.$$
+Similarly, for any pair $(x,\phi)$, the representation $\phi$ induces a character $\zeta_\phi$ on $Z_{G^\vee_{sc}}$. Then $\pi(x,\phi)$ is $G'$ relevant if and only if $\zeta_\phi=\zeta_{G'}$ and we denote the set of $G'$-relevant parameters by $\Phi_{e,\un}(G')$. 
+
+It is then clear that 
+$$\Phi_{e,\un}(G^\vee)=\bigsqcup_{G'\in\InnT(G)}\Phi_{e,\un}(G'),$$
+and the LLC predicts that $\Phi_{e,\un}(G')$ parametrizes the set $\Irr_{\un}(G')$ for each $G'\in\InnT(G)$.
+\fi
+
+

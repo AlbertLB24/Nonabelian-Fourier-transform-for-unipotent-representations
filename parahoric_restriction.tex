@@ -1,0 +1,70 @@
+\section{Parahoric restriction of Iwahori-spherical representations}
+
+Let $G$ be a connected split simple group \textit{of adjoint type} over a $p$-adic field $F$. Recall that from the previous section we know that there is a bijection 
+
+\begin{align*}
+    \LLC^p_{\un}: G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x}\}\longleftrightarrow&\bigsqcup_{G'\in\InnT^p(G)}\Irr_{\un}(G')\\
+    (x,\phi)\hspace{1.5cm}\longmapsto \hspace{1.5cm}&\quad(\pi(x,\phi),V(x,\phi)).
+\end{align*}
+
+The aim for this section is to give explicit methods that allow us to compute the $\overline{K}_J$-irreducible modules of $V^{U_J}$ for each maximal $J\subsetneq S_{\aff}$ whenever $V=V(x,\phi)$ is an Iwahori-spherical representation of $G$. These methods are quite complex and involve deep mathematics -- the difficulty resides in the fact that the parametrization of the unipotent representations of $p$-adic groups and that of finite groups of Lie type are not related in an obvious way.
+
+When the representation $V(x,\phi)$ is Iwahori-spherical, all irreducible $\overline{K}_J$-constituents of $V(x,\phi)^{U_J}$ are principal series representations and can be labelled by the representations of the Weyl group of $\overline{K_J}$. The method we present here consists in two major reduction steps; the first one involves Hecke algebras and the second one affine Weyl groups.
+
+Let us assume first that $V$ is any admissible representation of $G$ and fix some $J\subsetneq S_{\aff}$ such that $V^J\neq0$. For each irreducible $K_J$-representation $\chi$ trivial on $U_J$, we want to calculate the value of $\langle\chi,V^{U_J}\rangle_{K_J}$. To do this, we note that there is some parahoric subgroup $(K,U_K,\overline{K})$ contained in $(K_J,U_J,\overline{K}_J)$ and cuspidal representation $\sigma$ of $K$ trivial on $U_K$ such that 
+$$\chi^\sigma:=\Hom_K(\sigma,\chi)=\Hom_{K_J}(\Ind_K^{K_J}\sigma,\chi)\neq 0.$$
+Moreover, $\chi^\sigma$ is a naturally a $\cH(K_J,K,\sigma)$-module, where $\cH(K_J,K,\sigma)\cong\End_{K_J}(\Ind_K^{K_J}\sigma)$ is the subalgebra of functions of $\cH(G,K,\sigma)$ supported on $K_J$. Similarly, the vector space
+$$V^\sigma:=\Hom_K(\sigma,V)$$
+is naturally a $\cH(G,K,\sigma)$-module and therefore a $\cH(K_J,K,\sigma)$-module by restriction.
+\begin{lemma}\label{lem:multiplicity}[First reduction]
+    The multiplicity of the simple $K_J$-module $\chi$ in $V^{U_J}$ is given by 
+    $$\langle\chi,V^{U_J}\rangle_{K_J}=\langle\chi^\sigma,V^\sigma\rangle_{\cH(K_J,K,\sigma)}.$$
+\end{lemma}
+\begin{proof}
+    Since $U_J\subseteq U$, we have that
+    \begin{align*}
+        V^\sigma=\Hom_K(\sigma,V)&=\Hom_K(\sigma,V^{U_J})\simeq\Hom_{K_J}(\Ind_K^{K_J}\sigma,V^{U_J})\\
+        &\simeq\bigoplus_\eta\langle\eta,V^{U_J}\rangle_{K_J}\Hom_{K_J}(\Ind_K^{K_J}\sigma,\eta)\\
+        &\simeq\bigoplus_\eta\langle\eta,V^{U_J}\rangle_{K_J}\eta^\sigma,
+    \end{align*}
+    and therefore
+    \begin{equation*}
+        \langle\chi^\sigma,V^\sigma\rangle_{\cH(K_J,K,\sigma)}=\sum_\eta\langle\chi^\sigma,\eta^\sigma\rangle_{\cH(K_J,K,\sigma)}\langle\eta,V^{U_J}\rangle_{K_J}=\langle\chi,V^{U_J}\rangle_{K_J},
+    \end{equation*}
+    as desired.
+\end{proof}
+
+\begin{example}
+    Assume that $V$ is an Iwahori-spherical representation of $G$ and let $\chi$ be an irreducible $K_J$-representation trivial on $U_J$ such that 
+    $$\langle\chi,V^{U_J}\rangle_{K_J}\neq 0.$$
+    Let $(K,U_K,\overline{K})$ and $\sigma$ be as above, so that $$\chi^\sigma=\Hom_K(\sigma,\chi)\neq 0.$$
+    Since $\sigma$ is irreducible and trivial on $U_K$ it follows by composing both conditions that
+    $$\langle\sigma,V^{U_K}\rangle_{K}=\langle\sigma,V^{U_J}\rangle_{K}\neq 0.$$
+    However, $V$ is assumed to be Iwahori-spherical, so by Theorem \ref{thm:unip_restriction} we have that $K=\cI$ is the Iwahori subgroup and $\sigma=\mathbf{1}$ is the trivial representation. Lemma \ref{lem:multiplicity} states that 
+    $$\langle\chi,V^{U_J}\rangle_{K_J}=\langle\chi^\cI,V^\cI\rangle_{\cH(K_J,\cI,\mathbf{1})}.$$
+\end{example}
+
+Now let us consider the second reduction step. For this one, we let $R=\CC(v,v^{-1})$, where $v$ is an indeterminate. We then define $\cH(G,K,\sigma)_v$ to be the Hecke algebra defined over $R$ with the same generators and relations as $\cH(G,K,\sigma)$, but with $q$ replaced by $v^2$. The upshot of considering this generic Hecke algebra is that by specializing $v$ we can recover
+$$\cH(G,K,\sigma)_{\sqrt{q}}=\cH(G,K,\sigma),\quad\quad \cH(G,K,\sigma)_1=\CC[\widetilde{W}].$$
+
+\textbf{Fact:} For any simple $\cH(G,K,\sigma)$-module $E$ \textit{considered in this document}, there is a $\cH(G,K,\sigma)_v$-module $E_v$ such that 
+\[
+    E\simeq E_v\otimes_R\CC, \text{ where }f\in R\text{ acts on $\CC$ by }f(\sqrt{q}).
+\]
+It then follows that we have a $q=1$ operation that takes simple modules over Hecke algebras to modules over the corresponding Weyl groups, obtained by setting $v=1$ in all matrix coefficients of the generic module.
+
+\begin{proposition}[Second reduction]\label{prop:second_red}
+    Let $J\subsetneq S_{\aff}$ and let $(K,U_K,\overline{K})$ be a parahoric subgroup contained in $(K_J,U_J,\overline{K}_J)$ with cuspidal unipotent $\overline{K}$-representation $\sigma$. Then the diagram 
+    \[
+        \begin{tikzcd}
+        \cH(G,K,\sigma)\textrm{-mod} \arrow[r, "q=1"] \arrow[d, "\Res_{\cH(K_J,K,\sigma)}"'] & \widetilde{W}\textrm{-mod} \arrow[d, "\Res_{\widetilde{W}_J}"] \\
+        \cH(K_J,K,\sigma)\textrm{-mod} \arrow[r, "q=1"] & \widetilde{W}_J\textrm{-mod}
+        \end{tikzcd}
+    \]
+    is commutative, and the bottom arrow is an isometry with respect to the usual inner product of character. That is, for any irreducible $K_J$-module $\chi$, we have that 
+    \begin{equation}
+        \langle\chi^\sigma,V^\sigma\rangle_{\cH(K_J,K,\sigma)}=\langle\chi^\sigma_{q=1},V^\sigma_{q=1}\rangle_{\widetilde{W}_J}.
+    \end{equation}
+\end{proposition}
+
+\textcolor{red}{Need to talk about the connection between $V_{q=1}^\sigma$ and cohomology groups of flag varieties. This could also be a good point to talk about the Springer Correspondence!}
