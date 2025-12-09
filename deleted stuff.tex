@@ -1,0 +1,91 @@
+\section{Parahoric restriction for t1}
+
+\begin{lemma}\label{lem:springer_subregular}
+    The graded complex vector space $H(\mathcal{B}^u)=H^0(\mathcal{B}^u)\oplus H^2(\mathcal{B}^u)$ has a natural action of the group $W(B_n)\times A_u$ preserving the grading. The $W(B_n)$-modules $H^0(\mathcal{B}^u)^\mathbf{1}$, $H^2(\mathcal{B}^u)^\mathbf{1}$ and $H^2(\mathcal{B}^u)^\varepsilon$ afford the representations labelled by $(n,\emptyset)$, $(n-1,1)$ and $((n-1)1,\emptyset)$, respectively, while $H^0(\mathcal{B}^u)^\varepsilon=0$
+\end{lemma}
+
+From this, we can immediately compute that 
+\begin{align*}
+    \pi(ut_0,\mathbf{1})^\mathcal{I}_{q=1}|_W&=\varepsilon\otimes H(\mathcal{B}^u)^\mathbf{1}=\varepsilon\otimes\left[(n,\emptyset)+(n-1,1)\right]=(\emptyset,1^n)+(1,1^{n-1}),\\
+    \pi(ut_0,\varepsilon)^\mathcal{I}_{q=1}|_W&=\varepsilon\otimes H(\mathcal{B}^u)^\varepsilon=\varepsilon\otimes((n-1)1,\emptyset)=(\emptyset,21^{n-2}),
+\end{align*}
+
+The analogous computation for $\pi(ut_1,\mathbf{1})^\mathcal{I}_{q=1}|_W$ and $\pi(ut_1,\varepsilon)^\mathcal{I}_{q=1}|_W$ is significantly more involved. Firstly, we note that 
+\begin{align*}
+    Z_{G^\vee}(t_1)=Z_{G^\vee}(t_1)^0\times\langle w_{\alpha^0}\rangle\quad\text{where}\quad
+    Z_{G^\vee}(t_1)^0=\langle T,\mathfrak{X}_{\pm\alpha_2},\ldots,\mathfrak{X}_{\pm\alpha_{n-1}},\mathfrak{X}_{\pm\alpha_{n}}\rangle
+\end{align*}
+is a connected reductive group of type $B_{n-1}$. The Weyl group of $Z_{G^\vee}(t_1)$ is 
+$$W_{t_1}=\langle w_{\alpha_2},\ldots,w_{\alpha_{n-1}},w_{\alpha_{n}}\rangle\times\langle w_{\alpha^0}\rangle\cong W(B_{n-1})\times C_2$$ 
+and acts on $T$ by the transformations 
+$$h(a_1,\ldots,a_{n-1},a_n)\longmapsto h(a_{1}^{\pm1},a_{\tau(2)}^{\pm1},\ldots,a_{\tau(n)}^{\pm1}),\quad\text{where }\tau\in S_{n-1}.$$
+Thus $|W_{t_1}|=2^n(n-1)!$ and the index inside $W$ is $[W:W_{t_1}]=n$. From the descriptions above, $u\in Z_{G^\vee}(t_1)$ and is a regular unipotent element, so $\dim\mathcal{B}^u_{t_1}=0$. However, since $Z_{G^\vee}(t_1)$ is not connected, the structure of $\mathcal{B}^u_{t_1}$ is more interesting.
+
+\begin{lemma}
+    The variety $\mathcal{B}^u_{t_1}$ consists of two points. The two dimensional complex vector space $H^0(\mathcal{B}^u_{t_1})$ has a natural action of $W_{t_1}\times A_{ut_1}$ and $H^0(\mathcal{B}^u_{t_1})^\mathbf{1}$, $H^0(\mathcal{B}^u_{t_1})^\varepsilon$ are one-dimensional representations of $W_{t_1}=\langle w_{\alpha_1},\ldots,w_{\alpha_{n-1}}\rangle\times\langle w_{\alpha^0}\rangle\cong W(B_{n-1})\times C_2$ affording the characters $(n-1,\emptyset)\otimes\mathbf{1}$, $(n-1,\emptyset)\otimes\varepsilon$, respectively.
+\end{lemma}
+\begin{proof}
+    Since $u\in Z_{G^\vee}(t_1)$ is regular, it is contained in a unique Borel subgroup $B=\langle T,\mathfrak{X}_{\alpha_2},\ldots,\mathfrak{X}_{\alpha_{n-1}},\mathfrak{X}_{\alpha_{n}}\rangle$. We know that $t_2=h_uw_{\alpha^0}\in Z_{G^\vee}(u)-B$, so $u\in \prescript{t_2}{}{B}$. but $B\neq\prescript{t_2}{}{B}$. \textcolor{red}{Since $A_u=C_2$, these are the only two Borel subgroups containing $u$.}
+
+    We note that $A_{ut_1}=\{1,t_2\}$ and that $t_2$ acts on $\mathcal{B}^u_{t_1}$ by permuting both points and therefore 
+    $$H^0(\mathcal{B}^u_{t_1})^\mathbf{1}=\CC(B+\prescript{t_2}{}{B}),\quad\text{while}\quad H^0(\mathcal{B}_{t_1}^u)^\varepsilon=\CC(B-\prescript{t_2}{}{B})$$
+
+
+    By the classical Springer correspondence of type $B_{n-1}$ applied to the regular orbit containing $u$, we have that $\langle w_{\alpha_1},\ldots,w_{\alpha_{n-1}}\rangle$ acts trivially on $H^0(\mathcal{B}^u_{t_1})$. 
+    On the other hand, since $t_2\in N(T_n)$ maps to $w_{\alpha^0}$, the action of $w_{\alpha^0}$ on $H^0(\mathcal{B}_{t_1}^u)$ coincides with that of $t_2$.
+    \textcolor{red}{Maybe should justify this with the generalized Springer correspondence for disconnected reductive groups.}
+\end{proof}
+ 
+From these structural results, we can compute the parahoric restrictions of $\pi(ut_1,\mathbf{1})$ and $\pi(ut_1,\varepsilon)$.
+
+\begin{lemma}\label{lem:indWs1}
+    With the notation as above, we have that, as $W$-modules,
+    $$\pi(ut_1,\mathbf{1})^\mathcal{I}_{q=1}|_W=(\emptyset,1^n)+(\emptyset,21^{n-2})\quad\text{and}\quad\pi(ut_1,\varepsilon)^\mathcal{I}_{q=1}|_W=(1,1^{n-1}).$$
+\end{lemma}
+\begin{proof}
+    This is a direct calculation. From \textcolor{red}{(Deleted reference)}, we know that 
+    \begin{align*}
+        \pi(ut_1,\mathbf{1})^\mathcal{I}_{q=1}|_W&=\varepsilon\otimes\Ind_{W_{t_1}}^W H(\mathcal{B}^u_{t_1})^\mathbf{1}=\varepsilon\otimes\Ind_{W(B_{n-1})\times C_2}^W (n-1,\emptyset)\otimes\mathbf{1},\\
+        \pi(ut_1,\varepsilon)^\mathcal{I}_{q=1}|_W&=\varepsilon\otimes\Ind_{W_{t_1}}^W H(\mathcal{B}^u_{t_1})^\varepsilon=\varepsilon\otimes\Ind_{W(B_{n-1})\times C_2}^W (n-1,\emptyset)\otimes\varepsilon,
+    \end{align*}
+    and thus we analyze each induced representation. Recall that $(n-1,1)$ is the natural $n$-dimensional reflection representation of $W(B_n)$ acting on the $\CC$-span of $\alpha_1,\ldots,\alpha_n$. The line $l$ spanned by the root $\alpha^0=\alpha_1+\ldots+\alpha_n$ is a $1$-dimensional $W_{t_1}=\langle w_{\alpha_2},\ldots,w_{\alpha_{n}}\rangle\times\langle w_{\alpha^0}\rangle$-stable subspace, where $w_{\alpha_2},\ldots,w_{\alpha_{n}}$ act trivially while $w_{\alpha^0}$ acts by $\varepsilon$. Thus 
+    $$\Hom_W(\Ind_{W(B_{n-1})\times C_2}^W (n-1,\emptyset)\otimes\varepsilon,(n-1,1))=\Hom_{W(B_{n-1})\times C_2}((n-1,\emptyset)\otimes\varepsilon,(n-1,1))=\CC,$$
+    and since $[W:W_{t_1}]=n=\dim(n-1,1)$, it follows that $\Ind_{W_{t_1}}^W H(\mathcal{B}^u_{t_1})^\varepsilon=(n-1,1)$. We then twist by $\varepsilon$ to obtain 
+    $$\pi(ut_1,\varepsilon)^\mathcal{I}_{q=1}|_W=(1,1^{n-1}).$$
+
+    \iffalse On the other hand, we note that there is a double space decomposition $W=W_{t_1}\sqcup W_{t_1}w_{\alpha_n}W_{t_1}$, and since $H^0(\mathcal{B}^u_{t_1})^\mathbf{1}$ affords the trivial $W_{t_1}$ representation, by combining Mackey theory and Frobenius reciprocity we observe that 
+    \begin{equation*}
+        \langle\Ind_{W_{t_1}}^W H(\mathcal{B}^u_{t_1})^\mathbf{1},\Ind_{W_{t_1}}^W H(\mathcal{B}^u_{t_1})^\mathbf{1}\rangle_W=|W_{t_1}\backslash W/W_{t_1}|=2,
+    \end{equation*}
+    so $\Ind_{W_{t_1}}^W H(\mathcal{B}^u_{t_1})^\mathbf{1}=(n,\emptyset)+(\alpha,\beta)$, where $(\alpha,\beta)$ is a $n-1$-dimensional irreducible representation of $W(B_n)$. 
+    \fi
+
+    On the other hand, the first statement of the Lemma will follow immediately if we prove that 
+    \begin{equation}\label{eqn:IndWs1}
+        \Ind_{W_{t_1}}^W H(\mathcal{B}^u_{t_1})^\mathbf{1}=\varepsilon\otimes\left((\emptyset,1^n)+(\emptyset,21^{n-2})\right)=(n,\emptyset)+((n-1)1,\emptyset).
+    \end{equation}
+    We note that $\dim(n,\emptyset)=1$ while $\dim((n-1)1,\emptyset)=n-1$, so the dimensions in \eqref{eqn:IndWs1} agree in both sides. Moreover, using the fact that $|W_{t_1}\backslash W/W_{t_1}|=2$, together with Mackey theory, one can easily show that the above induction decomposes into two irreducible subrepresentations. Since $H(\mathcal{B}^u_{t_1})^\mathbf{1}$ is the trivial representation of $W_{t_1}$, the trivial representation $(n,\emptyset)$ must also appear in the induction, so it remains to show that $((n-1)1,\emptyset)$ is the other component. Similarly to the computation above, it is enough by Frobenius reciprocity to show that $((n-1)1,\emptyset)$ contains a (necessarily unique) $1$-dimensional vector subspace on which $W_{t_1}$ acts trivially.
+
+    To prove this last assertion, we need to analyze the construction of $((n-1)1,\emptyset)$ as a Macdonald representation of $W(B_n)$. By \textcolor{red}{Carter 11.4.2}, the root system associated to the bipartition $((n-1)1,\emptyset)$ has type $D_2=A_1\times A_1$, and by convenience we choose $\Phi'=\{\pm\alpha_1,\pm\alpha_0\}$ with corresponding Weyl group $W'=\langle w_{\alpha_1},w_{\alpha_0}\rangle\cong C_2^2$. Let $V$ be the $n$-dimensional vector space affording the natural reflection representation $(n-1,n)$ of $W(B_n)$. Since $\Phi'$ has two positive roots, the representation $((n-1)1,\emptyset)$ is a component of the representation $\Sym^2(V^*)$. By an analogous argument, the irreducible $n(n-1)/2$ - dimensional representation $(n-2,2)$ is also a subrepresentation of $\Sym^2(V^*)$. We now calculate explicitly a basis for each of these representations. 
+
+    Let us fix an orthonormal basis $\{e_1,\ldots,e_n\}$ of $V$ such that $\alpha_i=e_i-e_{i+1}$ for $1\leq i\leq n-1$ and $\alpha_n=e_n$. Then one can calculate that $W(B_n)$ acts on $V^*\cong V$ by the transformations
+    \begin{equation*}
+        w_{\alpha_i}=\begin{psmallmatrix}
+            I_{i-1} & & &\\
+            & 0 & 1 & \\
+            & 1 & 0 & \\
+            & & & I_{n-i-1}
+        \end{psmallmatrix}\quad\text{for } 1\leq i\leq n-1,\quad\text{and}\quad w_{\alpha_n}=\begin{psmallmatrix}
+            I_{n-1} & 0\\
+            0 & -1
+        \end{psmallmatrix}.
+    \end{equation*}
+    Let $\{x_1,\ldots,x_n\}$ be the dual basis of $\{e_1,\ldots,e_n\}$ in $V^*$ so $\Sym^2(V^*)=\Span_\CC\{x_ix_j\ |\ 1\leq i\leq j\leq n\}$ is the space of degree $2$ homogeneous polynomials on $V$. There is a direct sum decomposition $\Sym^2(V^*)=U_1\oplus U_2\oplus U_3$ in $W(B_n)$-invariant subspaces, where  
+    $$U_1=\Span_\CC\{\sum_{i=1}^n x_i^2\},\quad U_2=\Span_\CC\{x_{i}^2-x_{i+1}^2\ |\ 1\leq i\leq n-1\},\quad U_3=\Span_\CC\{x_ix_j\ | \ 1\leq i<j\leq n\}$$
+    have dimensions $1$, $n-1$ and $n(n-1)/2$, respectively. In the preceding paragraph we discussed the fact that both $((n-1)1,\emptyset)$ and $(n-2,2)$ are components of $\Sym^2(V^*)$ and it thus follows that the subspaces $U_1$, $U_2$ and $U_3$ afford the representations $(n,\emptyset)$, $((n-1)1,\emptyset)$ and $(n-2,2)$ of $W(B_n)$, respectively. 
+    
+    It is now easy to see from this explicit model of $((n-1)1,\emptyset)$ that $W_{t_1}=\langle w_{\alpha_2},\ldots,w_{\alpha_{n}},w_{\alpha^0}\rangle$ acts trivially on the $1$-dimensional subspace of $\Span_\CC\{x_{i}^2-x_{i+1}^2\ |\ 1\leq i\leq n-1\}$ spanned by $$(n-1)x_1^2-x_2^2-\cdots-x_{n-1}^2-x_n^2.$$
+    This immediately implies that 
+    $$\Ind_{W(B_{n-1})\times C_2}^W (n-1,\emptyset)\otimes\mathbf{1}=(n,\emptyset)+((n-1)1,\emptyset),$$
+    thus finishing the proof.
+\end{proof}
