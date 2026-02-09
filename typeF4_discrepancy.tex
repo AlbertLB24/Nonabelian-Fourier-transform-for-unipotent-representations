@@ -1,0 +1,386 @@
+\section{The p-adic group of type \texorpdfstring{$F_4$}{PDFstring}}
+
+Let $G=F_4(F)$ be a $p$-adic of type $F_4$ with simple roots $\alpha_1,\alpha_2$ (short roots) and $\alpha_3,\alpha_4$ (long roots). Let $S_{\aff}=\{\alpha_1,\alpha_2,\alpha_3,\alpha_4,-\alpha_0\}$ be the set of affine simple roots where $\alpha_0$ is the highest root. 
+
+Assuming Reeder's tables in [Re2000], we present a discrepancy with conjecture 1.2 in [ACR2023]. Since $G$ is both an adjoint and simply connected group, it has a unique inner twist and pure inner twist (itself) so 
+$$\mathcal{R}_{\un,\text{ell}}^p(G)=\overline{R}_{\un}(G).$$
+By Lemma 9.5 in [ACR2023], this space is equipped with the Euler-Poincare pairing $EP_G$ and the combinations
+$$\{\Pi(u,s,h)\ |\ u\in F_4(\CC)\text{ unipotent, }(s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)\},$$
+where $u$ ranges over representatives of conjugacy classes of $F_4(\CC)$, is an orthogonal basis. Since the non-abelian Fourier transform
+$$\mathrm{FT}_{\text{ell}}^\vee:\mathcal{R}_{\un,\text{ell}}^p(G)\longrightarrow\mathcal{R}_{\un,\text{ell}}^p(G)$$ 
+preserves the subspaces spanned by $\{\Pi(u,s,h)\ |\ (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)\}$ where $u$ is fixed, Conjecture 1.2 can be verified one unipotent class at a time. One can check that this space has dimension $31$, and $21$ of these come from the unipotent class $F_4(a_3)$, whose centralizer has component group isomorphic to $S_4$. To find the discrepancy, we shall fix a unipotent element $u$ of $F_4(\CC)$ in this class. 
+
+On the parahoric side, conjugacy classes of maximal open compact subgroups of $G$ coincide with conjugacy classes of maximal parahoric subgroups since $G$ is simply connected. Thus, there are five conjugacy classes of maximal compact subgroups $K_0,\ldots,K_4$ of types $F_4, B_4, A_3\times \tilde{A}_1, A_2\times\tilde{A}_2,A_1\times C_3$ respectively, where $K_i$ is the parahoric subgroup corresponding to the set of simple affine roots given by $S_{\aff}-\{\alpha_i\}$. In particular, since $G$ has no pure inner twists other than itself, $\mathcal{C}(G)_{\text{cpt},\un}=\oplus_{i=0}^4 R_{\un}(\overline{K}_i)$ and the non-abelian Fourier transform 
+$$\mathrm{FT}_{\text{cpt},\un}:\mathcal{C}(G)_{\text{cpt},\un}\longrightarrow\mathcal{C}(G)_{\text{cpt},\un}$$
+is simply the direct sum of Lusztig's non-abelian Fourier transform in each of the direct summands.
+
+Using Reeder's tables, I have verified that the conjecture holds for the unipotent classes labelled $F_4, F_4(a_1)$ and  $F_4(a_2)$. The unipotent class labelled $B_3$ is not covered in Mark's tables. Finally, take a unipotent element $u$ in the conjugacy class labelled by $F_4(a_3)$ and consider the parahoric subgroup $K_1$ of type $B_4$. We shall show that, assuming the tables are correct, the parahoric restriction of $\Pi(u,1,1)$ with respect to $K_1$ is not $\text{FT}_{K_1}$ stable, contradicting the conjecture. As Mark, I label the irreducible representations of $S_4$ by partitions of $4$: $(4)$ is the trivial rep, $(22)$ is the two dimensional rep, $(31)$ and $(211)$ are three-dimensional and $(1111)$ is the sign representation. Thus, 
+$$\Pi(u,1,1)=\pi(u,1,(4))+3\pi(u,1,(31))+3\pi(u,1,(211))+2\pi(u,1,(22))+\pi(u,1,(1111)).$$
+The first four representations are Iwahori-spherical, while $\pi(u,1,(1111))$ is supercuspidal. In particular, its parahoric restriction to $K_1$ is zero. The irreducible unipotent representations in the principal series of a finite group of Lie type of type $B_4$ are labelled by bipartitions $(\alpha,\beta)$ such that $|\alpha|+|\beta|=4$. According to Mark's tables, one obtains the parahoric restrictions with respect to $K_1$:
+\begin{align*}
+    \pi(u,1,(4))&\longrightarrow [\cdot,1^4]+[\cdot,211]+2[1,1^3]+[1^3,1]+[1,21]+[11,11]+[11,2]+[2,11],\\
+    \pi(u,1,(31))&\longrightarrow[\cdot,22]+[\cdot,31]+[1,21]+[2,2],\\
+    \pi(u,1,(211))&\longrightarrow[\cdot,4],\\
+    \pi(u,1,(22))&\longrightarrow[1,1^3]+[2,11].
+\end{align*}
+
+The unipotent representations of $\overline{K}_1$ form families of size $1$ or $4$. For families of size $1$ there is nothing to check. The families of size $4$ are
+\begin{align*}
+    &\{[1,1^3],[1^4,\cdot],[\cdot,211], \theta_1\},\\
+    &\{[11,11],[1^3,1],[\cdot,22], \theta_2\},\\
+    &\{[2,11],[211,\cdot],[\cdot,31], \theta_3\},\\
+    &\{[2,2],[22,\cdot],[1,3], \theta_4\},\\
+    &\{[3,1],[31,\cdot],[\cdot,4], \theta_5\}.
+\end{align*}
+where the first representation in each family is the unique special one. Also, $\theta_1,\ldots,\theta_5$ are the five representations coming from the the other series of unipotent representations of $\overline{K}_1$.
+Lusztig's non-abelian transform acts on each of these families by the transformation
+$$\begin{pmatrix}
+    1/2 & 1/2 & 1/2 & 1/2 \\
+    1/2 & 1/2 & -1/2 & -1/2 \\
+    1/2 & -1/2 & 1/2 & -1/2 \\
+    1/2 & -1/2 & -1/2 & 1/2 
+\end{pmatrix}$$
+If we examine carefully the expression for $\Pi(u,1,1)$ and the parahoric restrictions, we note that the representations (with multiplicity) from each of the five families are
+\begin{align*}
+    &4[1,1^3]+[\cdot,211],\\
+    &[11,11]+[1^3,1]+3[\cdot,22],\\
+    &3[2,11]+3[\cdot,31]\\
+    &3[2,2],\\
+    &3[\cdot,4].
+\end{align*}
+
+Only the third combination is $\FT_{K_1}$-stable. The other $4$ all fail to be stable. However, if we believe the conjecture to be true and therefore Mark's tables to contain typos, it is not too difficult to spot possible ad-hoc fixes. For example, if we replace $[\cdot,22]$ by $[22,\cdot]$ then the second and fourth lines would be stable. Similarly, if we replace $[\cdot,4]$ by $[\cdot,211]$, then the first and last lines would be stable. However, I doubt this is one of the mistakes because one calculates the parahoric restriction of $\pi(u,1,(211))$ by looking at the $\tilde{W}$-module $\varepsilon\otimes H(\mathcal{B}^u)^{(211)}$. The Springer correspondence gives that the action of $W$ on the top cohomology group corresponds to the principal series representation $\phi_{1,12}'$ of $F_4(\FF_q)$, so the top cohomology is one dimensional. Mark states that the restriction of $\pi(u,1,(211))$ is irreducible, which would imply that the remaining cohomology groups are all trivial. However, $[\cdot,211]$ is $3$-dimensional so it could not arise in the parahoric restriction of $\pi(u,1,(211))$. 
+
+Another ad-hoc fix for this is to replace both $[\cdot,211]$ and $[\cdot,4]$ for $[1^4,\cdot]$. But I find it hard to believe this is the mistake. This fix would affect the parahoric restriction of $\pi(u,1,(4))$ which is a problem because using Mark's tables the conjecture holds for the elliptic pair $(1,g_3)$, so the mistake would propagate to the restriction of $\pi(u,g_3,\mathbf{1})$.
+Indeed, the parahoric restriction of 
+$$\Pi(u,1,g_3)=\pi(u,1,(4))-\pi(u,1,(22))+\pi(u,1,(1111))$$
+is $\FT_{K_1}$-stable and coincides with the parahoric restriction of 
+$$\Pi(u,g_3,1)=\pi(u,g_3,\mathbf{1})+\pi(u,g_3,\theta)+\pi(u,g_3,\theta^2).$$
+This is a simple check since $\pi(u,1,(1111)),\pi(u,g_3,\theta)$ and $\pi(u,g_3,\theta^2)$ are all supercuspidal, so their parahoric restriction to $K_1$ is zero.
+
+
+
+Finding discrepancies in the families of size $4$ for the remaining elliptic pairs is harder because one needs to calculate parahoric restrictions of the representations $\pi(u,g_2,\varepsilon\otimes\mathbf{1}), \pi(u,g_2',r)$ and $\pi(u,g_4,-1)$, which are non-Iwahori and not supercuspidal representations and lie in the block whose type is given by $(K_{\{\alpha_2,\alpha_3\}},\theta)$, where $K_{\alpha_2,\alpha_3}$ is the parahoric subgroup of type $B_2$ and $\theta$ is the unique cuspidal unipotent representation of its reductive quotient. I am currently learning how to do this since it is not covered in Mark's paper. However, it is easy to find discrepancies in the families of size $1$, since these are always fixed by $\FT_{K_1}$. For example, $\{[\cdot,1^4]\}$ is the Steinberg representation of $\overline{K}_8$ and forms a family by itself. The multiplicity of this representation of the parahoric restriction of $\Pi(u,1,h), h\in\{1,g_2,g_2',g_3,g_4\}$ with respect to $K_1$ is always equal to $1$ according to Mark's tables. By the theory of unrefined minimal $K$-types of Moy--Prasad (please correct me if I am wrong here), the parahoric restriction of the three representations above with respect to $K_1$ cannot contain principal series representations. Thus, we can read the multiplicity of $[\cdot,1^4]$ in the parahoric restriction of $\Pi(u,h,1)$ for $h\in\{1,g_2,g_2',g_3,g_4\}$, which equals $1,2,0,1$ and $0$, respectively. So the conjecture would not hold for the elliptic pairs $(1,g_2),(1,g_2')$ or $(1,g_4)$ simply by looking at the Steinberg representation.
+
+
+If the parahoric restrictions can be programmed in GAP, then it should not be hard to check these tables, but I have not learned how to do this yet either. Of course, any comment about any of these problems is very welcome and appreciated!
+
+\vspace{1.4cm}
+\textbf{REFERENCES}
+
+[Re2000] refers to Mark Reeder's paper "Formal degrees and $L$-packets of unipotent discrete series representations of exceptional $p$-adic groups".
+
+[AMC2023] refers to Aubert-Ciubotaru-Romano paper "A nonabelian Fourier transform for tempered
+unipotent representations".
+
+
+\newpage
+
+\begin{landscape}
+    \begin{table}[!ht]
+        \centering
+        Iwahori-spherical $B_4$-types
+        {\tiny
+        \begin{tabular}{|l|llllllllllllllllllll|}
+            \hline
+        & $[4,\cdot]$ & $[31,\cdot]$ & $[22,\cdot]$ & $[21^2,\cdot]$ & $[1^4,\cdot]$ & $[3,1]$ & $[21,1]$ & $[1^3,1]$ & $[2,2]$ & $[2,11]$ & $[11,2]$ & $[11,11]$ & $[1,3]$ & $[1,21]$ & $[1,1^3]$ & $[\cdot,4]$ & $[\cdot,31]$ & $[\cdot,22]$ & $[\cdot,21^2]$ & $[\cdot,1^4]$ \\\hline
+        $[F_4(a_3),4]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 2 & 0 & 0 & 0 & 1 & 1\\
+        $[F_4(a_3),31]$ & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+        $[F_4(a_3),22]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+        $[F_4(a_3),211]$ & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        $[F_4(a_3),1^4]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[C_3(42)A_1,++]$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{2} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{2} & \textcolor{red}{1} \\
+        $[C_3(42)A_1,+-]$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} \\
+        $[C_3(42)A_1,-\pm]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[B_4(531),1]$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{2} & \textcolor{red}{0} \\
+        $[B_4(531),\varepsilon']$ & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} \\
+        $[B_4(531),\varepsilon'']$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} \\
+        $[B_4(531),r/\varepsilon]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[2A_2,1]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\
+        $[2A_2,\theta/\theta^2]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[A_1A_3,1]$ & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} \\
+        $[A_1A_3,-1/\pm i]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+    \begin{table}[!ht]
+        \centering
+        {\tiny
+        \begin{tabular}{|l|lllll|llll|llll|llll|llll|}
+            \hline
+        & $[4,\cdot]$ & $[21,1]$ & $[11,2]$ & $[1,21]$ & $[\cdot,1^4]$ & $[1,1^3]$ & $[1^4,\cdot]$ & $[\cdot,21^2]$ & $\theta_1$ & $[11,11]$ & $[1^3,1]$ & $[\cdot,22]$ & $\theta_2$ & $[2,11]$ & $[21^2,\cdot]$ & $[\cdot,31]$ & $\theta_3$ & $[2,2]$ & $[22,\cdot]$ & $[1,3]$ & $\theta_4$ \\\hline
+        $\Pi(u,1,1)$ & 0 & 0 & 1 & 1 & 4 & 7 & 6 & 1 & 0 & 4 & 4 & 0 & 0 & 3 & 3 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        $\Pi(u,1,g_2)$ & 0 & 0 & 1 & 1 & 2 & 3 & 0 & 1 & 0 & 2 & 2 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        $\Pi(u,1,g_2')$ & 0 & 0 & 1 & 1 & 0 & 3 & -2 & 1 & 0 & 0 & 0 & 0 & 0 & 3 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        $\Pi(u,1,g_3)$ & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        $\Pi(u,1,g_4)$ & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $\Pi(u,g_2,1)$  & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{2} & \textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{2} & \textcolor{red}{2} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\
+        $\Pi(u,g_2,g_2)$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{2} & \textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{2} & \textcolor{red}{-1} & \textcolor{red}{2} & \textcolor{red}{2} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\
+        $\Pi(u,g_2,\tau)$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{2} & \textcolor{red}{-1} & \textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\
+        $\Pi(u,g_2,g_2')$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{2} & \textcolor{red}{-1} & \textcolor{red}{2} & \textcolor{red}{-1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\\hline
+        $\Pi(u,g_2',1)$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{3} & \textcolor{red}{2} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{2} & \textcolor{red}{2} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\
+        $\Pi(u,g_2',g_2)$ &  \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{3} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\
+        $\Pi(u,g_2',g_2')$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{3} & \textcolor{red}{-2} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{2} & \textcolor{red}{-2} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\
+        $\Pi(u,g_2',\gamma)$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{-1} & \textcolor{red}{2} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\
+        $\Pi(u,g_2',g_4)$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{-1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\\hline
+        $\Pi(u,g_3,h)$ & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $\Pi(u,g_4,1/g_2')$ & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} \\
+        $\Pi(u,g_4,g_4^{\pm1})$ & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{-1} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{0} \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+
+\end{landscape}
+
+\newpage
+
+\begin{landscape}
+    \begin{table}[!ht]
+        \centering
+        Iwahori-spherical $A_3\times A_1$-types\\
+        {\small
+        \begin{tabular}{|l|llllllllll|}
+            \hline
+        & $[4,2]$ & $[31,2]$ & $[22,2]$ & $[21^2,2]$ & $[1^4,2]$ & $[4,11]$ & $[31,11]$ & $[22,11]$ & $[21^2,11]$ & $[1^4,11]$ \\\hline
+        $[F_4(a_3),4]$ & 0 & 1 & 1 & 3 & 2 & 0 & 2 & 1 & 5 & 3 \\
+        $[F_4(a_3),31]$ & 0 & 0 & 1 & 2 & 3 & 0 & 0 & 0 & 2 & 2 \\
+        $[F_4(a_3),22]$ & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 \\
+        $[F_4(a_3),211]$ & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+        $[F_4(a_3),1^4]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[C_3(42)A_1,++]$ &  &  &  &  &  &  &  &  &  &  \\
+        $[C_3(42)A_1,+-]$ &  &  &  &  &  &  &  &  &  &  \\
+        $[C_3(42)A_1,-\pm]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[B_4(531),1]$ &  &  &  &  &  &  &  &  &  &  \\
+        $[B_4(531),\varepsilon']$ &  &  &  &  &  &  &  &  &  &  \\
+        $[B_4(531),\varepsilon'']$ &  &  &  &  &  &  &  &  &  &  \\
+        $[B_4(531),r/\varepsilon]$  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[2A_2,1]$ & 0 & 1 & 1 & 2 & 1 & 0 & 1 & 1 & 4 & 3 \\
+        $[2A_2,\theta/\theta^2]$  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[A_1A_3,1]$ & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{3} & \textcolor{red}{1} \\
+        $[A_1A_3,-1/\pm i]$  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+    \begin{table}[!ht]
+        \centering
+        {\small
+        \begin{tabular}{|l|llllllllll|}
+            \hline
+        & $[4,2]$ & $[31,2]$ & $[22,2]$ & $[21^2,2]$ & $[1^4,2]$ & $[4,11]$ & $[31,11]$ & $[22,11]$ & $[21^2,11]$ & $[1^4,11]$ \\\hline
+        $\Pi(u,1,1)$ & 0 & 1 & 4 & 11 & 16 & 0 & 4 & 1 & 13 & 9 \\
+        $\Pi(u,1,g_2)$ & 0 & 1 & 2 & 5 & 4 & 0 & 2 & 1 & 7 & 5 \\
+        $\Pi(u,1,g_2')$ & 0 & 1 & 0 & 3 & 0 & 0 & 4 & 1 & 5 & 1 \\
+        $\Pi(u,1,g_3)$ & 0 & 1 & 1 & 2 & 1 & 0 & 1 & 1 & 4 & 3 \\
+        $\Pi(u,1,g_4)$ & 0 & 1 & 0 & 1 & 0 & 0 & 2 & 1 & 3 & 1 \\\hline
+        $\Pi(u,g_2,1)$ &  &  &  &  &  &  &  &  &  &  \\
+        $\Pi(u,g_2,g_2)$ &  &  &  &  &  &  &  &  &  &  \\
+        $\Pi(u,g_2,\tau)$ &  &  &  &  &  &  &  &  &  &  \\
+        $\Pi(u,g_2,g_2')$ &  &  &  &  &  &  &  &  &  &  \\\hline
+        $\Pi(u,g_2',1)$ &  &  &  &  &  &  &  &  &  &  \\
+        $\Pi(u,g_2',g_2)$ &  &  &  &  &  &  &  &  &  &  \\
+        $\Pi(u,g_2',\gamma)$ &  &  &  &  &  &  &  &  &  &  \\
+        $\Pi(u,g_2',g_2')$  &  &  &  &  &  &  &  &  &  &  \\
+        $\Pi(u,g_2',g_4)$  &  &  &  &  &  &  &  &  &  &  \\\hline
+        $\Pi(u,g_3,h)$ & 0 & 1 & 1 & 2 & 1 & 0 & 1 & 1 & 4 & 3 \\\hline
+        $\Pi(u,g_4,h)$ & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{2} & \textcolor{red}{1} & \textcolor{red}{3} & \textcolor{red}{1} \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+    \newpage
+
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|lllll|}
+            \hline
+            & $[1^4]$ & $[211]$ & $[22]$ & $[31]$ & $[4]$ \\\hline
+            $[F_4(a_3),4]$ & $2,\bar{3}$ & $3,\bar{5}$ & $1,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\
+            $[F_4(a_3),31]$ & $3,\bar{2}$ & $2,\bar{2}$ & $1,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+            $[F_4(a_3),22]$ & $1,\bar{0}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{0}$ \\
+            $[F_4(a_3),211]$ & $1,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\\hline
+            $[C_3(42)A_1,++]$ & $2,\bar{3}$ & $4,\bar{6}$ & $1,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\
+            $[C_3(42)A_1,+-]$ & $2,\bar{2}$ & $1,\bar{1}$ & $1,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\\hline
+            $[B_4(531),1]$ & $0,\bar{1}$ & $2,\bar{4}$ & $0,\bar{1}$ & $1,\bar{3}$ & $0,\bar{0}$ \\
+            $[B_4(531),\varepsilon'']$ & $0,\bar{0}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+            $[B_4(531),\varepsilon']$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{0}$ \\\hline
+            $[2A_2,1]$ & $1,\bar{3}$ & $2,\bar{4}$ & $1,\bar{1}$ & $1,\bar{1}$ & $0,\bar{0}$ \\\hline
+            $[A_1A_3,1]$ & $0,\bar{1}$ & $1,\bar{3}$ & $0,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\\hline
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|lllll|}
+            \hline
+            & $[1^4]$ & $[211]$ & $[22]$ & $[31]$ & $[4]$ \\\hline
+            $\Pi(u,1,1)$ & $16,\bar{9}$ & $11,\bar{13}$ & $4,\bar{1}$ & $1,\bar{4}$ & $0,\bar{0}$ \\
+            $\Pi(u,1,g_2)$ & $4,\bar{5}$ & $5,\bar{7}$ & $2,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\
+            $\Pi(u,1,g_2')$ & $0,\bar{1}$ & $3,\bar{5}$ & $0,\bar{1}$ & $1,\bar{4}$ & $0,\bar{0}$ \\
+            $\Pi(u,1,g_3)$ & $1,\bar{3}$ & $2,\bar{4}$ & $1,\bar{1}$ & $1,\bar{1}$ & $0,\bar{0}$ \\
+            $\Pi(u,1,g_4)$ & $0,\bar{1}$ & $1,\bar{3}$ & $0,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\\hline
+            $\Pi(u,g_2,1)$ & $4,\bar{5}$ & $5,\bar{7}$ & $2,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\
+            %$\Pi(u,g_2,g_2)$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$ \\
+            %$\Pi(u,g_2,\gamma)$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$ \\
+            $\Pi(u,g_2,g_2')$ & $0,\bar{1}$ & $3,\bar{5}$ & $0,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\\hline
+            $\Pi(u,g_2',1)$ & $0,\bar{1}$ & $3,\bar{5}$ & $0,\bar{1}$ & $1,\bar{4}$ & $0,\bar{0}$ \\
+            $\Pi(u,g_2',g_2)$ & $0,\bar{1}$ & $3,\bar{5}$ & $0,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\
+            $\Pi(u,g_2',g_4)$ & $0,\bar{1}$ & $1,\bar{3}$ & $0,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\\hline
+            $\Pi(u,g_3,1)$ & $1,\bar{3}$ & $2,\bar{4}$ & $1,\bar{1}$ & $1,\bar{1}$ & $0,\bar{0}$ \\\hline
+            $\Pi(u,g_4,1)$ & $0,\bar{1}$ & $1,\bar{3}$ & $0,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\
+            $\Pi(u,g_4,g_2')$ & $0,\bar{1}$ & $1,\bar{3}$ & $0,\bar{1}$ & $1,\bar{2}$ & $0,\bar{0}$ \\\hline
+            %$\Pi(u,,)$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$ & $,\bar{}$
+        \end{tabular}
+    \end{table}
+
+\end{landscape}
+
+
+\newpage
+
+\begin{landscape}
+    \begin{table}[!ht]
+        \centering
+        Iwahori-spherical $A_2\times A_2$-types\\
+        {\small
+        \begin{tabular}{|l|lllllllll|}
+            \hline
+        & $[1^3,1^3]$ & $[1^3,21]$ & $[1^3,3]$ & $[21,1^3]$ & $[21,21]$ & $[21,3]$ & $[3,1^3]$ & $[3,21]$ & $[3,3]$ \\\hline
+        $[F_4(a_3),4]$ & 4 & 4 & 1 & 4 & 4 & 1 & 1 & 1 & 0 \\
+        $[F_4(a_3),31]$ & 1 & 3 & 2 & 0 & 2 & 1 & 0 & 0 & 0 \\
+        $[F_4(a_3),22]$ & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\
+        $[F_4(a_3),211]$ & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        $[F_4(a_3),1^4]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[C_3(42)A_1,++]$ & 4 & 5 & 1 & 4 & 5 & 1 & 1 & 1 & 0 \\
+        $[C_3(42)A_1,+-]$ & 1 & 2 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
+        $[C_3(42)A_1,-\pm]$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[B_4(531),1]$ & 3 & 2 & 0 & 5 & 3 & 0 & 2 & 1 & 0 \\
+        $[B_4(531),\varepsilon'']$ & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+        $[B_4(531),\varepsilon']$ & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+        $[B_4(531),r/\varepsilon]$  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[2A_2,1]$ & \textcolor{red}{4} & \textcolor{red}{3} & \textcolor{red}{0} & \textcolor{red}{3} & \textcolor{red}{3} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} \\
+        $[2A_2,\theta/\theta^2]$  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        $[A_1A_3,1]$ & 3 & 1 & 0 & 4 & 2 & 0 & 1 & 1 & 0 \\
+        $[A_1A_3,-1/\pm i]$  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+    \begin{table}[!ht]
+        \centering
+        {\small
+        \begin{tabular}{|l|lllllllll|}
+            \hline
+        & $[1^3,1^3]$ & $[1^3,21]$ & $[1^3,3]$ & $[21,1^3]$ & $[21,21]$ & $[21,3]$ & $[3,1^3]$ & $[3,21]$ & $[3,3]$ \\\hline
+        $\Pi(u,1,1)$ & 7 & 15 & 12 & 6 & 12 & 4 & 3 & 1 & 0 \\
+        $\Pi(u,1,g_2)$ & 5 & 7 & 2 & 4 & 6 & 2 & 1 & 1 & 0 \\
+        $\Pi(u,1,g_2')$ & 3 & 3 & 0 & 6 & 4 & 0 & 3 & 1 & 0 \\
+        $\Pi(u,1,g_3)$ & 4 & 3 & 0 & 3 & 3 & 1 & 0 & 1 & 0 \\
+        $\Pi(u,1,g_4)$ & 3 & 1 & 0 & 4 & 2 & 0 & 1 & 1 & 0 \\\hline
+        $\Pi(u,g_2,1)$ & 5 & 7 & 2 & 4 & 6 & 2 & 1 & 1 & 0 \\
+        $\Pi(u,g_2,g_2)$ & 5 & 7 & 2 & 4 & 6 & 2 & 1 & 1 & 0 \\
+        $\Pi(u,g_2,\tau)$ & 3 & 3 & 0 & 4 & 4 & 0 & 1 & 1 & 0 \\
+        $\Pi(u,g_2,g_2')$ & 3 & 3 & 0 & 4 & 4 & 0 & 1 & 1 & 0 \\\hline
+        $\Pi(u,g_2',1)$ & 3 & 3 & 0 & 6 & 4 & 0 & 3 & 1 & 0 \\
+        $\Pi(u,g_2',g_2)$ & 3 & 3 & 0 & 4 & 4 & 0 & 1 & 1 & 0 \\
+        $\Pi(u,g_2',\gamma)$ & 3 & 1 & 0 & 6 & 2 & 0 & 3 & 1 & 0 \\
+        $\Pi(u,g_2',g_2')$  & 3 & 3 & 0 & 6 & 4 & 0 & 3 & 1 & 0 \\
+        $\Pi(u,g_2',g_4)$  & 3 & 1 & 0 & 4 & 2 & 0 & 1 & 1 & 0 \\\hline
+        $\Pi(u,g_3,h)$ & \textcolor{red}{4} & \textcolor{red}{3} & \textcolor{red}{0} & \textcolor{red}{3} & \textcolor{red}{3} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{0} \\\hline
+        $\Pi(u,g_4,h)$ & 3 & 1 & 0 & 4 & 2 & 0 & 1 & 1 & 0 \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+    \newpage
+
+    \begin{table}[!ht]
+        \centering
+        Iwahori-spherical $A_1\times C_3$-types\\
+        {\small
+        \begin{tabular}{|l|llllllllll|}
+            \hline
+        & $[3,\cdot]$ & $[21,\cdot]$ & $[1^3,\cdot]$ & $[2,1]$ & $[11,1]$ & $[1,2]$ & $[1,11]$ & $[\cdot,3]$ & $[\cdot, 21]$ & $[\cdot,1^3]$ \\\hline
+        $[F_4(a_3),4]$ &  &  & $\bar{1}$ & $\bar{1}$ & 1,$\bar{2}$ & 1,$\bar{1}$ & 2,$\bar{3}$ &  & 1,$\bar{1}$ & 2,$\bar{2}$ \\
+        $[F_4(a_3),31]$ &  &  &  & $\bar{1}$ &  & 1,$\bar{1}$ & $\bar{1}$ & $\bar{1}$ & 1,$\bar{2}$ & \\
+        $[F_4(a_3),22]$ &  &  &  & $\bar{1}$ &  &  & 1,$\bar{1}$ &  &  & 1 \\
+        $[F_4(a_3),211]$ &  &  &  &  &  &  &  & $\bar{1}$ &  & \\
+        $[F_4(a_3),1^4]$ &  &  &  &  &  &  &  &  &  & \\\hline
+        $[C_3(42)A_1,++]$ &  &  &  &  &  &  &  &  &  & \\
+        $[C_3(42)A_1,+-]$ &  &  &  &  &  &  &  &  &  & \\
+        $[C_3(42)A_1,-\pm]$ &  &  &  &  &  &  &  &  &  & \\\hline
+        $[B_4(531),1]$ &  &  &  &  &  &  &  &  &  & \\
+        $[B_4(531),\varepsilon'']$ &  &  &  &  &  &  &  &  &  & \\
+        $[B_4(531),\varepsilon']$ &  &  &  &  &  &  &  &  &  & \\
+        $[B_4(531),r/\varepsilon]$ &  &  &  &  &  &  &  &  &  & \\\hline
+        $[2A_2,1]$ &  &  & $\bar{1}$ &  & 1,$\bar{2}$ & 1,$\bar{1}$ & 1,$\bar{2}$ &  & 1,$\bar{1}$ & 1,$\bar{2}$ \\
+        $[2A_2,\theta/\theta^2]$  &  &  &  &  &  &  &  &  &  & \\\hline
+        $[A_1A_3,1]$ & \textcolor{red}{} & \textcolor{red}{} & \textcolor{red}{1,$\bar{2}$} & \textcolor{red}{} & \textcolor{red}{1,$\bar{2}$} & \textcolor{red}{} & \textcolor{red}{1,$\bar{1}$} & \textcolor{red}{} & \textcolor{red}{1} & \textcolor{red}{2,$\bar{2}$}\\
+        $[A_1A_3,-1/\pm i]$  &  &  &  &  &  &  &  &  &  & \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+        \begin{table}[!ht]
+        \centering
+        Iwahori-spherical $A_1\times C_3$-types\\
+        {\small
+        \begin{tabular}{|l|llllllllll|}
+            \hline
+        & $[\cdot,1^3]$ & $[1^3,\cdot]$ & $[11,1]$ & $[1,11]$ & $[21,\cdot]$ & $[\cdot,21]$ & $[2,1]$ & $[1,2]$ & $[\cdot, 3]$ & $[3,\cdot]$ \\\hline
+        $[F_4(a_3),4]$ & $2,\bar{2}$ & $0,\bar{1}$ & $1,\bar{2}$ & $2,\bar{3}$ & $0,\bar{0}$ & $1,\bar{1}$ & $0,\bar{1}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $[F_4(a_3),31]$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{0}$ & $1,\bar{2}$ & $0,\bar{1}$ & $1,\bar{1}$ & $0,\bar{1}$ & $0,\bar{0}$ \\
+        $[F_4(a_3),22]$ & $1,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $[F_4(a_3),211]$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{0}$ \\
+        $[F_4(a_3),1^4]$ &  &  &  &  &  &  &  &  &  & \\\hline
+        $[C_3(42)A_1,++]$ & $2,\bar{2}$ & $0,\bar{1}$ & $1,\bar{2}$ & $2,\bar{3}$ & $0,\bar{1}$ & $2,\bar{2}$ & $0,\bar{1}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $[C_3(42)A_1,+-]$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{0}$ & $1,\bar{1}$ & $0,\bar{1}$ & $0,\bar{0}$ \\
+        $[C_3(42)A_1,-\pm]$ &  &  &  &  &  &  &  &  &  & \\\hline
+        $[B_4(531),1]$ & $3,\bar{2}$ & $1,\bar{2}$ & $1,\bar{2}$ & $2,\bar{2}$ & $0,\bar{1}$ & $1,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $[B_4(531),\varepsilon'']$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{1}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $[B_4(531),\varepsilon']$ & $1,\bar{0}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $[B_4(531),r/\varepsilon]$ &  &  &  &  &  &  &  &  &  & \\\hline
+        $[2A_2,1]$ & $1,\bar{2}$ & $0,\bar{1}$ & $1,\bar{2}$ & $1,\bar{2}$ & $0,\bar{0}$ & $1,\bar{1}$ & $0,\bar{0}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $[2A_2,\theta/\theta^2]$  &  &  &  &  &  &  &  &  &  & \\\hline
+        $[A_1A_3,1]$ & $2,\bar{2}$ & $1,\bar{2}$ & $1,\bar{2}$ & $1,\bar{1}$ & $0,\bar{0}$ & $1,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $[A_1A_3,-1/\pm i]$  &  &  &  &  &  &  &  &  &  & \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+    \begin{table}[!ht]
+        \centering
+        {\small
+        \begin{tabular}{|l|llll|llll|llll|}
+            \hline
+        & $[3,\cdot]$ & $[1,2]$ & $[11,1]$ & $[\cdot,1^3]$ & $[1,11]$ & $[1^3,\cdot]$ & $[\cdot,21]$ & $\theta_1$ & $[2,1]$ & $[21,\cdot]$ & $[\cdot,3]$ & $\theta_2$ \\\hline
+        $\Pi(u,1,1)$ & $0,\bar{0}$ & $4,\bar{4}$ & $1,\bar{2}$ & $4,\bar{2}$ & $4,\bar{8}$ & $0,\bar{1}$ & $4,\bar{7}$ & $0,\bar{0}$ & $0,\bar{6}$ & $0,\bar{0}$ & $0,\bar{6}$ & $0,\bar{0}$ \\
+        $\Pi(u,1,g_2)$ & $0,\bar{0}$ & $2,\bar{2}$ & $1,\bar{2}$ & $2,\bar{2}$ & $2,\bar{4}$ & $0,\bar{1}$ & $2,\bar{3}$ & $0,\bar{0}$ & $0,\bar{2}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $\Pi(u,1,g_2')$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $4,\bar{2}$ & $4,\bar{4}$ & $0,\bar{1}$ & $0,-\bar{1}$ & $0,\bar{0}$ & $0,\bar{2}$ & $0,\bar{0}$ & $0,-\bar{2}$ & $0,\bar{0}$ \\
+        $\Pi(u,1,g_3)$ & $0,\bar{0}$ & $1,\bar{1}$ & $1,\bar{2}$ & $1,\bar{2}$ & $1,\bar{2}$ & $0,\bar{1}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\
+        $\Pi(u,1,g_4)$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $2,\bar{2}$ & $2,\bar{2}$ & $0,\bar{1}$ & $0,-\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\\hline
+        $\Pi(u,g_2,1)$ & $0,\bar{0}$ & $2,\bar{2}$ & $1,\bar{2}$ & $2,\bar{2}$ & $2,\bar{4}$ & $0,\bar{1}$ & $2,\bar{3}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{1}$ & $0,\bar{1}$ & $0,\bar{1}$ \\
+        $\Pi(u,g_2,g_2)$ & $0,\bar{0}$ & $2,\bar{2}$ & $1,\bar{2}$ & $2,\bar{2}$ & $2,\bar{4}$ & $0,\bar{1}$ & $2,\bar{3}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{1}$ & $0,\bar{1}$ & $0,-\bar{1}$ \\
+        $\Pi(u,g_2,\tau)$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $2,\bar{2}$ & $2,\bar{2}$ & $0,\bar{1}$ & $2,\bar{1}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{1}$ & $0,\bar{-1}$ & $0,\bar{1}$ \\
+        $\Pi(u,g_2,g_2')$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $2,\bar{2}$ & $2,\bar{2}$ & $0,\bar{1}$ & $2,\bar{1}$ & $0,\bar{0}$ & $0,\bar{1}$ & $0,\bar{1}$ & $0,\bar{-1}$ & $0,\bar{-1}$ \\\hline
+
+        $\Pi(u,g_2',1)$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $4,\bar{2}$ & $2,\bar{2}$ & $2,\bar{3}$ & $2,\bar{1}$ & $2,\bar{2}$ & $0,\bar{0}$ & $0,\bar{2}$ & $0,\bar{0}$ & $0,\bar{2}$\\
+
+        $\Pi(u,g_2',g_2)$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $2,\bar{2}$ & $2,\bar{2}$ & $0,\bar{1}$ & $2,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{2}$ & $0,\bar{0}$ & $0,\bar{0}$\\
+
+        $\Pi(u,g_2',\gamma)$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $4,\bar{2}$ & $2,\bar{2}$ & $2,\bar{3}$ & $0,\bar{-1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$\\
+
+        $\Pi(u,g_2',g_2')$ & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $4,\bar{2}$ & $2,\bar{2}$ & $2,\bar{3}$ & $2,\bar{1}$ & $-2,-\bar{2}$ & $0,\bar{0}$ & $0,\bar{2}$ & $0,\bar{0}$ & $0,-\bar{2}$\\
+
+        $\Pi(u,g_2',g_4)$  & $0,\bar{0}$ & $0,\bar{0}$ & $1,\bar{2}$ & $2,\bar{2}$ & $2,\bar{2}$ & $0,\bar{1}$ & $0,-\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\\hline
+
+        $\Pi(u,g_3,h)$  & $0,\bar{0}$ & $1,\bar{1}$ & $1,\bar{2}$ & $1,\bar{2}$ & $1,\bar{2}$ & $0,\bar{1}$ & $1,\bar{1}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ & $0,\bar{0}$ \\\hline
+        $\Pi(u,g_4,1/g_2')$ & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$1,\bar{2}$} & \textcolor{red}{$2,\bar{2}$} & \textcolor{red}{$1,\bar{1}$} & \textcolor{red}{$1,\bar{2}$} & \textcolor{red}{$1,\bar{0}$} & \textcolor{red}{$1,\bar{1}$} & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$0,\bar{0}$} \\
+        $\Pi(u,g_4,g_4^{\pm1})$ & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$1,\bar{2}$} & \textcolor{red}{$2,\bar{2}$} & \textcolor{red}{$1,\bar{1}$} & \textcolor{red}{$1,\bar{2}$} & \textcolor{red}{$1,\bar{0}$} & \textcolor{red}{$-1,-\bar{1}$} & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$0,\bar{0}$} & \textcolor{red}{$0,\bar{0}$} \\\hline
+        \end{tabular}
+        }
+    \end{table}
+
+\end{landscape}

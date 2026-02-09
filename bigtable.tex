@@ -43,32 +43,103 @@
         \hline
         & $K_0\rightarrow \Sp_{2n}(\FF_q)$ & $K_1\rightarrow \Sp_{2}(\FF_q)\times\Sp_{2(n-1)}(\FF_q)$ & $K_r\rightarrow \Sp_{2r}(\FF_q)\times\Sp_{2(n-r)}(\FF_q)$ & $K_{n-1}\rightarrow \Sp_{2(n-1)}(\FF_q)\times\Sp_{2}(\FF_q)$ & $K_n\rightarrow \Sp_{2n}(\FF_q)$ \\\hline
 
-        $\Pi(u,1,\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $[(1,1^{r-1})-(\emptyset,21^{r-2})]\boxtimes(\emptyset,1^{n-r})$ & $[(1,1^{n-2})-(\emptyset,21^{n-3})]\boxtimes(\emptyset,1)+$ & $(1,1^{n-1})-(\emptyset,21^{n-2})$ \\ 
+        $\Pi(u,1,\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $[(1,1^{r-1})-(\emptyset,21^{r-2})]\boxtimes(\emptyset,1^{n-r})+$ & $[(1,1^{n-2})-(\emptyset,21^{n-3})]\boxtimes(\emptyset,1)$ & $(1,1^{n-1})-(\emptyset,21^{n-2})$ \\ 
 
-         & $(1,1^{n-1})-(\emptyset,21^{n-2})$ & $(\emptyset,1)\boxtimes[(1,1^{n-2})-(\emptyset,21^{n-3})]$ & $(\emptyset,1^r)\boxtimes[(1,1^{n-r-1})-(\emptyset,21^{n-r-2})]+$ & $(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $+(\emptyset,1^n)$ \\\hline
+         & $(1,1^{n-1})-(\emptyset,21^{n-2})$ & $(\emptyset,1)\boxtimes[(1,1^{n-2})-(\emptyset,21^{n-3})]$ & $(\emptyset,1^r)\boxtimes[(1,1^{n-r-1})-(\emptyset,21^{n-r-2})]$ & $+(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $+(\emptyset,1^n)$ \\\hline
 
-        $\Pi(u,\delta,1)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $[(1^r,\emptyset)+\theta_r']\boxtimes(\emptyset,1^{n-r})+$ & $[(1^{n-1},\emptyset)+\theta_{n-1}']\boxtimes(\emptyset,1)+$ & $(1^n,\emptyset)+\theta_n'+$ \\ 
+        $\Pi(u,\delta,1)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $[(1^r,\emptyset)+\theta_r']\boxtimes(\emptyset,1^{n-r})+$ & $[(1^{n-1},\emptyset)+\theta_{n-1}']\boxtimes(\emptyset,1)$ & $(1^n,\emptyset)+\theta_n'$ \\ 
 
-         & $(1^n,\emptyset)+\theta_n'$ & $(\emptyset,1)\boxtimes[(1^{n-1},\emptyset)+\theta_{n-1}']$ & $(\emptyset,1^r)\boxtimes[(1^{n-r},\emptyset)+\theta_{n-r}']$ & $(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $(\emptyset,1^n)$ \\\hline
+         & $(1^n,\emptyset)+\theta_n'$ & $(\emptyset,1)\boxtimes[(1^{n-1},\emptyset)+\theta_{n-1}']$ & $(\emptyset,1^r)\boxtimes[(1^{n-r},\emptyset)+\theta_{n-r}']$ & $+(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $+(\emptyset,1^n)$ \\\hline
 
-        $\Pi(u,-1,\delta)$ & & & & & \\ 
+        $\Pi(u,-1,\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $[(1,1^{r-1})-(\emptyset,21^{r-2})]\boxtimes(\emptyset,1^{n-r})+$ & $[(1,1^{n-2})-(\emptyset,21^{n-3})]\boxtimes(\emptyset,1)$ & $(1,1^{n-1})-(\emptyset,21^{n-2})$ \\ 
 
-         & & & & &  \\\hline
+         & $(\emptyset,21^{n-2})-(1,1^{n-1})$ & $(\emptyset,1)\boxtimes[(\emptyset,21^{n-3})-(1,1^{n-2})]$ & $(\emptyset,1^r)\boxtimes[(\emptyset,21^{r-n-2})-(1,1^{r-n-1})]$ & $-(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $-(\emptyset,1^n)$  \\\hline
 
-        $\Pi(u,\delta,-1)$ & & & & & \\ 
+        $\Pi(u,\delta,-1)$ & $(\emptyset,1^n)-$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})-$ & $[(1^r,\emptyset)+\theta_r']\boxtimes(\emptyset,1^{n-r})-$ & $[(1^{n-1},\emptyset)+\theta_{n-1}']\boxtimes(\emptyset,1)$ & $(1^n,\emptyset)+\theta_n'$ \\ 
 
+         & $-[\theta_n'+(1^n,\emptyset)]$ & $-(\emptyset,1)\boxtimes[\theta_{n-1}'+(1^{n-1},\emptyset)]$ & $-(\emptyset,1^r)\boxtimes[\theta_{n-r}'-(1^{r-n},\emptyset)]$ & $-(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $-(\emptyset,1^n)$  \\\hline
+
+        $\Pi(u,\delta,\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^n-1)+$ & $[(1^r,\emptyset)-\theta_r']\boxtimes(\emptyset,1^{n-r})+$ & $[(1^{n-1,\emptyset})-\theta_{n-1}']\boxtimes(\emptyset,1)$ & $(1^n,\emptyset)-\theta_n'$ \\ 
+
+         & $(1^n,\emptyset)-\theta_n'$ & $(\emptyset,1)\boxtimes[(1^{n-1},\emptyset)-\theta_{n-1}']$ & $(\emptyset,1^r)\boxtimes[(1^{n-r},\emptyset)-\theta_{n-r}']$ & $+(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $+(\emptyset,1^n)$ \\\hline
+
+        $\Pi(u,\delta,-\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^n-1)+$ & $[(1^r,\emptyset)-\theta_r']\boxtimes(\emptyset,1^{n-r})+$ & $[(1^{n-1,\emptyset})-\theta_{n-1}']\boxtimes(\emptyset,1)$ & $(1^n,\emptyset)-\theta_n'$ \\ 
+
+         & $\theta_n'-(1^n,\emptyset)$ & $(\emptyset,1)\boxtimes[\theta_{n-1}'-(1^{n-1},\emptyset)]$ & $(\emptyset,1^r)\boxtimes[\theta_{n-r}'-(1^{n-r},\emptyset)]$ & $-(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $-(\emptyset,1^n)$ \\\hline
+    \end{tabular}
+\end{table}
+
+\newpage
+
+\begin{table}[h!]
+    \centering
+    \small
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $\pi(us,\phi)$ & $K_0\rightarrow \Sp_{2n}(\FF_q)$ & $K_1\rightarrow \Sp_{2}(\FF_q)\times\Sp_{2(n-1)}(\FF_q)$ & $K_r\rightarrow \Sp_{2r}(\FF_q)\times\Sp_{2(n-r)}(\FF_q)$ & $K_{n-1}\rightarrow \Sp_{2(n-1)}(\FF_q)\times\Sp_{2}(\FF_q)$ & $K_n\rightarrow \Sp_{2n}(\FF_q)$ \\\hline
+
+        $(t_0,\mathbf{1})$ & $(\emptyset,1^n)+$ & $(\emptyset,1)\boxtimes(\emptyset,1^{n-1})+$ & $(\emptyset,1^r)\boxtimes(\emptyset,1^{n-r})+$ & $(\emptyset,1^{n-1})\boxtimes(\emptyset,1)+$ & $(\emptyset,1^n)+$ \\ 
+
+         & $\textcolor{red}{\mathbf{(1,1^{n-1})}}$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+(\emptyset,1)\boxtimes\textcolor{red}{\mathbf{(1,1^{n-2})}}$ & $\textcolor{blue}{\mathbf{(1,1^{r-1})}}\boxtimes(\emptyset,1^{n-r})+(\emptyset,1^r)\boxtimes\textcolor{red}{\mathbf{(1,1^{n-r-1})}}$ & $\textcolor{blue}{\mathbf{(1,1^{n-2})}}\boxtimes(\emptyset,1)+(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $\textcolor{blue}{\mathbf{(1,1^{n-1})}}$\\\hline
+
+        $(t_0,\varepsilon)$ & & $(\emptyset,1)\boxtimes(\emptyset,1^{n-1})+$ & $(\emptyset,1^r)\boxtimes(\emptyset,1^{n-r})+$ & $(\emptyset,1^{n-1})\boxtimes(\emptyset,1)+$ &  \\ 
+
+         & $\textcolor{red}{(\emptyset,21^{n-2})}$ & $(\emptyset,1)\boxtimes\textcolor{red}{(\emptyset,21^{n-3})}$ & $\textcolor{blue}{(\emptyset,21^{r-2})}\boxtimes(\emptyset,1^{n-r})+(\emptyset,1^r)\boxtimes\textcolor{red}{(\emptyset,21^{n-r-2})}$ & $\textcolor{blue}{(\emptyset,21^{n-3})}\boxtimes(\emptyset,1)$ & $\textcolor{blue}{(\emptyset,21^{n-2})}$ \\\hline
+
+        $(t_1,\mathbf{1})$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $\textcolor{blue}{\mathbf{(1,1^{r-1})}}\boxtimes(\emptyset,1^{n-r})+$ & $\textcolor{blue}{\mathbf{(1,1^{n-2})}}\boxtimes(\emptyset,1)+$ & $\textcolor{blue}{\mathbf{(1,1^{n-1})}}$     \\ 
+
+         & $\textcolor{red}{(\emptyset,21^{n-2})}$ & $(\emptyset,1)\boxtimes[(\emptyset,1^{n-1})+\textcolor{red}{(\emptyset,21^{n-3})}]$ & $(\emptyset,1^r)\boxtimes[(\emptyset,1^{n-r})+\textcolor{red}{(\emptyset,21^{r-n-2})}]$ & $(\emptyset,1^{n-1})\boxtimes(\emptyset,1)$ &  \\\hline
+
+        $(t_1,\varepsilon)$ & $\textcolor{red}{\mathbf{(1,1^{n-1})}}$ & $(\emptyset,1)\boxtimes\textcolor{red}{\mathbf{(1,1^{n-2})}}+$ & $(\emptyset,1^r)\boxtimes\textcolor{red}{\mathbf{(1,1^{n-r-1})}}+$ & $(\emptyset,1^{n-1})\boxtimes(1,\emptyset)+$ & $(\emptyset,1^n)+$ \\ 
+
+         & & $(\emptyset,1)\boxtimes(\emptyset,1^{n-1})$ & $[(\emptyset,1^r)+\textcolor{blue}{(\emptyset,21^{r-2})}]\boxtimes(\emptyset,1^{n-r})$ & $[(\emptyset,1^{n-1})+\textcolor{blue}{(\emptyset,21^{n-3})}]\boxtimes(\emptyset,1)$ & $\textcolor{blue}{(\emptyset,21^{n-2})}$ \\\hline
+
+        $(t_2,\mathbf{1}\otimes\mathbf{1})$ & $(\emptyset,1^n)$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})$ & $\textcolor{blue}{(1^r,\emptyset)}\boxtimes(\emptyset,1^{n-r})$ & $\textcolor{blue}{(1^{n-1},\emptyset)}\boxtimes(\emptyset,1)$ & $\textcolor{blue}{(1^n,\emptyset)}$               \\ 
          & & & & & \\\hline
-
-        $\Pi(u,\delta,\delta)$ & & & & & \\ 
-
+        $(t_2,\mathbf{1}\otimes\varepsilon)$  & $0$ & $0$ & $\textcolor{blue}{\theta_r'}\boxtimes(\emptyset,1^{n-r})$ & $\textcolor{blue}{\theta_{n-1}'}\boxtimes(\emptyset,1)$ & $\textcolor{blue}{\theta_n'}$                              \\ 
          & & & & & \\\hline
-
-        $\Pi(u,\delta,-\delta)$ & & & & & \\ 
-
+        $(t_2,\varepsilon\otimes\mathbf{1})$  & $\textcolor{red}{(1^n,\emptyset)}$ & $(\emptyset,1)\boxtimes\textcolor{red}{(1^{n-1},\emptyset)}$ & $(\emptyset,1^r)\boxtimes\textcolor{red}{(1^{n-r},\emptyset)}$ & $(\emptyset,1^{n-r})\boxtimes(1,\emptyset)$ & $(\emptyset,1^n)$ \\ 
+         & & & & & \\\hline
+        $(t_2,\varepsilon\otimes\varepsilon)$ & $\textcolor{red}{\theta_n'}$ & $(\emptyset,1)\boxtimes\textcolor{red}{\theta_{n-1}'}$ & $(\emptyset,1^r)\boxtimes\textcolor{red}{\theta_{n-r}'}$ & $0$ & $0$ \\ 
          & & & & & \\\hline
     \end{tabular}
 \end{table}
 
+
+\newpage
+
+\begin{table}[h!]
+    \centering
+    \small
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        & $K_0\rightarrow \Sp_{2n}(\FF_q)$ & $K_1\rightarrow \Sp_{2}(\FF_q)\times\Sp_{2(n-1)}(\FF_q)$ & $K_r\rightarrow \Sp_{2r}(\FF_q)\times\Sp_{2(n-r)}(\FF_q)$ & $K_{n-1}\rightarrow \Sp_{2(n-1)}(\FF_q)\times\Sp_{2}(\FF_q)$ & $K_n\rightarrow \Sp_{2n}(\FF_q)$ \\\hline
+
+        $\Pi(u,1,\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $[\textcolor{blue}{\mathbf{(1,1^{r-1})}}-\textcolor{blue}{(\emptyset,21^{r-2})}]\boxtimes(\emptyset,1^{n-r})+$ & $[\textcolor{blue}{\mathbf{(1,1^{n-2})}}-\textcolor{blue}{(\emptyset,21^{n-3})}]\boxtimes(\emptyset,1)$ & $\textcolor{blue}{\mathbf{(1,1^{n-1})}}-\textcolor{blue}{(\emptyset,21^{n-2})}$ \\ 
+
+         & $\textcolor{red}{\mathbf{(1,1^{n-1})}}-\textcolor{red}{(\emptyset,21^{n-2})}$ & $(\emptyset,1)\boxtimes[\textcolor{red}{\mathbf{(1,1^{n-2})}}-\textcolor{red}{(\emptyset,21^{n-3})}]$ & $(\emptyset,1^r)\boxtimes[\textcolor{red}{\mathbf{(1,1^{n-r-1})}}-\textcolor{red}{(\emptyset,21^{n-r-2})}]$ & $+(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $+(\emptyset,1^n)$ \\\hline
+
+        $\Pi(u,\delta,1)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $[\textcolor{blue}{(1^r,\emptyset)}+\textcolor{blue}{\theta_r'}]\boxtimes(\emptyset,1^{n-r})+$ & $[\textcolor{blue}{(1^{n-1},\emptyset)}+\textcolor{blue}{\theta_{n-1}'}]\boxtimes(\emptyset,1)$ & $\textcolor{blue}{(1^n,\emptyset)}\textcolor{blue}{+\theta_n'}$ \\ 
+
+         & $\textcolor{red}{(1^n,\emptyset)}+\textcolor{red}{\theta_n'}$ & $(\emptyset,1)\boxtimes[\textcolor{red}{(1^{n-1},\emptyset)}+\textcolor{red}{\theta_{n-1}'}]$ & $(\emptyset,1^r)\boxtimes[\textcolor{red}{(1^{n-r},\emptyset)}+\textcolor{red}{\theta_{n-r}'}]$ & $+(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $+(\emptyset,1^n)$ \\\hline
+
+        $\Pi(u,-1,\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})+$ & $[\textcolor{blue}{\mathbf{(1,1^{r-1})}}-\textcolor{blue}{(\emptyset,21^{r-2})}]\boxtimes(\emptyset,1^{n-r})+$ & $[\textcolor{blue}{\mathbf{(1,1^{n-2})}}-\textcolor{blue}{(\emptyset,21^{n-3})}]\boxtimes(\emptyset,1)$ & $\textcolor{blue}{\mathbf{(1,1^{n-1})}}-\textcolor{blue}{(\emptyset,21^{n-2})}$ \\ 
+
+         & $\textcolor{red}{(\emptyset,21^{n-2})}-\textcolor{red}{\mathbf{(1,1^{n-1})}}$ & $(\emptyset,1)\boxtimes[\textcolor{red}{(\emptyset,21^{n-3})}-\textcolor{red}{\mathbf{(1,1^{n-2})}}]$ & $(\emptyset,1^r)\boxtimes[\textcolor{red}{(\emptyset,21^{r-n-2})}-\textcolor{red}{\mathbf{(1,1^{r-n-1})}}]$ & $-(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $-(\emptyset,1^n)$  \\\hline
+
+        $\Pi(u,\delta,-1)$ & $(\emptyset,1^n)-$ & $(1,\emptyset)\boxtimes(\emptyset,1^{n-1})-$ & $[\textcolor{blue}{(1^r,\emptyset)}+\textcolor{blue}{\theta_r'}]\boxtimes(\emptyset,1^{n-r})-$ & $[\textcolor{blue}{(1^{n-1},\emptyset)}+\textcolor{blue}{\theta_{n-1}'}]\boxtimes(\emptyset,1)$ & $\textcolor{blue}{(1^n,\emptyset)}+\textcolor{blue}{\theta_n'}$ \\ 
+
+         & $-[\textcolor{red}{\theta_n'}+\textcolor{red}{(1^n,\emptyset)}]$ & $-(\emptyset,1)\boxtimes[\textcolor{red}{\theta_{n-1}}'+\textcolor{red}{(1^{n-1},\emptyset)}]$ & $-(\emptyset,1^r)\boxtimes[\textcolor{red}{\theta_{n-r}'}+\textcolor{red}{(1^{r-n},\emptyset)}]$ & $-(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $-(\emptyset,1^n)$  \\\hline
+
+        $\Pi(u,\delta,\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^n-1)+$ & $[\textcolor{blue}{(1^r,\emptyset)}-\textcolor{blue}{\theta_r'}]\boxtimes(\emptyset,1^{n-r})+$ & $[\textcolor{blue}{(1^{n-1},\emptyset)}-\textcolor{blue}{\theta_{n-1}'}]\boxtimes(\emptyset,1)$ & $\textcolor{blue}{(1^n,\emptyset)}-\textcolor{blue}{\theta_n'}$ \\ 
+
+         & $\textcolor{red}{(1^n,\emptyset)}-\textcolor{red}{\theta_n'}$ & $(\emptyset,1)\boxtimes[\textcolor{red}{(1^{n-1},\emptyset)}-\textcolor{red}{\theta_{n-1}'}]$ & $(\emptyset,1^r)\boxtimes[\textcolor{red}{(1^{n-r},\emptyset)}-\textcolor{red}{\theta_{n-r}'}]$ & $+(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $+(\emptyset,1^n)$ \\\hline
+
+        $\Pi(u,\delta,-\delta)$ & $(\emptyset,1^n)+$ & $(1,\emptyset)\boxtimes(\emptyset,1^n-1)+$ & $[\textcolor{blue}{(1^r,\emptyset)}-\textcolor{blue}{\theta_r'}]\boxtimes(\emptyset,1^{n-r})+$ & $[\textcolor{blue}{(1^{n-1,\emptyset})}-\textcolor{blue}{\theta_{n-1}'}]\boxtimes(\emptyset,1)$ & $\textcolor{blue}{(1^n,\emptyset)}-\textcolor{blue}{\theta_n'}$ \\ 
+
+         & $\textcolor{red}{\theta_n'}-\textcolor{red}{(1^n,\emptyset)}$ & $(\emptyset,1)\boxtimes[\textcolor{red}{\theta_{n-1}'}-\textcolor{red}{(1^{n-1},\emptyset)}]$ & $(\emptyset,1^r)\boxtimes[\textcolor{red}{\theta_{n-r}'}-\textcolor{red}{(1^{n-r},\emptyset)}]$ & $-(\emptyset,1^{n-1})\boxtimes(1,\emptyset)$ & $-(\emptyset,1^n)$ \\\hline
+    \end{tabular}
+\end{table}
 
 
 \end{landscape}
