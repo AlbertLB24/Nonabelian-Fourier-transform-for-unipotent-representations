@@ -1,13 +1,5 @@
-\section{Unipotent representations of p-adic groups}
-Having discussed the classification of unipotent characters of finite groups of Lie type and Lusztig's nonabelian Fourier transform, in this section we explain in detail the remaining maps and objects from Conjecture \ref{conj:main}. To achieve this, we first need to cover the notion of a parahoric subgroup and of a unipotent representation of a $p$-adic group
-%denoted the \textit{dual nonabelian Fourier transform} on unipotent representations of $p$-adic groups. 
-Therefore, we now shift our focus completely and turn our attention towards the structural and representation theoretic aspects of $p$-adic groups. 
-
-Throughout, we let $F$ be a nonarchimedean local field with ring of integers $\cO$, uniformizer $\varpi$ and residue field $k$ of cardinality $q$, a power of a prime $p$. Let $\mathbf{G}$ be a connected, almost simple, split algebraic group over $F$ and let $G=\mathbf{G}(F)$ be the group of $F$-rational points. In this section, we will first discuss some results about the structure theory of the group $G$, including the Bruhat--Tits building and the classification of parahoric (or open compact) subgroups of $G$. These results will be instrumental to study and classify the unipotent representations of $G$ \textcolor{red}{refer to definition} inside the category $\Rep(G)$ of smooth admissible complex representations of $G$, the central object of interest in the local Langlands correspondence. 
-
-\iffalse
+\section{Structure theory and representations of p-adic groups}
 \subsection{The Bernstein decomposition}\label{sec:Bernstein}
-
 Let $F$ be a nonarchimedean local field with ring of integers $\cO$, uniformizer $\varpi$ and residue field $k$ of cardinality $q$, a power of a prime $p$. Let $\mathbf{G}$ be a connected, almost simple, split algebraic group over $F$ and let $G=\mathbf{G}(F)$. We denote by $\Rep(G)$ the set of smooth admissible complex representations of $G$. We begin this chapter by discussing a fundamental result that instrumental in the study of the category $\Rep(G)$. The starting point is the following well-known fact.
 
 \begin{proposition}
@@ -33,35 +25,35 @@ These results are summarized in the following theorem.
     \end{equation}
     and each full subcategory $\Rep(G)_{[M,\sigma]}$ is indecomposable.
 \end{theorem}
-\fi
+
+
 
 \subsection{The apartment of a split maximal torus}
-To simplify the exposition, we will assume throughout that $G$ is a split $p$-adic group over $F$, even though it is not strictly necessary.
-%Before continuing with representation theoretic aspects of $p$-adic groups, we first shift towards a more structural focus. As in the previous section, let $\mathbf{G}$ be a connected, almost simple, split algebraic group over $F$ and let $G=\mathbf{G}(F)$.
-For any split maximal torus $T$ of $G$ over $F$, there is a natural perfect pairing 
-$$\langle\cdot,\cdot\rangle:X^*(T)\times X_*(T)\longrightarrow\ZZ,$$
-where $X^*(T)=\Hom(T,F^\times)$ and $X_*(T)=\Hom(F^\times,T)$ are its character and cocharacter lattice, respectively, and the pairing is obtained by composition. Let $\Phi(G,T)\subset X^*(T)$ be the set of roots associated to $T$, with the corresponding set of coroots $\Phi^\vee(G,T)\subset X_*(T)$. Similarly to the previous section, a choice of a Borel subgroup $B$ of $G$ containing $T$ is equivalent to the choice of simple roots $\Delta=\{\alpha_1,\ldots,\alpha_r\}\subset\Phi(G,T)$, which we now fix throughout. We also let $\alpha_0$ be the highest root of $\Phi(G,T)$ with respect to $\Delta$. In addition, the group $B$ together with the normalizer $N:=N_G(T)$ form a $BN$-pair with corresponding Weyl group $W=N(F)/T(F)$. 
 
-A natural object arising in the representation theory of $G$ is the apartment $\cA(G,T):=X_*(T)\otimes_\ZZ\RR$, a real vector space spanned by the simple coroots. Moreover, $\cA(G,T)$ has the structure of a simplicial complex given by the hyperplanes
+Before continuing with representation theoretic aspects of $p$-adic groups, we first shift towards a more structural focus. As in the previous section, let $\mathbf{G}$ be a connected, almost simple, split algebraic group over $F$ and let $G=\mathbf{G}(F)$.
+Let $T$ be a split maximal torus of $G$ over $F$, and let $X^*(T)$ (resp. $X_*(T)$) be its character (resp. cocharacter) lattice and let 
+$$\langle\cdot,\cdot\rangle:X^*(T)\times X_*(T)\longrightarrow\ZZ$$
+the natural perfect pairing between characters and cocharacters of $T$. Let $\Phi(G,T)\subset X^*(T)$ be the set of roots associated to $T$, with the corresponding set of coroots $\Phi^\vee(G,T)\subset X_*(T)$. We recall from the previous chapter that a choice of a Borel subgroup $B$ of $G$ containing $T$ is equivalent to the choice of simple roots $\Delta(G,T)=\{\alpha_1,\ldots,\alpha_r\}\subset\Phi(G,T)$, which we fix throughout. In addition, the group $B$ together with the normalizer $N:=N_G(T)$ form a $BN$-pair with corresponding Weyl group $W=N(F)/T(F)$. 
+
+A natural object arising in the representation theory of $G$ is the apartment $\cA(G,T):=X_*(T)\otimes_\ZZ\RR$, a real vector space containing all coroots. Moreover, $\cA(G,T)$ has the structure of a simplicial complex given by the hyperplanes
 $$H_{\alpha,n}=\{x\in\cA(G,T)\ |\ \langle\alpha,x\rangle=n\},\quad\text{for each }\alpha\in\Phi(G,T)^+\text{ and } n\in\ZZ.$$
-Whenever the torus $T$ is clear from context, we will omit it from the notation. The complexes on the apartment are called \textit{facets}, and the facets of largest dimension (equivalently, the open facets) are called \textit{alcoves}. Our choice of simple roots $\Delta$ determines a canonical alcove
+Whenever the torus $T$ is clear from context, we will omit it from the notation. The complexes on the apartment are called \textit{facets}, and the facets of largest dimension (equivalently, they are open in the apartment) are called \textit{alcoves}. Our choice of simple roots $\Delta$ determines a canonical alcove
 $$\mathcal{C}_0=\{x\in\cA\ |\ \langle\alpha,x\rangle>0, \alpha\in\Delta\ \text{ and } \langle\alpha_0,x\rangle<1\},$$
 commonly referred to as the \textit{fundamental alcove}.
 
-Another important property of the apartment is that it carries a natural action of the group $N$ by affine transformations. To state some of its properties, we define, for each root $\alpha\in\Phi(G,T)$ a map (not a group homomorphism!) $w_\alpha:\CC^\times\rightarrow N$ given by $w_\alpha(t)=x_\alpha(t)x_{-\alpha}(-t^{-1})x_\alpha(t)$. The action of $N$ on $\cA$ satisfies
+Another important property of the apartment is that it carries a natural action of the group $N$ satisfying
 \begin{itemize}
     \item For any $\alpha\in\Phi$ and $\lambda\in F$, the element $\calpha(\lambda)\in T\subset N$ acts on $\cA$ by a translation $-\nu_p(\lambda)\calpha$.
-    \item For any $\alpha\in\Phi$, the element $w_\alpha(t)\in N$ acts on $\cA$ by a reflection along $H_{\alpha,-\nu_p(t)}$. When $t\in\cO$, this coincides with the natural action of $W$ on $\cA$.
-    \item This action preserves the simplicial structure of the apartment and is transitive on the set of alcoves of $\cA$.
-    \item The kernel of this action is $T(\cO)$.
+    \item The centre of $G$ acts faithfully and fixes every alcove. \textcolor{red}{maybe important to explain this better?}
+    \item For any $\alpha\in\Phi$, the element $w_\alpha(1)\in N$ acts on $\cA$ by a reflection along $H_{\alpha,0}$. This coincides with the natural action of $W$ on $\cA$.
 \end{itemize}
-Therefore the \textit{extended Weyl group}
+This action preserves the simplicial structure of the apartment and is transitive on the set of alcoves of $\cA$. Moreover, the kernel of this action is $T(\cO)$ and therefore the \textit{extended Weyl group}
 $$\widetilde{W}:=N(F)/T(\cO)\cong W\ltimes X_*(T)$$
 acts faithfully on the apartment $\cA$ and transitively on the set of alcoves. We denote by $w_{\alpha,n}$ the unique element in $\widetilde{W}$ acting on $\mathcal{A}$ by a reflection on the hyperplane $H_{\alpha,n}$. 
 
-In general, however, this action is not simple on the set of alcoves and the group $\Omega=\{w\in\widetilde{W}\ |\ w(\mathcal{C}_0)=\mathcal{C}_0\}$ is non-trivial. These groups fit in a \textbf{splitting} short exact sequence
+In general, however, this action is not simple on the set of alcoves and the group $\Omega=\{w\in\widetilde{W}\ |\ w(\mathcal{C}_0)=\mathcal{C}_0\}$ is non-empty. These groups fit in a \textbf{splitting} short exact sequence
 $$1\longrightarrow W_{\aff}\longrightarrow \widetilde{W}\longrightarrow \Omega\longrightarrow 1,$$
-where $(W_{\aff},S_{\aff})$ is an affine Coxeter group generated by the simple reflections $\tilde{s}_0:=w_{\alpha_0,1}$, $s_i=w_{\alpha_i,0},\ i=1,\ldots, r$ along the walls of the fundamental alcove $\mathcal{C}_0$ and acting simply transitively on the set of alcoves of $\cA$. The group $W_{\aff}$ is the \textit{affine Weyl group} associated to the group $G$. The Weyl groups $W$, $\widetilde{W}$ and $W_{\aff}$ are independent of $T$, up to isomorphism.
+where $(W_{\aff},S_{\aff})$ is a Coxeter group generated by the simple reflections $s_0:=w_{\alpha_0,1}$, $s_i=w_{\alpha_i,0},\ i=1,\ldots, r$ along the walls of the fundamental alcove $\mathcal{C}_0$ and acting simply transitively on the set of alcoves of $\cA$. The group $W_{\aff}$ is the \textit{affine Weyl group} associated to the group $G$. The Weyl groups $W$, $\widetilde{W}$ and $W_{\aff}$ are independent of $T$, up to isomorphism.
 
 \begin{example}
     \begin{enumerate}
@@ -143,48 +135,46 @@ where $(W_{\aff},S_{\aff})$ is an affine Coxeter group generated by the simple r
     \end{enumerate}
 \end{example}
 
-Some of the behaviour observed in the previous example holds in much greater generality. For example, $\Omega$ is an abelian group, and it has finite order if and only if $G$ is a simple group. In that case, $\Omega$ is in bijection with the centre of complex dual group $G^\vee(\CC)$ of $G$ and with the length preserving automorphisms of the affine Dynkin diagram \textcolor{red}{(cite Iwahori)}. In particular, if $G$ is simply connected, then $\Omega$ is trivial, while $\Omega$ has the largest size within the isogeny class when $G$ is adjoint. On the other hand, $W_{\aff}$ only depends on the isogeny class, and therefore only on the root system of $G$.
+Some of the behaviour observed in the previous example holds in much greater generality. For example, $\Omega$ is an abelian group, and it has finite order if and only if $G$ is a simple group. In that case, $\Omega$ is in bijection with the centre of complex dual group $G^\vee(\CC)$ of $G$. In particular, if $G$ is simply connected, then $\Omega$ is trivial, while $\Omega$ has the largest size within the isogeny class when $G$ is adjoint. On the other hand, $W_{\aff}$ only depends on the isogeny class, and therefore only on the root system of $G$.
+
 
 \subsection{The Bruhat-Tits building and parahoric subgroups}
 
-When we work with the apartment $\cA(G,T)$, we are making an arbitrary choice for the torus. It is possible, however, to push this idea further and construct the Bruhat-Tits building $\cB(G)$, a \textit{canonical} polysimplial space associated to $G$ that contains $\cA(G,T)$ for any $F$-split maximal torus. This is achieved by gluing together the apartments of all $F$-split maximal tori of $G$ according to some natural equivalence relation. An important property of the building $\cB(G)$ is that it carries a $G$-action satisfying the following:
+It is possible to push idea further and construct the Bruhat-Tits building $\cB(G)$, a polysimplial space associated to $G$ that contains $\cA(G,T)$ for any $F$-split maximal torus. This is achieved by gluing together the apartments of all $F$-split maximal tori of $G$ and then gluing them according to some equivalence relation. %More concretely, we define $$\cB(G)=\cA(G,T)\times G/\sim$$ 
+An important property of the building $\cB(G)$ is that it carries a $G$-action satisfying the following:
 \begin{enumerate}
     \item It extends the action of $N_G(T)$ on $\cA(G,T)$ for each $F$-split maximal torus $T$.
     \item The stabilizer of $\cA(G,T)$ is $N_G(T)$ for each $F$-split maximal torus $T$.
     \item The stabilizer of any facet $c$ of the building is a (maybe disconnected) open compact subgroup of $G$.
     \item The action is strongly transitive on the set $\{(\mathcal{C},\cA)\ |\ \mathcal{C} \text{ is an alcove inside the apartment }\cA\}$. 
     \item For any pair $(\mathcal{C},\cA)$ as above, its stabilizer acts on $\cB(G)$ as the group $\Omega$. In other words
-    $$\mathrm{Stab}_G(\mathcal{C},\cA)/T(\cO)=(N\cap\mathrm{Stab}_G(\mathcal{C}))/T(\cO)=\mathrm{Stab}_N(\mathcal{C})/T(\cO)\cong\Omega.$$
+    $$\mathrm{Stab}_G(\mathcal{C},\cA)/T(\cO)=(N\cap\mathrm{Stab}_G(\mathcal{C}))/T(\cO)=\mathrm{Stab}_N(\mathcal{C})/T(\cO)\cong\Omega$$
+     
 \end{enumerate}
 
-The study of the action of $G$ on its Bruhat--Tits building $\cB(G)$ is an invaluable tool to study the structure of $G$. Many results about $G$ that are hard to prove directly become transparent when studying the building. One such problem is the classification of open maximal compact subgroups of $G$.
-
-Given a facet $c$ of the building of $G$, we are interested in the stabilizer $K_c^+:=\mathrm{Stab}_G(c)$. By the properties listed above, this is a (possibly disconnected) open compact subgroup of $G$. All maximal open compact subgroups of $G$ arise this way. These stabilizers behave well under the conjugation in $G$ since
-$$\mathrm{Stab}_G(g\cdot c)=g K_c^+ g^{-1}\quad\text{for all facets $c\subset\cB(G)$ and }g\in G.$$
-
 \begin{example}
-    The Bruhat-Tits building of $G=\SL_2(\QQ_p)$ or $G=\PGL_2(\QQ_p)$ is an infinite tree all of whose vertices have degree $p+1$. Each infinite line inside the building is an apartment corresponding to a distinct $F$-split maximal torus of $G$. Consider the apartment $\cA(G,T)$, where $T$ is the group of diagonal matrices, and let $\Delta=\{\alpha\}$ be the simple root as above. Then $\mathcal{C}_0$ is the segment between the vertices $0$ and $\calpha/2$.
+    The Bruhat-Tits building of $G=\SL_2(\QQ_p)$ or $G=\PGL_2(\QQ_p)$ is an infinite tree all of whose vertex have degree $p+1$. Each infinite line inside the building is an apartment corresponding to a distinct $F$-split maximal torus of $G$. Consider the apartment $\cA(G,T)$, where $T$ is the group of diagonal matrices, and let $\Delta=\{\alpha\}$ be the simple root as above. Then $\mathcal{C}_0$ is the segment between the vertices $0$ and $\calpha/2$.
 
     If $G=\SL_2(\QQ_p)$, then 
-    $$K_{\{0\}}^+=\SL_2(\ZZ_p),\ K_{\{\calpha/2\}}^+=\begin{psmallmatrix}
+    $$K_1:=\mathrm{Stab}(0)=\SL_2(\ZZ_p),\ K_2:=\mathrm{Stab}(\calpha/2)=\begin{psmallmatrix}
         \ZZ_p & p^{-1}\ZZ_p\\
         p\ZZ_p & \ZZ_p
-    \end{psmallmatrix}, \text{ and }\cI:=K_{\mathcal{C}_0}^+=\begin{psmallmatrix}
+    \end{psmallmatrix}, \text{ and }\cI:=\mathrm{Stab}(\mathcal{C}_0)=\begin{psmallmatrix}
         \ZZ_p^\times & \ZZ_p\\
         p\ZZ_p & \ZZ_p^\times
     \end{psmallmatrix}$$
-    are all connected, open compact subgroups of $\SL_2(\QQ_p)$ not conjugate to each other. Since any vertex in the building lies in the $G$-orbit of $0$ or $\calpha/2$, $K_0$ and $K_1$ are the unique maximal compact subgroups of $\SL_2(\QQ_p)$ up to conjugation. The subgroup $\cI$ is called the \textbf{Iwahori subgroup}, it is conjugate to the stabilizer of any facet in the building and is of fundamental importance in the representation theory of $\SL_2(\QQ_p)$.
+    are all connected, open compact subgroups of $\SL_2(\QQ_p)$ not conjugate to each other. $K_0$ and $K_1$ are the unique maximal compact subgroups of $\SL_2(\QQ_p)$ -- in particular, the stabilizer of any vertex of the building is conjugate to either $K_0$ or $K_1$. The subgroup $\cI$ is called the \textbf{Iwahori subgroup}, it is conjugate to the stabilizer of any facet in the building and is of fundamental importance in the representation theory of $\SL_2(\QQ_p)$.
 
     On the other hand, if $G=\PGL_2(\QQ_p)$, then 
-    $$K_{\{0\}}^+=\mathrm{Stab}(0)=\PGL_2(\ZZ_p),\ K_{\{\calpha/2\}}^+=\mathrm{Stab}(\calpha/2)=\begin{psmallmatrix}
+    $$K_1:=\mathrm{Stab}(0)=\PGL_2(\ZZ_p),\ K_2:=\mathrm{Stab}(\calpha/2)=\begin{psmallmatrix}
         \ZZ_p & p^{-1}\ZZ_p\\
         p\ZZ_p & \ZZ_p
     \end{psmallmatrix}_{\det\in\ZZ_p^\times}$$
     are both connected open compact subgroups and conjugate in $\PGL_2(F)$ by $\begin{psmallmatrix}
         0 & 1\\
         p & 0
-    \end{psmallmatrix}$, so $\PGL_2(F)$ has one unique \textit{connected} maximal compact subgroup up to conjugacy. But it has another class of maximal compact subgroups, namely     
-    $$K_{\mathcal{C}_0}^+=\begin{psmallmatrix}
+    \end{psmallmatrix}$, so $\PGL_2(F)$ has one unique \textit{connected} maximal compact subgroup up to conjugacy. Correspondingly,     
+    $$\mathrm{Stab}(\mathcal{C}_0)=\begin{psmallmatrix}
         \ZZ_p^\times & \ZZ_p\\
         p\ZZ_p & \ZZ_p^\times
     \end{psmallmatrix}_{\det\in\ZZ_p^\times}\bigsqcup\begin{psmallmatrix}
@@ -193,52 +183,42 @@ $$\mathrm{Stab}_G(g\cdot c)=g K_c^+ g^{-1}\quad\text{for all facets $c\subset\cB
     \end{psmallmatrix}\begin{psmallmatrix}
         \ZZ_p^\times & \ZZ_p\\
         p\ZZ_p & \ZZ_p^\times
-    \end{psmallmatrix}_{\det\in\ZZ_p^\times},$$
-    a disconnected open compact subgroup. We define the Iwahori subgroup $\cI$ to be identity connected component of $K_{\mathcal{C}_0}^+$.
+    \end{psmallmatrix}_{\det\in\ZZ_p^\times}$$
+    is a disconnected open compact subgroup, whose identity component is the Iwahori subgroup.
 \end{example}
 
-The example above suggests that the connected components of the stabilizers of facets in the building depend in a subtle way on the group $\Omega$. This is indeed the case, and we discuss this connection now. Since $\Omega=\mathrm{Stab}_{\widetilde{W}}(\mathcal{C}_0)$ and $\mathcal{C}_0$ is bounded by hyperplanes corresponding to $S_{\aff}$, there is a natural homomorphism
-$$\Omega\longrightarrow\Aut(S_{\aff}).$$
-All permutations of $S_{\aff}$ induced by $\Omega$ preserve the affine Dynkin diagram associated to $S_{\aff}$, and if $G$ is simple of adjoint type, then all such automorphisms of $S_{\aff}$ are induced by $\Omega$. This greatly restricts the size of $\Omega$.
+The example above suggests that the connected components of the stabilizers of facets in the building depend in a subtle way on the group $\Omega$. This is indeed the case, and we discuss this connection now. Since $\Omega=\mathrm{Stab}_G(\mathcal{C}_0)$ and $\mathcal{C}_0$ is bounded by hyperplanes corresponding to $S_{\aff}$, there is a natural homomorphism of groups $$\Omega\longrightarrow\Aut(S_{\aff}).$$ Moreover, all permutations of $S_{\aff}$ induced by $\Omega$ can be easily seen to preserve the affine Dynkin diagram associated to $S_{\aff}$, and if $G$ is simple of adjoint type, then all such automorphisms of $S_{\aff}$ are induced by $\Omega$. This greatly restricts the size of $\Omega$.
 
 Next, fix some \textit{proper} subset $J\subset S_{\aff}$ and consider the \textit{standard} facet 
 $$c_J=\{x\in\overline{\mathcal{C}_0}\ |\ \langle\alpha,x\rangle\in\ZZ\text{ for }\alpha\in J\text{ and }\langle\alpha,x\rangle\not\in\ZZ\text{ for }\alpha\in S_{\aff}-J\}.$$
 Two facets $c_{J_1}$ and $c_{J_2}$ are conjugate under the action of $G$ if and only if $J_1$ and $J_2$ lie in the same $\Omega$-orbit. Moreover, any facet $c$ in the building is conjugate to $c_J$ for some proper subset $J\subset S_{\aff}$. In other words, there is a bijection between
 \[
-    \{\Omega-\text{orbits of }J\subsetneq S_{\aff}\}\longleftrightarrow\{G-\text{orbits of facets $c$ in the BT-building}\},
+    \{\Omega-\text{orbits of }J\subsetneq S_{\aff}\}\longleftrightarrow\{G-\text{orbits of facets $c$ in the BT-building}\}
 \]
-satisfying that for any two $J_1\subseteq J_2$, their corresponding facets satisfy $c_{J_2}\subset \overline{c_{J_1}}$.
-
-The groups $K_c^+$ will be of great importance since they bridge the representation theory of $p$-adic groups with the that of finite groups of Lie type. To explain this connection, we note that there is a short exact sequence
+For any facet $c$ of the building of $G$, we let $K_c^+:=\mathrm{Stab}_G(c)$ be the stabilizer of $c$. There is a short exact sequence
 $$1\longrightarrow U_c\longrightarrow K_c^+\longrightarrow \overline{K}_c^+\longrightarrow 1,$$
-where $U_c$ is the pro-unipotent radical of $K_c^+$ and $\overline{K}_c^+$ is the group of $k$-rational points of a (possibly disconnected) reductive group $\mathbf{\overline{K}}_c^+$ over $k$. To avoid disconnected quotients, it is convenient to introduce the notion of a \textit{parahoric subgroup}.
+where $U_c$ is the pro-unipotent radical of $K_c^+$ and $\overline{K}_c^+$ is the group of $k$-rational points of a (possibly disconnected) reductive group $\mathbf{\overline{K}}_c^+$ over $k$. 
 
 \begin{definition}
-    A \textbf{parahoric subgroup} $K_c$ is the inverse image in $K_c^+$ of the group $\overline{K}_c$ of $k$-rational points of the identity component $\mathbf{\overline{K}}_c$ of $\mathbf{\overline{K}}_c^+$. We shall sometimes denote ``parahoric subgroup" to the triple $(K_c,U_c,\overline{K}_c)$. If $c=c_J$ is a standard facet, then we simply write $(K_J,U_J,\overline{K}_J)$ for its associated parahoric subgroup.
+    A \textbf{parahoric subgroup} $K_c$ is the inverse image in $K_c^+$ of the group $\overline{K}_c$ of $k$-rational points of the identity component $\mathbf{\overline{K}}_c$ of $\mathbf{\overline{K}}_c^+$. We shall sometimes denote "parahoric subgroup" to the triple $(K_c,U_c,\overline{K}_c)$. If $c$ is open in the building, then $(K_c,U_c,\overline{K}_c)$ is a minimal parahoric subgroup and is called an \textbf{Iwahori subgroup}. The standard Iwahori subgroup corresponds to $J=\emptyset\subsetneq S_{\aff}$.
 \end{definition}
 
-Naturally, two parahoric subgroups are conjugate in $G$ if and only if the corresponding facets of the building are in the same $G$-orbit. Thus, there is an inclusion-preserving bijection between 
+Naturally, two parahoric subgroups are conjugate in $G$ if and only if the corresponding facets of the building are in the same $G$-orbit. Thus, all Iwahori subgroups are conjugate in $G$. If $c=c_J$ is a standard facet, then we simply write $(K_J,U_J,\overline{K}_J)$ for its associated parahoric subgroup, and $K_J$ is generated by the standard Iwahori subgroup and $J$. Thus, there is a bijection between 
 \[
     \{\Omega-\text{orbits of }J\subsetneq S_{\aff}\}\longleftrightarrow\{G-\text{conjugacy classes of parahoric subgroups } (K,U_K,\overline{K})\}
 \]
-
-In particular, if $c$ is open in the building, then $(K_c,U_c,\overline{K}_c)$ is a minimal parahoric subgroup. These is called an \textbf{Iwahori subgroups}, and they are all conjugate in $G$. The standard Iwahori subgroup $\cI$ corresponds to $J=\emptyset\subsetneq S_{\aff}$.
-
 Moreover, if the facet $c$ corresponds to $J\subsetneq S_{\aff}$, then
 $$K_c^+/K_c\cong\Omega_J=\mathrm{Stab}_\Omega(J).$$
 These results can be directly verified for $\SL_2$, $\PGL_2$ and $\GL_2$ using the examples above.
 
 \begin{example}\label{example:G2_quotients}
-    Suppose that $G=G_2(F)$. The affine Dynkin diagram of $G_2$ has no symmetries, so $\Omega=1$ and the extended affine weyl group $\widetilde{W}$ is a Coxeter group of type $\tilde{G_2}$. Since $S_{\aff}=\{s_0,s_1,s_2\}$, there are $7$ conjugacy classes of parahoric subgroups, satisfying
-    \begin{align*}
+    Suppose that $G=G_2(F)$. The affine Dynkin diagram of $G_2$ has no symmetries, so $\Omega=1$ and the extended affine weyl group $\widetilde{W}$ is a Coxeter group of type $\tilde{G_2}$. Since $S_{\aff}={s_0,s_1,s_2}$, there are $7$ conjugacy classes of parahoric subgroups, satisfying
+    \begin{align}
         \overline{K}_{\{s_1,s_2\}}=G_2(k),\quad \overline{K}_{\{s_0,s_1\}}=\SL_3(k), \quad \overline{K}_{\{s_0,s_2\}}=\SL_2(k)\times\SL_2(k)\\
-        \overline{K}_{\{s_1\}}=\overline{K}_{\{s_2\}}=\overline{K}_{\{s_0\}}=\SL_2(k)\quad\text{and}\quad \overline{K}_{\emptyset}=T(k)=(k^\times)^2.
-    \end{align*}
+        \text{\textcolor{red}{what about singletons}}\quad \overline{K}_{\emptyset}=T(k)=(k^\times)^2.
+    \end{align}
 \end{example}
 
-As we mentioned earlier, parahoric subgroups are of great important for they provide a bridge between smooth admissible representations of $G$ and finite dimensional representations of the finite groups of Lie type $\overline{K}_c$. In the next subsection, we carefully describe this bridge and how it helps us classify certain representations of $G$.
-
-\iffalse
 \subsection{Types for Bernstein blocks and Hecke algebras}
 In Section \ref{sec:Bernstein} we stated the Bernstein decomposition, a fundamental result in the complex representation theory of $p$-adic groups. The upshot of this result a priori is clear -- one can restrict attention to each block individually and study the irreducible objects in each block instead of the entire category $\Rep(G)$. In this section, we briefly introduce the notion of types and their corresponding Hecke algebra, which help us understand each individual Bernstein block. We give precise results for so-called \textit{depth-zero Bernstein blocks} which will be required later on. We begin with the definition of a \textit{type}.
 \begin{definition}
@@ -296,62 +276,59 @@ In most cases, one can answer the three questions giving rise to beautiful, deep
 
 For the remainder of the section, assume for simplicity that $G$ is simple. Suppose that $M$ is a Levi subgroup of $G$ and that $\sigma$ is a depth-zero supercuspidal representation $\sigma$ of $M$. A well-known result of Moy and Prasad states that there is a vertex $x\in\cB(M)\subseteq\cB(G)$ with corresponding stabilizer $K^{(M)+}_x$, parahoric subgroup $(K^{(M)}_x,U^{(M)}_x,\overline{K}^{(M)}_x)$ and a cuspidal representation $\tilde\tau$ of $\overline{K}^{(M)}_xZ(G)$ such that 
 $$\sigma\cong\cInd_{K^{(M)}_xZ(G)}^G\tilde\tau.$$
-\fi
+
 
 
 
 \subsection{Parahoric restriction and unipotent representations}
-In this section, we finally focus our attention in representation theoretic aspects of the $p$-adic group $G$, using the techniques developed in previous ones. The main object of study in the local Langlands correspondence is the category of smooth admissible complex representations of $G$, denoted by $\Rep(G)$. Let $\Irr(G)$ be the set of irreducible representations in $\Rep(G)$. This is a large, and we are interested in a particular subset of known as \textit{unipotent} irreducible representations of $G$ and denoted by $\Irr_{\un}(G)$, which we now define using parahoric subgroups.
 
-Consider a smooth admissible representation $(\pi,V)$ of $G$ and let $(K,U_K,\overline{K})$ be a parahoric subgroup corresponding to a facet $c$. The space $V^{U_K}$ of fixed points under the pro-unipotent radical is naturally a representation of $\overline{K}=K/U_K$. We can take this idea one step further and define the \textit{parahoric restriction functor}
+
+Parahoric subgroups are ubiquitous objects in the representation theory of p-adic objects, since it provides a bridge between smooth admissible representations of the p-adic group $G$ and finite dimensional representations of the finite groups of Lie type $\overline{K}_c$ defined in the previous section. In this section, we explore this important connection that we will exploit in a latter chapter. 
+
+If $(K,U_K,\overline{K})$ is any parahoric subgroup corresponding to a facet $c$ and $(\pi,V)$ is a smooth admissible representation of $G$, the space $V^{U_K}$ of fixed points under the pro-unipotent radical is naturally a representation of $\overline{K}$. We can take this idea one step further and define the \textit{parahoric restriction functor}
 \begin{equation}\label{eqn:par_restriction}
-    \res_K:R(G)\longrightarrow R(\overline{K}),\quad V\longmapsto V^{U_K},\quad\text{for all }V\in\Irr(G),
+    \res_K:R(G)\longrightarrow \CC[\overline{K}]^{\overline{K}},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G),
 \end{equation}
-where $R(G)$ is the $\CC$-span of $\Irr(G)$ and $R(\overline{K})$ is the $\CC$-span of the irreducible representations of $\overline{K}$. This is well-defined since the representations are assumed to be admissible. The existence of such a functor is very powerful -- we can then apply the techniques of representation theory of finite groups of Lie such as Deligne--Lusztig induction in the setting of $p$-adic groups. Let us begin with a natural definition.
+where $R(G)$ is the $\CC$-span of $\Irr(G)$ and $\CC[\overline{K}]^{\overline{K}}$ is the space of class functions of $\overline{K}$. This is well-defined since the representations are assumed to be admissible. The existence of such a functor is very powerful -- we can then apply the techniques of representation theory of finite groups of Lie such as Deligne-Lusztig induction in the setting of $p$-adic groups. Let us begin first with a natural definition.
 
 \begin{definition}
     Let $(K,U_K,\overline{K})$ be a parahoric subgroup and $(\tau, E)$ be a cuspidal representation of $\overline{K}$. Define 
     $$\Irr(G,K,E)=\{(\pi,V)\in\Irr(G)\ |\ \text{the $\overline{K}$-module }V^{U_K}\text{ contains the $\overline{K}$-module }E\}.$$ 
 \end{definition}
 
-The definition of a unipotent representation is now straightforward.
 
 \begin{definition}
-    We say that an irreducible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there is a parahoric subgroup $(K,U_K,\overline{K})$ such that $V^{U_K}$ contains a cuspidal unipotent representation of $\overline{K}$; that is, if $(\pi,V)\in\Irr(G,K,E)$ for some pair $(K,E)$ where $E$ is unipotent.
+    We say that an irreducible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there is a parahoric subgroup $(K,U_K,\overline{K})$ such that $V^{U_K}$ contains a cuspidal unipotent representation of $\overline{K}$; that is, if $(\pi,V)\in\Irr(G,K,E)$ for some pair $(K,E)$ where $E$ is unipotent. We denote the set of unipotent representations of $G$ by 
+    $$\Irr_{\un}(G)=\bigcup_{\substack{J\subsetneq S_{\aff}\\
+    E \text{ cusp. unip. $\overline{K}_J$-rep}}}\Irr(G,K_J,E)$$
 \end{definition}
-
-Therefore, the set of unipotent representations up to isomorphism is
-$$\Irr_{\un}(G)=\bigcup_{\substack{J\subsetneq S_{\aff}\\ E \text{ cusp. unip. $\overline{K}_J$-rep}}}\Irr(G,K_J,E).$$
-We say that each set $\Irr(G,K_J,E)$ generates a distinct \textit{block} of representations of $G$.
 
 We note that if we replace the $p$-adic group $G$ for the finite group of Lie type $G^F$ and \textit{parahoric} by \textit{parabolic}, then we recover the definition of a unipotent representation in $G^F$. 
 
+\textcolor{red}{Are all pairs $(K,E)$ as above types of certain Bernstein blocks?}
+
 \begin{example}\label{example:unip_blocks}
-    Let $G$ be a split reductive $p$-adic group with split maximal torus $T$. Let $\cI$ be an Iwahori subgroup with pro-unipotent radical $\cI^+$. Then the reductive quotient $\cI/\cI^+$ is isomorphic to $T(k)$. Thus, all irreducible representations of $\cI/\cI^+$ are $1$-dimensional and the only unipotent representation is the trivial one. Therefore, the irreducible \textit{Iwahori-spherical} representations
-    $$\Irr(G,\cI,\mathbf{1})=\{(\pi,V)\in\Irr(G)\ |\ V^{\cI}\neq 0\}$$
-    are all unipotent. It is a known fact that this set coincides with the set of irreducible subrepresentations of $\cInd_B^G\chi$, where $\chi$ is an unramified character of $T$. We say that $\Irr(G,\cI,\mathbf{1})$ generates the \textit{principal block}.
-    \iffalse
+    Let $G$ be a split reductive p-adic group with split maximal torus $T$.
     \begin{enumerate}
-        \item 
+        \item Let $\cI$ be an Iwahori subgroup with pro-unipotent radical $\cI^+$. Then the reductive quotient $\cI/\cI^+$ is isomorphic to $T(k)$. Thus, all irreducible representations of $\cI/\cI^+$ are $1$-dimensional and the only unipotent representation is the trivial one. Therefore, the irreducible \textit{Iwahori-spherical} representations
+        $$\Irr(G,\cI,\mathbf{1})=\{(\pi,V)\in\Irr(G)\ |\ V^{\cI}\neq 0\}$$
+        are all unipotent, and this set coincides with the set of irreducible subrepresentations of $\cInd_B^G\chi$, where $\chi$ is an unramified character of $T$.
+        Thus, it follows that
+        $$\{(\pi,V)\in\Rep(G)\ | \ V \text{ is generated by } V^{\cI}\}$$
+        is the \textit{principal Bernstein block} $\Rep(G)_{[T,1]}$.
         \item Let $(K,U_K,\overline{K})$ be a maximal parahoric subgroup corresponding to a vertex of the building associated to $G$ and let $(\sigma,E)$ be a cuspidal (not necessarily unipotent) representation of $\overline{K}$ viewed as a representation of $K$ by inflation. Then the compactly induced $(\pi,V):=\cInd_K^G(\sigma,E)$ is an irreducible supercuspidal representation and by Frobenius reciprocity
         $$(\pi,V)\in\Irr(G,K,E).$$
         In fact, as we shall observe later, we have that $\Irr(G,K,E)=\{(\pi,V)\}$ and consequently \textcolor{red}{(potentially mention type theory briefly)} the block 
         $$\Rep(G)_{[G,\pi]}=\{\pi,\pi\oplus\pi,\pi\oplus\pi\oplus\pi,\ldots\}.$$
     \end{enumerate}
-    \fi    
+    
 \end{example}
 
-\begin{example}\label{rem:An_unipotent}
+\begin{remark}\label{rem:An_unipotent}
     For $n\geq 1$, reductive groups over finite fields of type $A_n$ have no irreducible cuspidal unipotent representations. Therefore, if $G$ is a reductive $p$-adic group of type $A_n$ and $J\subseteq S_{\aff}$ is non-empty, then $\overline{K}_J$ has no cuspidal unipotent representations. This implies that the set of irreducible unipotent representations of $G$
     $$\Irr_{\un}(G)=\Irr(G,\cI,\mathbf{1})$$
     coincides with the irreducible Iwahori-spherical representations of $G$.
-\end{example}
-
-\begin{example}
-    Let $G$ be a $p$-adic group of type $G_2$. For $J\subsetneq S_{\aff}$, $\overline{K}_J$ has unipotent cuspidal representations only if $J=\emptyset$ and $J=J_0=\{s_1,s_2\}$. In the first case, we obtain the principal block $\Irr(G,\cI,\mathbf{1})$. In the second case, $\overline{K}_J$ has four unipotent characters, so 
-    $$\Irr_un(G)=\Irr(G,\cI,\mathbf{1})\sqcup\bigsqcup_{\rho\in\{1,-1,\theta,\theta^2\}}\Irr(G,K_{J_0},G_2[\rho]).$$
-    However, these last four blocks are very simple since they have a unique irreducible unipotent representation, namely $\Irr(G,K_{J_0},G_2[\rho])=\{\cInd_{K_{J_0}}^G G_2[\rho]\}$ for each $\rho\in\{1,-1,\theta,\theta^2\}$.
-\end{example}
+\end{remark}
 
 The next step is to ensure that unipotent representations behave under the parahoric restriction functor \eqref{eqn:par_restriction}. The following two results ensure this is indeed the case.
 \begin{proposition}\label{prop:unipotent_padic}
