@@ -231,8 +231,8 @@ These results can be directly verified for $\SL_2$, $\PGL_2$ and $\GL_2$ using t
 \begin{example}\label{example:G2_quotients}
     Suppose that $G=G_2(F)$. The affine Dynkin diagram of $G_2$ has no symmetries, so $\Omega=1$ and the extended affine weyl group $\widetilde{W}$ is a Coxeter group of type $\tilde{G_2}$. Since $S_{\aff}=\{s_0,s_1,s_2\}$, there are $7$ conjugacy classes of parahoric subgroups, satisfying
     \begin{align*}
-        \overline{K}_{\{s_1,s_2\}}=G_2(k),\quad \overline{K}_{\{s_0,s_1\}}=\SL_3(k), \quad \overline{K}_{\{s_0,s_2\}}=\SL_2(k)\times\SL_2(k)\\
-        \overline{K}_{\{s_1\}}=\overline{K}_{\{s_2\}}=\overline{K}_{\{s_0\}}=\SL_2(k)\quad\text{and}\quad \overline{K}_{\emptyset}=T(k)=(k^\times)^2.
+        \overline{K}_{\{s_1,s_2\}}=G_2(k),\quad \overline{K}_{\{s_0,s_1\}}=\SL_3(k), \quad \overline{K}_{\{s_0,s_2\}}=(\SL_2(k)\times\SL_2(k))/\mu_2\\
+        \overline{K}_{\{s_1\}}=\overline{K}_{\{s_2\}}=\overline{K}_{\{s_0\}}=\GL_2(k)\quad\text{and}\quad \overline{K}_{\emptyset}=T(k)=(k^\times)^2.
     \end{align*}
 \end{example}
 
@@ -310,7 +310,7 @@ Consider a smooth admissible representation $(\pi,V)$ of $G$ and let $(K,U_K,\ov
 where $R(G)$ is the $\CC$-span of $\Irr(G)$ and $R(\overline{K})$ is the $\CC$-span of the irreducible representations of $\overline{K}$. This is well-defined since the representations are assumed to be admissible. The existence of such a functor is very powerful -- we can then apply the techniques of representation theory of finite groups of Lie such as Deligne--Lusztig induction in the setting of $p$-adic groups. Let us begin with a natural definition.
 
 \begin{definition}
-    Let $(K,U_K,\overline{K})$ be a parahoric subgroup and $(\tau, E)$ be a cuspidal representation of $\overline{K}$. Define 
+    Let $(K,U_K,\overline{K})$ be a parahoric subgroup and $(\sigma, E)$ be a cuspidal representation of $\overline{K}$. Define 
     $$\Irr(G,K,E)=\{(\pi,V)\in\Irr(G)\ |\ \text{the $\overline{K}$-module }V^{U_K}\text{ contains the $\overline{K}$-module }E\}.$$ 
 \end{definition}
 
@@ -358,7 +358,7 @@ The next step is to ensure that unipotent representations behave under the parah
     Let $(\pi,V)$ be an irreducible admissible representation of $G$. If there is some parahoric subgroup $(K,U_K,\overline{K})$ such that $V^{U_K}$ contains a (potentially non-cuspidal) unipotent representation of $\overline{K}$, then $(\pi,V)$ is a unipotent representation of $G$.
 \end{proposition}
 \begin{proof}
-    By assumption, $V^{U_K}$ contains a unipotent irreducible representation $(\sigma,W)$ of $\overline{K}$ so $\Hom_K(W,V^{U_K})\neq 0$. By Proposition \ref{prop:harishchandra}, there is some standard parabolic subgroup $\overline{P}=\overline{U_P}\cdot\overline{L_P}$ of $\overline{K}$ and cuspidal unipotent representation $(\tau,E)$ of $\overline{L_P}$ such that 
+    By assumption, $V^{U_K}$ contains a unipotent irreducible representation $(\tau,W)$ of $\overline{K}$ so $\Hom_K(W,V^{U_K})\neq 0$. By Proposition \ref{prop:harishchandra}, there is some standard parabolic subgroup $\overline{P}=\overline{U_P}\cdot\overline{L_P}$ of $\overline{K}$ and cuspidal unipotent representation $(\sigma,E)$ of $\overline{L_P}$ such that 
     $$\Hom_{K}(W,\Ind_{\overline{P}}^{\overline{K}}E)\neq 0,$$
     where we view the $\overline{K}$ representations as inflated $K$ representations, trivial on $U_K$. By the classification of parahoric subgroups in $G$, it follows that $\overline{P}=H/U_K$, where $(H,U_H,\overline{H})$ is another parahoric subgroup contained in $K$. Moreover, we have the inclusions $U_K\subseteq U_H\subseteq H\subseteq K$ and therefore $\overline{U_P}=U_H/U_K$ and $\overline{L_P}=\overline{H}=H/U_H$. Since induction and inflation are commuting operations, it follows that
     $$\mathrm{Inf}_{\overline{K}}^K\Ind_{\overline{P}}^{\overline{K}}E\cong\Ind_{H}^K\mathrm{Inf}_{\overline{H}}^H E$$
@@ -408,18 +408,18 @@ Since $\pi$ is an irreducible representation of $G$, there must be some $g\in G$
 
 Analogously to the construction of $R(G)$, we define $R_{\textrm{un}}(G)$ to be the $\CC$-span of the irreducible unipotent representations $\Irr_{\un}(G)$. Lemma \ref{prop:unipotent_padic} and Theorem \ref{thm:unip_restriction} implies that for each parahoric subgroup $(K,U_K,\overline{K})$ there is a well-defined \textit{restriction function}
 \begin{equation*}
-    \res_{\textrm{un}}^K:R_{\textrm{un}}(G)\longrightarrow \CC_{\textrm{un}}[\overline{K}]^{\overline{K}},\quad V\longmapsto \text{(character of) }V^{U_K},\quad\text{for all }V\in\Irr(G).
+    \res_{\un}^K:R_{\textrm{un}}(G)\longrightarrow R_{\un}(\overline{K}),\quad V\longmapsto V^{U_K},\quad\text{for all }V\in\Irr(G).
 \end{equation*}
-It is also convenient to consider simultaneously all such functions for all conjugacy classes of maximal parahoric subgroups, so we define $\res_{\textrm{un}}^{\textrm{par}}=(\res_{\textrm{un}}^K)_K$. 
+It is also convenient to consider simultaneously all such functions for all conjugacy classes of maximal parahoric subgroups, so we define $\res_{\textrm{un}}^{\textrm{par}}=(\res_{\textrm{un}}^K)_K$. These are the vertical maps in the diagram \ref{conj:main}.
 
 
 \iffalse In the previous section, we defined a nonabelian Fourier transform 
-$$\FT^K:\CC_{\un}[\overline{K}]^{\overline{K}}\longrightarrow\CC_{\un}[\overline{K}]^{\overline{K}},$$
+$$\FT^K:R_{\un}(\overline{K})\longrightarrow R_{\un}(\overline{K}),$$
 taking the unipotent characters to the almost characters of $\overline{K}$, having nice geometric properties. We also consider all these maps simultaneously for all conjugacy classes of maximal parahoric subgroups, which we denote as $\FT^{\mathrm{par}}=(\FT^K)_{K \text{ maximal}}$.
 \fi
 
 
-
+\iffalse
 \subsection{Parahoric restriction for unipotent supercuspidal representations}
 
 Let $G$ be the simple $p$-adic group over $F$. In this section, we investigate the parahoric restriction of supercuspidal unipotent representations of $G$ (if any) with respect to maximal parahoric subgroups. A well-known result of Moy and Prasad states that any supercuspidal unipotent representation $(\pi,V)$ of $G$ is obtained by compactly inducting an irreducible smooth representation $(\rho,E)$ of $K_x^+$, where $x\in\cB(G)$ is a vertex, such that $\rho|_{K_x}$ is the inflation of a cuspidal representation of $\overline{K}_x$. By conjugating if necessary, we may assume that $x$ lies in the closure of the fundamental alcove $\mathcal{C}_0$. Explicitly, 
@@ -450,14 +450,54 @@ In the next section, we shall describe a natural way to parametrize this family.
 
 Firstly, consider the case $\pi=\cInd_{K_0}^G\sigma$ for a cuspidal unipotent representation $\sigma$ of $G_2(\FF_q)$. By Frobenius reciprocity, it follows that $\pi^{U_{K_0}}=\sigma\neq0$ and therefore by Theorem \ref{thm:unip_restriction}, the set $J_0=\{\alpha_1,\alpha_2\}$ is minimal with respect to the property that $V^{U_J}\neq 0$. Suppose for a contradiction that $V^{U_{J_i}}\neq 0$ for $i=1$ or $i=2$, where $J_1:=\{\alpha_0,\alpha_2\}$ and $J_2:=\{\alpha_0,\alpha_1\}$. Since $J_1$ or $J_2$ cannot be minimal with respect to the same property, then $V^{U_{\{\alpha_0\}}}\neq0$. But $\overline{K}_{\{\alpha_0\}}$ has no cuspidal unipotent representations, so $V^{K_{\emptyset}}=V^{I}\neq0$, a contradiction to Corollary \ref{cor:disjoint_reps}.
 
-
-
-
-\newpage
+\fi
 \subsection{The Langlands parametrization of unipotent representations}
 
+In this section, we give an overview on the Langlands parametrization of unipotent representations achieved by Lusztig in his celebrated paper of 1995. It relates the unipotent representations of $G$ with certain geometric structures of its complex dual group $G^\vee$. This is a complex reductive group, whose root datum is dual to that of $G$. Here are some examples for classical groups.
+\begin{center}
+    \begin{tabular}{c|cccccc}
+        
+        $G$ & $\GL_n(F)$ & $\SL_n(F)$ & $\PGL_n(F)$ & $\Sp_{2n}(F)$ & $\mathrm{PSp}_{2n}(F)$ & $\SO_{2n+1}(F)$\\\hline
+        $G^\vee$ & $\GL_n(\CC)$ & $\PGL_n(\CC)$ & $\SL_n(\CC)$ & $\SO_{2n+1}(\CC)$ & $\mathrm{Spin}_{2n+1}(\CC)$ & $\Sp_{2n}(\CC)$\\
+    \end{tabular}    
+\end{center}
 
-In this section, we give an overview on the Langlands parametrization of unipotent representations achieved by Lusztig in his celebrated paper of 1995. Firstly, we briefly discuss the results of Kazhdan--Lusztig on the parametrization of Iwahori-spherical representation when $G$ is a $p$-adic reductive group of \textit{adjoint} type. Throughout, let $G^\vee$ be complex dual group of $G$.
+This parametrization is widely used and is key to define the dual nonabelian fourier transform $\FT^\vee_{\text{ell}}$ on a certain space of unipotent representations of $G$. To state this result, we need to consider the representations not only of $G$, but also of its \textit{pure inner twists} $\InnT^p(G)$. We will not discuss the precise definition here; instead it will suffice to know that there is a canonical bijection
+\begin{equation}\label{eqn:pureinnertwists}
+    \InnT^p(G)\longleftrightarrow Z(G^\vee),
+\end{equation}
+where the unique split form corresponds to the trivial character. In particular, if $G$ is simply connected, $G^\vee$ is adjoint so it has trivial centre and $G$ has no pure inner twists other than itself. The three example we will visit later are all simply connected, so no pure inner twists will arise. The main result of this section is the following.
+
+\begin{theorem}[The arithmetic-geometric correspondence]\label{thm:correspondence}
+    There is an natural bijection between the sets
+    \begin{align*}
+        G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x}\}&\longleftrightarrow\bigsqcup_{G'\in\InnT^p(G)}\Irr_{\un}(G')\\
+        (x,\phi)&\longmapsto (\pi_{(x,\phi)},V_{(x,\phi)}),
+    \end{align*}
+    where $A_x=Z_{G^\vee}(x)/Z_{G^\vee}(x)^0$ is the component group of the centralizer of $x$ in $G^\vee$.
+\end{theorem}
+
+This is a remarkable result, which we now study in some detail, fits naturally within the local Langlands correspondence and the theory of Langlands parameters \textcolor{red}{(overview of this in chapter 4 Beth and Dan)}. Firstly, given a pair $(x,\phi)$, where $x\in G^\vee$ and $\phi\in\widehat{A_x}$, one can easily determine the inner twist $G'$ acting on the representation $(\pi_{(x,\phi)},V_{(x,\phi)})$. We can $\phi$ as a character on $Z_{G^\vee}(x)$ and we can restrict it to get a character of $Z(G^\vee)$. Tracing back through the bijection in \eqref{eqn:pureinnertwists} we obtain the corresponding pure inner twist $G'$.
+
+Secondly, given a pair $(x,\phi)$ parametrizing a representation of $G$, we would like to know inside which unipotent block does $(\pi_{(x,\phi)},V_{(x,\phi)})$ lie. This is a much harder question to answer than the previous one, and its solution delves deep into the proof of the arithmetic-geometric correspondence. For the remaining of this section, we give an overview of some of the ideas involved which will of use for us later. The main one is the use of \textit{Hecke algebras} to classify irreducible representation of an individual block. This approach has the added advantage that it reduces the problem of classifying infinite dimensional irreducible representation of $G$ of some block to classifying simple finite dimensional modules over the Hecke algebra. 
+
+Suppose that $(\pi,V)\in\Irr(G,K,E)$ is an irreducible unipotent representation of $G$, where $(E,\sigma)$ is a cuspidal unipotent representation of $\overline{K}$. By definition, $V^{U_K}$ is a finite dimensional $\overline{K}$-representation, so 
+$$\Hom_G(\cInd_{K}^G \sigma,\pi)=\Hom_K(\sigma,\pi)=\Hom_K(\sigma,\pi^{U_K})$$
+is a non-zero finite-dimensional module over the algebra $\cH(G,K,\sigma):=\End_G(\cInd_{K}^G \sigma)$ acting by precomposition, denoted the \textit{Hecke algebra} associated to the pair $(K,\sigma)$.
+\begin{theorem}
+    There is a bijection between 
+    \begin{equation*}
+        \Irr(G,K,E)\longleftrightarrow\text{ simple right }\cH(G,K,\sigma)-\text{modules}, \quad V\longmapsto\Hom_K(E,V^{U_K}).
+    \end{equation*}
+\end{theorem}
+This is a foundational result in the study of representations of $p$-adic groups, which can be vastly generalized. Still, this does not solve the problem stated above. A pair $(x,\phi)$ parametrizes a simple module of some unipotent Hecke algebra $\cH(G,K,\sigma)$, but which one? The answer is provided by the generalized Springer correspondence (which is something I am learning currently). 
+\begin{example}[Classical Springer correspondence]
+    As a particular example of this correspondence, we state a criterion for $(x,\phi)$ to parametrize a simple module for the principal Hecke algebra $\cH(G,\cI,\mathbf{1})$ and therefore of Iwahori-spherical representations. This is the content of the classical Springer correspondence. Let $\cB:=G^\vee/B^\vee$ the flag variety of $G^\vee$ and let $\cB^x$ the fixed points under the action of conjugation of $x$. The space $\cB$ naturally parametrizes the set of Borel subgroups of $G^\vee$, while $\cB^x$ parametrizes the set of Borel subgroups \textit{containing} $x$. Now, $\cB^x$ admits a natural action of the group $A_x$ by conjugation. This induces an $A_x$-action on the singular cohomology complex $H^*(\cB^x,\CC)$. Then $(x,\phi)$ corresponds to an Iwahori-spherical representation if and only if the $\phi$-isotropic subspace on $H^*(\cB^x,\CC)$ is non-trivial. Using this, it can be shown that $(x,\mathbf{1})$ always parametrizes an Iwahori-spherical representation of the split form for any $x\in G^\vee$. It is possible to construct explicitly the Hecke algebra module from $(x,\phi)$, but we shall not visit this here.
+\end{example}
+
+\iffalse
+
+Firstly, we briefly discuss the results of Kazhdan--Lusztig on the parametrization of Iwahori-spherical representation when $G$ is a $p$-adic reductive group of \textit{adjoint} type. Throughout, let $G^\vee$ be complex dual group of $G$.
 
 We recall that the irreducible Iwahori-spherical representations are in bijection with the irreducible modules of $\cH_\cI=\cH(G,\cI,\mathbf{1})$. Let $\cB$ be the variety of Borel subgroups of $G^\vee$ and let 
 $$\mathcal{Z}=\{(B,u,B')\in\cB\times G^\vee\times\cB:u\in B\cap B'\text{ unipotent}\}$$
@@ -508,7 +548,7 @@ This question was studied and completely resolved by Lusztig in his celebrated p
 \end{align}
 For instance, if $G$ is a simply connected $p$-adic group, then $Z_{G^\vee}=\{1\}$ and therefore $G$ has no pure inner twists other than itself. Secondly, one needs to consider all unipotent representations, and not just the Iwahori-spherical. The following theorem contains this information.
 
-\begin{theorem}[The arithmetic-geometric correspondence]\label{thm:correspondence}
+\begin{theorem}[The arithmetic-geometric correspondence]
     There is an explicit bijection between the sets
     \begin{equation*}
         \bigcup_{G'\in\InnT^p(G)}\Irr_{\un}(G')\longleftrightarrow\mathcal{T}(\sqrt{q})\longleftrightarrow\mathcal{T}(1),
@@ -581,12 +621,13 @@ and the LLC predicts that $\Phi_{e,\un}(G')$ parametrizes the set $\Irr_{\un}(G'
         G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\bigsqcup_{G'\in\InnT(G)}\Irr_{\un}(G'),\quad (x,\phi)\longmapsto\pi(x,\phi)
     \end{equation*}
 \end{example}
+\fi
 
 \subsection{Unipotent conjugacy classes of complex simple groups}\label{subsec:unipotent_classes}
 
-In the previous paragraph we stated the unramified local Langlands correspondence, which reduces the classification of unipotent representations of $G$ to the classification of conjugacy classes or $G^\vee$ and the structure of the component group of their centralizer. To understand these, one first studies the classification of unipotent conjugacy classes of $G^\vee$, an interesting problem on its own right that uncovers rich structure inside $G^\vee$. 
+In the previous paragraph we stated the arithmetic-geometric correspondence (also known as the unramified local Langlands correspondence), which reduces the classification of unipotent representations of $G$ to the classification of conjugacy classes of $G^\vee$ and the structure of the component group of their centralizers. To understand these, we first need to study the classification of unipotent conjugacy classes of $G^\vee$, an interesting problem on its own right that uncovers rich geometric structure inside $G^\vee$. 
 
-Define $\mathcal{U}$ to be the set of unipotent elements of $G^\vee$. This can be seen to be a closed irreducible subvariety of $G^\vee$ of dimension $\dim G^\vee-\rk G^\vee$. If $u\in \mathcal{U}$ is a unipotent element, its conjugacy class $C(u)\subset H$ is the orbit of $u$ under the conjugation action of $G^\vee$ on itself. Standard results in the structure theory of unipotent elements inside complex reductive groups state that $G^\vee$ has finitely many conjugacy classes of unipotent elements, and that each class $C$ is a locally closed subvariety of $G^\vee$. Moreover, its closure $\overline{C}$ is the union of (finitely many) unipotent conjugacy classes. In particular, there is one unique unipotent conjugacy class $C_{\reg}$ of maximal dimension such that $C_{\reg}$ is open and $\overline{C_{\reg}}=\mathcal{U}$. Such unipotent elements are called \textit{regular}, and $\dim Z_{G^\vee}(u)=\rk G^\vee$ for any $u\in C_{\reg}$. The boundary of $C_{\reg}$ has dimension $\dim G^\vee-\rk G^\vee-2$ and contains a unique dense unipotent conjugacy class $C_{subreg}$ of \textit{subregular} unipotent elements such that 
+Define $\mathcal{U}$ to be the set of unipotent elements of $G^\vee$. This can be seen to be a closed irreducible subvariety of $G^\vee$ of dimension $\dim G^\vee-\rk G^\vee$. If $u\in \mathcal{U}$ is a unipotent element, its conjugacy class $C(u)\subset G^\vee$ is the orbit of $u$ under the conjugation action of $G^\vee$ on itself. Standard results in the structure theory of unipotent elements inside complex reductive groups state that $G^\vee$ has finitely many conjugacy classes of unipotent elements, and that each class $C$ is a locally closed subvariety of $G^\vee$. Moreover, its closure $\overline{C}$ is the union of (finitely many) unipotent conjugacy classes. In particular, there is one unique unipotent conjugacy class $C_{\reg}$ of maximal dimension such that $C_{\reg}$ is open and dense. Such unipotent elements are called \textit{regular}, and $\dim Z_{G^\vee}(u)=\rk G^\vee$ for any $u\in C_{\reg}$. The boundary of $C_{\reg}$ has dimension $\dim G^\vee-\rk G^\vee-2$ and contains a unique dense unipotent conjugacy class $C_{subreg}$ of \textit{subregular} unipotent elements such that 
 $$\overline{C_{subreg}}=\overline{C_{\reg}}-C_{\reg}=\mathcal{U}-C_{\reg}.$$
 Similarly, $\dim_{Z_{G^\vee}}(u)=\rk G^\vee+2$ for any $u\in C_{subreg}$. At the other end, there is the trivial class consisting of $\{1\}$, and this is the only closed conjugacy class. There is one further "canonical orbit", the set of \textit{minimal} unipotent elements $C_{\min}$, with the property that they are contained in the closure of every unipotent conjugacy class except for $\{1\}$.  
 
@@ -598,25 +639,107 @@ One can then picture this partial order in a diagram, called a \textit{Hasse dia
     \includegraphics{Unipotent structure.png}
 \end{figure}
 
-\begin{example}
-    If $\mathbf{G}$ is a simple split algebraic group of type $G_2$, then $G=\mathbf{G}(F)$ is both adjoint and simply connected and consequently there is a bijection
+\newpage
+\subsection{The dual nonabelian Fourier transform}
+At this stage, it is hopefully a natural question to ask whether there exists so linear involution $\FT^\vee:R_{\un}(G)\rightarrow R_{\un}(G)$ such that the square
+\[
+\begin{tikzcd}
+R_{\un}(G) \arrow[r,dashed, "\FT^\vee"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & R_{\un}(G) \arrow[d, "\res_{\un}^{\mathrm{par}}"] \\
+\bigoplus_K R_{\un}(\overline{K}) \arrow[r, "(\FT_{\overline{K}})_K"] & \bigoplus_K R_{\un}(\overline{K})
+\end{tikzcd}
+\]
+commutes, where the sum is taken over all maximal parahoric subgroups $K$. This is an open question in general, and a very difficult one. A significant amount of work has been done trying to define such a map with nice properties. The first important observation is that while the above map is hoped to exist for simply connected groups $G$, representations of pure inner twists of $G$ should interact with those of $G$, so a modification is required. More concretely, we consider instead the commutative square
+\[
+\begin{tikzcd}
+\bigoplus_{G'}R_{\un}(G') \arrow[r,dashed, "\FT^\vee"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & \bigoplus_{G'}R_{\un}(G') \arrow[d, "\res_{\un}^{\mathrm{par}}"] \\
+\bigoplus_{G'}\bigoplus_{K'} R_{\un}(\overline{K'}) \arrow[r, "\FT^{\mathrm{par}}"] & \bigoplus_{G'}\bigoplus_{K'} R_{\un}(\overline{K'}),
+\end{tikzcd}
+\]
+where the outer sum is taken over all pure inner twists of $G$ and the inner sum is taken over all maximal \textbf{open compact} subgroups of $G$, not necessarily connected. Their connected components at the identity are parahoric subgroups and they coincide with them when $G$ is simply connected. It is also important to highlight the fact that $\FT^{\mathrm{par}}$ is generalization of Lusztig's nonabelian transform for finite groups of Lie type. For example, if a maximal open compact subgroup $K$ of $G$ is disconnected, there is some other maximal open compact subgroup $K'$ of a pure inner twist $G'$ of $G$ in such a way that $\FT^{\mathrm{par}}$ acts on $R_{\un}(K)\oplus R_{\un}(K')$ but not on each individual term. We will not pursue this further since $G$ will always be simply connected in our examples. \textcolor{red}{cite the paper of Beth}
+
+So far, there has not been a well-defined construction for $\FT^\vee$ on the space $\oplus_{G'}R_{\un}(G')$. However, such a construction for $\FT^\vee$ has been achieved on a certain subspace called the \textit{elliptic representation space} of unipotent representations of $G$, which we now describe. For each unipotent conjugacy class, consider some element $u\in G^\vee$ in that class and let $\Gamma_u$ be reductive part of $Z_{G^\vee}(u)$. The set of elliptic pairs associated to $u$ are defined as
+$$\mathcal{Y}(\Gamma_u)_{\text{ell}}=\{(s,h)\ |\ s,h\in\Gamma_u \text{ semisimple, }sh=hs \text{ and }Z_{\Gamma_u}(s,h) \text{ is finite}\}.$$
+For each class of elliptic pairs $(s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}}$ up to $\Gamma_u$-conjugacy, we define the virtual representation 
+$$\Pi(u,s,h):=\sum_{\phi\in\widehat{A_{su}}}\phi(h)\pi(su,\phi).$$
+\begin{definition}
+    The elliptic unipotent representation space $\mathcal{R}_{\un,\text{ell}}^p(G)$ of $G$ is defined as the $\CC$-subspace of $\bigoplus_{G'}R_{\un}(G')$ spanned by the set $\{\Pi(u,s,h)\ |\ u\in G^\vee,\ (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}}\}.$
+\end{definition}
+
+On the space $\mathcal{R}_{\un,\text{ell}}^p(G)$ we can define the \textit{dual} Fourier transform in a natural way.
+
+\begin{definition}\label{def:ellFourier}
+    The dual elliptic nonabelian Fourier transform is the linear map satisfying
     \begin{equation*}
-        G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}\longleftrightarrow\Irr_{\un}(G)=\Irr(G,\cI,\mathbf{1})\ \bigcup\ \{\cInd_{K_0}^GG_2[\alpha]\ |\ \alpha\in\{1,-1,\theta,\theta^2\}\}.
+        \mathrm{FT}^\vee_{\text{ell}}:\mathcal{R}_{\un,\text{ell}}^p(G)\longrightarrow\mathcal{R}_{\un,\text{ell}}^p(G)\quad \Pi(u,s,h)\longmapsto\Pi(u,h,s)\quad\text{for all}\quad (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\text{ell}},\ u\in G^\vee\text{ unipotent.}
     \end{equation*}
-    Let us indicate which pairs $(x=su,\rho)$ in the left correspond to the $4$ unipotent supercuspidal representations of $G_2$. Since supercuspidal representations are square-integrable (\textcolor{red}{Is this true?}), it is enough to look at the regular and subregular unipotent elements.
-    \begin{itemize}
-        \item Let $u=u_{\reg}$ be the regular unipotent element. In that case $A_u=1$ and therefore $s=1$, $A_x=A_u=1$ and $\rho$ is the trivial representation. The corresponding representation $\pi(u_{\reg},\mathbf{1})$ is the Steinberg representation.
-        \item Let $u=u_{\sr}$ be the subregular unipotent element. In that case, $A_u=S_3$ so up to conjugacy, $s\in\{1,g_2,g_3\}$ where $g_i$ is a lift of order $i$ from $A_u$ to $Z_{G^\vee}(u)$. Moreover, $A_{ug_2}=S_3$ and $A_{ug_3}=s_2$. The corresponding table gives the required parametrization.
-        \begin{figure}[!ht]
-            \centering
-            \includegraphics{subregular_element.png}
-        \end{figure}
-    \end{itemize}
+\end{definition}
+
+\begin{example}
+    Let $G=G_2(F)$. Its dual complex group $G_2(\CC)$ has $5$ unipotent classes, but only the regular class (labelled by $G_2$) with trivial component group, and the subregular one (labelled by $G_2(a_1)$) with component group isomorphic to $S_3$, have elliptic pairs. The only elliptic pair for the regular class $G_2$ is $(1,1)$, so
+    $$\Pi(G_2,1,1)=\pi(G_2,\mathbf{1}).$$
+    Instead, the subregular class $G_2(a_1)$ has $8$ elliptic pairs, giving
+    \begin{align*}
+            \Pi(G_2(a_1),1,1)&=\pi(G_2(a_1),\mathbf{1})+\pi(G_2(a_1),\varepsilon)+2\pi(G_2(a_1),\mathbf{r})\\
+            \Pi(G_2(a_1),1,g_2)&=\pi(G_2(a_1),\mathbf{1})-\pi(G_2(a_1),\varepsilon)\\
+            \Pi(G_2(a_1),1,g_3)&=\pi(G_2(a_1),\mathbf{1})+\pi(G_2(a_1),\varepsilon)-\pi(G_2(a_1),\mathbf{r})\\
+            \Pi(G_2(a_1),g_2,1)&=\pi(G_2(a_1)g_2,\mathbf{1})+\pi(G_2(a_1)g_2,\varepsilon)\\
+            \Pi(G_2(a_1),g_2,g_2)&=\pi(G_2(a_1)g_2,\mathbf{1})-\pi(G_2(a_1)g_2,\varepsilon)\\
+            \Pi(G_2(a_1),g_3,1)&=\pi(G_2(a_1)g_3,\mathbf{1})+\pi(G_2(a_1)g_3,\theta)+\pi(G_2(a_1),\theta^2)\\
+            \Pi(G_2(a_1),g_3,g_3)&=\pi(G_2(a_1)g_3,\mathbf{1})+\theta^2\pi(G_2(a_1)g_3,\theta)+\theta\pi(G_2(a_1)g_3,\theta^2)\\
+            \Pi(G_2(a_1),g_3,g_3^{-1})&=\pi(G_2(a_1)g_3,\mathbf{1})+\theta\pi(G_2(a_1)g_3,\theta)+\theta^2\pi(G_2(a_1)g_3,\theta^2).
+    \end{align*}
+
 \end{example}
 
+Definition \ref{def:ellFourier} allows us to state the main conjecture of this document. It was stated in the Introduction \textcolor{red}{relabel here}, but we restate it for completeness.
+
+\begin{conjecture}
+    Let $G$ be a simple $p$-adic group. Then the diagram 
+    \[
+        \begin{tikzcd}
+        \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[r, "\FT^\vee_{\text{ell}}"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[d, "\res_{\un}^{\mathrm{par}}"] \\
+        \bigoplus_{G'}\bigoplus_{K'} R_{\un}(\overline{K'}) \arrow[r, "\FT^{\mathrm{par}}"] & \bigoplus_{G'}\bigoplus_{K'} R_{\un}(\overline{K'}),
+        \end{tikzcd}
+    \]
+    commutes, up to certain some roots of unity.
+\end{conjecture}
+A simple yet important observation is that the conjecture can be verified one \textit{unipotent conjugacy class of $G^\vee$ at a time} since the virtual representations $\Pi(u,s,h)$ and the dual elliptic nonabelian Fourier transform preserve the unipotent part of the parametrization. 
+
+By far, the hardest part in the proof of this conjecture is the explicit calculation of the parahoric restriction map $\res_{\un}^{\mathrm{par}}:\mathcal{R}_{\un,\text{ell}}^p(G)\longrightarrow \oplus_{G'}\oplus_{K'} R_{\un}(\overline{K'})$. The issue is that representations in $R_{\un}(G')$ are labelled in terms of geometric data, while representations in $R_{\un}(\overline{K'})$ are described using Lusztig's labels. The relation between them is deep and requires the generalized Springer correspondence. We devote the next chapter to explore this connection. 
+
+\iffalse
+\begin{example}
+    Let $\mathbf{G}$ be a simple algebraic group of type $G_2$, and let $G=G(F)$. Then $G$ is both simply connected and adjoint so it has no pure inner twists other than itself. In addition, $G$ has three maximal parahoric subgroups of types $K_0$, $K_1$ and $K_2$, with reductive quotients of type $G_2$, $A_2$ and $A_1+\tilde{A_1}$, respectively. Thus, commutativity of the above square is equivalent to the commutativity of
+    \[
+        \begin{tikzcd}
+        \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[r, "\FT^\vee_{\text{ell}}"] \arrow[d, "\res_{\un}^{\mathrm{par}}"] & \mathcal{R}_{\un,\text{ell}}^p(G) \arrow[d, "\res_{\un}^{K_i}"] \\
+        R_{\un}(\overline{K_i}) \arrow[r, "\FT^{K_i}"] & R_{\un}(\overline{K_i}),
+        \end{tikzcd}
+    \]
+    for $i=0,1,2$. Moreover, if $u\in G^\vee$ is unipotent, then $\mathcal{Y}(\Gamma_u)$ is non-empty if and only if $u=u_{\text{reg}}$ is regular and $\Gamma_u=\{(1,1)\}$, or $u=G_2(a_1)$ is subregular and $\Gamma_u=\{(1,1),(1,g_2),(1,g_3),(g_2,1),(g_2,g_2),(g_3,1),(g_3,g_3),(g_3,g_3')\}$.
+    Therefore, $\mathcal{R}_{\un,\text{ell}}^p(G)$ is $9$-dimensional, spanned by
+    \begin{equation*}
+        \begin{cases}
+            \Pi(u_{\text{reg}},1,1)&=\pi(u_{\text{reg}},\mathbf{1})\\
+            \Pi(G_2(a_1),1,1)&=\pi(G_2(a_1),\mathbf{1})+\pi(G_2(a_1),\varepsilon)+2\pi(G_2(a_1),\mathbf{r})\\
+            \Pi(G_2(a_1),1,g_2)&=\pi(G_2(a_1),\mathbf{1})-\pi(G_2(a_1),\varepsilon)\\
+            \Pi(G_2(a_1),1,g_3)&=\pi(G_2(a_1),\mathbf{1})+\pi(G_2(a_1),\varepsilon)-\pi(G_2(a_1),\mathbf{r})\\
+            \Pi(G_2(a_1),g_2,1)&=\pi(G_2(a_1)g_2,\mathbf{1})+\pi(G_2(a_1)g_2,\varepsilon)\\
+            \Pi(G_2(a_1),g_2,g_2)&=\pi(G_2(a_1)g_2,\mathbf{1})-\pi(G_2(a_1)g_2,\varepsilon)\\
+            \Pi(G_2(a_1),g_3,1)&=\pi(G_2(a_1)g_3,\mathbf{1})+\pi(G_2(a_1)g_3,\theta)+\pi(G_2(a_1),\theta^2)\\
+            \Pi(G_2(a_1),g_3,g_3)&=\pi(G_2(a_1)g_3,\mathbf{1})+\theta^2\pi(G_2(a_1)g_3,\theta)+\theta\pi(G_2(a_1)g_3,\theta^2)\\
+            \Pi(G_2(a_1),g_3,g_3^{-1})&=\pi(G_2(a_1)g_3,\mathbf{1})+\theta\pi(G_2(a_1)g_3,\theta)+\theta^2\pi(G_2(a_1)g_3,\theta^2).
+        \end{cases}
+    \end{equation*}
+
+    When $i=1,2$ and the finite group $\overline{K_i}$ is of type $A_2$ or $A_1+\tilde{A_1}$, then $\mathrm{FT}^{K_i}$ is the identity map, and therefore it is enough to show that 
+    $$\res_{\un}^{K_i}(\pi(u,s,h))=\res_{\un}^{K_i}(\Pi(u,h,s))$$
+    for all $\Pi(u,s,h)$ spanning $\mathcal{R}_{\un,\text{ell}}^p(G)$. This is obvious for all cases except for $\pi(u,s,h)=\pi(G_2(a_1),1,g_2),\pi(G_2(a_1),1,g_3)$.
 
 
-\newpage
+\end{example}
+\fi
+
 
 \iffalse
 \subsubsection{Enhanced Langlands parameters}

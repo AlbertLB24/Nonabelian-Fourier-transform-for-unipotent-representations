@@ -303,9 +303,12 @@ Since $R_{T_1,1}=\sum_{\phi\in\hat{W}}R_\phi$, it follows that for any family $\
     Consider again the group $G^F=G_2(\FF_q)$. Following the notation in Example \ref{ex:G2_reps}, the special characters of $W\cong D_{12}$ are $\phi_{1,0},\phi_{1,6},\phi_{2,1}$ whose corresponding families are
     $$(\phi_{1,0}),(\phi_{2,1},\phi_{2,2},\phi_{1,3}',\phi_{1,3}''),(\phi_{1,6}).$$
     On the other hand, the $10$ unipotent characters of $G^F$ fall into three families, parametrized as follows. 
-    \begin{center}
+    \begin{figure}[ht]
+        \centering
         \includegraphics[width=0.7\textwidth]{cuspidals G_2.png}
-    \end{center}
+        \caption{Unipotent characters of $G_2(\FF_q)$ and its family labels.}
+        \label{fig:G2_labels}
+    \end{figure}
 \end{example}
 
 Finally, Lusztig used these families to define a \textit{nonabelian Fourier transform} $\FT_{G^F}$ on the set of irreducible characters of $G^F$. This is a linear map on complex vector space $R_{\un}(G^F)$ defined as the $\CC$-span of the irreducible unipotent characters of $G^F$. The families described above induce a direct sum decomposition 
@@ -319,9 +322,12 @@ In particular, Lusztig's nonabelian transform satisfies $\FT_{G^F}(\chi_\phi)=R_
 %\end{example}
 \begin{example}
     If $G^F$ is of type $G_2$, then $\FT_{G^F}$ fixes the characters $\phi_{1,0}$ and $\phi_{1,6}$ but transforms the third family according to the Fourier transform matrix
-    \begin{center}
-        \includegraphics[width=0.6\textwidth]{Fourier matrix for S_3.png}.
-    \end{center}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Fourier matrix for S_3.png}
+        \caption{Fourier matrix when $\Gamma_\mathcal{F}\cong S_3$.}
+        \label{fig:S3matrix}
+    \end{figure}
 \end{example}
 %The almost characters satisfy certain \textit{stability properties}. \textcolor{red}{Search what do they exactly mean by this.}
 %The aim of the next chapter is to discuss a lift of this map for $p$-adic groups.

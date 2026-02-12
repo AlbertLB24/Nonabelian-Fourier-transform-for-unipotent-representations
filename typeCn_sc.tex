@@ -1,113 +1,32 @@
 \section{The p-adic symplectic group}
 
-In this chapter, we verify that Conjecture \ref{conj:main} holds when $G=\Sp_{2n}(F)$ and $u$ is a subregular unipotent element. In this case, $G$ is a simply connected simple $p$-adic group, whose complex dual group is $G^\vee=\SO_{2n+1}(\CC)$. In particular, $G$ has no pure inner twists and all maximal compact subgroups are maximal parahoric subgroups. %Following the remark after Conjecture \ref{conj:main}, we will prove the result for specific unipotent conjugacy classes of $\SO_{2n+1}(\CC)$ and maximal parahoric subgroups.
+Let $G=\Sp_{2n}(F)$ be the simply connected $p$-adic group of type $C_n$, whose complex dual group $G^\vee=\SO_{2n+1}(\CC)$. We note that $G$ has no pure inner twists other than itself. The main result of this section is the following.
 
-Firstly, we briefly verify that the conjecture is true if $u$ is a regular unipotent element of $G^\vee$. It is well-known that $\dim Z_{G^\vee}(u)=\rk\SO_{2n+1}=n$ and that $\Gamma_u=Z(G^\vee)=1$ and consequently $\mathcal{Y}(\Gamma_u)_{\text{ell}}=\{(1,1)\}$. The representation $\Pi(u,1,1)=\pi(u,1,\mathbf{1})$ is fixed by $\FT^{\text{ell}}$ and moreover the Springer correspondence implies that 
+\begin{theorem}[In progress]\label{thm:Cn_subregular}
+    Let $u$ be a subregular unipotent element of $\SO_{2n+1}(\CC)$. For any elliptic pair $(s,h)\in\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}$,
+    $$\res_{\un}^{\mathrm{par}}(\Pi(u,h,s))=\FT^{\mathrm{par}}(\res_{\un}^{\mathrm{par}}(\Pi(u,s,h))).$$
+    In other words, Conjecture \ref{conj:main} holds when $G=\Sp_{2n}(F)$ and $u$ is a subregular unipotent element.
+\end{theorem}
+
+For the sake of completeness, we briefly verify that the conjecture is true if $u$ is a regular unipotent element of $G^\vee$. It is well-known that $\dim Z_{G^\vee}(u)=\rk\SO_{2n+1}=n$ and that $\Gamma_u=Z(G^\vee)=1$ and consequently $\mathcal{Y}(\Gamma_u)_{\text{ell}}=\{(1,1)\}$. The representation $\Pi(u,1,1)=\pi(u,1,\mathbf{1})$ is fixed by $\FT^{\text{ell}}$ and moreover the Springer correspondence implies that 
 $$\res_{K_i}\pi(u,1,\mathbf{1})=\St_{K_i}\quad\text{for any maximal parahoric }K_i\subset G,$$
 and this representation is also fixed by each $\FT^{K_i}$, so the conjecture is verified.
 
-\subsection{Structure theory of \texorpdfstring{$\SO_{2n+1}(\CC)$}{PDFstring}}
-
-To progress any further, we need to understand some structural properties of $G^\vee=\SO_{2n+1}(\CC)$ and representation theoretic aspects of the reductive quotients of maximal parahoric subgroups of $G=\Sp_{2n}(F)$, which we discuss now. We recall that 
-$$\SO_{2n+1}=\{A\in\GL_{2n+1}\ |\ AJA^T=J\},\quad\text{where}\quad J=\begin{pmatrix}
-    1 & & \\
-     & & I_n \\
-     & I_n & \\
-\end{pmatrix}$$
-The diagonal matrices in $\SO_{2n+1}(\CC)$ are
-$$T_n=\left\{h(a_1,\ldots,a_n):=\begin{pmatrix}
-1 & & & & & & \\
-& a_1 & & & & & \\
-& & \ddots& & & & \\
-& & & a_n & & & \\
-& & & & a_1^{-1} & & \\
-& & & & & \ddots& \\
-& & & & & & a_n^{-1}\\
-\end{pmatrix}\ |\ a_1,\ldots,a_n\in\CC^\times\right\},$$
-and they form a maximal torus in $\SO_{2n+1}(\CC)$. We fix a set of simple roots $\Delta_n=\{\alpha_1,\alpha_2,\ldots,\alpha_n\}$ given by 
-\begin{equation*}
-    \alpha_i(h(a_1,\ldots,a_n))=\begin{cases}
-        a_ia_{i+1}^{-1} & \text{ if } 1\leq i\leq n-1,\\
-        a_{n} & \text{ if } i=n.
-    \end{cases}
-\end{equation*}
-The simple root $\alpha_n$ is the only short one and the corresponding Dynkin diagram is
-\textcolor{red}{Insert/draw Dynkin diagram}. Using the Killing form, we can embed $\Delta_n$ in a $n$-dimensional Euclidean space $V$ with orthonormal basis ${e_1,\ldots,e_n}$ and such that $\alpha_i=e_i-e_{i+1}$ for $1\leq i\leq n-1$ and $\alpha_n=e_n$.
-
-
-We also let $\alpha_0:=\alpha_1+\alpha_2+\cdots+\alpha_n=e_1$ be the highest short root of $\Phi(B_n)$. This is slightly unconventional, since $\alpha_0$ is normally the highest root of $\Phi$, but this notation will be very useful. For example, $\calpha_0$ is the highest root of type $C_n$ so $S_{\aff}(C_n):=\{-\calpha_0,\calpha_1,\ldots,\calpha_n\}$ is the set of affine roots of type $C_n$ with corresponding affine Dynkin diagram \textcolor{red}{Insert/draw affine Dynkin diagram}.
-
-In particular, $\alpha_0(h(a_1,\ldots,a_n))=a_1$ and the corresponding simple coroots are 
-\begin{equation*}
-    \calpha_i(t)=\begin{cases}
-        h(t^2,1,\ldots,1) & \text{ if } i=0,\\
-        h(1,\ldots,1,t,t^{-1},1,\ldots,1) & \text{ if } 1\leq i\leq n-1,\\
-        h(1,\ldots,1,t^2) & \text{ if } i=n.
-        
-    \end{cases}
-\end{equation*}
-
-The Weyl group $W(B_n)=N(T_n)/T_n$ is isomorphic to the group $S_n\ltimes C_2^n$ and it acts on $T_n$ faithfully by the transformations 
-$$h(a_1,\ldots,a_n)\longmapsto h(a_{\sigma(1)}^{\pm1},\ldots,a_{\sigma(n)}^{\pm1}),\quad\text{where }\sigma\in S_n.$$
-For each $i\in\{0,1,2,\ldots,n\}$, let $s_i\in W(B_n)$ be the simple reflection associated to the root $\alpha_i$. Then 
-$$W(B_n)=\langle s_1,\ldots,s_{n-1}\text{ (long reflections)}, s_n\text{ (short reflection)}\rangle=\langle s_0,s_1,\ldots,s_{n-1}\rangle,$$ 
-and the simple reflections act by
-\begin{equation*}
-    s_i\cdot h(a_1,\ldots,a_n)=\begin{cases}
-        h(a_1^{-1},a_2,\ldots,a_n) & \text{ if } i=0,\\
-        h(a_1,\ldots,a_{i+1},a_{i},\ldots,a_n) & \text{ if } 1\leq i\leq n-1,\\
-        h(a_1,\ldots,a_{n-1},a_n^{-1}) & \text{ if } i=n.
-    \end{cases}
-\end{equation*}
-
-Moreover, the Euclidean space $V=\oplus_{i=1}^n e_i$ is the Lie algebra of $T_n$ so admits a natural $W$-action given by 
-$$s_i(v)=v-\frac{2(\alpha_i,v)}{(\alpha_i,\alpha_i)}\alpha_i,\quad v\in V\quad\text{so}\quad s_i=\begin{psmallmatrix}
-    I_{i-1} & & & \\
-    & 0 & 1 & \\
-    & 1 & 0 & \\
-    & & & I_{n-i-1}
-\end{psmallmatrix}\text{ for }1\leq i\leq n-1\quad\text{and}\quad s_n=\begin{psmallmatrix}
-    I_{n-1} & \\
-    & -1
-\end{psmallmatrix}$$
-and under this action $V$ becomes the natural reflection representation of $W(B_n)$.
-
-% \subsection{Unipotent conjugacy classes of \texorpdfstring{$\SO_{2n+1}(\CC)$}{PDFstring}}
-
-Next, we study the structure of unipotent conjugacy classes of $\SO_{2n+1}(\CC)$. We recall from Section \ref{subsec:unipotent_classes} that each complex simple group has three canonical classes of unipotent elements: $C_{\reg}, C_{subreg}$ and $C_{\min}$. For $\SO_{2n+1}(\CC)$, the unipotent conjugacy classes can be parametrized as follows.
-
-\begin{proposition}\label{prop:unip_odd_so}
-    The conjugacy classes of $\SO_{2n+1}(\CC)$ are parametrized by pairs $(\lambda,\mu)$ of permutations such that $2|\lambda|+|\mu|=2n+1$ and $\mu$ has distinct odd parts and no even parts. The regular orbit is parametrized by $(\emptyset,2n+1)$, the subregular orbit by $(1,2n-1)$, the minimal orbit by $(21^{n-2},1)$ and the zero orbit by $(1^n,1)$.
-\end{proposition}
-
-In addition to this result, one can also find nice representatives for each of these orbits. The results are summarized in the following table \textcolor{red}{(need to reference this well)}.
-
-\begin{table}[!ht]
-    \begin{tabular}{c|c|c|c|c|c}
-        Unipotent & $(\lambda,\mu)$ & Dynkin Diagram & $\dim Z_{G^\vee}(u)$ &$\dim\mathcal{B}^u$ & $\Gamma_u$ \\ \hline
-        $\prod_{i=1}^n x_{\alpha_i}(1)$ & $(\emptyset,2n+1)$ & & $n$ & $0$ & $1$ \\
-        $\prod_{i=2}^{n} x_{\alpha_i}(1)$ & $(1,2n-1)$ & & $n+2$ & $1$ & $\CC^\times\rtimes C_2$ \\
-        ... & ... & ... & ... & ... & ... \\
-        $x_{\alpha_1}(1)$ & $(21^{n-2},1)$ & & $2n^2-3n+4$ & $n^2-2n+2$ & $B_{n-2}\times A_1$ \\
-        $1$ & $(1^n,1)$ & & $2n^2+n$ & $n^2$ & $\SO_{2n+1}$     
-    \end{tabular}
-\end{table}
-
-In the next subsection, we will prove that Conjecture \ref{conj:main} holds for the subregular unipotent orbit containing $u=\prod_{i=1}^{n-1}x_{\alpha_i}(1)$. Before we do this, however, we need to discuss the representation theory of parahoric reductive quotients of $\Sp_{2n}(F)$.
+To progress any further, we need to understand representation theoretic aspects of the reductive quotients of maximal parahoric subgroups of $G=\Sp_{2n}(F)$ and some structural properties of $G^\vee=\SO_{2n+1}(\CC)$, which we discuss now.
 
 \subsection{Unipotent representations of \texorpdfstring{$\Sp_{2n}(\FF_q)$}{PDFstring}}
 
-We recall from Proposition \ref{prop:harishchandra} that for any unipotent representation $\chi$ of $\Sp_{2n}(\FF_q)$ there exists a parahoric subgroup $P\subseteq\Sp_{2n}(\FF_q)$ with Levi decomposition $P=LN$ and a cuspidal unipotent character $\phi$ of $L$ such that $\chi\hookrightarrow\Ind_{P}^{\Sp_{2n}(\FF_q)}\phi$ and that moreover the pair $(P,\phi)$ are unique up to conjugacy. In the 90s (\textcolor{red}{check this}), Lusztig showed that finite groups of Lie type of type $A_m, m\geq1$ have no cuspidal unipotent representations, while those of type $C_m$ have a unique cuspidal unipotent representation $\phi_s$ if $m=s^2+s$ for some $s\geq0$, and none otherwise. 
+We recall from Proposition \ref{prop:harishchandra} that for any unipotent representation $\chi$ of $\Sp_{2n}(\FF_q)$ there exists a parabolic subgroup $P\subseteq\Sp_{2n}(\FF_q)$ with Levi decomposition $P=LN$ and a cuspidal unipotent character $\phi$ of $L$ such that $\chi\hookrightarrow\Ind_{P}^{\Sp_{2n}(\FF_q)}\phi$ and that moreover the pair $(P,\phi)$ are unique up to conjugacy. Lusztig showed that finite groups of Lie type of type $A_m, m\geq1$ have no cuspidal unipotent representations, while those of type $C_m$ have a unique cuspidal unipotent representation $\phi_s$ if $m=s^2+s$ for some $s\geq0$, and none otherwise. Thus, the only parabolic subgroups of $\Sp_{2n}(\FF_q)$ whose Levi component has a cuspidal unipotent representation has type $C_m$ for some $m=s^2+s$.
 
-For each $s\geq0$ such that $m:=s^2+s\leq n$, let $P_s=L_sN_s$ be the standard parabolic of type $C_m$ and let $\phi_s$ be the unique cuspidal unipotent representation of $L_s$. The unipotent representations of $\Sp_{2n}(\FF_q)$ are the components of the representations
+For each $s\geq0$ such that $=s^2+s\leq n$, let $P_s=L_sN_s$ be the standard parabolic of type $C_{s^2+s}$ and let $\phi_s$ be the unique cuspidal unipotent representation of $L_s$. The unipotent representations of $\Sp_{2n}(\FF_q)$ are the components of the representations
 \begin{equation*}
     \Ind_{P_s}^{\Sp_{2n}(\FF_q)}\phi_s\quad\text{for all }s\geq0\text{ satisfying }s^2+s\leq n.
 \end{equation*}
 
-For each choice of $s$, the components of $\Ind_{P_s}^{\Sp_{2n}(\FF_q)}\phi_s$ define a \textit{series} of unipotent representations of $\Sp_{2n}(\FF_q)$ denoted by $\mathcal{E}(\Sp_{2n}(\FF_q),P_s,\phi_s)$. Let us focus first on $s=0$, corresponding to the principal series representations. In this case, $P_0=B$ is a Borel subgroup, $L_0=T$ is a maximal torus and $\phi_0=\mathbf{1}$, so we aim to characterize the components of $\Ind_B^{\Sp_{2n}(\FF_q)}\mathbf{1}$. In \ref{subsec:unipotent_families}, we proved that there is a canonical bijection between principal series representations of $\Sp_{2n}(\FF_q)$ and irreducible representations of its Weyl group $W(C_n)\cong S_n\ltimes C_2^n$. The Weyl group $W(B_n)$ of $\SO_{2n+1}(\CC)$ is canonically isomorphic to $W(C_n)$ by swapping between short and long simple reflections. Thus irreducible representations of $W(B_n)$ also parametrize principal series representations of $\Sp_{2n}(\FF_q)$. We shall abuse notation and denote both types of representations with the same symbol -- it will be clear from context whether we refer to principal series representations of $\Sp_{2n}(\FF_q)$ or irreducible representations of $W(B_n)$. 
+For each choice of $s$, the components of $\Ind_{P_s}^{\Sp_{2n}(\FF_q)}\phi_s$ define a \textit{series} of unipotent representations of $\Sp_{2n}(\FF_q)$ denoted by $\mathcal{E}(\Sp_{2n}(\FF_q),P_s,\phi_s)$. Let us focus first on $s=0$, corresponding to the principal series representations. In this case, $P_0=B$ is a Borel subgroup, $L_0=T$ is a maximal torus and $\phi_0=\mathbf{1}$, so we aim to characterize the components of $\Ind_B^{\Sp_{2n}(\FF_q)}\mathbf{1}$. In \ref{subsec:unipotent_families}, we proved that there is a canonical bijection between principal series representations of $\Sp_{2n}(\FF_q)$ and irreducible representations of its Weyl group $W(C_n)\cong S_n\ltimes C_2^n$. As we explained in Remark \ref{rem:Weylgroups}, most of our computation take place inside the Weyl $W(B_n)$ group of $\SO_{2n+1}(\CC)$ isomorphic to $W(C_n)$ by swapping short and long roots. For convenience, therefore, we state the classification theorem for irreducible $W(B_n)$ in terms of combinatorial data.
 
 \begin{theorem}\label{thm:WBn_reps}
-    There is a natural one-to-one correspondence between irreducible representations of $W(B_n)$ and ordered pairs of partitions (or bipartitions) $(\alpha,\beta)$ with $|\alpha|+|\beta|=n$. Let $\alpha=(\alpha_1,\alpha_2,\ldots)$ and $\beta=(\beta_1,\beta_2,\ldots)$ with 
+    There is a natural one-to-one correspondence between irreducible representations of $W(C_n)$ and ordered pairs of partitions (or bipartitions) $(\alpha,\beta)$ with $|\alpha|+|\beta|=n$. Let $\alpha=(\alpha_1,\alpha_2,\ldots)$ and $\beta=(\beta_1,\beta_2,\ldots)$ with 
     $$0\leq\alpha_1\leq\alpha_2\ldots\quad 0\leq\beta_1\leq\beta_2\ldots,$$
     where some of the $\alpha_i,\beta_i$ may be $0$. Let $\alpha^*,\beta^*$ be the dual partitions of $\alpha,\beta$. Then consider a subsystem $\Phi'\subseteq\Phi$ of type 
     $$D_{\alpha_1^*}+D_{\alpha_2^*}+\cdots+B_{\beta_1^*}+B_{\beta_2^*}+\cdots,$$
@@ -115,7 +34,9 @@ For each choice of $s$, the components of $\Ind_{P_s}^{\Sp_{2n}(\FF_q)}\phi_s$ d
     $$\dim\phi_{\alpha,\beta}=\frac{n!}{\mathrm{hook}(\alpha)\mathrm{hook}(\beta)}.$$
 \end{theorem}
 
-Throughout, we will label the representations of $W(B_n)$ by $(\alpha,\beta)$ instead of $\phi_{\alpha,\beta}$. The above theorem provides a complete classification of the irreducible representations of $W(B_n)$ and, with some work, provides a way to obtain explicit models of each representation a subrepresentation of $\Sym^N(V^*)$ (homogeneous degree $N$ polynomials on $V$), where $V=\oplus_{i=1}^n\CC e_i$ is the natural reflection representation of $W$ described above and $N$ is the number of positive roots of the associated root subsystem $\Phi'$. To simplify notation, let $\{x_1,\ldots,x_n\}\subset V^*$ be the dual basis of $\{e_1,\ldots,e_n\}$. 
+
+
+Throughout, we will label the representations of $W(B_n)$ by $(\alpha,\beta)$ instead of $\phi_{\alpha,\beta}$. The above theorem provides a complete classification of the irreducible representations of $W(B_n)$ and, with some work, provides a way to obtain explicit models of each representation a subrepresentation of $\Sym^N(V^*)$ (homogeneous degree $N$ polynomials on $V$), where $V=\oplus_{i=1}^n\CC e_i$ is the natural reflection representation of $W(B_n)$ described above and $N$ is the number of positive roots of the associated root subsystem $\Phi'$. To simplify notation, let $\{x_1,\ldots,x_n\}\subset V^*$ be the dual basis of $\{e_1,\ldots,e_n\}$. 
 
 Let us discuss some important examples and models of the above theorem.
 \begin{enumerate}
@@ -200,17 +121,116 @@ This concludes the classification of principal series representations of $\Sp_{2
 where $0\leq\lambda_1<\lambda_2<\ldots<\lambda_a$, $0\leq\mu_1<\mu_2<\ldots<\mu_b$, $a-b$ is odd and positive and $\lambda_1,\mu_1$ are not both $0$. We define the \textit{defect} of such a symbol as $d=a-b$ and its \textit{rank} as
 $$\sum_{i=1}^{a}\lambda_i+\sum_{j=1}^{b}\mu_j-\left[\left(\frac{a+b-1}{2}\right)^2\right].$$
 
+We can finally state the classification theorem for unipotent characters of $\Sp_{2n}(\FF_q)$.
 
 \begin{theorem}
     Unipotent characters of $\Sp_{2n}(\FF_q)$ are parametrized in terms of symbols of the form as above whose rank equals $n$. Such a character is a component of $\Ind_{P_s}^{\Sp_{2n}(\FF_q)}\phi_s$, where $d=2s+1$. Finally, two unipotent characters lie in the same family of characters if and only if their symbols contain the same entries with the same multiplicities.
 \end{theorem}
 
-\subsection{Springer correspondence of \texorpdfstring{$\SO_{2n-1}(\CC)$}{PDFstring}}
 
+
+
+\subsection{Structure theory of \texorpdfstring{$\SO_{2n+1}(\CC)$}{PDFstring}}
+
+ We recall that 
+$$\SO_{2n+1}=\{A\in\GL_{2n+1}\ |\ AJA^T=J\},\quad\text{where}\quad J=\begin{pmatrix}
+    1 & & \\
+     & & I_n \\
+     & I_n & \\
+\end{pmatrix}$$
+The diagonal matrices in $\SO_{2n+1}(\CC)$ are
+$$T_n=\left\{h(a_1,\ldots,a_n):=\begin{pmatrix}
+1 & & & & & & \\
+& a_1 & & & & & \\
+& & \ddots& & & & \\
+& & & a_n & & & \\
+& & & & a_1^{-1} & & \\
+& & & & & \ddots& \\
+& & & & & & a_n^{-1}\\
+\end{pmatrix}\ |\ a_1,\ldots,a_n\in\CC^\times\right\},$$
+and they form a maximal torus in $\SO_{2n+1}(\CC)$. We fix a set of simple roots $\Delta_n=\{\alpha_1,\alpha_2,\ldots,\alpha_n\}$ given by 
+\begin{equation*}
+    \alpha_i(h(a_1,\ldots,a_n))=\begin{cases}
+        a_ia_{i+1}^{-1} & \text{ if } 1\leq i\leq n-1,\\
+        a_{n} & \text{ if } i=n.
+    \end{cases}
+\end{equation*}
+The simple root $\alpha_n$ is the only short one and the corresponding Dynkin diagram is
+\[
+    \alpha_1 \relbar \alpha_2 \relbar\cdots\relbar \alpha_{n-1} \xRightarrow{\quad} \alpha_n.
+\]
+Using the Killing form, we can embed $\Delta_n$ in a $n$-dimensional Euclidean space $V$ with orthonormal basis ${e_1,\ldots,e_n}$ and such that $\alpha_i=e_i-e_{i+1}$ for $1\leq i\leq n-1$ and $\alpha_n=e_n$.
+
+
+We also let $\alpha_0:=\alpha_1+\alpha_2+\cdots+\alpha_n=e_1$ be the highest short root of $\Phi(B_n)$. This is slightly unconventional, since $\alpha_0$ is normally the highest root of $\Phi$, but this notation will be very useful. For example, $\calpha_0$ is the highest root of type $C_n$ so $S_{\aff}(C_n):=\{-\calpha_0,\calpha_1,\ldots,\calpha_n\}$ is the set of affine roots of type $C_n$ with corresponding affine Dynkin diagram 
+\[
+    -\calpha_0 \xRightarrow{\quad} \calpha_1 \relbar\calpha_2 \relbar\cdots\relbar \calpha_{n-1} \xLeftarrow{\quad} \calpha_n.
+\]
+
+In particular, $\alpha_0(h(a_1,\ldots,a_n))=a_1$ and the corresponding simple coroots are 
+\begin{equation*}
+    \calpha_i(t)=\begin{cases}
+        h(t^2,1,\ldots,1) & \text{ if } i=0,\\
+        h(1,\ldots,1,t,t^{-1},1,\ldots,1) & \text{ if } 1\leq i\leq n-1,\\
+        h(1,\ldots,1,t^2) & \text{ if } i=n.
+        
+    \end{cases}
+\end{equation*}
+
+The Weyl group $W(B_n)=N(T_n)/T_n$ is isomorphic to the group $S_n\ltimes C_2^n$ and it acts on $T_n$ faithfully by the transformations 
+$$h(a_1,\ldots,a_n)\longmapsto h(a_{\sigma(1)}^{\pm1},\ldots,a_{\sigma(n)}^{\pm1}),\quad\text{where }\sigma\in S_n.$$
+For each $i\in\{0,1,2,\ldots,n\}$, let $s_i\in W(B_n)$ be the simple reflection associated to the root $\alpha_i$. Then 
+$$W(B_n)=\langle s_1,\ldots,s_{n-1}\text{ (long reflections)}, s_n\text{ (short reflection)}\rangle=\langle s_0,s_1,\ldots,s_{n-1}\rangle,$$ 
+and the simple reflections act by
+\begin{equation*}
+    s_i\cdot h(a_1,\ldots,a_n)=\begin{cases}
+        h(a_1^{-1},a_2,\ldots,a_n) & \text{ if } i=0,\\
+        h(a_1,\ldots,a_{i+1},a_{i},\ldots,a_n) & \text{ if } 1\leq i\leq n-1,\\
+        h(a_1,\ldots,a_{n-1},a_n^{-1}) & \text{ if } i=n.
+    \end{cases}
+\end{equation*}
+
+Moreover, the Euclidean space $V=\oplus_{i=1}^n e_i$ is the Lie algebra of $T_n$ so admits a natural $W(B_n)$-action given by 
+$$s_i(v)=v-\frac{2(\alpha_i,v)}{(\alpha_i,\alpha_i)}\alpha_i,\quad v\in V\quad\text{so}\quad s_i=\begin{psmallmatrix}
+    I_{i-1} & & & \\
+    & 0 & 1 & \\
+    & 1 & 0 & \\
+    & & & I_{n-i-1}
+\end{psmallmatrix}\text{ for }1\leq i\leq n-1\quad\text{and}\quad s_n=\begin{psmallmatrix}
+    I_{n-1} & \\
+    & -1
+\end{psmallmatrix}$$
+and under this action $V$ becomes the natural reflection representation of $W(B_n)$.
+
+\iffalse
+
+Next, we study the structure of unipotent conjugacy classes of $\SO_{2n+1}(\CC)$. We recall from Section \ref{subsec:unipotent_classes} that each complex simple group has three canonical classes of unipotent elements: $C_{\reg}, C_{subreg}$ and $C_{\min}$. For $\SO_{2n+1}(\CC)$, the unipotent conjugacy classes can be parametrized as follows.
+
+\begin{proposition}\label{prop:unip_odd_so}
+    The conjugacy classes of $\SO_{2n+1}(\CC)$ are parametrized by pairs $(\lambda,\mu)$ of permutations such that $2|\lambda|+|\mu|=2n+1$ and $\mu$ has distinct odd parts and no even parts. The regular orbit is parametrized by $(\emptyset,2n+1)$, the subregular orbit by $(1,2n-1)$, the minimal orbit by $(21^{n-2},1)$ and the zero orbit by $(1^n,1)$.
+\end{proposition}
+
+In addition to this result, one can also find nice representatives for each of these orbits. The results are summarized in the following table \textcolor{red}{(need to reference this well)}.
+
+\begin{table}[!ht]
+    \begin{tabular}{c|c|c|c|c|c}
+        Unipotent & $(\lambda,\mu)$ & Dynkin Diagram & $\dim Z_{G^\vee}(u)$ &$\dim\mathcal{B}^u$ & $\Gamma_u$ \\ \hline
+        $\prod_{i=1}^n x_{\alpha_i}(1)$ & $(\emptyset,2n+1)$ & & $n$ & $0$ & $1$ \\
+        $\prod_{i=2}^{n} x_{\alpha_i}(1)$ & $(1,2n-1)$ & & $n+2$ & $1$ & $\CC^\times\rtimes C_2$ \\
+        ... & ... & ... & ... & ... & ... \\
+        $x_{\alpha_1}(1)$ & $(21^{n-2},1)$ & & $2n^2-3n+4$ & $n^2-2n+2$ & $B_{n-2}\times A_1$ \\
+        $1$ & $(1^n,1)$ & & $2n^2+n$ & $n^2$ & $\SO_{2n+1}$     
+    \end{tabular}
+\end{table}
+
+In the next subsection, we will prove that Conjecture \ref{conj:main} holds for the subregular unipotent orbit containing $u=\prod_{i=1}^{n-1}x_{\alpha_i}(1)$. Before we do this, however, we need to discuss the representation theory of parahoric reductive quotients of $\Sp_{2n}(F)$.
+
+\subsection{Springer correspondence of \texorpdfstring{$\SO_{2n-1}(\CC)$}{PDFstring}}
+\fi
 
 
 \subsection{The subregular unipotent orbit of \texorpdfstring{$\SO_{2n+1}(\CC)$}{PDFstring}}
-In this section, we prove Conjecture \ref{conj:main} for the subregular unipotent element. We recall from Proposition \ref{prop:unip_odd_so} that the subregular unipotent orbit is parametrized by the bipartition $(1,2n-1)$. To simplify notation, let $\alpha_0=\alpha_1+\alpha_2+\cdots+\alpha_n$ be the highest short root of $\Phi(B_n)$. This is slightly unconventional, since $\alpha_0$ is normally the highest root of $\Phi$, but this notation will be very useful, and its dual root $\calpha_0$ is the highest root of $\Phi^\vee$.
+In this section, we prove Conjecture \ref{conj:main} for the subregular unipotent class, commonly labelled by the partition $(2n-1,1,1)$. The first step is to find a nice representative of this class, which is fortunately possible.
 
 \begin{lemma}
     The unipotent element $u=\exp(e_{\alpha_2}+\cdots+e_{\alpha_{n-1}}+e_{\alpha_n})$ lies in the subregular orbit and the reductive part of its centralizer is $\Gamma_u=\Gamma_u^0\rtimes\langle h_uw_{\alpha^0}\rangle$, where
@@ -223,7 +243,7 @@ In this section, we prove Conjecture \ref{conj:main} for the subregular unipoten
     \end{cases}$$
 \end{lemma}
 \begin{proof}
-    
+    The first part can be found in \textcolor{red}{Collingwood}, while the second one can be easily checked with a computer algebra program (such as GAP).
 \end{proof}
 
 The above result implies that there is an isomorphism 
@@ -266,25 +286,19 @@ Thus, we wish to compute the parahoric restriction with respect to maximal compa
 
 We first compute these restrictions for representations having Iwahori-fixed vectors, whose restrictions to $\overline{K}_J$ are a direct sum of principal series representations. The restrictions of the remaining representations will be calculated afterwards. 
 
-We recall from Lemma \ref{lem:multiplicity} and Proposition \ref{prop:second_red} that if $\pi(ut,\rho)$ has Iwahori-fixed vectors and $J\subsetneq S_{\aff}=\{\calpha_1,\calpha_2,\ldots,\calpha_n,-\calpha_0\}$, for any irreducible $K_J$ module $\chi$ trivial on $U_J$, we have that 
+We recall from Lemma \ref{lem:multiplicity} and Proposition \ref{prop:second_red} that if $\pi(ut,\rho)$ has Iwahori-fixed vectors and $J\subsetneq S_{\aff}=\{-\calpha_0,\calpha_1,\calpha_2,\ldots,\calpha_n\}$, for any irreducible $K_J$ module $\chi$ trivial on $U_J$, we have that 
 $$\langle\chi,V^{U_J}\rangle_{K_J}=\langle\chi^{\mathcal{I}},V^{\mathcal{I}}\rangle_{\mathcal{H}(K_J,\mathcal{I},\mathbf{1})}=\langle\chi^{\mathcal{I}}_{q=1},\pi(ut,\rho)^{\mathcal{I}}_{q=1}\rangle_{\widetilde{W}_J}.$$
 
-The operation $\chi\mapsto\chi^{\mathcal{I}}_{q=1}$ corresponds to the aforementioned bijection between principal series representations of $\overline{K}_J$ and irreducible representations of $\widetilde{W}_J$, while 
-$$\pi(ut,\rho)^{\mathcal{I}}_{q=1}=\varepsilon\otimes\Ind_{\widetilde{W}_t}^{\widetilde{W}}[s\otimes H(\mathcal{B}_t^u)^\rho]$$
-as a $\widetilde{W}$-module, up to semisimplification. It is convenient to work inside the Weyl group $W(B_n)$ and there is a well canonical isomorphism $\psi_J:W_J\rightarrow \widetilde{W}_J$ for some $W_J\leq W$. Following \textcolor{red}{Reference M.Reeder}, we obtain that 
+The operation $\chi\mapsto\chi^{\mathcal{I}}_{q=1}$ corresponds to the aforementioned bijection between principal series representations of $\overline{K}_J$ and irreducible representations of $\widetilde{W}_J$, while Theorem \ref{thm:Kato_module} and Proposition \ref{prop:ind_cohomo} imply that
+$$\pi(ut,\rho)^{\mathcal{I}}_{q=1}=\varepsilon\otimes\Ind_{\widetilde{W}_t}^{\widetilde{W}}[s\otimes H^*(\mathcal{B}_t^u)^\rho]$$
+as a $\widetilde{W}$-module, up to semisimplification. In particular, we are interested in the $W_J$-module (see \eqref{eqn:mackey_easycase})
 \begin{equation}\label{eqn:mackey}
-    \psi_J^*\left(\pi(ut,\rho)^{\mathcal{I}}_{q=1}|_{\widetilde{W}_J}\right)=\varepsilon\otimes\bigoplus_{w\in W_t\backslash W/W_J}\Ind_{W_J\cap W_{t^w}}^{W_J}\chi_{t^w}^{J}\otimes\left[H(\mathcal{B}^u_t)^\rho\right]^w
+    \psi_J^*\left(\pi(ut,\rho)^{\mathcal{I}}_{q=1}|_{\widetilde{W}_J}\right)=\varepsilon\otimes\bigoplus_{w\in W_t\backslash W/W_J}\Ind_{W_J\cap W_{t^w}}^{W_J}\chi_{t^w}^{J}\otimes\left[H^*(\mathcal{B}^u_t)^\rho\right]^w.
 \end{equation}
-where $\chi^J_{t^w}$ is a character of $W_{J,t^w}:=W_J\cap W_{t^w}$ satisfying the following properties:
-\begin{enumerate}\label{en:prop_chi}
-    \item There is a semidirect decomposition $W_{J,t^w}=W_{J,t^w}^0\rtimes R_{J,t^w}$, where $W_{J,t^w}^0$ is generated by the reflections about roots of $G^\vee_J$ which are trivial on $t^w$ and $R_{J,t^w}$ is the stabilizer in $W_{J,t^w}$ of some system of positive roots for the centralizer of $t^w$ of $G^\vee_J$.
-    \item The character $\chi^J_{t^w}$ is trivial on $W_{J,t^w}^0$.
-    \item \textcolor{red}{There is an explicit formula for other elements in $R_{J,t^w}$.}
-\end{enumerate}
 
-Our aim is to compute this restriction with respect to maximal compact subgroups. Since $\Sp_{2n}(F)$ is simply connected, these coincide with maximal parahoric subgroups and its conjugacy classes are in natural bijection with maximal subsets $J\subsetneq S_{\aff}$. For each $r=0,\ldots,n$, let $J_r=S_{\aff}\backslash\{\calpha_r\}$ be the maximal subset of $J_{\aff}$, $K_{J_r}$ be the corresponding parahoric subgroup with unipotent radical $U_{J_r}$ and reductive quotient $\overline{K}_{J_r}$ isomorphic to $\Sp_{2r}(\FF_q)\times\Sp_{2(n-r)}(\FF_q)$. In particular, the Weyl group of $\overline{K}_{J_r}$ inside $W$ is generated by 
-$$W_{J_r}=\langle s_0,\ldots,s_{r-1}\rangle\times\langle s_{r+1},\ldots,s_n\rangle$$
-and it is the direct product of two irreducible Weyl groups of type $B_r$ and $B_{n-r}$. 
+
+Our aim is to compute parahoric restriction with respect to maximal compact subgroups. Since $\Sp_{2n}(F)$ is simply connected, these coincide with maximal parahoric subgroups and its conjugacy classes are in natural bijection with maximal subsets $J\subsetneq S_{\aff}$. For each $r=0,\ldots,n$, let $J_r=S_{\aff}\backslash\{\calpha_r\}$ be the maximal subset of $S_{\aff}$, $K_r$ be the corresponding parahoric subgroup with unipotent radical $U_r$ and reductive quotient $\overline{K}_r$ isomorphic to $\Sp_{2r}(\FF_q)\times\Sp_{2(n-r)}(\FF_q)$. In particular, the Weyl group $W_{J_r}$ of $\overline{K}_r$ is generated by 
+$$W_{J_r}=\langle s_0,\ldots,s_{r-1}\rangle\times\langle s_{r+1},\ldots,s_n\rangle\cong W(B_r)\times W(B_{n-r}).$$
 
 \textbf{Case 0: $t=t_0$.} In this case, $Z_{G^\vee}(t_0)=G^\vee$ so $W_{t^0}=W$, $\mathcal{B}_{t^0}^u=\mathcal{B}^u$ and the character $\chi_{t_0}^{J_r}$ is trivial. Hence, the right hand side of \eqref{eqn:mackey} becomes
 \[
@@ -300,7 +314,7 @@ If $r=0,n$, then $W_{J_r}=W$ so there is nothing to prove. If $1\leq r\leq n-1$,
     V_{(n-1,1)}&=\Span\{x_i\ |\ 1\leq i\leq r\}\oplus\Span\{x_i\ |\ r+1\leq i\leq n\},\\
     V_{((n-1)1,\emptyset)}&=\Span\{x_i^2-x_{i+1}^2\ |\ 1\leq i\leq r-1\}\oplus\Span\{x_i^2-x_{i+1}^2\ |\ r+1\leq i\leq n-1\}\oplus\Span\{(n-r)\sum_{i=1}^{r}x_i^2-r\sum_{i=r+1}^{n}x_i^2\}
 \end{align*}
-into irreducible $W_{J_r}$-modules, affording the representations $(r-1,1)\boxtimes(n-r,\emptyset)$ and $(r,\emptyset)\boxtimes(n-r-1,1)$ for the first line, and $((r-1)1,\emptyset)\boxtimes(n-r,\emptyset)$, $(r,\emptyset)\boxtimes((n-r-1)1,\emptyset)$ and $(r,\emptyset)\boxtimes(n-r,\emptyset)$ for the second line. This finishes the first case.
+into irreducible $W_{J_r}$-modules, affording the representations $(r-1,1)\boxtimes(n-r,\emptyset)$ and $(r,\emptyset)\boxtimes(n-r-1,1)$ for the first line, and $((r-1)1,\emptyset)\boxtimes(n-r,\emptyset)$, $(r,\emptyset)\boxtimes((n-r-1)1,\emptyset)$ and $(r,\emptyset)\boxtimes(n-r,\emptyset)$ for the second line. This finishes the first case, which is the content of the first two rows of Table \ref{tbl:par_res}.
 
 \textbf{Case 1: $t=t_1$.} In this case, 
 \begin{align}\label{eqn:centralizer_t1}
@@ -312,8 +326,8 @@ $$W_{t_1}=\langle s_0\rangle\times\langle s_2,\ldots,s_{n-1},s_n\rangle\cong C_2
 and acts on $T$ by the transformations 
 $$h(a_1,\ldots,a_{n-1},a_n)\longmapsto h(a_{1}^{\pm1},a_{\tau(2)}^{\pm1},\ldots,a_{\tau(n)}^{\pm1}),\quad\text{where }\tau\in S_{n-1}.$$
 Thus $|W_{t_1}|=2^n(n-1)!$ and the index inside $W$ is $[W:W_{t_1}]=n$. To understand the right hand side of \eqref{eqn:mackey}, we first need to understand the double coset space $W_{t_1}\backslash W/W_{J_r}$. If $r=0$ or $r=n$, then $W_{J_r}\cong W$, so there is only one double coset. In these two cases, the right hand side of \eqref{eqn:mackey} simplifies to 
-$$\varepsilon\otimes\Ind_{W_{t_1}}^{W}\chi_{t_1}^{J_r}\otimes H(\mathcal{B}_{t_1}^u)^\rho.$$
-From the properties listed in \ref{en:prop_chi}, one can easily check that $\chi_{t_1}^{J_0}$ is the trivial character while $\chi_{t_1}^{J_n}$ is trivial on $W_{t_1}^0=\langle s_2,\ldots,s_n\rangle$, but it takes $s_0$ to $-1$. To finish the calculations, we need to study the $W_{t_1}$-action on the cohomology complex $H(\mathcal{B}^u_{t_1})$. From \eqref{eqn:centralizer_t1}, $u\in Z_{G^\vee}(t_1)$ and is a regular unipotent element, so $\dim\mathcal{B}^u_{t_1}=0$. However, since $Z_{G^\vee}(t_1)$ is not connected, the structure of $\mathcal{B}^u_{t_1}$ is more interesting. The following result gives an explicit description of $H^0(\mathcal{B}_{t_1}^u)$ as a $W_{t_1}$-module.
+$$\varepsilon\otimes\Ind_{W_{t_1}}^{W}\chi_{t_1}^{J_r}\otimes H^*(\mathcal{B}_{t_1}^u)^\rho.$$
+Using the explicit formulas in \textcolor{red}{Reeder}, one can compute that $\chi_{t_1}^{J_0}$ is the trivial character while $\chi_{t_1}^{J_n}$ is trivial on $\langle s_2,\ldots,s_n\rangle$, but it takes $s_0$ to $-1$. To finish the calculations, we need to study the $W_{t_1}$-action on the cohomology complex $H^*(\mathcal{B}^u_{t_1})$. From \eqref{eqn:centralizer_t1}, $u\in Z_{G^\vee}(t_1)$ and is a regular unipotent element, so $\dim\mathcal{B}^u_{t_1}=0$. However, since $Z_{G^\vee}(t_1)$ is not connected, the structure of $\mathcal{B}^u_{t_1}$ is more interesting. The following result gives an explicit description of $H^0(\mathcal{B}_{t_1}^u)$ as a $W_{t_1}$-module.
 
 \begin{lemma}
     The variety $\mathcal{B}^u_{t_1}$ consists of two points. The two dimensional complex vector space $H^0(\mathcal{B}^u_{t_1})$ has a natural action of $W_{t_1}\times A_{ut_1}$ and it admits a direct sum decomposition 
@@ -342,7 +356,7 @@ To calculate the second induction, we follow a similar argument. The one-dimensi
 \begin{equation}\label{eqn:Ind_sign}
     \Ind_{W_{t_1}}^W\mathbf{1}\boxtimes(n-1,\emptyset)=(n-1,1).
 \end{equation}
-Putting everything together immediately gives the desired parahoric restrictions. \textcolor{red}{See the table at the end}
+Putting everything together immediately gives the desired parahoric restrictions.
 
 If $1\leq r\leq n-1$, the problem is more involved. The natural quotient map $W\twoheadrightarrow S_n$ induces a bijection
 $$W_{t_1}\backslash W/W_{J_r}\longrightarrow\Stab_{S_n}(1)\backslash S_n/\Stab_{S_n}(1,\ldots,r)\times\Stab_{S_n}(r+1,\ldots,n),$$
@@ -350,9 +364,9 @@ and the action of $\Stab_{S_n}(1,\ldots,r)\times\Stab_{S_n}(r+1,\ldots,n)$ on $\
 $$\{\Stab(1),\Stab(1)(1\ 2),\ldots,\Stab(1\ r)\}\quad\text{and}\quad\{\Stab(1)(1\ r+1),\ldots,\Stab(1\ n)\}.$$
 For convenience, we choose representatives $e$ and $\eta$ of $W_{t_1}\backslash W/W_{J_r}$, where $\eta$ acts on $T$ by the permutation $(1\ n)$. This calculation shows that 
 \begin{equation}\label{eqn:mackey_t1}
-    \bigoplus_{w\in W_{t_1}\backslash W/W_{J_r}}\Ind_{W_{J_r,t_1^w}}^{W_{J_r}}\chi_{t_1^w}^{J_r}\otimes\left[H(\mathcal{B}^u_{t_1})^\rho\right]^w=\Ind_{W_{J_r,t_1}}^{W_{J_r}}\chi_{t_1}^{J_r}\otimes H(\mathcal{B}^u_{t_1})^\rho\oplus\Ind_{W_{J_r,t_1^\eta}}^{W_{J_r}}\chi_{t_1^\eta}^{J_r}\otimes\left[H(\mathcal{B}^u_{t_1})^\rho\right]^\eta
+    \bigoplus_{w\in W_{t_1}\backslash W/W_{J_r}}\Ind_{W_{J_r,t_1^w}}^{W_{J_r}}\chi_{t_1^w}^{J_r}\otimes\left[H^*(\mathcal{B}^u_{t_1})^\rho\right]^w=\Ind_{W_{J_r,t_1}}^{W_{J_r}}\chi_{t_1}^{J_r}\otimes H(\mathcal{B}^u_{t_1})^\rho\oplus\Ind_{W_{J_r,t_1^\eta}}^{W_{J_r}}\chi_{t_1^\eta}^{J_r}\otimes\left[H(\mathcal{B}^u_{t_1})^\rho\right]^\eta
 \end{equation}
-To calculate the $W_{J_r}$-modules above, we first calculate the characters $\chi_{t_1}^{J_r}$ and $\chi_{t_1^\eta}^{J_r}$. Using the properties stated in \ref{en:prop_chi}, we note that $W_{J_r,t_1}=\langle s_0\rangle\times W_{J_r,t_1}^0$ while $W_{J_r,t_1^\eta}=W_{J_r,t_1^\eta}^0\times\langle s_n\rangle$, while $\chi_{t_1}^{J_r}(s_0)=-1$ and $\chi_{t_1^\eta}^{J_r}(s_n)=1$. 
+To calculate the $W_{J_r}$-modules above, we first calculate the characters $\chi_{t_1}^{J_r}$ and $\chi_{t_1^\eta}^{J_r}$. Using \textcolor{red}{Reeder}, we can show that $\chi_{t_1^\eta}^{J_r}$ is the trivial character. On the other hand, $W_{J_r,t_1}\cong\langle s_0\rangle\times W(B_{r-2})\times W(B_{n-r})$ as a subgroup of $W_{J_r}\cong W(B_{r})\times W(B_{n-r})$, and $\chi_{t_1}^{J_r}$ is trivial on $W(B_{r-2})\times W(B_{n-r})$ while $\chi_{t_1}^{J_r}(s_0)=-1$.
 
 We are now ready to calculate the right hand side of \eqref{eqn:mackey_t1}. If $\rho=\mathbf{1}$, then $H^0(\mathcal{B}_{t_1}^u)^\mathbf{1}$ is the trivial module so
 \begin{align*}
@@ -371,8 +385,7 @@ If $\rho=\varepsilon$, then $s_0$ acts on $H^0(\mathcal{B}_{t_1}^u)^\varepsilon$
     Similarly, all formulas hold for $r=n-1$ except for 
     $$\Ind_{W_{J_{n-1},t_1^\eta}}^{W_{J_{n-1}}}\chi_{t_1^\eta}^{J_{n-1}}\otimes [H^0(\mathcal{B}_{t_1}^u)^\mathbf{1}]^\eta=(n-1,\emptyset)\boxtimes(1,\emptyset)$$
 \end{remark}
-This gives us all the parahoric restrictions. \textcolor{red}{See table at the end too.}
-
+This gives us all the parahoric restrictions, and the results can be found in the third and fourth rows in Table \ref{tbl:par_res}.
 
 \textbf{Case 2: $t=t_2$.} Firstly, we note that $t_2$ is conjugate to the diagonal matrix $\begin{psmallmatrix}
     1 & \\
@@ -380,52 +393,36 @@ This gives us all the parahoric restrictions. \textcolor{red}{See table at the e
 \end{psmallmatrix}$, and therefore 
 \begin{align*}
     Z_{G^\vee}(t_2)=Z_{G^\vee}(t_2)^0\times\langle s_0\rangle\quad\text{where}\quad
-    Z_{G^\vee}(t_2)^0=\langle T,\mathfrak{X}_{\beta}\ |\ \beta\text{ is a long root}\rangle,
+    Z_{G^\vee}(t_2)^0=\langle T,\mathfrak{X}_{\beta}\ |\ \beta\text{ is a long root}\rangle
 \end{align*}
-where $Z_{G^\vee}(t_2)^0$ is a connected reductive group of type $D_n$. We can then deduce that the Weyl group of $Z_{G^\vee}(t_2)$ is $W_{t_2}=W$ and that $u$ is a regular unipotent element in $Z_{G^\vee}(t_2)$, so $\dim\mathcal{B}_{t_2}^u=0$. Thus, the right hand side of \eqref{eqn:mackey} simplifies to 
-\begin{equation}
+is a connected reductive group of type $D_n$. Thus, the Weyl group of $Z_{G^\vee}(t_2)$ is $W_{t_2}=W$ and $u$ is a regular unipotent element in $Z_{G^\vee}(t_2)$, so $\dim\mathcal{B}_{t_2}^u=0$. The right hand side of \eqref{eqn:mackey} simplifies to 
+\begin{equation}\label{eqn:t2_case}
     \varepsilon\otimes\chi_{t_2}^{J_r}\otimes H^0(\mathcal{B}^u_{t_2})^\rho|_{W_{J_r}}.
 \end{equation}
 
-By the properties listed in \ref{en:prop_chi}, the character $\chi_{t_2}^{J_r}$ of $W_{J_r}=\langle s_0,s_1,\ldots,s_{r-1}\rangle\times\langle s_{r+1},\ldots,s_{n-1},s_n\rangle$ is trivial on the long reflections (these generate $W_{J_r,t_2}^0$) while $\chi_{t_2}^{J_r}$ sends $s_n$ to $1$ and $s_0$ to $-1$. Thus, the character $\chi_{t_2}^{J_r}$ is the $W_{J_r}$ representation labelled by $(\emptyset,r)\boxtimes(n-r,\emptyset)$.
+The character $\chi_{t_2}^{J_r}$ of $W_{J_r}=\langle s_0,s_1,\ldots,s_{r-1}\rangle\times\langle s_{r+1},\ldots,s_{n-1},s_n\rangle$ is trivial on the long reflections, while $\chi_{t_2}^{J_r}$ sends $s_n$ to $1$ and $s_0$ to $-1$. Thus, $\chi_{t_2}^{J_r}$ is the $W_{J_r}$ representation labelled by $(\emptyset,r)\boxtimes(n-r,\emptyset)$.
 
-Finally, we need an explicit description of the $W$-action on $H(\mathcal{B}^u_{t_2})=H^0(\mathcal{B}^u_{t_2})$.
+Finally, we need an explicit description of the $W$-action on $H^*(\mathcal{B}^u_{t_2})=H^0(\mathcal{B}^u_{t_2})$.
 
 \begin{lemma}
     The variety $\mathcal{B}^u_{t_2}$ consists of two points. The two dimensional complex vector space $H^0(\mathcal{B}^u_{t_2})$ has a natural action of $W\times A_{ut_2}$ where $A_{ut_2}=\{t_0,t_1,t_2,t_1t_2\}$. It admits a direct sum decomposition
-    $$H(\mathcal{B}_{t_2}^u)=H^0(\mathcal{B}_{t_2}^u)^{\mathbf{1}\otimes\mathbf{1}}\oplus H^0(\mathcal{B}_{t_2}^u)^{\varepsilon\otimes\mathbf{1}}$$
+    $$H^*(\mathcal{B}_{t_2}^u)=H^0(\mathcal{B}_{t_2}^u)^{\mathbf{1}\otimes\mathbf{1}}\oplus H^0(\mathcal{B}_{t_2}^u)^{\varepsilon\otimes\mathbf{1}}$$
     into $1$-dimensional $W$-representations, affording the characters $(n,\emptyset)$ and $(\emptyset,n)$, respectively.
 \end{lemma}
 
-In particular, the above result implies that $H^0(\mathcal{B}_{t_2}^u)^{\mathbf{1}\otimes\mathbf{1}}|_{W_{J_r}}$ is the trivial representation labelled by $(r,\emptyset)\boxtimes(n-r,\emptyset)$ while $H^0(\mathcal{B}_{t_2}^u)^{\mathbf{1}\otimes\mathbf{1}}|_{W_{J_r}}$ is the character labelled by $(\emptyset,r)\boxtimes(\emptyset,n-r)$
+In particular, the above result implies that $H^0(\mathcal{B}_{t_2}^u)^{\mathbf{1}\otimes\mathbf{1}}|_{W_{J_r}}$ is the trivial representation labelled by $(r,\emptyset)\boxtimes(n-r,\emptyset)$ while $H^0(\mathcal{B}_{t_2}^u)^{\mathbf{1}\otimes\mathbf{1}}|_{W_{J_r}}$ is the character labelled by $(\emptyset,r)\boxtimes(\emptyset,n-r)$. We can then calculate the parahoric restriction directly using \eqref{eqn:t2_case}, and the results are contained in the fifth and seventh row of Table \ref{tbl:par_res}.
 
+This concludes the computations of all parahoric restrictions of Iwahori-spherical representations. It remains to compute the restrictions for the remaining two representations $\pi(u,t_2,\mathcal{1}\otimes\varepsilon)$ and $\pi(ut_2,\varepsilon\otimes\varepsilon)$ that are not Iwahori-spherical representations. 
 
-
-\newpage
-
-
-
-
-\begin{lemma}
-    The representation $\pi(ut_2,\mathbf{1}\otimes\varepsilon)$ has no $U_{J_0}$ fixed vectors, while the parahoric restriction of $\pi(ut_2,\varepsilon\otimes\varepsilon)$ to $\overline{K}_0$ is the defect $1$ irreducible $\Sp_{2n}(\FF_q)$ representation labelled by the symbol
+\begin{proposition}[Proof in progress. It relies on the generalized Springer correspondence]
+    Let $\theta_r'$ be the irreducible representation of $\Sp_{2r}(\FF_q)$ labelled by the symbol
     $$\begin{pmatrix}
-        0 & 1 & 2 & \ldots & n-2 & n-1 & n\\
-        && 1 & \ldots & n-2 &&
+        0 & 1 & 2 & \ldots & r-2 & r-1 & r\\
+        && 1 & \ldots & r-2 &&
     \end{pmatrix}.$$
-\end{lemma}
+    Then the parahoric restrictions of $\pi(ut_2,\varepsilon\otimes\mathbf{1})$ and $\pi(ut_2,\varepsilon\otimes\varepsilon)$ with respect to $K_{J_r}$ are irreducible representations labelled by $\theta_r'\boxtimes(\emptyset,1^{n-r})$ and $(\emptyset,1^r)\boxtimes\theta_{n-r}'$, respectively.
+\end{proposition}
 
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        $\pi(us,\phi)$                        & $K_0\rightarrow \Sp_{2n}(\FF_q)$ \\ \hline
-        $(t_0,\mathbf{1})$                    & $(\emptyset,1^n)+(1,1^{n-1})$    \\ \hline
-        $(t_0,\varepsilon)$                   & $(\emptyset,21^{n-2})$           \\ \hline
-        $(t_1,\mathbf{1})$                    & $(\emptyset,1^n)+(\emptyset,21^{n-2})$     \\ \hline
-        $(t_1,\varepsilon)$                   & $(1,1^{n-1})$                    \\ \hline
-        $(t_2,\mathbf{1}\otimes\mathbf{1})$   & $(\emptyset,1^n)$                \\ \hline
-        $(t_2,\mathbf{1}\otimes\varepsilon)$  & $0$                              \\ \hline
-        $(t_2,\varepsilon\otimes\mathbf{1})$  & $(1^n,\emptyset)$                \\ \hline
-        $(t_2,\varepsilon\otimes\varepsilon)$ & $\theta_{1,K_0}$                 \\ \hline
-    \end{tabular}
-\end{table}
+Assuming this last result, it is a routine calculation to prove Theorem \ref{thm:Cn_subregular}. Table \ref{tbl:par_res_virtual} contains the restrictions of the virtual characters $\Pi(u,s,h)$, from which the proof easily follows.
+
+
