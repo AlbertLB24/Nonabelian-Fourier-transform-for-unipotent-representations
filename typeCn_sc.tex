@@ -9,21 +9,21 @@ Let $G=\Sp_{2n}(F)$ be the simply connected $p$-adic group of type $C_n$, whose 
 \end{theorem}
 
 For the sake of completeness, we briefly verify that the conjecture is true if $u$ is a regular unipotent element of $G^\vee$. It is well-known that $\dim Z_{G^\vee}(u)=\rk\SO_{2n+1}=n$ and that $\Gamma_u=Z(G^\vee)=1$ and consequently $\mathcal{Y}(\Gamma_u)_{\text{ell}}=\{(1,1)\}$. The representation $\Pi(u,1,1)=\pi(u,1,\mathbf{1})$ is fixed by $\FT^{\text{ell}}$ and moreover the Springer correspondence implies that 
-$$\res_{K_i}\pi(u,1,\mathbf{1})=\St_{K_i}\quad\text{for any maximal parahoric }K_i\subset G,$$
-and this representation is also fixed by each $\FT^{K_i}$, so the conjecture is verified.
+$$\res_{K_i}\pi(u,1,\mathbf{1})=\St_{K_i}\quad\text{for any maximal parahoric }K_i\subset G.$$
+This representation is fixed by each $\FT^{K_i}$, so the conjecture is verified.
 
 To progress any further, we need to understand representation theoretic aspects of the reductive quotients of maximal parahoric subgroups of $G=\Sp_{2n}(F)$ and some structural properties of $G^\vee=\SO_{2n+1}(\CC)$, which we discuss now.
 
-\subsection{Unipotent representations of \texorpdfstring{$\Sp_{2n}(\FF_q)$}{PDFstring}}
+\subsection{Unipotent representations of \texorpdfstring{$\Sp_{2n}(\FF_q)$}{PDFstring}}\label{subsec:C_unipreps}
 
 We recall from Proposition \ref{prop:harishchandra} that for any unipotent representation $\chi$ of $\Sp_{2n}(\FF_q)$ there exists a parabolic subgroup $P\subseteq\Sp_{2n}(\FF_q)$ with Levi decomposition $P=LN$ and a cuspidal unipotent character $\phi$ of $L$ such that $\chi\hookrightarrow\Ind_{P}^{\Sp_{2n}(\FF_q)}\phi$ and that moreover the pair $(P,\phi)$ are unique up to conjugacy. Lusztig showed that finite groups of Lie type of type $A_m, m\geq1$ have no cuspidal unipotent representations, while those of type $C_m$ have a unique cuspidal unipotent representation $\phi_s$ if $m=s^2+s$ for some $s\geq0$, and none otherwise. Thus, the only parabolic subgroups of $\Sp_{2n}(\FF_q)$ whose Levi component has a cuspidal unipotent representation has type $C_m$ for some $m=s^2+s$.
 
-For each $s\geq0$ such that $=s^2+s\leq n$, let $P_s=L_sN_s$ be the standard parabolic of type $C_{s^2+s}$ and let $\phi_s$ be the unique cuspidal unipotent representation of $L_s$. The unipotent representations of $\Sp_{2n}(\FF_q)$ are the components of the representations
+For each $s\geq0$ such that $s^2+s\leq n$, let $P_s=L_sN_s$ be the standard parabolic of type $C_{s^2+s}$ and let $\phi_s$ be the unique cuspidal unipotent representation of $L_s$. The unipotent representations of $\Sp_{2n}(\FF_q)$ are the components of the representations
 \begin{equation*}
     \Ind_{P_s}^{\Sp_{2n}(\FF_q)}\phi_s\quad\text{for all }s\geq0\text{ satisfying }s^2+s\leq n.
 \end{equation*}
 
-For each choice of $s$, the components of $\Ind_{P_s}^{\Sp_{2n}(\FF_q)}\phi_s$ define a \textit{series} of unipotent representations of $\Sp_{2n}(\FF_q)$ denoted by $\mathcal{E}(\Sp_{2n}(\FF_q),P_s,\phi_s)$. Let us focus first on $s=0$, corresponding to the principal series representations. In this case, $P_0=B$ is a Borel subgroup, $L_0=T$ is a maximal torus and $\phi_0=\mathbf{1}$, so we aim to characterize the components of $\Ind_B^{\Sp_{2n}(\FF_q)}\mathbf{1}$. In \ref{subsec:unipotent_families}, we proved that there is a canonical bijection between principal series representations of $\Sp_{2n}(\FF_q)$ and irreducible representations of its Weyl group $W(C_n)\cong S_n\ltimes C_2^n$. As we explained in Remark \ref{rem:Weylgroups}, most of our computation take place inside the Weyl $W(B_n)$ group of $\SO_{2n+1}(\CC)$ isomorphic to $W(C_n)$ by swapping short and long roots. For convenience, therefore, we state the classification theorem for irreducible $W(B_n)$ in terms of combinatorial data.
+For each choice of $s$, the components of $\Ind_{P_s}^{\Sp_{2n}(\FF_q)}\phi_s$ define a \textit{series} of unipotent representations of $\Sp_{2n}(\FF_q)$ denoted by $\mathcal{E}(\Sp_{2n}(\FF_q),P_s,\phi_s)$. Let us focus first on $s=0$, corresponding to the principal series representations. In this case, $P_0=B$ is a Borel subgroup, $L_0=T$ is a maximal torus and $\phi_0=\mathbf{1}$, so we aim to characterize the components of $\Ind_B^{\Sp_{2n}(\FF_q)}\mathbf{1}$. In \ref{subsec:unipotent_families}, we proved that there is a canonical bijection between principal series representations of $\Sp_{2n}(\FF_q)$ and irreducible representations of its Weyl group $W(C_n)\cong S_n\ltimes C_2^n$. As we explained in Remark \ref{rem:Weylgroups}, most of our computation take place inside the Weyl $W(B_n)$ group of $\SO_{2n+1}(\CC)$ isomorphic to $W(C_n)$ by swapping short and long roots. For convenience, therefore, we state the classification theorem for irreducible $W(B_n)$ in terms of combinatorial data (see \cite[\S 11.4]{Carter1993}).
 
 \begin{theorem}\label{thm:WBn_reps}
     There is a natural one-to-one correspondence between irreducible representations of $W(C_n)$ and ordered pairs of partitions (or bipartitions) $(\alpha,\beta)$ with $|\alpha|+|\beta|=n$. Let $\alpha=(\alpha_1,\alpha_2,\ldots)$ and $\beta=(\beta_1,\beta_2,\ldots)$ with 
@@ -243,7 +243,7 @@ In this section, we prove Conjecture \ref{conj:main} for the subregular unipoten
     \end{cases}$$
 \end{lemma}
 \begin{proof}
-    The first part can be found in \textcolor{red}{Collingwood}, while the second one can be easily checked with a computer algebra program (such as GAP).
+    The first part can be found in \cite[\S 5.2]{CollingwoodMcGovern1993}, while the second one can be easily checked with a computer algebra program such as GAP.
 \end{proof}
 
 The above result implies that there is an isomorphism 
@@ -271,11 +271,11 @@ In particular, we note that $\Gamma_{ut_0}=\Gamma_{ut_1}=\Gamma_u$ so $A_{ut_0}=
     $$\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}=\{(\pm1,\delta),(\delta,\pm1),(\delta,\pm\delta)\}.$$
 \end{lemma}
 \begin{proof}
-    All elements in $\Gamma_u$ are semisimple, and any two $\gamma_1,\gamma_2\in\Gamma_u$ commute if any only if $\gamma_1,\gamma_2\in\CC^\times$ (in which case their common centralizer is infinite) or 
+    All elements in $\Gamma_u$ are semisimple, and any two $\gamma_1,\gamma_2\in\Gamma_u$ commute if and only if $\gamma_1,\gamma_2\in\CC^\times$ (in which case their common centralizer is infinite) or 
     $(\gamma_1,\gamma_2)\in\{(\pm1,z\delta),(z\delta,\pm1),(z\delta,\pm z\delta)\ | \ z\in\CC^\times\}$. It is easy to see that these pairs have finite centralizer and are $\CC^\times$-conjugate to $\{(\pm1,\delta),(\delta,\pm1),(\delta,\pm\delta)\}$, respectively.
 \end{proof}
 
-Thus, we wish to compute the parahoric restriction with respect to maximal compact subgroups of the virtual representations
+Thus, we wish to compute the parahoric restrictions with respect to open maximal compact subgroups of the virtual representations
 \begin{align*}
     \Pi(u,1,\delta)=\pi(ut_0,\mathbf{1})-\pi(ut_0,\varepsilon),\quad \Pi(u,-1,\delta)=\pi(ut_1,\mathbf{1})-\pi(ut_1,\varepsilon),\\
     \Pi(u,\delta,1)=\pi(ut_2,\mathbf{1}\boxtimes\mathbf{1})+\pi(ut_2,\mathbf{1}\boxtimes\varepsilon)+\pi(ut_2,\varepsilon\boxtimes\mathbf{1})+\pi(ut_2,\varepsilon\boxtimes\varepsilon),\\
@@ -327,7 +327,7 @@ and acts on $T$ by the transformations
 $$h(a_1,\ldots,a_{n-1},a_n)\longmapsto h(a_{1}^{\pm1},a_{\tau(2)}^{\pm1},\ldots,a_{\tau(n)}^{\pm1}),\quad\text{where }\tau\in S_{n-1}.$$
 Thus $|W_{t_1}|=2^n(n-1)!$ and the index inside $W$ is $[W:W_{t_1}]=n$. To understand the right hand side of \eqref{eqn:mackey}, we first need to understand the double coset space $W_{t_1}\backslash W/W_{J_r}$. If $r=0$ or $r=n$, then $W_{J_r}\cong W$, so there is only one double coset. In these two cases, the right hand side of \eqref{eqn:mackey} simplifies to 
 $$\varepsilon\otimes\Ind_{W_{t_1}}^{W}\chi_{t_1}^{J_r}\otimes H^*(\mathcal{B}_{t_1}^u)^\rho.$$
-Using the explicit formulas in \textcolor{red}{Reeder}, one can compute that $\chi_{t_1}^{J_0}$ is the trivial character while $\chi_{t_1}^{J_n}$ is trivial on $\langle s_2,\ldots,s_n\rangle$, but it takes $s_0$ to $-1$. To finish the calculations, we need to study the $W_{t_1}$-action on the cohomology complex $H^*(\mathcal{B}^u_{t_1})$. From \eqref{eqn:centralizer_t1}, $u\in Z_{G^\vee}(t_1)$ and is a regular unipotent element, so $\dim\mathcal{B}^u_{t_1}=0$. However, since $Z_{G^\vee}(t_1)$ is not connected, the structure of $\mathcal{B}^u_{t_1}$ is more interesting. The following result gives an explicit description of $H^0(\mathcal{B}_{t_1}^u)$ as a $W_{t_1}$-module.
+Using the explicit formulas in \cite[\S 8.3]{Reeder2000}, one can compute that $\chi_{t_1}^{J_0}$ is the trivial character while $\chi_{t_1}^{J_n}$ is trivial on $\langle s_2,\ldots,s_n\rangle$, but it takes $s_0$ to $-1$. To finish the calculations, we need to study the $W_{t_1}$-action on the cohomology complex $H^*(\mathcal{B}^u_{t_1})$. From \eqref{eqn:centralizer_t1}, $u\in Z_{G^\vee}(t_1)$ and is a regular unipotent element, so $\dim\mathcal{B}^u_{t_1}=0$. However, since $Z_{G^\vee}(t_1)$ is not connected, the structure of $\mathcal{B}^u_{t_1}$ is more interesting. The following result gives an explicit description of $H^0(\mathcal{B}_{t_1}^u)$ as a $W_{t_1}$-module.
 
 \begin{lemma}
     The variety $\mathcal{B}^u_{t_1}$ consists of two points. The two dimensional complex vector space $H^0(\mathcal{B}^u_{t_1})$ has a natural action of $W_{t_1}\times A_{ut_1}$ and it admits a direct sum decomposition 
@@ -366,7 +366,7 @@ For convenience, we choose representatives $e$ and $\eta$ of $W_{t_1}\backslash 
 \begin{equation}\label{eqn:mackey_t1}
     \bigoplus_{w\in W_{t_1}\backslash W/W_{J_r}}\Ind_{W_{J_r,t_1^w}}^{W_{J_r}}\chi_{t_1^w}^{J_r}\otimes\left[H^*(\mathcal{B}^u_{t_1})^\rho\right]^w=\Ind_{W_{J_r,t_1}}^{W_{J_r}}\chi_{t_1}^{J_r}\otimes H(\mathcal{B}^u_{t_1})^\rho\oplus\Ind_{W_{J_r,t_1^\eta}}^{W_{J_r}}\chi_{t_1^\eta}^{J_r}\otimes\left[H(\mathcal{B}^u_{t_1})^\rho\right]^\eta
 \end{equation}
-To calculate the $W_{J_r}$-modules above, we first calculate the characters $\chi_{t_1}^{J_r}$ and $\chi_{t_1^\eta}^{J_r}$. Using \textcolor{red}{Reeder}, we can show that $\chi_{t_1^\eta}^{J_r}$ is the trivial character. On the other hand, $W_{J_r,t_1}\cong\langle s_0\rangle\times W(B_{r-2})\times W(B_{n-r})$ as a subgroup of $W_{J_r}\cong W(B_{r})\times W(B_{n-r})$, and $\chi_{t_1}^{J_r}$ is trivial on $W(B_{r-2})\times W(B_{n-r})$ while $\chi_{t_1}^{J_r}(s_0)=-1$.
+To calculate the $W_{J_r}$-modules above, we first calculate the characters $\chi_{t_1}^{J_r}$ and $\chi_{t_1^\eta}^{J_r}$. Using the explicit formulas in \cite[\S 8.3]{Reeder2000}, we can show that $\chi_{t_1^\eta}^{J_r}$ is the trivial character. On the other hand, $W_{J_r,t_1}\cong\langle s_0\rangle\times W(B_{r-2})\times W(B_{n-r})$ as a subgroup of $W_{J_r}\cong W(B_{r})\times W(B_{n-r})$, and $\chi_{t_1}^{J_r}$ is trivial on $W(B_{r-2})\times W(B_{n-r})$ while $\chi_{t_1}^{J_r}(s_0)=-1$.
 
 We are now ready to calculate the right hand side of \eqref{eqn:mackey_t1}. If $\rho=\mathbf{1}$, then $H^0(\mathcal{B}_{t_1}^u)^\mathbf{1}$ is the trivial module so
 \begin{align*}
@@ -415,12 +415,12 @@ In particular, the above result implies that $H^0(\mathcal{B}_{t_2}^u)^{\mathbf{
 This concludes the computations of all parahoric restrictions of Iwahori-spherical representations. It remains to compute the restrictions for the remaining two representations $\pi(u,t_2,\mathcal{1}\otimes\varepsilon)$ and $\pi(ut_2,\varepsilon\otimes\varepsilon)$ that are not Iwahori-spherical representations. 
 
 \begin{proposition}[Proof in progress. It relies on the generalized Springer correspondence]
-    Let $\theta_r'$ be the irreducible representation of $\Sp_{2r}(\FF_q)$ labelled by the symbol
+    For $r\geq2$, let $\theta_r'$ be the irreducible representation of $\Sp_{2r}(\FF_q)$ labelled by the symbol
     $$\begin{pmatrix}
         0 & 1 & 2 & \ldots & r-2 & r-1 & r\\
         && 1 & \ldots & r-2 &&
     \end{pmatrix}.$$
-    Then the parahoric restrictions of $\pi(ut_2,\varepsilon\otimes\mathbf{1})$ and $\pi(ut_2,\varepsilon\otimes\varepsilon)$ with respect to $K_{J_r}$ are irreducible representations labelled by $\theta_r'\boxtimes(\emptyset,1^{n-r})$ and $(\emptyset,1^r)\boxtimes\theta_{n-r}'$, respectively.
+    Then the parahoric restrictions of $\pi(ut_2,\varepsilon\otimes\mathbf{1})$ and $\pi(ut_2,\varepsilon\otimes\varepsilon)$ with respect to $K_{J_r}$ are irreducible representations labelled by $\theta_r'\boxtimes(\emptyset,1^{n-r})$ and $(\emptyset,1^r)\boxtimes\theta_{n-r}'$, respectively. For $r=0,1$, we set $\theta_r'=0$.
 \end{proposition}
 
 Assuming this last result, it is a routine calculation to prove Theorem \ref{thm:Cn_subregular}. Table \ref{tbl:par_res_virtual} contains the restrictions of the virtual characters $\Pi(u,s,h)$, from which the proof easily follows.

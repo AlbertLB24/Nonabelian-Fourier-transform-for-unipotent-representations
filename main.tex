@@ -11,8 +11,9 @@
 \usepackage[margin=0.9in]{geometry}
 \usepackage{graphicx}
 \usepackage{mathtools, caption, dsfont, tikz-cd}
-\usepackage{wrapfig}
-\usepackage{pdflscape}
+\usepackage{wrapfig, pdflscape}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{references.bib}
 
 % tikzpicture
 
@@ -20,6 +21,11 @@
 \pgfplotsset{compat=1.15}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
+
+\usepackage{xcolor}
+\usepackage{array}
+
+\newcolumntype{R}{>{\color{red}}c}  % red, centred column
 
 
 \mathchardef\mhyphen="2D
@@ -154,12 +160,14 @@
 \newtheorem*{hypothesis}{Hypothesis}
 \newtheorem*{exercise}{Exercise}
 
+%\newcolumntype{R}{>{\color{red}}c}  % red, centred column
 
-\title{Nonabelian Fourier transform for unipotent representations}
-\author{Albert Lopez Bruch}
+\title{\textbf{King's College London PhD Upgrade}\\A nonabelian Fourier transform for unipotent\\ representations of p-adic groups}
+\author{Student: Albert Lopez Bruch \\ Supervisor: Dr. Beth Romano}
 
 \begin{document}
 	\maketitle
+    \tableofcontents
 	\pagenumbering{arabic}
     \input{introduction.tex}
     \newpage
@@ -177,11 +185,14 @@
     \newpage
 
     \input{typeF4.tex}
+    \input{F4_tables.tex}
     \newpage
-    %\input{other_results.tex}
-    %\newpage
 
+    \printbibliography
     
     
 
 \end{document}
+
+
+

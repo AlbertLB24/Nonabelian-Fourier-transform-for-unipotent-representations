@@ -1,7 +1,7 @@
 \section{Unipotent representations for finite groups of Lie type}
 %The statement of \textcolor{red}{Conjecture from introduction} is at heart a statement about the representation theory of a p-adic group $G$.
 
-Despite the fact that the statement of \textcolor{red}{\ref{conj:main}} is at heart a result about the representation theory of a p-adic group $G$, in this first section we restrict our attention to structural and representation theoretic results of finite groups of Lie type. The aim is to understand Lusztig's non-abelian fourier transform $\FT^K:R_{\un}(\overline{K})\longrightarrow R_{\un}(\overline{K})$ on the space of unipotent representations of the reductive parahoric quotient $\overline{K}$ appearing at the bottom of the diagram in \ref{conj:main}. To achieve this, we first need to take a step back and look at general theory of finite groups of Lie type and the classification of their representations. Most of the material in this first section can be found in the book by \textcolor{red}{Carter}, a great reference on the subject. 
+Despite the fact that the statement of Conjecture \ref{conj:main} is at heart a result about the representation theory of a $p$-adic group $G$, in this first section we restrict our attention to structural and representation theoretic results of finite groups of Lie type. The aim is to understand Lusztig's nonabelian fourier transform $\FT^K:R_{\un}(\overline{K})\longrightarrow R_{\un}(\overline{K})$ on the space of unipotent representations of the reductive parahoric quotient $\overline{K}$ appearing at the bottom of the diagram in \ref{conj:main}. To achieve this, we first need to take a step back and look at general theory of finite groups of Lie type and the classification of their representations. Most of the material in this first section can be found in the book by Carter \cite{Carter1993}, a great reference on the subject.
 
 To introduce finite groups of Lie type, we first need to briefly look at Frobenius maps. Throughout this chapter, as it is common in the literature, $G$ will denote an algebraic group over an algebraically closed field of positive characteristic. In later sections, $G$ will always denote a $p$-adic group!
 %In later sections, we will explain structural and representation theoretic results of $p$-adic groups to understand the vertical arrows
@@ -13,13 +13,13 @@ Let $k$ be an algebraically closed field of characteristic $p>0$ and let $G$ be 
 
 For some power $q=p^e, e\geq 1$, consider the map $F_q:\GL_n(k)\rightarrow\GL_n(K),\ (a_{ij})\mapsto(a_{ij}^q)$, which is known to be a rational group homomorphism. A homomorphism $F:G\rightarrow G$ is called a \textit{standard Frobenius map} if there exists an embedding $i:G\hookrightarrow\GL_n(k)$ and some $q=p^e$ such that
 $$i(F(g))=F_q(i(g))\quad\text{for all }g\in G.$$
-More generally, a homomorphism $F:G\rightarrow G$ is a \textit{Frobenius map} if some power of $F$ is a standard Frobenius map. If $F:G\rightarrow G$ is a Frobenius map, we are interested in structure and representation theory of the \textbf{finite} group $G^F$ of fixed points under the Frobenius map. Many properties are inherited from $G$, but some change significantly.
+More generally, a homomorphism $F:G\rightarrow G$ is a \textit{Frobenius map} if some power of $F$ is a standard Frobenius map. If $F:G\rightarrow G$ is a Frobenius map, we are interested in the structure and representation theory of the \textbf{finite} group $G^F$ of fixed points under the Frobenius map. Many properties are inherited from $G$, but some change significantly.
 
-One can show that $G$ contains $F$-stable Borel subgroups, and that inside any $F$-stable Borel there are $F$-stable maximal tori. Thus, we may assume that the Borel subgroup $B$ and maximal torus $T$ fixed in the previous paragraph are $F$-stable. Under these assumptions, the Frobenius map acts on the simple roots by permuting the corresponding the root spaces. Thus, $F$ corresponds to some permutation $\rho$ of $\Delta$ satisfying
+One can show that $G$ contains $F$-stable Borel subgroups, and that inside any $F$-stable Borel there are $F$-stable maximal tori. Thus, we may assume that the Borel subgroup $B$ and maximal torus $T$ fixed in the previous paragraph are $F$-stable. Under these assumptions, the Frobenius map acts on the simple roots by permuting the corresponding root spaces. Thus, $F$ induces some permutation $\rho$ of $\Delta$ satisfying
 $$F(\cX_\alpha)=\cX_{\rho(\alpha)}\quad\text{ for all }\alpha\in\Delta.$$
-Moreover, one can easily check that $\rho$ is in fact a symmetry of the Dynkin diagram, and these can be completely classified. When $\rho$ is trivial we say that $G^F$ is a \textit{split} group and \textit{non-split} otherwise. In this document, we will mainly focus on split groups.  
+Moreover, one can easily check that $\rho$ is in fact a symmetry of the Dynkin diagram, which can be completely classified. When $\rho$ is trivial we say that $G^F$ is a \textit{split} group and \textit{non-split} otherwise. In this document, we will mainly focus on split groups.  
 
-For each orbit $J\subseteq\Delta$ of $\rho$, let $w_J\in W_J=\{w_{\alpha_i}\ |\ \alpha_i\in J\}$ be the unique element such that $w_J(J)=-J$. It is the longest element of $W_J$ and it satisfies that $w_J^2=1$. In then follows that the group $G^F$ has a natural $BN$-pair given by the groups $B^F$ and $N^F$, whose Weyl group is
+For each orbit $J\subseteq\Delta$ of $\rho$, let $w_J\in W_J=\{w_{\alpha_i}\ |\ \alpha_i\in J\}$ be the unique element such that $w_J(J)=-J$. It is the longest element of $W_J$ and it satisfies that $w_J^2=1$. It then follows that the group $G^F$ has a natural $BN$-pair given by the groups $B^F$ and $N^F$, whose Weyl group is
 $$N^F/T^F=(N/T)^F=W^F=\langle w_J\ |\ J\subseteq\Delta\text{ is an orbit of }\rho\rangle.$$
 When $G^F$ is split, $\rho$ acts trivially and all orbits are singletons, so $W^F\cong W$.
 
@@ -27,7 +27,7 @@ When $G^F$ is split, $\rho$ acts trivially and all orbits are singletons, so $W^
     Let $G=\GL_n(k)$ and let $F:G\rightarrow G$ be a Frobenius map. If $F=F_q$, then $\rho$ is trivial and $G^F=\GL_n(\FF_q)$. Alternatively, consider the map $\gamma:\GL_n(k)\rightarrow\GL_n(k)$ given by $A\mapsto Q_n^{-1}(A^T)^{-1}Q_n$, where $Q_n$ is the matrix with $1$ in the anti-diagonal and $0$ everywhere else. Then the map $F':=F_q\circ\gamma$ squares to $F_{q^2}$ so it is a Frobenius map. Then we obtain the non-split group $$\GL_n(k)^{F'}=\mathrm{GU}_n(\FF_q)=\{g\in\GL_n(\FF_{q^2})|\bar{A}^TQ_nA=Q_n\}.$$
 \end{example}
 
-It is a key structural fact of $G^F$ than any two $F$-stable Borel subgroups in $G$ are conjugate under $G^F$. However, it is not the case that any two $F$-stable maximal tori in $G$ are $G^F$-conjugate. A classification of these classes is a fundamental problem in the structure theory of $G^F$, with a beautiful solution. While it is true that any $F$-stable Borel subgroup contains an $F$-stable maximal torus, the converse might not be true. Any $F$-stable maximal torus that is contained in an $F$-stable Borel subgroup is called \textit{maximally split}, and it can be shown that any two $F$-stable maximally split tori are also conjugate under $G^F$.
+It is a key structural fact of $G^F$ that any two $F$-stable Borel subgroups in $G$ are conjugate under $G^F$. However, it is not the case that any two $F$-stable maximal tori in $G$ are $G^F$-conjugate. A classification of these classes is a fundamental problem in the structure theory of $G^F$, with a beautiful solution. While it is true that any $F$-stable Borel subgroup contains an $F$-stable maximal torus, the converse might not be true. Any $F$-stable maximal torus that is contained in an $F$-stable Borel subgroup is called \textit{maximally split}, and it can be shown that any two $F$-stable maximally split tori are also conjugate under $G^F$.
 
 Remarkably, one can easily determine the $G^F$-conjugacy classes of $F$-stable maximal tori by looking at the Weyl group. To state this result, we first introduce the notion of $F$-conjugacy classes in $W$. Given two $w_1,w_2\in W$, we say that they are $F$-conjugate if there is some $x\in W$ such that $F(x)w_1x^{-1}=w_2$. Note that if $F$ acts on $W$ trivially, then the $F$-conjugacy classes are the standard conjugacy classes.
 
@@ -43,7 +43,7 @@ From now, we will write $T_1$ for a maximally split $F$-stable maximal torus and
 
 \subsection{Deligne--Lusztig characters and unipotent representations}
 
-In their groundbreaking paper from 1976, Deligne and Lusztig attached to each pair $(T,\theta)$ of $F$-stable maximal torus $T$ and character $\theta$ of $T^F$, a virtual character $R_{T,\theta}$ of the group $G^F$. These virtual characters were constructed using the action of $G^F$ on certain $\ell$-adic cohomology groups associated to certain Deligne--Lusztig varieties. We shall not consider the explicit definition of the characters, but we will rather recall without proof some important properties. 
+In their groundbreaking paper from 1976, Deligne and Lusztig attached to each pair $(T,\theta)$ of $F$-stable maximal torus $T$ and character $\theta$ of $T^F$, a virtual character $R_{T,\theta}$ of the group $G^F$. These virtual characters were constructed using the action of $G^F$ on $\ell$-adic cohomology groups associated to certain Deligne--Lusztig varieties. We shall not consider the explicit definition of the characters, but we will recall without proof some important properties. 
 
 \begin{enumerate}
     \item If the pair $(T',\theta')$ is obtained from $(T,\theta)$ by conjugation on some element of $G^F$ in the natural way, then $R_{T,\theta}=R_{T',\theta'}$.
@@ -136,7 +136,7 @@ Amongst all geometric conjugacy classes of characters of $G^F$, there is a disti
     %\end{equation*}
 \end{definition}
 
-We remark that if $\chi$ is a unipotent character of $G^F$, then $(\chi,R_{T,\theta})=0$ for any $(T,\theta)$ with $\theta\neq1$. This is an immediate consequence of property $7.$ above. Lusztig realized that a classification of unipotent characters of $G^F$ and certain subgroups (also finite groups of Lie type) was enough to understand all irreducible characters. Firstly, he observed that the study of unipotent characters of $G^F$ can be reduced to the case when $G$ is simple of adjoint type. Secondly, following the same approach as Harish--Chandra, he noticed that it was enough to classify \textit{cuspidal} unipotent characters. There are many equivalent definitions for this notion; the idea is that $\chi$ is not obtained by parabolically inducing any unipotent character of a proper parabolic subgroup. The precise statement the following.
+We remark that if $\chi$ is a unipotent character of $G^F$, then $(\chi,R_{T,\theta})=0$ for any $(T,\theta)$ with $\theta\neq1$. This is an immediate consequence of property $7.$ above. Lusztig realized that a classification of unipotent characters of $G^F$ and certain subgroups (also finite groups of Lie type) was enough to understand all irreducible characters. Firstly, he observed that the study of unipotent characters of $G^F$ can be reduced to the case when $G$ is simple of adjoint type. Secondly, following the same approach as Harish--Chandra, he noticed that it was enough to classify \textit{cuspidal} unipotent characters $\phi$. There are many equivalent definitions for this notion; the idea is that $\phi$ is not obtained by parabolically inducing any unipotent character of a proper parabolic subgroup. The precise statement the following.
 
 \begin{proposition}\label{prop:harishchandra}
     Let $\chi$ be an irreducible character of $G^F$. 
@@ -147,7 +147,7 @@ We remark that if $\chi$ is a unipotent character of $G^F$, then $(\chi,R_{T,\th
     \end{enumerate}     
 \end{proposition}
 
-Therefore, to classify the unipotent characters of $G^F$, it is enough to determine the cuspidal unipotent representations $\phi$ of the standard Levi subgroups $L_J^F$ of $G^F$ and then calculate the decomposition of ${\phi_{P_J^F}}^{G^F}$ into irreducible characters. The later task can be achieved by Howlett--Lehrer theory (Carter, \S10), while the former was achieved by Lusztig in a case by case analysis. For example, he proved that if $G^F$ has classical type, then it has either $0$ or $1$ cuspidal unipotent characters (if the type $A_n,n\geq1$, there are no cuspidal unipotent characters). In exceptional types, one can find more exotic behaviour. In type $G_2$ we find $4$ cuspidal unipotent characters and in $F_4$ we find $7$.
+Therefore, to classify the unipotent characters of $G^F$, it is enough to determine the cuspidal unipotent representations $\phi$ of the standard Levi subgroups $L_J^F$ of $G^F$ and then calculate the decomposition of ${\phi_{P_J^F}}^{G^F}$ into irreducible characters. The latter task can be computed using Howlett--Lehrer theory (see \cite[\S10]{Carter1993} for a detailed treatment), while the former was achieved by Lusztig in a case by case analysis. For example, he proved that if $G^F$ has classical type, then it has either $0$ or $1$ cuspidal unipotent characters (if the type $A_n,n\geq1$, there are no cuspidal unipotent characters). In exceptional types, one can find more exotic behaviour. In type $G_2$ we find $4$ cuspidal unipotent characters and in $F_4$ we find $7$.
 
 \iffalse
 It is clear from the definitions that unipotent characters form one geometric conjugacy class of irreducible characters, and that if $\chi$ is a unipotent character, then $(\chi,R_{T,\theta})=0$ for any $\theta\neq 1$. Semisimple characters, on the other hand, have the opposite property. To explain this, we define the class function $\Xi$ to be supported on regular unipotent elements with constant value of $|Z^F|q^l$. By using properties of character duality, one can show that $(\Xi,\Xi)=|Z^F|q^l$ and that $(\Xi,\chi)\in\{-1,0,1\}$ for all irreducible characters $\chi$ of $G^F$. Note that this implies that there are exactly $|Z^F|q^l$ semisimple characters. In fact, one can furthermore show that 
@@ -216,14 +216,14 @@ Lusztig further observed that the unipotent characters of $G^F$ naturally form f
     \{\text{Irreducible characters of }W\}&\longrightarrow\{\text{Irreducible components of }\Ind_{B^F}^{G^F}1\}\\
     \phi&\longmapsto\chi_\phi.
 \end{align}
-This fact can be elegantly seen as follows. The choice of Borel subgroup $B$ containing the torus determines a set of simple roots, and thus a set of simple reflections $S$ generating $W$. Now consider the endomorphism algebra $\cH(T^F,1):=\End(\Ind_{B^F}^{G^F}1)$. Using some Mackey theory, one can show that $\cH(T^F,1)$ has natural basis $\{T_w,w\in W\}$ satisfying the multiplication rules
+This fact can be elegantly seen as follows. The choice of Borel subgroup $B$ containing the torus determines a set of simple roots, and thus a set of simple reflections $S$ generating $W$. Now consider the endomorphism algebra $\cH(T^F,1):=\End(\Ind_{B^F}^{G^F}1)$. Using Mackey theory, one can show that $\cH(T^F,1)$ has natural basis $\{T_w,w\in W\}$ satisfying the multiplication rules
 \begin{align*}
     T_s^2=(q-1)T_s+qT_1 & \quad\text{ if }s\in S,\\
     T_{w_1}T_{w_2}=T_{w_1w_2} & \quad\text{ if }l(w_1w_2)=l(w_1)+l(w_2).
 \end{align*}
-Thus, $\cH(T^F,1)$ is isomorphic to the Coxeter algebra $\cH(W,S,q)$ with constant parameter $q$. This algebra is a deformation of the group algebra $\CC[W]$ (by setting $q=1$). Using Tit's deformation theorem, it follows that 
-$$\cH(T^F,1)\cong\CC[W],$$
-from which the above bijection can be easily deduced. We can also deduce the nice formula
+Thus, $\cH(T^F,1)$ is isomorphic to the Coxeter algebra $\cH(W,S,q)$ with constant parameter $q$. This algebra is a deformation of the group algebra $\CC[W]$ (by setting $q=1$). Tits' deformation theorem (\cite[Proposition 10.11.2]{Carter1993}) tells us something even stronger; we in fact have that
+$$\cH(T^F,1)\cong\CC[W]$$
+are isomorphic, from which the above bijection can be easily deduced. We can also deduce the nice formula
 $$(\chi_\phi,\Ind_{B^F}^{G^F}1)=\dim\phi.$$
 
 \iffalse
@@ -248,14 +248,14 @@ and the modules on the right hand side are precisely the irreducible submodules,
 \fi
 
 \begin{example}\label{ex:G2_reps}
-    Let $G=G_2(k)$ and let $F=F_q:G\to G$ be the standard Frobenius. Then $G^F=G_2(\FF_q)$, whose Weyl group $W$ is isomorphic to $D_{12}$. Following Carter, we label the six irreducible representations by $\phi_{1,0},\phi_{1,3}',\phi_{1,3}'',\phi_{1,6},\phi_{2,1},\phi_{2,2}$, where the first subindex gives the dimension and, for example, $\phi_{1,0}=1$ and $\phi_{1,6}=\det$. Moreover, the Weyl group has $6$ conjugacy classes often labelled by $e,a,b,ab,(ab)^2$ and $(ab)^3$, where $a$ and $b$ are short and long reflections, respectively. Then
+    Let $G=G_2(k)$ and let $F=F_q:G\to G$ be the standard Frobenius. Then $G^F=G_2(\FF_q)$, whose Weyl group $W$ is isomorphic to $D_{12}$. Following Carter, we label the six irreducible representations by $\phi_{1,0},\phi_{1,3}',\phi_{1,3}'',\phi_{1,6},\phi_{2,1},\phi_{2,2}$, where the first subindex gives the dimension. For example, $\phi_{1,0}=\mathbf{1}$ is the trivial character and $\phi_{1,6}=\varepsilon$ is the sign character. As it is customary in the literature, we use the same notation to denote the corresponding principal series representations of $G_2(\FF_q)$. The Weyl group has $6$ conjugacy classes often labelled by $e,a,b,ab,(ab)^2$ and $(ab)^3$, where $a$ and $b$ are short and long reflections, respectively. Then
     \begin{align*}
-        R_{T_1,1}&=\phi_{1,0}+\phi_{1,6}+\phi_{1,3}'+\phi_{1,3}''+2\phi_{2,1}+2\phi_{2,2},& \\
-        R_{T_a,1}&=\phi_{1,0}-\phi_{1,6}+\phi_{1,3}'-\phi_{1,3}'',& \\
-        R_{T_b,1}&=\phi_{1,0}-\phi_{1,6}-\phi_{1,3}'+\phi_{1,3}'',& \\
-        R_{T_{ab},1}&=\phi_{1,0}+\phi_{1,6}-\phi_{2,1}&+G_2[-1]+G_2[\theta]+G_2[\theta^2],\\
-        R_{T_{(ab)^2},1}&=\phi_{1,0}+\phi_{1,6}-\phi_{2,2}&+G_2[1]-G_2[\theta]-G_2[\theta^2],\\
-        R_{T_{(ab)^3},1}&=\phi_{1,0}+\phi_{1,6}-\phi_{1,3}'-\phi_{1,3}''&-2G_2[1]-2G_2[-1],
+        R_{T_1,1}&=\phi_{1,0}+\phi_{1,6}+\phi_{1,3}'+\phi_{1,3}''+2\phi_{2,1}+2\phi_{2,2}, \\
+        R_{T_a,1}&=\phi_{1,0}-\phi_{1,6}+\phi_{1,3}'-\phi_{1,3}'',\\
+        R_{T_b,1}&=\phi_{1,0}-\phi_{1,6}-\phi_{1,3}'+\phi_{1,3}'',\\
+        R_{T_{ab},1}&=\phi_{1,0}+\phi_{1,6}-\phi_{2,1}  +G_2[-1]+G_2[\theta]+G_2[\theta^2],\\
+        R_{T_{(ab)^2},1}&=\phi_{1,0}+\phi_{1,6}-\phi_{2,2}  +G_2[1]-G_2[\theta]-G_2[\theta^2],\\
+        R_{T_{(ab)^3},1}&=\phi_{1,0}+\phi_{1,6}-\phi_{1,3}'-\phi_{1,3}''-2G_2[1]-2G_2[-1],
     \end{align*}
     where $G_2[1],G_2[-1],G_2[\theta],G_2[\theta^2]$ are the commonly used labels for the $4$ cuspidal unipotent characters.
 \end{example}
@@ -302,11 +302,11 @@ Since $R_{T_1,1}=\sum_{\phi\in\hat{W}}R_\phi$, it follows that for any family $\
 \begin{example}
     Consider again the group $G^F=G_2(\FF_q)$. Following the notation in Example \ref{ex:G2_reps}, the special characters of $W\cong D_{12}$ are $\phi_{1,0},\phi_{1,6},\phi_{2,1}$ whose corresponding families are
     $$(\phi_{1,0}),(\phi_{2,1},\phi_{2,2},\phi_{1,3}',\phi_{1,3}''),(\phi_{1,6}).$$
-    On the other hand, the $10$ unipotent characters of $G^F$ fall into three families, parametrized as follows. 
+    On the other hand, the $10$ unipotent characters of $G^F$ fall into three families, and their Lusztig parametrization is in Figure \ref{fig:G2_labels}. 
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.7\textwidth]{cuspidals G_2.png}
-        \caption{Unipotent characters of $G_2(\FF_q)$ and its family labels.}
+        \caption{Unipotent characters of $G_2(\FF_q)$ and its family labels (\cite[pg. 478]{Carter1993}).}
         \label{fig:G2_labels}
     \end{figure}
 \end{example}
@@ -315,7 +315,7 @@ Finally, Lusztig used these families to define a \textit{nonabelian Fourier tran
 $$R_{\un}(G^F)=\bigoplus_\mathcal{F}R_{\un,\mathcal{F}}(G^F),$$
 where $R_{\un,\mathcal{F}}(G^F)$ is the $\CC$-span of the unipotent representations of $G^F$ in the family $\mathcal{F}$. Lusztig's nonabelian Fourier transform acts on each block as follows. For a family $\mathcal{F}$ with associated group $\Gamma_\mathcal{F}$, consider the $|M(\Gamma_\mathcal{F})|\times|M(\Gamma_\mathcal{F})|$ matrix $\mathcal{M}(\mathcal{F})$ whose $((x,\sigma),(y,\tau))$ entry is the value $\{(x,\sigma),(y,\tau)\}$. This matrix is Hermitian and squares to the identity. The map $\FT_{G^F}:R_{\un}(G^F)\rightarrow R_{\un}(G^F)$ then acts on each block $R_{\un,\mathcal{F}}(G^F)$ by the matrix $\mathcal{M}(\mathcal{F})$. Since all the matrices square to the identity, $\FT_{G^F}$ is an involution. 
 
-In particular, Lusztig's nonabelian transform satisfies $\FT_{G^F}(\chi_\phi)=R_\phi$, so it maps the unipotent characters of $G^F$ to almost unipotent characters. The latter ones have very nice geometric properties, which were exploited by Lusztig to prove other remarkable results. We will not pursue this further here, but we will see an explicit example for type $G_2$. %By this we mean that every almost character agrees up to a scalar with a characteristic function associated to an $F$-stable character sheaf on $G^F$ (see Shoji's article).
+In particular, Lusztig's nonabelian transform satisfies $\FT_{G^F}(\chi_\phi)=R_\phi$, so it maps the unipotent characters of $G^F$ to almost unipotent characters. The latter ones have very nice geometric properties, which were exploited by Lusztig to prove other remarkable results, but we will not pursue this further. %By this we mean that every almost character agrees up to a scalar with a characteristic function associated to an $F$-stable character sheaf on $G^F$ (see Shoji's article).
 
 %\begin{example}
 %    If $G^F$ is of type $A_l$, then the unipotent characters coincide with the almost characters.
@@ -325,7 +325,7 @@ In particular, Lusztig's nonabelian transform satisfies $\FT_{G^F}(\chi_\phi)=R_
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.6\textwidth]{Fourier matrix for S_3.png}
-        \caption{Fourier matrix when $\Gamma_\mathcal{F}\cong S_3$.}
+        \caption{Fourier matrix when $\Gamma_\mathcal{F}\cong S_3$ (\cite[pg. 457]{Carter1993}).}
         \label{fig:S3matrix}
     \end{figure}
 \end{example}

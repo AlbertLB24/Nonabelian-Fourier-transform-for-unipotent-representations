@@ -1,10 +1,13 @@
 \section{The p-adic group of type \texorpdfstring{$F_4$}{PDFstring}}
 
-In this chapter, we let $G=F_4(F)$ be a simple $p$-adic group of type $F_4$, whose extended Dynkin diagram is
+In this chapter, we let $G=F_4(F)$ be a simple $p$-adic group of type $F_4$. Since the fundamental group $\Omega$ is trivial, $F_4$ is both simply connected and adjoint. This is an important fact that simple groups of type $F_4$ share with simple groups of type $G_2$ that simplifies many results and calculations. Its dual group is $G^\vee=F_4(\CC)$, and we let $\{\alpha_1,\alpha_2,\alpha_3,\alpha_4\}$ be the simple roots of $G^\vee$, with Dynkin diagram 
 \[
-    0 \relbar 4 \relbar 3 \xRightarrow{\quad} 2 \relbar 1.
+    \alpha_1 \relbar \alpha_2 \xRightarrow{\quad} \alpha_3 \relbar \alpha_4.
 \]
-Let us also fix a set of simple affine roots $S_{\aff}=\{\beta_1,\beta_2,\beta_3,\beta_4,\beta_0\}$, where $\beta_1,\beta_2$ are the short simple roots. Since the extended Dynkin diagram has no non-trivial automorphisms, the fundamental group $\Omega(F_4)$ is trivial, and therefore $G=F_4(F)$ is both a simply connected and adjoint $p$-adic group. This is an important fact that simple groups of type $F_4$ share with simple groups of type $G_2$ that simplifies many results and calculations. 
+We denote by $\alpha_0$ and $\alpha^0$ the highest short root and highest root of the root system, respectively, so the simple affine roots of $G$ are $J_{\aff}=\{-\calpha_0,\calpha_4,\calpha_3,\calpha_2,\calpha_1\}$ with affine Dynkin diagram 
+\[
+    (-\calpha_0) \relbar \calpha_4 \relbar \calpha_3 \xRightarrow{\quad} \calpha_2 \relbar \calpha_1.
+\]
 
 Since $G$ is simply connected, it has no pure inner twists other than itself. Moreover, the set of maximal open compact subgroups of $G$ agree with the set of maximal parahoric subgroups of $G$, and their conjugacy classes can be parametrized by proper maximal subsets $J\subsetneq S_{\aff}$. It is then easy to see that there are five maximal open compact subgroups $\{K_0,K_4,K_3,K_2,K_1\}$ of $G$ up to conjugacy, where $K_i$ corresponds to $J_i:=S_{\aff}\setminus\{\alpha_i\}$ for $0\leq i\leq 4$. The reductive quotients $\overline{K}_0,\overline{K}_4,\overline{K}_3,\overline{K}_2,\overline{K}_1$ are finite reductive groups of type $F_4, A_1\times C_3, A_2\times\tilde{A}_2, A_3\times\tilde{A}_1,B_4$, respectively. In particular,
 \[
@@ -12,9 +15,9 @@ Since $G$ is simply connected, it has no pure inner twists other than itself. Mo
 \]
 and $\FT^{\mathrm{par}}=(\FT^{K_i})_i$ is Lusztig's Fourier transform on $R_{\un}(\overline{K}_i)$ on each coordinate.
 
-The aim of this chapter is to prove that Conjecture \ref{conj:main} holds for $G$. In other words, we prove that 
+The aim of this section is to prove that Conjecture \ref{conj:main} holds for $G$. In other words, we prove that 
 
-\begin{theorem}\label{thm:F4}
+\begin{theorem}[In progress]\label{thm:F4}
     Let $G$ be a simple p-adic group of type $F_4$. Then the diagram 
     \[
         \begin{tikzcd}
@@ -25,7 +28,9 @@ The aim of this chapter is to prove that Conjecture \ref{conj:main} holds for $G
     commutes.
 \end{theorem}
 
-Firstly, we need to compute the basis $\{\Pi(u,s,h)\ |\ u\in G^\vee, (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}\}$ of the space $\mathcal{R}_{\un,\text{ell}}^p(G)$. Here $u$ is a unipotent element of $G^\vee=F_4(\CC)$, the complex simple reductive group of type $F_4$, and $\mathcal{Y}(\Gamma_u)$ is the set of elliptic pairs of $\Gamma_u$ (see Section \ref{subsec:unipotent_elliptic} for the Definitions). Thus, the first step is to classify all such pairs for all unipotent conjugacy classes of $F_4(\CC)$. Thankfully, this is a well-known classification given in Table \ref{tbl:F4_pairs}. In particular, $\mathcal{R}_{\un,\text{ell}}^p(G)$ is a $31$-dimensional vector space.
+We remark that the above result was already proven by Ciubotaru, in an unpublished paper \cite{Ciubotaru2020} for the reduction to the hyperspecial parahoric subgroup $K_0$. We complete the proof for the remaining $4$ parahoric subgroups.
+
+Firstly, we need to compute the basis $\{\Pi(u,s,h)\ |\ u\in G^\vee, (s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}\}$ of the space $\mathcal{R}_{\un,\text{ell}}^p(G)$. Here $u$ is a unipotent element of $G^\vee=F_4(\CC)$, the complex simple reductive group of type $F_4$, and $\mathcal{Y}(\Gamma_u)$ is the set of elliptic pairs of $\Gamma_u$ (see Section \ref{subsec:dualFourier} for the Definitions). The classification of all elliptic pairs of $F_4(\CC)$ is well-known (see Table \ref{tbl:F4_pairs} for a complete description). In particular, $\mathcal{R}_{\un,\text{ell}}^p(G)$ is a $31$-dimensional vector space, where $21$ of these dimensions come from the distinguished unipotent class $F_4(a_3)$.
 
 \begin{table}[ht]
     \centering
@@ -42,10 +47,61 @@ Firstly, we need to compute the basis $\{\Pi(u,s,h)\ |\ u\in G^\vee, (s,h)\in\Ga
     \label{tbl:F4_pairs}
 \end{table}
 
-The main difficulty in proving Theorem \ref{thm:F4} lies in the explicit computation of the restriction map 
+To prove Theorem \ref{thm:F4} we need an explicit computation of the restriction map 
 $$\res^{\mathrm{par}}_{\un}:\mathcal{R}_{\un,\mathrm{ell}}^p(G)\longrightarrow\bigoplus_{i=0}^5 R_{\un}(\overline{K}_i).$$
+This takes a large amount of work (we have to compute $155$ parahoric restrictions, with varying amounts of effort) to do this. For the purposes of this document, we will instead just discuss in detail a few examples that already highlight the main ideas involved in the calculation for distinct parahoric subgroups $K_i$. All examples discussed come from Iwahori-spherical representations, since the parahoric restrictions of the other representations are still work in progress. This work was mostly completed by \cite[\S 10]{Reeder2000}, but his tables contain some mistakes, systematically arising from the two representations $\pi(F_4(a_3),1,31)$ and $\pi(F_4(a_3),1,211)$. We have been unable to guess where the mistake may have come from. We gather all the results in large tables at the end of the section that fix the mistakes in Reeder's tables. We omit the tables for the parahoric restriction to maximal hyperspecial for a few reasons; they take the most space, the are already correct in Reeder's paper (except for the restriction of $[B_4(531),\epsilon'']$, where the second $K_0$ type should be $\phi_{2,16}'$ instead of $\phi_{2,16}''$) and Theorem \ref{thm:F4} has already been proven in this case.
 
-We note that the conjecture can be verified one unipotent class $u\in G^\vee$ and one parahoric subgroup $K_i$ at a time. Thus, the proof of Theorem \ref{thm:F4} will consist on a case-by-case analysis of the distinct options.
+The conjecture can be verified one unipotent class $u\in G^\vee$ at a time. By far, the most interesting case is the class $F_4(a_3)$, so all examples will involve representations labelled by this class. Let us introduce some helpful notation used in \cite{Reeder2000}. The class $F_4(a_3)$ is distinguished with component group isomorphic to $S_4$, so there are $5$ conjugacy classes of semisimple elements commuting with any $u\in F_4(a_3)$. If $s$ is such a semisimple element, then $Z_{G^\vee}(s)$ is a pseudo-Levi subgroup of a certain type, and $u$ is a unipotent element of this group with a certain label. Then the representation of $F_4(F)$ parametrized by $(us,\phi),\phi\in\widehat{A_{su}}$ will be labelled by the type of unipotent $u$ inside $Z_{G^\vee}(s)$, together with the representation $\phi$.
 
-\subsection{Restriction to hyperspecial parahoric \texorpdfstring{$K_0\longrightarrow F_4$}{PDFstring}}
+For example, if $s$ is a two-cycle, then $Z_{G^\vee}(s)$ has type $C_3\times A_1$, $\widehat{A_{su}}=C_2\times C_2$ and $u$ is labelled by $C_3(42)\times A_1$ (subregular in the first group and regular in the second). If $s$ is a three-cycle, then $Z_{G^\vee}(s)$ has type $A_2\times A_2$, $\widehat{A_{su}}$ and $u$ is a regular unipotent labelled by $2A_2$. See the tables at the end for all the labels.
 
+\subsection{Examples of parahoric restrictions}
+The first example is the computation of parahoric restrictions with respect to the maximal hyperspecial parahoric $K_0$. This is the simplest case, but it will prove very useful in other ones.
+
+\begin{example}[Restriction to hyperspecial parahoric $K_0\rightarrow F_4$]
+    This case is the simplest, since the characters $\chi^{J_0}_t$ are all trivial. For Iwahori-spherical representations, we first use the Springer correspondence for the group $Z_{G^\vee}(s)$ to understand the structure of the cohomology groups $H^*(\cB^u_s)$, and then we induce them from $W_s$ to $W$. To do this, we have used the tables by Dean Alvis in \cite{Alvis1982}, which have been of great help.
+    
+    For a concrete example, consider $u\in G^\vee$ unipotent of type $F_4(a_3)$ and let $s$ be a disjoint product of two $2$-cycles. Then $Z_{G^\vee}$ has type $B_4$, $W_s\cong W(B_4)$ and $u\in Z_{G^\vee}$ is the unipotent labelled by $B_4(531)$. In particular, $\cB^u_s$ is $2$ dimensional, and Springer theory gives
+    $$H^*(\cB^u_s)^\mathbf{1}=[2,2]+[3,1]+[4,\cdot]\quad\text{as $W_s$-modules}.$$
+    Next, using again the tables in \cite{Alvis1982}, we obtain that
+    $$\Ind_{W_s}^W[2,2]+[3,1]+[4,\cdot]=\phi_{9,2}+\phi_{9,6}''+\phi_{8,3}''+\phi_{4,1}+\phi_{2,4}''+\phi_{1,0}.$$
+    To obtain the parahoric restriction of the representation $[B_4(531),\mathbf{1}]$, we twist by $\varepsilon$ and by the outer automorphism of $W$ swapping long and short roots, and
+    $$[B_4(531),\mathbf{1}]\xrightarrow{\res^{K_0}}\phi_{9,10}+\phi_{9,6}''+\phi_{8,9}''+\phi_{4,13}+\phi_{2,16}''+\phi_{1,24}.$$
+\end{example}
+
+Once the parahoric restrictions for the maximal hyperspecial have been calculated, we can turn our attention towards computing the rest. The first step is to determine when the characters $\chi_t^J$ are trivial using Lemma \ref{lem:trivial_char}. We know the orders of all semisimple elements $s$ commuting with $u$, and it is not hard to show that $Z_{J_1},Z_{J_2},Z_{J_3}$ and $Z_{J_4}$ have sizes $2,2,3$ and $2$, respectively. Whenever the orders of $s$ and $J_1$ are relatively prime, we can use Lemma \ref{lem:mackey_restriction} and Alvis' tables to compute the restriction directly without further computations. Let us discuss another interesting example.
+
+\begin{example}
+    We calculate the parahoric restriction of $\pi(us,\mathbf{1})$ when $s$ is a $4$-cycle with respect to $K_2$. Let $J_2=\{-\calpha_0,\calpha_4,\calpha_3,\calpha_1\}$ and note that $W_{J_2}=\langle s_0,s_4,s_3,s_1\rangle\cong W(A_3)\times W(A_1)$. Consider the pseudo-Levi subgroup $L^\vee$ of $G^\vee$ generated by the affine simple roots $\{\alpha_4,\alpha_2,\alpha_1,-\alpha^0\}$ and isomorphic to the group $(\SL_4(\CC)\times\SL_2(\CC))/\mu_2$. Then $u$ can be taken to be a regular unipotent element in this pseudo-Levi, while $s$ is a non-trivial central element. In particular, $s=\calpha_3(-1)\calpha_4(i)$, and $W_s=\langle s_4,s_2,s_1,s^0\rangle\cong W(A_1)\times W(A_3)$ is the Weyl group of $L^\vee$. Then
+    $$W_s\backslash W/W_{J_2}=\{1,w\},$$
+    where $w\in W$ can be computed with computer algebra programs such as GAP. In addition, 
+    $$W_{J_2,s}=\langle s_4,s_1\rangle\cong C_2\times C_2,\quad\text{while}\quad W_{J_2,s^w}=\langle d \rangle\cong C_4,$$
+    for some $d\in W$ explicitly computable with GAP. With some work, we can show that $\chi_{s}^{J_2}$ is trivial on $W_{J_3,s}$, while $\chi_{s^w}^{J_2}$ is a primitive character. Since $u$ is regular unipotent in $Z_{G^\vee}(s)=L^\vee$ by construction, $H^*(\cB^u_s)$ is a one-dimensional space affording the trivial representation of $W$. So we want to calculate the two $W_{J_2}$-modules
+    $$\Ind_{W_{J_2,s}}^{W_{J_2}}\mathbf{1}\quad\text{and}\quad\Ind_{W_{J_2,s^w}}^{W_{J_2}}\chi,$$
+    where $\chi$ is a primitive character of $C_4$. To do this, we need to understand how the two groups $W_{J_2,s}$ and $W_{J_2,s^w}$ embed inside $W_{J_2}$. This can be done by studying the action of these groups on the subsystem $\Phi_{J_2}=\Phi(A_3\times A_1)$ of $\Phi(F_4)$ spanned by the roots in $J_2$. The conjugacy classes of $W_{J_2}$ are labelled by $(\lambda,\mu)$, where $\lambda$ is a permutation of $4$ and $\mu$ is a permutation of $2$. The elements $s_4,s_1$ and $d$ embed inside $W_{J_2}$ as the partitions $(211,11)$, $(1^4,2)$ and $(4,2)$, respectively. A direct computation then yields 
+    \begin{align*}
+        \Ind_{W_{J_2,s}}^{W_{J_2}}\mathbf{1}=[[4]+2[311]+[22]+[211]]\boxtimes[2]\quad\text{and}\quad\Ind_{W_{J_2,s^w}}^{W_{J_2}}\chi=[[31]+[211]]\boxtimes[[2]+[11]].
+    \end{align*}
+    Adding these and twisting by sign gives the required parahoric restriction.
+\end{example}
+
+As a final challenging example, we sketch the calculation of the parahoric restriction of $\pi(us,\mathbf{1})$, when $s$ is a $3$-cycle with respect to $K_3$. This example completely resolves the parahoric restriction for $K_3\rightarrow A_2\times A_2$.
+
+\begin{example}
+    Let $J_3=\{-\calpha_0,\calpha_4,\calpha_2,\calpha_1\}$ and note that $W_{J_3}=\langle s_0,s_4,s_2,s_1\rangle\cong W(A_2)\times W(A_2)$. Consider the pseudo-Levi subgroup $L^\vee$ of $G^\vee$ generated by the affine simple roots $\{\alpha_4,\alpha_3,\alpha_1,-\alpha^0\}$ and isomorphic to the group $(\SL_3(\CC)\times\SL_3(\CC))/\mu_3$. Then $u$ can be taken to be a regular unipotent element in this pseudo-Levi, while $s$ is a non-trivial central element. In particular, $s=\calpha_3(\theta)\calpha_4(\theta^{-1})$, where $\theta$ is a primitive third root of unity, and $W_s=\langle s_4,s_3,s_1,s^0\rangle\cong W(A_2)\times W(A_2)$ is the Weyl group of $L^\vee$. Then
+    $$W_s\backslash W/W_{J_3}=\{w_1=1,w_2,w_3,w_4,w_5\},$$
+    where $w_i\in W$ are representatives of double cosets with sizes $324, 324, 36, 36$ and $432$, respectively. In particular, 
+    $$W_{J_3,s^{w_3}}=W_{J_3,s^{w_4}}=W_{J_3}\quad\text{while}\quad W_{J_3,s}\cong W_{J_3,s^{w_2}}\cong C_2\times C_2.$$
+    These are all reflection subgroups of $W_{J_3}$ and the characters $\chi_{s^{w_i}}^{J_3}$ are trivial for $i=1,2,3,4$. The remaining coset is more interesting since    
+    $$W_{J_3,s^{w_5}}=\langle d \rangle\cong C_3,$$
+    is no longer a reflection subgroup, and $\chi_{s^{w_4}}^{J_3}$ is a primitive character. 
+    
+    Similarly to the previous example, $u$ is regular unipotent in $Z_{G^\vee}(s)=L^\vee$ so $H^*(\cB^u_s)$ is a one-dimensional space affording the trivial representation of $W$. It remains to understand the embedding of the groups $W_{J_3,s^{w_i}}$ inside $W_{J_3}\cong W(A_2)\times W(A_2)$, whose conjugacy classes are labelled by two partitions $(\lambda,\mu)$ of $3$. Again, this can be done by studying the action on the subsystem $\Phi_{J_3}=\Phi(A_2\times A_2)$ of $\Phi(F_4)$ spanned by the roots in $J_3$.
+
+    This embedding is trivial for $i=3,4$, while both $W_{J_3,s^{w_2}}$ and $W_{J_3,s^{w_2}}$ are conjugate in $W_{J_3}$ embedded as $\{(1^3,1^3), (1^3,21), (21,1^3), (21,21)\}$. Finally, the generator $d$ of $W_{J_3,s^{w_5}}$ embeds in $W_{J_3}$ as $(3,3)$. A direct computation yields
+    \begin{align*}
+        \Ind_{W_{J_3,s}}^{J_3}\mathbf{1}=\Ind_{W_{J_3,s^{w_2}}}^{J_3}\mathbf{1}=&[3,3]+[3,21]+[21,3]+[21,21],\quad\Ind_{W_{J_3,s^{w_3}}}^{J_3}\mathbf{1}=\Ind_{W_{J_3,s^{w_4}}}^{J_3}\mathbf{1}=[3,3]\\
+        \text{and}\quad&\Ind_{W_{J_3,s^{w_5}}}^{J_3}\mathbf{1}=[21,3]+[3,21]+[21,21]+[21,1^3]+[1^3,21].
+    \end{align*}
+    Adding these and twisting by sign gives the required parahoric restriction.
+\end{example}
